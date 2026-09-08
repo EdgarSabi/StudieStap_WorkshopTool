@@ -17,10 +17,10 @@ venv/
 
 # Local data / privacygevoelige bestanden
 data-local/
-*.wav
-*.mp3
-*.m4a
-*.mp4
+# *.wav
+# *.mp3
+# *.m4a
+# *.mp4
 
 # IDE / OS
 .vscode/
