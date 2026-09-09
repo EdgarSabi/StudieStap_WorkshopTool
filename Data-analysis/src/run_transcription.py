@@ -11,21 +11,26 @@ Usage:
 import argparse
 import sys
 
-from config import TranscriptionConfig, RAW_DATA_DIR, PROCESSED_DATA_DIR
+from config import TranscriptionConfig, RAW_DATA_DIR, PROCESSED_DATA_DIR, TEST_FILES_DIR
 from transcription.engine import TranscriptionEngine
 from transcription.cache import cached_result_exists, output_path_for
 
 
 def main():
     parser = argparse.ArgumentParser(description="Phase 1: audio -> transcript JSON")
-    parser.add_argument("audio_filename", help="Filename inside Data-local/raw/")
+    parser.add_argument("audio_filename", help="Filename inside the chosen --dir")
+    parser.add_argument(
+        "--dir", choices=["raw", "test"], default="raw",
+        help="'raw' = Data-local/raw (gitignored), 'test' = src/test-files (committable)"
+    )
     parser.add_argument("--model", default="base", help="Whisper model size")
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--compute-type", default="int8")
-    parser.add_argument("--force", action="store_true", help="Re-transcribe even if a cached output exists")
+    parser.add_argument("--force", action="store_true")
     args = parser.parse_args()
 
-    audio_path = RAW_DATA_DIR / args.audio_filename
+    input_dir = TEST_FILES_DIR if args.dir == "test" else RAW_DATA_DIR
+    audio_path = input_dir / args.audio_filename
     PROCESSED_DATA_DIR.mkdir(parents=True, exist_ok=True)
 
     if not args.force and cached_result_exists(audio_path, PROCESSED_DATA_DIR):

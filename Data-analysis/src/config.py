@@ -12,6 +12,7 @@ from pathlib import Path
 PROJECT_ROOT = Path(__file__).resolve().parents[2]
 RAW_DATA_DIR = PROJECT_ROOT / "Data-local" / "raw"
 PROCESSED_DATA_DIR = PROJECT_ROOT / "Data-local" / "processed"
+TEST_FILES_DIR = Path(__file__).resolve().parent / "test-files"
 
 
 @dataclass
