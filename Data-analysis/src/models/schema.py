@@ -1,12 +1,9 @@
 """
-Shared data schemas used across the whole pipeline, so timestamps and
-speaker labels survive from transcription through to classification.
-
-Phase 1 leaves `speaker` as None on every segment — it gets filled in
-by Phase 2 (diarization). Nothing downstream should assume it's set yet.
+Shared data schemas. Extended with faster-whisper's per-segment quality
+metadata and our own heuristic flags, for research comparison.
 """
 from typing import Optional
-from pydantic import BaseModel
+from pydantic import BaseModel, Field
 
 
 class TranscriptSegment(BaseModel):
@@ -14,6 +11,14 @@ class TranscriptSegment(BaseModel):
     end: float
     speaker: Optional[str] = None
     text: str
+
+    # Raw quality signals from faster-whisper, preserved as-is.
+    avg_logprob: Optional[float] = None
+    no_speech_prob: Optional[float] = None
+    compression_ratio: Optional[float] = None
+
+    # Our own heuristic flags — see config.py flag_* thresholds.
+    quality_flags: list[str] = Field(default_factory=list)
 
 
 class WorkshopTranscript(BaseModel):
@@ -23,3 +28,4 @@ class WorkshopTranscript(BaseModel):
     segments: list[TranscriptSegment]
     model_size: str
     transcription_time_seconds: float
+    transcription_config: dict = Field(default_factory=dict)  # snapshot, for comparing benchmark runs
