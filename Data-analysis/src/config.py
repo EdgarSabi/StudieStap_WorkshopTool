@@ -12,6 +12,7 @@ PROCESSED_DATA_DIR = PROJECT_ROOT / "Data-local" / "processed"
 TEST_FILES_DIR = Path(__file__).resolve().parent / "test-files"
 BENCHMARK_OUTPUT_DIR = PROCESSED_DATA_DIR / "benchmark"
 DIARIZATION_OUTPUT_DIR = PROCESSED_DATA_DIR / "diarization"
+PREPROCESSING_OUTPUT_DIR = PROCESSED_DATA_DIR / "preprocessing"
 
 # Load a repo-root .env (gitignored) if present, so HF_TOKEN etc. don't have
 # to be exported by hand. Never overrides variables already set in the shell.
@@ -90,3 +91,28 @@ class DiarizationConfig:
     overlap_min_ratio: float = 0.15       # 2nd speaker covers >= 15% of a segment -> mark overlap
     uncertain_coverage_below: float = 0.60  # winning speaker covers < 60% of the segment -> uncertain
     uncertain_margin_below: float = 0.15    # (winner - runner_up) / segment_duration < 15% -> uncertain
+
+
+@dataclass
+class PreprocessingConfig:
+    """
+    Phase 3 (turn structuring + context). Groups diarized ASR segments into
+    speaker turns and attaches structural context flags. No didactic
+    classification lives here or downstream of these thresholds.
+
+    Both thresholds below are heuristic EXPERIMENTAL defaults chosen to look
+    reasonable on the Phase 2 test fragment (testaudio4_fragment) — they are
+    not derived from measurement across varied audio. Expect to retune once
+    more/different fragments have been processed.
+    """
+    # Merge consecutive same-speaker segments into one turn if the gap between
+    # them is <= this. Only CLEAN segments (overlap=False AND
+    # uncertain_assignment=False) are eligible to merge at all — a segment
+    # that is unassigned, uncertain, or overlapping is always its own
+    # singleton turn, never merged into a neighbour. See preprocessing/turns.py.
+    max_gap_within_turn_seconds: float = 1.5
+
+    # A neighbouring turn farther away than this counts as a "large gap" for
+    # context_uncertain_{before,after} — independent of whether a neighbour
+    # exists at all (that's context_available_{before,after}).
+    large_context_gap_seconds: float = 3.0
