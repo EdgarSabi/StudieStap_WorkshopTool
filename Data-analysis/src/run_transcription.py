@@ -20,7 +20,7 @@ def main():
     parser = argparse.ArgumentParser(description="Phase 1: audio -> transcript JSON")
     parser.add_argument("audio_filename", help="Filename inside the chosen --dir")
     parser.add_argument(
-        "--dir", choices=["raw", "test"], default="raw",
+        "--dir", choices=["raw", "test"], default="test",
         help="'raw' = Data-local/raw (gitignored), 'test' = src/test-files (committable)"
     )
     parser.add_argument("--model", default="base", help="Whisper model size")

@@ -1,0 +1,35 @@
+# Dependencies voor Data-analysis/src (transcriptie + diarizatie pipeline).
+# Installeren in de venv in deze map:
+#
+#   python -m venv .venv
+#   .venv\Scripts\pip install -r requirements.txt --extra-index-url https://download.pytorch.org/whl/cpu
+#
+# torch wordt via --extra-index-url als CPU-only wheel opgehaald (geen CUDA nodig
+# voor dit project). Zonder die vlag pakt pip de (veel grotere) GPU-wheel van PyPI.
+#
+# Voor diarizatie is bovendien een HuggingFace-token nodig:
+#   1. licentie accepteren op https://huggingface.co/pyannote/speaker-diarization-3.1
+#      en https://huggingface.co/pyannote/segmentation-3.0
+#   2. een read-token aanmaken op https://huggingface.co/settings/tokens
+#   3. HF_TOKEN=... zetten in een .env in de repo-root (wordt automatisch geladen
+#      door config.py via python-dotenv)
+#
+# ffmpeg moet los als CLI-tool op PATH staan (niet via pip) — nodig voor het
+# knippen van testfragmenten en voor de mp3->wav-conversie vóór diarizatie.
+
+# --- transcriptie ---
+faster-whisper==1.2.1
+pydantic==2.13.5
+numpy==2.5.3
+
+# --- diarizatie ---
+torch==2.14.0+cpu
+torchaudio==2.11.0
+pyannote.audio==4.0.7
+
+# --- config / env ---
+python-dotenv==1.2.3
+
+# --- optioneel: alleen voor evaluation/wer.py (Word Error Rate tegen een
+# handmatig gecorrigeerde referentietranscriptie) ---
+# jiwer
