@@ -26,6 +26,19 @@ Method
    distribution before picking one (see comparison/results.md for what was
    chosen and why).
 
+IMPORTANT: any --threshold you pass is an EXPERIMENTAL setting, not a
+validated/proven-reliable classification criterion (see
+comparison/results.md's threshold section and its error analysis) —
+downstream consumers of the CSV should treat `prediction` accordingly.
+
+Every row keeps the ORIGINAL diarization-pipeline label (`pipeline_speaker`,
+from the existing diarized JSON), the recognition `similarity` score, and
+the recognition `prediction` as three SEPARATE fields — this script never
+overwrites `pipeline_speaker` with `prediction`, and never silently resolves
+a disagreement between them. `agreement`/`conflict` (added per-row) only
+classify how the two relate; they do not pick a winner — see
+_common.compute_agreement().
+
 Run (from anywhere; use the project's own venv):
     Data-analysis\\src\\.venv\\Scripts\\python.exe Data-analysis\\Experiments\\speaker_recognition\\pyannote_embeddings\\test_teacher_recognition.py
     Data-analysis\\src\\.venv\\Scripts\\python.exe Data-analysis\\Experiments\\speaker_recognition\\pyannote_embeddings\\test_teacher_recognition.py --threshold 0.45
@@ -108,6 +121,10 @@ def main():
             prediction = None
             if similarity is not None and args.threshold is not None:
                 prediction = "DOCENT" if similarity >= args.threshold else "OTHER"
+            # pipeline_speaker (original diarization label) is kept AS-IS below;
+            # agreement/conflict only describe the relationship to `prediction`,
+            # they never replace or merge into pipeline_speaker or prediction.
+            agreement, conflict = common.compute_agreement(chunk.pipeline_speaker, prediction)
             rows.append(
                 {
                     "fragment": fragment,
@@ -120,6 +137,9 @@ def main():
                     "pipeline_speaker": chunk.pipeline_speaker,
                     "similarity": round(similarity, 4) if similarity is not None else None,
                     "prediction": prediction,
+                    "agreement": agreement,
+                    "conflict": conflict,
+                    "threshold_status": common.THRESHOLD_STATUS_NOTE if args.threshold is not None else None,
                     "warning": warn,
                 }
             )
@@ -135,6 +155,13 @@ def main():
     for bucket in ("<0.5s", "0.5-1s", ">1s"):
         bucket_sims = [r["similarity"] for r in rows if r["similarity"] is not None and r["duration_bucket"] == bucket]
         common.print_distribution(f"pyannote (duration {bucket})", bucket_sims)
+
+    if args.threshold is not None:
+        conflicts = [r for r in rows if r["conflict"]]
+        print(f"\n--- conflicts (pipeline_speaker vs. prediction disagree): {len(conflicts)}/{len(rows)} ---")
+        for r in conflicts:
+            print(f"  [{r['fragment']} #{r['chunk_index']}] pipeline={r['pipeline_speaker']} "
+                  f"sim={r['similarity']} prediction={r['prediction']}  {r['text'][:50]!r}")
 
 
 if __name__ == "__main__":

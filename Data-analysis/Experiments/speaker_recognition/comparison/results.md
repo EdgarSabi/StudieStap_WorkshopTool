@@ -59,16 +59,33 @@ Beide modellen laten een duidelijk zichtbare, maar niet perfect gescheiden, twee
 meeste DOCENT-chunks clusteren rond 0.45–0.8, de meeste OTHER-chunks rond -0.2–0.3, met een overlappende
 middenzone rond 0.3–0.45 waar vooral korte (~1s) uitingen in vallen.
 
-## Gekozen threshold (indicatief, niet hard aanbevolen)
+## Gekozen threshold — EXPERIMENTELE instelling, geen bewezen betrouwbaar criterium
 
-| Model | Threshold | Rationale |
+**Belangrijk, expliciet:** de onderstaande waarden zijn een experimentele instelling, gekozen door de
+similarity-distributie op deze ene steekproef van 49 chunks visueel te inspecteren — géén gevalideerd of
+bewezen betrouwbaar classificatiecriterium. Ze worden nergens automatisch toegepast om een bestaand
+diarization-label te overschrijven; de CSV-output (`pyannote_teacher_similarity.csv` /
+`speechbrain_teacher_similarity.csv`) bewaart per chunk altijd **drie aparte kolommen naast elkaar** —
+`pipeline_speaker` (het oorspronkelijke diarization-label, ongewijzigd), `similarity` (de score), en
+`prediction` (het eventuele nieuwe, op de threshold gebaseerde label) — plus een `agreement`/`conflict`-kolom
+die alleen aangeeft OF de twee het met elkaar eens zijn, zonder ooit een winnaar te kiezen of een label te
+overschrijven (zie `_common.compute_agreement()`). Elke rij met `conflict=True` moet gelezen worden als "deze
+twee technieken spreken elkaar hier tegen", niet als "prediction is correct".
+
+| Model | Threshold (experimenteel) | Rationale voor déze steekproef |
 |---|---|---|
 | pyannote | **0.35** | Ligt in het dal tussen de twee clusters. Bij dit punt: 3 van de 20 DOCENT-chunks worden gemist (FN), 1 van de 19 OTHER-chunks wordt fout als DOCENT gezien (FP) → 35/39 = **~90%** op de indicatieve labels. |
 | speechbrain | **0.40** | Zelfde redenering. Bij dit punt: 5/20 FN, 0/19 FP → 34/39 = **~87%**. |
 
 **Nogmaals: dit zijn géén formele accuracy-cijfers** — ze zijn berekend op 39 van de 49 chunks waarvoor ik zelf,
 via tekstmatching met de handmatige transcripties, een rol heb toegekend. Ze zijn bedoeld om te laten zien dát
-er een bruikbare scheiding zit, niet om een exact percentage te claimen.
+er een bruikbare scheiding zit, niet om een exact percentage te claimen, en zeker niet om de threshold als
+"bewezen" te presenteren — een andere steekproef (andere docent, ander klaslokaal, andere microfoon) kan een
+andere waarde nodig hebben. Met `--threshold` weggelaten draaien beide scripts alleen de distributie, zonder
+enige DOCENT/OTHER-voorspelling te maken — dat is bewust de default.
+
+Op déze steekproef geeft de threshold **14/49 conflicten** (pyannote) resp. **16/49** (speechbrain) tussen
+`pipeline_speaker` en `prediction` — zie de CSV's voor de volledige lijst per rij.
 
 **Welke fouten ontstaan** (op de indicatieve labels, thr pyannote=0.35 / speechbrain=0.40):
 - Korte, op zichzelf staande uitingen van de docent worden het vaakst gemist (FN): *"Jawel."* (1.0s, pyannote 0.094, speechbrain 0.067), *"Wat voor probleem heeft-ie?"* (2.0s, beide ≈0.14–0.26), *"Oké, heel mooi."* (5.2s — lang genoeg, maar toch laag; mogelijk ruis/opname-artefact aan het begin van dat fragment).

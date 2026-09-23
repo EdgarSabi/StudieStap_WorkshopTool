@@ -70,8 +70,11 @@ Data-analysis/src/.venv/Scripts/python.exe Data-analysis/Experiments/speaker_rec
 Data-analysis/src/.venv/Scripts/python.exe Data-analysis/Experiments/speaker_recognition/speechbrain_ecapa/test_teacher_recognition.py --threshold 0.40
 ```
 
-(0.35 / 0.40 zijn de waarden die in `comparison/results.md` zijn onderbouwd — geen harde
-aanbeveling, zie de kanttekeningen daar.)
+(0.35 / 0.40 zijn EXPERIMENTELE instellingen — gekozen door de similarity-distributie op
+deze steekproef te inspecteren, geen gevalideerd/bewezen betrouwbaar criterium. Elke rij in
+de CSV-output bewaart `pipeline_speaker` (origineel, ongewijzigd), `similarity` en `prediction`
+apart naast elkaar, plus een expliciete `conflict`-kolom als de twee elkaar tegenspreken — zie
+de kanttekeningen in `comparison/results.md`.)
 
 ## Resultaten
 

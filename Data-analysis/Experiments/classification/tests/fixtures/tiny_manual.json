@@ -1,0 +1,11 @@
+{
+  "fragment_id": "tiny_manual_fixture",
+  "synthetic": true,
+  "speaker_mapping": {"MAIN_SPEAKER": "DOCENT", "OTHER_SPEAKER": "LEERLING"},
+  "turns": [
+    {"turn_id": 1, "speaker": "MAIN_SPEAKER", "text": "Wat denk jij dat het antwoord is?"},
+    {"turn_id": 2, "speaker": "OTHER_SPEAKER", "text": "Ik denk twaalf."},
+    {"turn_id": 3, "speaker": "MAIN_SPEAKER", "text": "Hoe kom je daarbij?"},
+    {"turn_id": 4, "speaker": "OTHER_SPEAKER", "text": "Door te rekenen."}
+  ]
+}

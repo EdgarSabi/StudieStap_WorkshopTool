@@ -150,6 +150,52 @@ def duration_bucket(seconds: float) -> str:
     return ">1s"
 
 
+# Any cosine-similarity threshold used in this experiment (or reused from it
+# elsewhere, e.g. Experiments/word_level_speaker_attribution) is an
+# EXPERIMENTAL setting chosen by inspecting the similarity distribution on a
+# 49-chunk sample — see comparison/results.md's "Gekozen threshold" section
+# for the full caveat. It is explicitly NOT a validated/proven-reliable
+# classification criterion and should not be presented as one downstream.
+THRESHOLD_STATUS_NOTE = (
+    "experimentele instelling, gekozen op een steekproef van 49 chunks — "
+    "geen gevalideerd/bewezen betrouwbaar classificatiecriterium"
+)
+
+
+def compute_agreement(diarization_label: Optional[str], recognition_label: Optional[str]) -> tuple[str, bool]:
+    """Compare a diarization-pipeline label against a speaker-recognition
+    label WITHOUT ever choosing a winner or merging them into one value —
+    callers must keep both labels as separate fields; this only classifies
+    how they relate, as (agreement, conflict).
+
+    `diarization_label` is the existing pipeline's label (MAIN_SPEAKER /
+    OTHER_SPEAKER_n / None). `recognition_label` is "DOCENT" / "OTHER" / None
+    (None when recognition wasn't evaluated for this chunk, e.g. no
+    threshold was supplied, or the chunk was too short/unembeddable).
+
+    Returns:
+      ("not_evaluated", False)               - no recognition_label to compare
+      ("no_diarization_label", False)        - diarization gave no label (None/unassigned)
+      ("consistent_docent", False)           - both agree: MAIN_SPEAKER <-> DOCENT
+      ("consistent_other", False)            - both agree: OTHER_SPEAKER_n/other <-> OTHER
+      ("conflict_diar_main_sim_low", True)   - diarization says MAIN_SPEAKER, recognition says OTHER
+      ("conflict_diar_other_sim_high", True) - diarization says OTHER_SPEAKER_n, recognition says DOCENT
+    """
+    if recognition_label is None:
+        return "not_evaluated", False
+    if diarization_label is None:
+        return "no_diarization_label", False
+
+    diar_says_docent = diarization_label == "MAIN_SPEAKER"
+    recognition_says_docent = recognition_label == "DOCENT"
+
+    if diar_says_docent == recognition_says_docent:
+        return ("consistent_docent" if diar_says_docent else "consistent_other"), False
+    if diar_says_docent and not recognition_says_docent:
+        return "conflict_diar_main_sim_low", True
+    return "conflict_diar_other_sim_high", True
+
+
 def print_distribution(label: str, values: list[float]) -> None:
     if not values:
         print(f"\n--- {label}: no scores to summarize ---")
