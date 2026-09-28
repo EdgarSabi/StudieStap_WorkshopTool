@@ -1,5 +1,12 @@
 # Experiment A — pyannote/speaker-diarization-community-1
 
+> **Status: afgerond, niet actief in gebruik.** We werken hier voorlopig niet
+> verder aan — dat betekent niet dat de methode bewezen onbruikbaar is, alleen
+> dat er in onze beperkte tests geen overtuigende verbetering t.o.v. de
+> baseline (`speaker-diarization-3.1`) is aangetoond (zie punt 7/8 hieronder
+> en [`../comparison/experiment_notes.md`](../comparison/experiment_notes.md)).
+> De productiepipeline blijft bij de baseline.
+
 ## 1. Doel
 
 Testen of `pyannote/speaker-diarization-community-1` (de opvolger/community-variant
@@ -26,7 +33,7 @@ geen aparte licentie-acceptatie nodig gebleken bovenop wat de baseline al vereis
 ## 4. Hoe opnieuw runnen
 
 ```bash
-cd Data-analysis/Experiments/diarization/community1
+cd Data-analysis/Afgeronde_experimenten/diarization/community1
 ../../../src/.venv/Scripts/python.exe community1_test.py
 # of specifieke fragmenten:
 ../../../src/.venv/Scripts/python.exe community1_test.py --fragment testaudio1_fragment --fragment testaudio5_fragment --force

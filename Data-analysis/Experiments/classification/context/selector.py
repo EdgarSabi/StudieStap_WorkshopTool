@@ -47,11 +47,22 @@ class ContextWindow(BaseModel):
     unknown_reliability: bool
     flagged_uncertain: bool
 
+    # Same idea, for docent_role (Phase 4): True if ANY turn in the window has
+    # docent_role None (not evaluated) or "ONZEKER" — i.e. the window
+    # contains at least one turn whose docent/other status isn't a settled
+    # DOCENT/OTHER call. A classifier should treat that as missing evidence,
+    # not silently ignore it.
+    docent_role_unresolved: bool
+
 
 def _reliability_flags(turns: list[ClassificationTurn]) -> tuple[bool, bool]:
     unknown = any(t.uncertain_assignment is None or t.overlap is None for t in turns)
     flagged = any(t.uncertain_assignment is True or t.overlap is True for t in turns)
     return unknown, flagged
+
+
+def _docent_role_unresolved(turns: list[ClassificationTurn]) -> bool:
+    return any(t.docent_role is None or t.docent_role == "ONZEKER" for t in turns)
 
 
 def select_context(turns: list[ClassificationTurn], center_index: int, mode: str) -> ContextWindow:
@@ -74,6 +85,7 @@ def select_context(turns: list[ClassificationTurn], center_index: int, mode: str
         turns=window_turns,
         unknown_reliability=unknown,
         flagged_uncertain=flagged,
+        docent_role_unresolved=_docent_role_unresolved(window_turns),
     )
 
 

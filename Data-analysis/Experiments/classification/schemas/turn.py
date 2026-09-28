@@ -18,6 +18,17 @@ None meaning "unknown / not available" — NOT "reliable". This matters:
     it leaves them None. None must never be treated as "False" (=clean)
     downstream — see ContextWindow's reliability summary below, which keeps
     "unknown" and "known-clean" visibly distinct.
+
+`docent_role` follows the same "None means unknown, never inferred" rule as
+`speaker` above: it is populated ONLY when the source ProcessedTranscript
+went through Phase 4 (run_docent_recognition.py), carried over exactly as
+computed there (DOCENT/OTHER/ONZEKER, never re-derived from `speaker` here —
+a MAIN_SPEAKER turn with no docent_role stays None, not "DOCENT"). A
+hand-written manual transcript never has this evaluated, so it stays None
+even though it may carry a `speaker_mapping` — that mapping is kept as
+separate, informational metadata (see FragmentTurns) and is deliberately
+NOT wired into `docent_role`, to avoid conflating a human-authored label
+with a voice-recognition result.
 """
 from typing import Optional
 from pydantic import BaseModel, Field
@@ -39,6 +50,14 @@ class ClassificationTurn(BaseModel):
     # See module docstring.
     uncertain_assignment: Optional[bool] = None
     overlap: Optional[bool] = None
+
+    # Phase 4 (docent recognition) fields — None when not evaluated (manual
+    # transcripts, or a ProcessedTranscript that never went through
+    # run_docent_recognition.py). Never inferred from `speaker`. See module
+    # docstring for why "DOCENT"/"OTHER"/"ONZEKER"/None are kept distinct.
+    docent_role: Optional[str] = None
+    docent_role_similarity: Optional[float] = None   # raw cosine similarity — NOT a calibrated probability
+    docent_role_note: Optional[str] = None            # why ONZEKER, or an embedding warning
 
     source: str  # "manual" | "pipeline_processed" — traceability only, no semantics attached
 

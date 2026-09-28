@@ -13,6 +13,7 @@ TEST_FILES_DIR = Path(__file__).resolve().parent / "test-files"
 BENCHMARK_OUTPUT_DIR = PROCESSED_DATA_DIR / "benchmark"
 DIARIZATION_OUTPUT_DIR = PROCESSED_DATA_DIR / "diarization"
 PREPROCESSING_OUTPUT_DIR = PROCESSED_DATA_DIR / "preprocessing"
+DOCENT_RECOGNITION_OUTPUT_DIR = PROCESSED_DATA_DIR / "docent_recognition"
 
 # Load a repo-root .env (gitignored) if present, so HF_TOKEN etc. don't have
 # to be exported by hand. Never overrides variables already set in the shell.
@@ -116,3 +117,32 @@ class PreprocessingConfig:
     # context_uncertain_{before,after} — independent of whether a neighbour
     # exists at all (that's context_available_{before,after}).
     large_context_gap_seconds: float = 3.0
+
+
+@dataclass
+class DocentRecognitionConfig:
+    """
+    Phase 4 (docent recognition). Compares each speaker turn's own audio to a
+    teacher reference recording (pyannote WeSpeaker embeddings) to decide a
+    `docent_role` independent of the diarization identity/talk-time heuristic
+    (MAIN_SPEAKER/OTHER_SPEAKER_n) — see models/processed.py's SpeakerTurn
+    docstring and docent_recognition/assign.py for the decision rule.
+
+    `reference_audio` has NO default on purpose: it must be an explicit,
+    per-run choice (a teacher's own reference clip), never silently reused
+    from a previous run or hardcoded to one of the test fragments.
+    """
+    reference_audio: str                              # path to the teacher's reference recording — REQUIRED, no default
+    embedding_model: str = "pyannote/wespeaker-voxceleb-resnet34-LM"
+    device: str = "cpu"
+
+    # EXPERIMENTAL setting, carried over from
+    # Experiments/speaker_recognition/comparison/results.md — chosen by
+    # inspecting a similarity distribution on a 49-chunk sample, NOT a
+    # validated/proven-reliable classification criterion. Configurable
+    # precisely because it should NOT be treated as a fixed, final rule.
+    similarity_threshold: float = 0.35
+
+    # Below this, a turn is not embedded at all — same reasoning as
+    # speaker_recognition's finding that sub-1s clips give unreliable scores.
+    min_clip_duration_seconds: float = 1.0

@@ -67,6 +67,21 @@ class SpeakerTurn(BaseModel):
     # A clean turn with shaky context, or an uncertain turn with clean
     # context, are both cases where a classifier should hold back.
 
+    # --- Phase 4: docent recognition (filled in by docent_recognition/assign.py) ---
+    # Deliberately SEPARATE from `speaker` above: `speaker` is the diarization
+    # identity/talk-time heuristic (MAIN_SPEAKER / OTHER_SPEAKER_n) and is
+    # NEVER treated as "docent" by itself. `docent_role` is an independent
+    # judgement, made by comparing this turn's own audio against a teacher
+    # reference recording (pyannote WeSpeaker embeddings) — see
+    # docent_recognition/. All fields default to None: a transcript that
+    # never went through docent recognition (or a hand-written one) simply
+    # has no opinion here, which is NOT the same as "OTHER".
+    docent_role: Optional[str] = None              # "DOCENT" | "OTHER" | "ONZEKER" | None (not evaluated)
+    docent_role_similarity: Optional[float] = None  # raw cosine similarity — NOT a calibrated probability
+    docent_role_threshold: Optional[float] = None   # experimental threshold used for this decision (see docent_recognition/assign.py)
+    docent_role_reference_audio: Optional[str] = None  # traceability: which reference recording this was compared against
+    docent_role_note: Optional[str] = None           # why ONZEKER, or any warning from the embedding step
+
 
 class ProcessedTranscript(BaseModel):
     source_transcript_path: str        # traceability to the Phase 1/2 JSON this was built from
@@ -77,3 +92,8 @@ class ProcessedTranscript(BaseModel):
     original_segment_count: int
     turns: list[SpeakerTurn]
     preprocessing_config: dict = Field(default_factory=dict)  # snapshot of thresholds used
+
+    # --- Phase 4: present only after run_docent_recognition.py has enriched this
+    # transcript. Free-form snapshot (backend, model, reference audio, threshold,
+    # runtime) — mirrors how WorkshopTranscript.diarization stores Phase 2 metadata.
+    docent_recognition: Optional[dict] = None

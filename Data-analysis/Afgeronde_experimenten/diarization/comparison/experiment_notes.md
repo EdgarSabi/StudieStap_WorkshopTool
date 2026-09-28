@@ -1,5 +1,27 @@
 # Diarizatie-experimenten: vergelijking
 
+> **Status (bijgewerkt bij reorganisatie): beide experimenten hieronder zijn
+> afgerond — we werken er voorlopig niet verder aan. Dat betekent niet dat
+> een van beide bewezen onbruikbaar is, alleen dat de productiepipeline
+> voorlopig bij BASELINE (pyannote `speaker-diarization-3.1` +
+> segment-niveau `assign_speakers()`) blijft.**
+> - **A (community-1)** is een alternatief *diarizationmodel* — daarop is de
+>   conclusie: **geen overtuigende verbetering aangetoond in onze beperkte
+>   tests** (3 korte fragmenten, geen ground truth — zie de tabellen
+>   hieronder).
+> - **B (WhisperX)** is **geen** alternatief diarizationmodel (het gebruikt
+>   hetzelfde pyannote 3.1 als de baseline) — het is een alternatieve
+>   **transcriptie/alignment/sprekerkoppelingsroute**: eigen ASR + forced
+>   alignment + woordniveau speaker-koppeling, tegen de prijs van een aparte
+>   Python-omgeving en aanzienlijk meer dependencies/runtime (zie Tabel 2).
+>   De map staat nog op zijn oorspronkelijke plek
+>   (`Data-analysis/Experiments/diarization/whisperx/`, incl. eigen venv) —
+>   niet verplaatst, wel gemarkeerd als afgerond, niet actief in gebruik.
+>   Het lichtere alternatief dat **wel** actief is —
+>   `word_timestamps=True` + de bestaande pyannote-turns, zonder WhisperX —
+>   staat in
+>   [`Experiments/word_level_speaker_attribution`](../../../Experiments/word_level_speaker_attribution).
+
 Vergelijking van drie aanpakken op dezelfde drie testfragmenten
 (`testaudio1_fragment`, `testaudio2_fragment`, `testaudio5_fragment`), allemaal
 op CPU, Whisper `medium`, taal `nl`.
@@ -9,10 +31,14 @@ op CPU, Whisper `medium`, taal `nl`.
   ([Data-analysis/src](../../../src)).
 - **A**: zelfde ASR-transcript + bestaande `assign_speakers()`, maar pyannote
   `speaker-diarization-community-1` in plaats van 3.1
-  ([community1/](../community1)).
+  ([community1/](../community1)) — alternatief diarizationmodel, geen
+  overtuigende verbetering aangetoond in onze beperkte tests.
 - **B**: WhisperX (eigen ASR + forced alignment) + pyannote 3.1 (zelfde model
   als baseline) + woordniveau `assign_word_speakers()`
-  ([whisperx/](../whisperx)).
+  ([whisperx/](../../../Experiments/diarization/whisperx)) — geen ander
+  diarizationmodel, maar een alternatieve transcriptie/alignment/
+  sprekerkoppelingsroute; map niet verplaatst (blijft op zijn oorspronkelijke
+  plek, zie status hierboven).
 
 > **Belangrijk onderscheid, zoals gevraagd:** diarizatiekwaliteit en
 > transcript↔speaker-koppeling zijn twee aparte vragen.

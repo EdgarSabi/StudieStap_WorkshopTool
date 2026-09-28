@@ -1,5 +1,18 @@
 # Speaker recognition experiment — DOCENT vs OTHER
 
+> **Status: pyannote WeSpeaker (`pyannote_embeddings/`) is actief** — blijft
+> in gebruik, o.a. door `Experiments/word_level_speaker_attribution`.
+> **SpeechBrain ECAPA (`speechbrain_ecapa/`) is afgerond, niet actief in
+> gebruik.** Beide mappen blijven hier staan (niet verplaatst): het script
+> importeert `_common.py` via een pad relatief aan zijn eigen locatie
+> (`speaker_recognition/`), en die map moet in zijn geheel blijven staan
+> omdat actieve onderdelen (`pyannote_embeddings/`,
+> `word_level_speaker_attribution`) `_common.py` gebruiken. "Afgerond"
+> betekent hier niet dat SpeechBrain bewezen slechter is dan pyannote — zie
+> `comparison/results.md` voor de (genuanceerde) vergelijking — alleen dat we
+> er voorlopig niet verder aan werken. `Notebooks/04-diarization.ipynb`
+> (actief) analyseert de output van beide modellen.
+
 Verkennend, losstaand experiment. **Raakt de bestaande transcriptie-/diarizatiepipeline in
 `Data-analysis/src` niet aan** — er wordt niets in dat pakket geïmporteerd, overschreven of
 opnieuw gedraaid. Dit experiment *leest alleen* wat die pipeline al eerder produceerde:

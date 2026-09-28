@@ -1,0 +1,54 @@
+{
+  "source_transcript_path": "fictief_pad/fictief_transcript.json",
+  "audio_file": "fictief.mp3",
+  "language": "nl",
+  "duration": 20.0,
+  "model_size": "medium",
+  "original_segment_count": 5,
+  "turns": [
+    {
+      "turn_id": 0, "speaker": "MAIN_SPEAKER", "start": 0.0, "end": 3.0,
+      "text": "Wat denk jij dat het antwoord is?",
+      "overlap": false, "uncertain_assignment": false,
+      "docent_role": "DOCENT", "docent_role_similarity": 0.6,
+      "docent_role_threshold": 0.35, "docent_role_reference_audio": "fictief_docent_ref.mp3",
+      "docent_role_note": null
+    },
+    {
+      "turn_id": 1, "speaker": "OTHER_SPEAKER_1", "start": 3.0, "end": 5.0,
+      "text": "Ik denk twaalf.",
+      "overlap": false, "uncertain_assignment": false,
+      "docent_role": "OTHER", "docent_role_similarity": 0.1,
+      "docent_role_threshold": 0.35, "docent_role_reference_audio": "fictief_docent_ref.mp3",
+      "docent_role_note": null
+    },
+    {
+      "turn_id": 2, "speaker": "OTHER_SPEAKER_2", "start": 5.0, "end": 7.5,
+      "text": "Ik denk dertien.",
+      "overlap": false, "uncertain_assignment": false,
+      "docent_role": "OTHER", "docent_role_similarity": 0.15,
+      "docent_role_threshold": 0.35, "docent_role_reference_audio": "fictief_docent_ref.mp3",
+      "docent_role_note": null
+    },
+    {
+      "turn_id": 3, "speaker": "MAIN_SPEAKER", "start": 7.5, "end": 9.0,
+      "text": "Hoe kom je daarbij? Nee dat klopt niet.",
+      "overlap": true, "uncertain_assignment": false,
+      "docent_role": "ONZEKER", "docent_role_similarity": null,
+      "docent_role_threshold": 0.35, "docent_role_reference_audio": "fictief_docent_ref.mp3",
+      "docent_role_note": "turn zelf is overlap (diarization-onzekerheid/gemengde spraak) - docentrol niet betrouwbaar te bepalen op basis van dit spraakstuk"
+    },
+    {
+      "turn_id": 4, "speaker": "MAIN_SPEAKER", "start": 9.0, "end": 12.0,
+      "text": "Door te rekenen kom je op het antwoord.",
+      "overlap": false, "uncertain_assignment": false
+    }
+  ],
+  "preprocessing_config": {},
+  "docent_recognition": {
+    "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM",
+    "reference_audio": "fictief_docent_ref.mp3",
+    "similarity_threshold": 0.35,
+    "note": "turn_id 4 deliberately has NO docent_role fields at all, to test that missing recognition stays None/unevaluated rather than being inferred from MAIN_SPEAKER"
+  }
+}

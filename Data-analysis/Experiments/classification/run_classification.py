@@ -74,6 +74,7 @@ def run(input_path: Path, mode: str, indicators: list[str], classifier: Classifi
                     "raw_output": raw.model_dump(),
                     "unknown_reliability": window.unknown_reliability,
                     "flagged_uncertain": window.flagged_uncertain,
+                    "docent_role_unresolved": window.docent_role_unresolved,
                 })
             except Exception as e:  # keep going — one bad turn/indicator shouldn't kill the run
                 errors.append({

@@ -12,6 +12,13 @@ No timestamps, no uncertainty/overlap signal — that information simply
 doesn't exist for a hand-written transcript, so uncertain_assignment/overlap
 are left None ("unknown"), never defaulted to False ("known clean"). See
 schemas/turn.py's module docstring for why that distinction matters.
+
+docent_role is likewise left None: no voice recognition ever ran on a
+hand-written transcript. `speaker_mapping` (e.g. {"MAIN_SPEAKER": "DOCENT"})
+is a human-authored label for a synthetic scenario, not a recognition
+result — it is kept on FragmentTurns as separate, informational metadata
+and deliberately NOT copied into docent_role, so the two kinds of "this is
+the teacher" information (asserted vs. recognized) never get conflated.
 """
 import json
 from pathlib import Path

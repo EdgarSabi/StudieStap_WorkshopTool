@@ -3,7 +3,7 @@ Shared helpers for Fase 4 — word-level speaker attribution.
 
 Standalone experiment: does NOT modify anything in Data-analysis/src. It
 imports and reuses existing pipeline modules read-only (same pattern as the
-other Experiments/ scripts, e.g. diarization/community1/community1_test.py),
+other Experiments/ scripts, e.g. Afgeronde_experimenten/diarization/community1/community1_test.py),
 and reuses the previous speaker_recognition experiment's helpers for the
 WeSpeaker embedding/cosine-similarity plumbing rather than duplicating it.
 """

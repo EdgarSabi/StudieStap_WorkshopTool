@@ -1,5 +1,23 @@
 # Experiment B — WhisperX + pyannote (word-level speaker assignment)
 
+> **Status: afgerond, niet actief in gebruik — map blijft op deze plek
+> staan** (inclusief de eigen `.venv-whisperx/`), bewust niet verplaatst naar
+> `Afgeronde_experimenten/` om geen enkel risico te lopen met de venv of
+> andere bestanden met mogelijk absolute paden. "Afgerond" betekent hier niet
+> dat de methode bewezen onbruikbaar is — alleen dat we er voorlopig niet
+> verder aan werken.
+>
+> **Dit is geen alternatief diarizationmodel** (het gebruikt hetzelfde
+> pyannote `speaker-diarization-3.1` als de baseline) — het is een
+> alternatieve **transcriptie/alignment/sprekerkoppelingsroute**: eigen ASR +
+> forced alignment + woordniveau speaker-koppeling, tegen de prijs van een
+> aparte Python-omgeving en aanzienlijk meer dependencies/runtime (zie
+> [`../comparison/experiment_notes.md`](../../../Afgeronde_experimenten/diarization/comparison/experiment_notes.md)
+> voor de volledige vergelijking, die map is wel verplaatst).
+> Het lichtere, wél actieve alternatief — `word_timestamps=True` + de
+> bestaande pyannote-turns, zonder WhisperX — staat in
+> [`../../word_level_speaker_attribution`](../../word_level_speaker_attribution).
+
 ## 1. Doel
 
 Niet zomaar "een ander diarizationmodel" testen, maar onderzoeken of
