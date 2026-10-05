@@ -1,0 +1,60 @@
+{
+  "10": {
+    "gt_speakers": 4,
+    "pyannote_speakers_found": 2,
+    "overall_correct_pct": 81.0,
+    "per_gt_speaker": {
+      "SPREKER_A": {
+        "seconds": 72.0,
+        "matched_pyannote_speaker": "SPEAKER_00",
+        "covered_pct": 86.9
+      },
+      "SPREKER_B": {
+        "seconds": 36.9,
+        "matched_pyannote_speaker": "SPEAKER_01",
+        "covered_pct": 87.3
+      },
+      "SPREKER_C": {
+        "seconds": 7.3,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      },
+      "SPREKER_D": {
+        "seconds": 0.8,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      }
+    },
+    "pyannote_turns": 63,
+    "runtime_seconds": 86.85
+  },
+  "8": {
+    "gt_speakers": 4,
+    "pyannote_speakers_found": 4,
+    "overall_correct_pct": 83.2,
+    "per_gt_speaker": {
+      "SPREKER_A": {
+        "seconds": 72.0,
+        "matched_pyannote_speaker": "SPEAKER_01",
+        "covered_pct": 82.4
+      },
+      "SPREKER_B": {
+        "seconds": 36.9,
+        "matched_pyannote_speaker": "SPEAKER_03",
+        "covered_pct": 84.0
+      },
+      "SPREKER_C": {
+        "seconds": 7.3,
+        "matched_pyannote_speaker": "SPEAKER_02",
+        "covered_pct": 97.3
+      },
+      "SPREKER_D": {
+        "seconds": 0.8,
+        "matched_pyannote_speaker": "SPEAKER_00",
+        "covered_pct": 0.0
+      }
+    },
+    "pyannote_turns": 69,
+    "runtime_seconds": 91.95
+  }
+}

@@ -3,7 +3,7 @@ Shared helpers for Fase 4 — word-level speaker attribution.
 
 Standalone experiment: does NOT modify anything in Data-analysis/src. It
 imports and reuses existing pipeline modules read-only (same pattern as the
-other Experiments/ scripts, e.g. diarization/community1/community1_test.py),
+other Experiments/ scripts, e.g. Afgeronde_experimenten/diarization/community1/community1_test.py),
 and reuses the previous speaker_recognition experiment's helpers for the
 WeSpeaker embedding/cosine-similarity plumbing rather than duplicating it.
 """
@@ -49,7 +49,7 @@ from config import (  # noqa: E402
     TranscriptionConfig,
     get_hf_token,
 )
-from models.schema import WorkshopTranscript  # noqa: E402
+from models import WorkshopTranscript  # noqa: E402
 
 TEST_FILES_DIR = TEST_FILES_DIR  # re-export for convenience
 

@@ -11,8 +11,9 @@ probability)]) is never read or stored anywhere: TranscriptSegment has no
 `words` field, so it's silently discarded today.
 
 This script does NOT touch engine.py or schema.py. It calls WhisperModel
-directly (same pattern as the diarization/community1 and diarization/whisperx
-experiments — a thin, separate script reusing config, not the pipeline's own
+directly (same pattern as the Afgeronde_experimenten/diarization/community1
+and diarization/whisperx experiments — a thin, separate script reusing config,
+not the pipeline's own
 conversion code), with the EXACT same transcribe kwargs the baseline pipeline
 used for these fragments (see transcription_config in
 Data-local/processed/<fragment>.json), except word_timestamps=True. That way

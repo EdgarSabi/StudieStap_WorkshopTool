@@ -2,7 +2,7 @@
 
 Verkennend experiment. **Raakt de bestaande pipeline in `Data-analysis/src`
 niet aan** — niets wordt geïmporteerd-en-gewijzigd, alleen geïmporteerd en
-read-only hergebruikt (zelfde patroon als `Experiments/diarization/community1`
+read-only hergebruikt (zelfde patroon als `Afgeronde_experimenten/diarization/community1`
 en `Experiments/speaker_recognition`). Geen nieuwe modellen getraind, geen
 nieuw diarizationmodel onderzocht, geen dependencies toegevoegd.
 
