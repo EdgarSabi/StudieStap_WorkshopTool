@@ -1,0 +1,88 @@
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,overlap,note,transcript_hint
+testaudio4_fragment,0,0.0,1.2,SPREKER_A,nee,,"Ja, als ik jou nog één keer hoor."
+testaudio4_fragment,1,1.2,2.4,SPREKER_B,nee,,Dat vind ik echt niet eerlijk.
+testaudio4_fragment,2,2.4,5.1,SPREKER_A,nee,,"Nou, ik hoor jouw stem nou, toch?"
+testaudio4_fragment,3,5.1,5.8,SPREKER_B,nee,,"Ja, dat klopt."
+testaudio4_fragment,4,5.8,6.4,SPREKER_A,nee,,"Ja, nou."
+testaudio4_fragment,5,6.4,7.6,SPREKER_B,ja,,Omdat ik protesteer.
+testaudio4_fragment,6,7.6,9.2,SPREKER_A,nee,,"Ja, precies. Jij protesteert."
+testaudio4_fragment,7,9.2,10.0,SPREKER_B,ja,,"Ja, zeker."
+testaudio4_fragment,8,10.0,12.6,SPREKER_A,nee,,"Ja, niet doen en dan is het klaar."
+testaudio4_fragment,9,12.6,15.3,SPREKER_A,nee,,"Ja, ik wil jou gewoon even niet meer horen."
+testaudio4_fragment,10,15.3,16.7,SPREKER_A,nee,,Anders ga je hoofdstuk 4...
+testaudio4_fragment,11,16.7,17.4,SPREKER_B,nee,,Hou op!
+testaudio4_fragment,12,17.4,19.0,SPREKER_A,nee,,"Ja, Anita, klaar."
+testaudio4_fragment,13,19.0,21.6,SPREKER_A,nee,,Ga maar even hoofdstuk 4 even openschrijven.
+testaudio4_fragment,14,21.6,22.7,SPREKER_B,nee,,"Ja, dacht het even niet."
+testaudio4_fragment,15,22.7,25.5,SPREKER_A,nee,,"Nou, ik heb jou twee keer gewaarschuwd."
+testaudio4_fragment,16,25.5,27.7,SPREKER_A,nee,,En je leopt de hele tijd keihard doorheen te schreeuwen.
+testaudio4_fragment,17,27.7,29.1,SPREKER_B,ja,,"Ja, vind je dat heel gek?"
+testaudio4_fragment,18,29.2,30.2,SPREKER_A,nee,,Vind ik heel gek.
+testaudio4_fragment,19,30.2,30.7,SPREKER_A,nee,,Ja.
+testaudio4_fragment,20,30.7,31.5,SPREKER_A,nee,,Vind ik heel gek.
+testaudio4_fragment,21,31.5,34.3,SPREKER_B,nee,,"Nou, dat mag u vinden, maar ik vind het ook heel gek dat jij dat heeft gezegd."
+testaudio4_fragment,22,34.3,35.6,SPREKER_A,ja,,Ga maar even daar zitten.
+testaudio4_fragment,23,35.6,36.8,SPREKER_A,nee,,Ga maar even naar het data zitten.
+testaudio4_fragment,24,36.8,37.4,SPREKER_B,ja,,"Nee, wat ik nou..."
+testaudio4_fragment,25,37.4,38.2,SPREKER_B,nee,,"Ja, beter."
+testaudio4_fragment,26,38.2,40.4,SPREKER_A,nee,,"Ja, beter. Precies."
+testaudio4_fragment,27,40.4,42.8,SPREKER_A,nee,,En dan ga je alvast beginnen met hoofdstuk 4 overschrijven.
+testaudio4_fragment,28,42.8,43.5,SPREKER_A,nee,,En dan eind van de les...
+testaudio4_fragment,29,43.5,45.3,SPREKER_B,nee,,Ik ga echt niet hoofdstuk 4 overschrijven.
+testaudio4_fragment,30,45.3,48.5,SPREKER_B,nee,docent praat erdoorheen,"Prima ga ik daar zitten, maar ik ga niet hoofdstuk 4 overschrijven."
+testaudio4_fragment,31,48.5,50.4,SPREKER_B,nee,,Dat kan je echt op je buik schrijven.
+testaudio4_fragment,32,50.4,51.6,SPREKER_A,nee,,Anita.
+testaudio4_fragment,33,51.6,52.2,SPREKER_B,nee,,"Ja, wat?"
+testaudio4_fragment,34,52.2,53.6,SPREKER_A,nee,,Enorm boos.
+testaudio4_fragment,35,53.6,54.2,SPREKER_B,nee,,Ja.
+testaudio4_fragment,36,54.2,55.0,SPREKER_A,nee,,Ja.
+testaudio4_fragment,37,55.0,57.3,SPREKER_B,nee,,"U gaat zonder reden, geeft u mij gewoon strafwerk."
+testaudio4_fragment,38,57.3,58.4,SPREKER_B,nee,,Daar heb ik dus echt geen zin in.
+testaudio4_fragment,39,58.4,59.0,SPREKER_A,nee,,"Nou, ik heb..."
+testaudio4_fragment,40,59.0,59.5,SPREKER_B,ja,,Nee.
+testaudio4_fragment,41,59.5,60.4,SPREKER_A,ja,,Ik heb...
+testaudio4_fragment,42,60.4,61.5,SPREKER_B,nee,,"Nee, ik ben er klaar mee."
+testaudio4_fragment,43,61.5,64.8,SPREKER_A,nee,,De reden is dat jij de hele tijd loopt te schreeuwen.
+testaudio4_fragment,44,64.8,65.8,SPREKER_B,ja,,"Ja, doei."
+testaudio4_fragment,45,67.3,68.0,SPREKER_A,nee,,Doei.
+testaudio4_fragment,46,68.0,69.3,SPREKER_B,nee,,Hou je bek.
+testaudio4_fragment,47,69.3,70.0,SPREKER_A,nee,,Emma.
+testaudio4_fragment,48,71.2,73.4,SPREKER_A,nee,,"Emma, wat is het nou?"
+testaudio4_fragment,49,73.4,75.8,SPREKER_A,nee,,Zet je nou de kras of...
+testaudio4_fragment,50,75.8,77.3,SPREKER_C,nee,,"Ja, oké, ja."
+testaudio4_fragment,51,77.3,79.3,SPREKER_C,nee,,Maar ik was ook wel gewoon aan het werk.
+testaudio4_fragment,52,79.3,79.5,SPREKER_A,ja,,Ja.
+testaudio4_fragment,53,79.5,80.3,SPREKER_A,nee,,"Nee, maar dat is niet oké."
+testaudio4_fragment,54,80.3,83.8,SPREKER_A,nee,,Dan wil ik dat jij hoofdstuk 4 gaat overschrijven.
+testaudio4_fragment,55,83.8,84.2,SPREKER_C,nee,,4?
+testaudio4_fragment,56,84.2,86.2,SPREKER_C,nee,,Weet je hoe fucking veel dat is?
+testaudio4_fragment,57,86.4,89.3,SPREKER_A,nee,,Weet je hoe vervelend het is dat je gewoon de les loopt te verstoren?
+testaudio4_fragment,58,89.3,89.7,SPREKER_A,ja,,Ja?
+testaudio4_fragment,59,89.7,91.1,SPREKER_C,nee,,Maar ik was ook gewoon aan het werk.
+testaudio4_fragment,60,91.1,93.8,SPREKER_A,nee,,"Ja, maar ik vind het niet fijn als je in die honders schrift zit te krassen."
+testaudio4_fragment,61,93.8,95.4,SPREKER_A,nee,,Dus hoofdstuk 4 is het nou voor jou.
+testaudio4_fragment,62,95.4,96.9,SPREKER_A,nee,,En morgen even inleven bij mij.
+testaudio4_fragment,63,96.9,97.8,SPREKER_A,nee,,Ja?
+testaudio4_fragment,64,97.8,98.5,SPREKER_A,nee,,Anita.
+testaudio4_fragment,65,98.5,99.2,SPREKER_B,nee,,Meneer.
+testaudio4_fragment,66,99.2,99.8,SPREKER_A,nee,,"Nee, Anita."
+testaudio4_fragment,67,99.8,100.6,SPREKER_B,nee,,Ga gewoon weg.
+testaudio4_fragment,68,100.6,101.9,SPREKER_B,nee,,"Ja, ga gewoon weg."
+testaudio4_fragment,69,101.9,102.8,SPREKER_B,nee,,Ga weg.
+testaudio4_fragment,70,102.8,103.9,SPREKER_A,nee,,"Ja, nou ik sta er."
+testaudio4_fragment,71,103.9,105.2,SPREKER_A,nee,,"Nou, hoe vind je dat?"
+testaudio4_fragment,72,105.2,106.3,SPREKER_B,nee,,"Ik wil... Nee, nee."
+testaudio4_fragment,73,106.3,107.2,SPREKER_A,ja,,Luister eens.
+testaudio4_fragment,74,107.2,107.9,SPREKER_A,nee,,Anita.
+testaudio4_fragment,75,107.9,108.4,SPREKER_B,nee,,Ja.
+testaudio4_fragment,76,108.4,110.2,SPREKER_A,nee,,Ik heb net gesproken met Emma en die...
+testaudio4_fragment,77,110.2,111.8,SPREKER_B,nee,,"Ja, dat doet me echt geen ene zak."
+testaudio4_fragment,78,111.8,112.6,SPREKER_D,nee,,Laat hem uit.
+testaudio4_fragment,79,112.6,114.5,SPREKER_B,nee,rumoer,Het gaat niet gewoon met de periode schrijven.
+testaudio4_fragment,80,114.5,114.8,SPREKER_A,nee,rumoer,Nee.
+testaudio4_fragment,81,114.8,116.0,SPREKER_A,nee,rumoer,"Nee, maar dat heb ik ook."
+testaudio4_fragment,82,116.0,116.6,SPREKER_B,nee,rumoer,Zeker.
+testaudio4_fragment,83,116.6,117.7,SPREKER_A,nee,rumoer,"Nee, dat heb ik echt wel."
+testaudio4_fragment,84,117.7,118.2,SPREKER_A,nee,rumoer,Nee.
+testaudio4_fragment,85,118.2,119.2,SPREKER_A,nee,rumoer,"Oké, luister."
+testaudio4_fragment,86,119.2,120.0,SPREKER_B,nee,rumoer,Hou je mond.

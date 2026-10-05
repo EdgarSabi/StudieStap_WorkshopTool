@@ -16,7 +16,7 @@ faster-whisper-based ASR internally.
 Reused from Data-analysis/src (both are pure-python, no pydantic/faster-whisper
 dependency, so they import cleanly in this separate venv):
   - config.TEST_FILES_DIR / PROCESSED_DATA_DIR / get_hf_token()
-  - diarization.base.SpeakerTurn / DiarizationResult
+  - diarization.SpeakerTurn / DiarizationResult
   - diarization.labeling.build_label_map   (raw speaker -> MAIN/OTHER_n, same
     heuristic as the baseline, applied here to whisperx's diarization turns
     so the two experiments' speaker labels read the same way)
@@ -50,8 +50,7 @@ SRC_DIR = Path(__file__).resolve().parents[3] / "src"
 sys.path.insert(0, str(SRC_DIR))
 
 from config import PROCESSED_DATA_DIR, TEST_FILES_DIR, get_hf_token  # noqa: E402
-from diarization.base import SpeakerTurn, DiarizationResult  # noqa: E402
-from diarization.labeling import build_label_map  # noqa: E402
+from diarization import SpeakerTurn, DiarizationResult, build_label_map  # noqa: E402
 
 import whisperx  # noqa: E402
 from whisperx.diarize import DiarizationPipeline, assign_word_speakers  # noqa: E402

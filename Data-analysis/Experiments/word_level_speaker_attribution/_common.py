@@ -49,7 +49,7 @@ from config import (  # noqa: E402
     TranscriptionConfig,
     get_hf_token,
 )
-from models.schema import WorkshopTranscript  # noqa: E402
+from models import WorkshopTranscript  # noqa: E402
 
 TEST_FILES_DIR = TEST_FILES_DIR  # re-export for convenience
 

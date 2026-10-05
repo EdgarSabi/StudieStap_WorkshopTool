@@ -1,0 +1,20 @@
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,overlap,note,transcript_hint
+testaudio2_fragment,0,0.0,2.0,SPREKER_A,nee,,"Vier, Rick. Zegt u het maar."
+testaudio2_fragment,1,2.0,4.0,SPREKER_A,nee,,"Ja, kijk maar even in je schrift op de vier."
+testaudio2_fragment,2,4.0,5.0,SPREKER_B,nee,,Ruud heeft een brommer.
+testaudio2_fragment,3,5.0,7.0,SPREKER_A,nee,,"De tekst gaat toch niet over brommer, of wel?"
+testaudio2_fragment,4,7.0,9.0,SPREKER_B,nee,,"Nee, maar het gaat ook niet om de brommer."
+testaudio2_fragment,5,9.0,11.0,SPREKER_A,ja,spreker b praat er nog in de achtergrond doorheen,"Maar Ruud heeft een probleem, dat is de vraag."
+testaudio2_fragment,6,11.0,13.0,SPREKER_A,nee,,Wat voor probleem heeft-ie?
+testaudio2_fragment,7,13.0,14.0,SPREKER_B,nee,spreker slaat op de tafel,Met zijn vrouw.
+testaudio2_fragment,8,14.0,15.0,SPREKER_A,nee,,"Nee, klopt niet."
+testaudio2_fragment,9,15.0,16.0,SPREKER_B,nee,,"Ik bedoel, met zijn hond."
+testaudio2_fragment,10,16.0,17.0,SPREKER_A,nee,,"Ja, je bent gewoon verzinnen, of niet?"
+testaudio2_fragment,11,17.0,18.0,SPREKER_B,nee,,Nee.
+testaudio2_fragment,12,18.0,19.0,SPREKER_A,nee,,Jawel.
+testaudio2_fragment,13,19.0,20.0,SPREKER_B,ja,,Dan staat-ie echt waar.
+testaudio2_fragment,14,20.0,21.0,SPREKER_A,nee,,"Ja, het staat in jouw schrift."
+testaudio2_fragment,15,21.0,23.0,SPREKER_A,nee,spreker b maakt geluid in achtergrond,"Misschien staat het niet in zijn schrift, misschien is-ie het gewoon te verzinnen."
+testaudio2_fragment,16,23.0,25.0,SPREKER_A,nee,,Je ziet je ogen heen en weer gaan.
+testaudio2_fragment,17,25.0,28.0,SPREKER_A,nee,,"Dus ik denk, nou gaat je hoofd heen en weer."
+testaudio2_fragment,18,28.0,30.0,SPREKER_A,nee,,"Dus ja, ja."

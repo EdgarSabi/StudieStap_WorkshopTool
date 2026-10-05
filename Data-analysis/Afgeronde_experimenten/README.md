@@ -16,21 +16,26 @@ werkelijke locatie van elk experiment.
 
 | Onderdeel | Waar |
 |---|---|
-| Transcriptie — Faster-Whisper `medium` | `Data-analysis/src/transcription/` (`run_transcription.py`) |
-| Diarizatie — pyannote `speaker-diarization-3.1` | `Data-analysis/src/diarization/` (`run_diarization.py`) |
-| Preprocessing (speaker turns, context, onzekerheid, traceability) | `Data-analysis/src/preprocessing/` (`run_preprocessing.py`) |
-| **Docentherkenning (productieroute)** — pyannote WeSpeaker vs. een configureerbare referentiestem, apart van diarizatie-identiteit | `Data-analysis/src/docent_recognition/` (`run_docent_recognition.py`) — voegt `docent_role` (DOCENT/OTHER/ONZEKER) toe aan elke turn |
-| Docentherkenning (oorspronkelijk experiment, model-/drempelkeuze onderbouwd) | `Data-analysis/Experiments/speaker_recognition/pyannote_embeddings/` (+ `_common.py`) — logica hergebruikt door `docent_recognition/`, niet geïmporteerd |
+| Transcriptie — Faster-Whisper `medium` | `Data-analysis/src/transcription.py` |
+| Diarizatie — pyannote `speaker-diarization-3.1` | `Data-analysis/src/diarization.py` |
+| Preprocessing (speaker turns, context, onzekerheid, traceability) | `Data-analysis/src/preprocessing.py` |
+| **Docentherkenning (productieroute)** — pyannote WeSpeaker vs. een configureerbare referentiestem, apart van diarizatie-identiteit | `Data-analysis/src/docent_recognition.py` — voegt `docent_role` (DOCENT/OTHER/ONZEKER) toe aan elke turn |
+| Docentherkenning (oorspronkelijk experiment, model-/drempelkeuze onderbouwd) | `Data-analysis/Experiments/speaker_recognition/pyannote_embeddings/` (+ `_common.py`) — logica hergebruikt door `docent_recognition.py`, niet geïmporteerd |
 | Woordniveau-koppeling (`word_timestamps=True` + bestaande pyannote-turns) | `Data-analysis/Experiments/word_level_speaker_attribution/` |
 | Classificatiebasis (contextvensters, schema, mockclassifier, tests) — leest nu ook `docent_role` | `Data-analysis/Experiments/classification/` |
 | Onderzoeksverslag | `Data-analysis/Notebooks/*.ipynb` |
+| Alles-in-één gemakskoppeling | `Data-analysis/src/run_docent_pipeline.py` — draait de eerste 4 stappen na elkaar |
 
 **Volledige route, workshopaudio + docentreferentie → classificatie-invoer:**
-`run_transcription.py` → `run_diarization.py` → `run_preprocessing.py` →
-`run_docent_recognition.py` (nieuw, Fase 5B) → `Experiments/classification/run_classification.py`.
+`transcription.py` → `diarization.py` → `preprocessing.py` →
+`docent_recognition.py` → `Experiments/classification/classification.py`.
 Elke stap is een los, herhaalbaar CLI-commando dat naar een eigen bestand
-schrijft — zie de hoofdrapportage van deze wijziging voor het exacte
-commando per stap.
+schrijft. **Update:** `Data-analysis/src` is opgeschoond — elke stap was eerst
+een submap met 3-5 losse bestanden (`diarization/base.py` +
+`pyannote_backend.py` + `assign.py` + `labeling.py`, enz.), nu is dat één
+bestand per stap, inclusief het bijbehorende commando (de vroegere
+`run_*.py`-scripts zijn daarin opgegaan — zie de hoofdrapportage van deze
+opschoning voor het exacte, ongewijzigde gedrag en de vóór/na-vergelijking).
 
 ## Afgeronde experimenten
 

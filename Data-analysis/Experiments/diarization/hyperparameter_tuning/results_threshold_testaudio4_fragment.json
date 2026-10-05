@@ -1,0 +1,89 @@
+{
+  "0.704565": {
+    "gt_speakers": 4,
+    "pyannote_speakers_found": 2,
+    "overall_correct_pct": 81.0,
+    "per_gt_speaker": {
+      "SPREKER_A": {
+        "seconds": 72.0,
+        "matched_pyannote_speaker": "SPEAKER_00",
+        "covered_pct": 86.9
+      },
+      "SPREKER_B": {
+        "seconds": 36.9,
+        "matched_pyannote_speaker": "SPEAKER_01",
+        "covered_pct": 87.3
+      },
+      "SPREKER_C": {
+        "seconds": 7.3,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      },
+      "SPREKER_D": {
+        "seconds": 0.8,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      }
+    },
+    "pyannote_turns": 63,
+    "runtime_seconds": 91.54
+  },
+  "0.6": {
+    "gt_speakers": 4,
+    "pyannote_speakers_found": 2,
+    "overall_correct_pct": 81.0,
+    "per_gt_speaker": {
+      "SPREKER_A": {
+        "seconds": 72.0,
+        "matched_pyannote_speaker": "SPEAKER_00",
+        "covered_pct": 86.9
+      },
+      "SPREKER_B": {
+        "seconds": 36.9,
+        "matched_pyannote_speaker": "SPEAKER_01",
+        "covered_pct": 87.3
+      },
+      "SPREKER_C": {
+        "seconds": 7.3,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      },
+      "SPREKER_D": {
+        "seconds": 0.8,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      }
+    },
+    "pyannote_turns": 63,
+    "runtime_seconds": 92.7
+  },
+  "0.5": {
+    "gt_speakers": 4,
+    "pyannote_speakers_found": 2,
+    "overall_correct_pct": 66.5,
+    "per_gt_speaker": {
+      "SPREKER_A": {
+        "seconds": 72.0,
+        "matched_pyannote_speaker": "SPEAKER_00",
+        "covered_pct": 90.0
+      },
+      "SPREKER_B": {
+        "seconds": 36.9,
+        "matched_pyannote_speaker": "SPEAKER_01",
+        "covered_pct": 35.2
+      },
+      "SPREKER_C": {
+        "seconds": 7.3,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      },
+      "SPREKER_D": {
+        "seconds": 0.8,
+        "matched_pyannote_speaker": null,
+        "covered_pct": 0.0
+      }
+    },
+    "pyannote_turns": 55,
+    "runtime_seconds": 92.42
+  }
+}

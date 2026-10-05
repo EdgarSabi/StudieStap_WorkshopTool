@@ -2,8 +2,8 @@
 Gemakskoppeling: draait de volledige route in één keer —
 transcriptie -> diarisatie -> preprocessing -> docentherkenning.
 
-Roept gewoon de vier bestaande scripts na elkaar aan (run_transcription.py,
-run_diarization.py, run_preprocessing.py, run_docent_recognition.py) met de
+Roept gewoon de vier bestaande stapbestanden na elkaar aan (transcription.py,
+diarization.py, preprocessing.py, docent_recognition.py) met de
 bestandsnamen die ze zelf al als conventie gebruiken. Bevat zelf GEEN nieuwe
 logica — puur orkestratie, zodat je niet elke stap los hoeft te typen.
 
@@ -53,26 +53,31 @@ def main():
 
     # Stap 1: transcriptie
     run_step(1, "transcriptie", [
-        "run_transcription.py", args.audio_filename, "--dir", args.dir, "--model", args.model, *force,
+        "transcription.py", args.audio_filename, "--dir", args.dir, "--model", args.model, *force,
     ])
     transcript_path = PROCESSED_DATA_DIR / f"{stem}.json"
 
     # Stap 2: diarisatie
     run_step(2, "diarisatie", [
-        "run_diarization.py", "--transcript", str(transcript_path), *force,
+        "diarization.py", "--transcript", str(transcript_path), *force,
     ])
     diarized_path = DIARIZATION_OUTPUT_DIR / f"{stem}_diarized.json"
 
     # Stap 3: preprocessing (segmenten -> spreekbeurten + context)
+    # preprocessing.py kent geen --force-vlag (en heeft die ook niet nodig —
+    # het schrijft zijn output altijd onvoorwaardelijk, zie preprocessing.py's
+    # eigen main()). *force NIET meegeven hier, anders crasht deze stap met
+    # "unrecognized arguments: --force" zodra je run_docent_pipeline.py zelf
+    # met --force aanroept.
     run_step(3, "preprocessing", [
-        "run_preprocessing.py", "--diarized", str(diarized_path), *force,
+        "preprocessing.py", "--diarized", str(diarized_path),
     ])
     processed_path = PREPROCESSING_OUTPUT_DIR / f"{diarized_path.stem}_turns.json"
 
     # Stap 4: docentherkenning (vergelijkt elke spreekbeurt met de referentiestem)
     threshold_args = ["--threshold", str(args.threshold)] if args.threshold is not None else []
     run_step(4, "docentherkenning", [
-        "run_docent_recognition.py", "--processed", str(processed_path), "--reference", args.reference,
+        "docent_recognition.py", "--processed", str(processed_path), "--reference", args.reference,
         *threshold_args, *force,
     ])
     out_path = DOCENT_RECOGNITION_OUTPUT_DIR / f"{processed_path.stem}_docent_roles.json"

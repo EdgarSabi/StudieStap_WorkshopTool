@@ -10,13 +10,15 @@ modules as-is (PyannoteBackend, labeling, assign) and only swaps the
 id as a parameter, so no baseline code needed to change to test a different
 pyannote pipeline.
 
-Reused, unmodified from Data-analysis/src:
-  - diarization.get_backend / PyannoteBackend   (loads whichever hf_model
-    the config says — community-1 here, 3.1 in the real pipeline)
-  - diarization.labeling.build_label_map        (raw speaker -> MAIN/OTHER_n)
-  - diarization.assign.assign_speakers/summarize (segment <-> turn geometry)
-  - run_diarization._to_wav                     (mp3 -> 16kHz mono wav for pyannote)
-  - models.schema.WorkshopTranscript             (to read the baseline transcript JSON)
+Reused, unmodified from Data-analysis/src (diarization.py, since the
+src/diarization/ + src/models/ packages were flattened into single files —
+see Afgeronde_experimenten/README.md):
+  - diarization.PyannoteBackend   (loads whichever hf_model the config says
+    — community-1 here, 3.1 in the real pipeline)
+  - diarization.build_label_map        (raw speaker -> MAIN/OTHER_n)
+  - diarization.assign_speakers/summarize (segment <-> turn geometry)
+  - diarization.to_wav                  (mp3 -> 16kHz mono wav for pyannote)
+  - models.WorkshopTranscript            (to read the baseline transcript JSON)
 
 Input:  Data-local/processed/<fragment>.json          (Phase 1 baseline transcript)
         Data-analysis/src/test-files/<fragment>.mp3   (same audio as baseline)
@@ -36,11 +38,8 @@ SRC_DIR = Path(__file__).resolve().parents[3] / "src"
 sys.path.insert(0, str(SRC_DIR))
 
 from config import DiarizationConfig, PROCESSED_DATA_DIR, TEST_FILES_DIR  # noqa: E402
-from models.schema import WorkshopTranscript  # noqa: E402
-from diarization import get_backend  # noqa: E402
-from diarization.labeling import build_label_map  # noqa: E402
-from diarization.assign import assign_speakers, summarize  # noqa: E402
-from run_diarization import _to_wav  # noqa: E402
+from models import WorkshopTranscript  # noqa: E402
+from diarization import PyannoteBackend, build_label_map, assign_speakers, summarize, to_wav as _to_wav  # noqa: E402
 
 EXPERIMENT_NAME = "pyannote_community_1"
 BASELINE_MODEL = "speaker-diarization-3.1"
@@ -57,7 +56,7 @@ DEFAULT_FRAGMENTS = ["testaudio1_fragment", "testaudio2_fragment"]
 def run_one(fragment: str, backend, device: str, force: bool) -> dict:
     transcript_path = PROCESSED_DATA_DIR / f"{fragment}.json"
     if not transcript_path.exists():
-        sys.exit(f"Baseline transcript not found: {transcript_path} (run run_transcription.py first)")
+        sys.exit(f"Baseline transcript not found: {transcript_path} (run transcription.py first)")
     transcript = WorkshopTranscript.model_validate_json(transcript_path.read_text(encoding="utf-8"))
 
     audio_path = TEST_FILES_DIR / f"{fragment}.mp3"
@@ -131,7 +130,7 @@ def main():
     config = DiarizationConfig(hf_model=COMMUNITY1_MODEL, device=args.device)
     print(f"Loading pyannote pipeline '{config.hf_model}' on {config.device} ...")
     t0 = time.time()
-    backend = get_backend(config)
+    backend = PyannoteBackend(config)
     print(f"Model loaded in {time.time() - t0:.1f}s\n")
 
     for fragment in fragments:

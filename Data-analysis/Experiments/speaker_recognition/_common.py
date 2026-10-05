@@ -70,7 +70,7 @@ def load_chunks(fragment: str) -> list[Chunk]:
     path = DIARIZATION_DIR / f"{fragment}_diarized.json"
     if not path.exists():
         raise FileNotFoundError(
-            f"{path} not found — expected run_diarization.py to already have produced it."
+            f"{path} not found — expected diarization.py to already have produced it."
         )
     data = json.loads(path.read_text(encoding="utf-8"))
     return [
@@ -83,7 +83,7 @@ def fragment_wav_path(fragment: str) -> Path:
     path = DIARIZATION_DIR / f"{fragment}_16k_mono.wav"
     if not path.exists():
         raise FileNotFoundError(
-            f"{path} not found — expected run_diarization.py to already have produced it."
+            f"{path} not found — expected diarization.py to already have produced it."
         )
     return path
 

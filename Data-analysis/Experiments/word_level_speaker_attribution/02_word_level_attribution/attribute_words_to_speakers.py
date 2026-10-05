@@ -30,7 +30,7 @@ What this deliberately does NOT do, per the assignment:
 
 Input:
   Data-local/processed/word_level_speaker_attribution/<fragment>_words.json  (Step 2)
-  Data-local/processed/diarization/<fragment>_16k_mono.wav                   (existing, from run_diarization.py)
+  Data-local/processed/diarization/<fragment>_16k_mono.wav                   (existing, from diarization.py)
   Data-local/processed/<fragment>.json                                      (baseline transcript, for the A/B reference comparison)
 
 Output:
@@ -49,9 +49,7 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent.parent))
 import _common as common  # noqa: E402
 
-from diarization import get_backend  # noqa: E402
-from diarization.assign import _overlap_seconds, assign_speakers, summarize  # noqa: E402
-from diarization.labeling import build_label_map  # noqa: E402
+from diarization import PyannoteBackend, _overlap_seconds, assign_speakers, summarize, build_label_map  # noqa: E402
 
 EXPERIMENT_NAME = "word_level_attribution"
 
@@ -174,11 +172,11 @@ def run_one(fragment: str, force: bool) -> dict:
 
     wav_path = common.diarization_wav_path(fragment)
     if not wav_path.exists():
-        sys.exit(f"{wav_path} not found — expected run_diarization.py to have already produced it.")
+        sys.exit(f"{wav_path} not found — expected diarization.py to have already produced it.")
 
     cfg = common.base_diarization_config()
     print(f"[{fragment}] diarizing (fresh run, same model as baseline: {cfg.hf_model}) ...")
-    backend = get_backend(cfg)
+    backend = PyannoteBackend(cfg)
     t0 = time.time()
     diar_result = backend.diarize(wav_path)
     diar_runtime = round(time.time() - t0, 2)
