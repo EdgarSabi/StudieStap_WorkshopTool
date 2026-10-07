@@ -27,6 +27,13 @@ torch==2.14.0+cpu
 torchaudio==2.11.0
 pyannote.audio==4.0.7
 
+# --- diarizatie, alternatieve backend (optioneel): NVIDIA Sortformer ---
+# Alleen nodig voor `diarization.py --backend sortformer`. Getest met
+# nemo_toolkit 3.0.0 naast pyannote.audio 4.0.7 in dezelfde venv (geen
+# conflicten). Model is niet gated, geen HF-token nodig. Zie
+# Experiments/diarization/sortformer/README.md (ook voor Windows).
+# nemo_toolkit[asr]==3.0.0
+
 # --- config / env ---
 python-dotenv==1.2.3
 

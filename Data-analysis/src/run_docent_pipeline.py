@@ -10,6 +10,9 @@ logica — puur orkestratie, zodat je niet elke stap los hoeft te typen.
 Gebruik:
     .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3
 
+    # met Sortformer (NVIDIA NeMo) i.p.v. pyannote voor de diarisatie:
+    .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3 --diarization-backend sortformer
+
     # met een andere docentreferentie of ander model:
     .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3 --reference test-files/andere_docent.mp3 --model medium
 
@@ -45,6 +48,8 @@ def main():
                          help="Pad naar de docentreferentie-audio (default: test-files/testdocent.mp3)")
     parser.add_argument("--model", default="medium", help="Whisper-modelgrootte (default: medium)")
     parser.add_argument("--threshold", type=float, default=None, help="Override de similarity-drempel voor docentrol")
+    parser.add_argument("--diarization-backend", choices=["pyannote", "sortformer"], default=None,
+                         help="Diarisatiemodel voor stap 2 (default: DiarizationConfig.backend in config.py)")
     parser.add_argument("--force", action="store_true", help="Bestaande output overschrijven bij elke stap")
     args = parser.parse_args()
 
@@ -58,8 +63,9 @@ def main():
     transcript_path = PROCESSED_DATA_DIR / f"{stem}.json"
 
     # Stap 2: diarisatie
+    backend_args = ["--backend", args.diarization_backend] if args.diarization_backend else []
     run_step(2, "diarisatie", [
-        "diarization.py", "--transcript", str(transcript_path), *force,
+        "diarization.py", "--transcript", str(transcript_path), *backend_args, *force,
     ])
     diarized_path = DIARIZATION_OUTPUT_DIR / f"{stem}_diarized.json"
 

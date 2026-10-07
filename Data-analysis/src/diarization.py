@@ -4,8 +4,13 @@ Dit gebeurt in een vervolgstap
 
 Draaien:
     python diarization.py --transcript <Phase 1 JSON> [--audio ...] [--min-speakers N] [--max-speakers N] [--force]
+    python diarization.py --transcript <Phase 1 JSON> --backend sortformer   # NVIDIA Sortformer i.p.v. pyannote
 
-Uses pyannote.audio (the only ML model in this file) to find raw speaker
+Twee backends met dezelfde interface: pyannote (default) en NVIDIA Streaming
+Sortformer via NeMo (zie SortformerBackend hieronder). De backend levert
+alleen SpeakerTurns; alles daarna is voor beide gelijk.
+
+Uses pyannote.audio (or Sortformer) to find raw speaker
 turns ("SPEAKER_00 talked from 3.2s to 7.1s"), then:
   1. build_label_map()   turns those raw ids into MAIN_SPEAKER / OTHER_SPEAKER_n,
                           based on who talked the most overall.
@@ -199,6 +204,175 @@ class PyannoteBackend:
 
 
 # ============================================================
+# NVIDIA Streaming Sortformer (via NeMo) — alternatieve backend
+# ============================================================
+# Waarom: pyannote doet eerst segmentatie en daarna clustering van
+# stem-embeddings. Korte tussenkomsten ("Meneer.", "Hou op!") leveren te
+# weinig embedding op en worden dan bij de dominante spreker geclusterd —
+# precies het probleem uit de hyperparameter-tuning (Emma verdwijnt,
+# spreker B in testaudio2 wordt bij A gezet). Sortformer heeft géén aparte
+# clusteringstap: één end-to-end model voorspelt per frame van 80 ms voor
+# elk van maximaal 4 sprekers of die actief is. Overlap is daardoor gewoon
+# "twee sprekers tegelijk actief" in plaats van een bijproduct.
+#
+# Beperkingen (bewust hier opgeschreven):
+#   - maximaal 4 sprekers. Bij een klas met meer sprekers worden stemmen in
+#     die 4 "slots" samengevoegd. Voor ons doel (docent vs. de rest) is dat
+#     minder erg dan het klinkt, maar het is GEEN volledige diarisatie van
+#     een hele klas.
+#   - getraind op vooral Engels; Nederlands is niet door NVIDIA getest.
+#     Daarom eerst evalueren met
+#     Experiments/diarization/sortformer/evaluate_sortformer.py.
+#   - min_speakers / max_speakers worden door Sortformer genegeerd.
+#
+# Licentie: nvidia/diar_streaming_sortformer_4spk-v2.1 valt onder de NVIDIA
+# Open Model License (commercieel gebruik toegestaan). Let op: de oudere
+# nvidia/diar_sortformer_4spk-v1 is CC-BY-NC-4.0 (niet-commercieel).
+
+# Streaming-instellingen uit de modelkaart, de variant met de hoogste
+# latency en daarmee de beste nauwkeurigheid. Wij verwerken offline (hele
+# opname achteraf), dus latency maakt ons niet uit.
+SORTFORMER_STREAMING_DEFAULTS = {
+    "chunk_len": 340,
+    "chunk_right_context": 40,
+    "fifo_len": 40,
+    "spkcache_update_period": 300,
+    "spkcache_len": 188,
+}
+
+
+def parse_sortformer_lines(lines: list[str]) -> list[SpeakerTurn]:
+    """NeMo geeft per bestand regels als "0.500 3.120 speaker_0" terug.
+    Zet ze om naar SpeakerTurns met pyannote-achtige ids (SPEAKER_00), zodat
+    build_label_map() en assign_speakers() ongewijzigd blijven werken.
+    Losse functie (zonder NeMo) zodat hij zonder model te testen is."""
+    turns: list[SpeakerTurn] = []
+    for line in lines:
+        parts = str(line).split()
+        if len(parts) < 3:
+            continue
+        start, end, raw = float(parts[0]), float(parts[1]), parts[2]
+        idx = raw.rsplit("_", 1)[-1]
+        speaker = f"SPEAKER_{int(idx):02d}" if idx.isdigit() else raw
+        if end > start:
+            turns.append(SpeakerTurn(start=start, end=end, speaker=speaker))
+    turns.sort(key=lambda t: (t.start, t.end))
+    return turns
+
+
+class SortformerBackend:
+    name = "sortformer"
+
+    def __init__(self, config: DiarizationConfig):
+        self.config = config
+
+        try:
+            import torch
+            from nemo.collections.asr.models import SortformerEncLabelModel
+        except ImportError as e:
+            raise ImportError(
+                "NeMo is not installed. Run:  pip install \"nemo_toolkit[asr]\"  "
+                "(see Experiments/diarization/sortformer/README.md for Windows notes)"
+            ) from e
+
+        model_name = config.sortformer_model
+        try:
+            if Path(model_name).suffix == ".nemo" and Path(model_name).exists():
+                self._model = SortformerEncLabelModel.restore_from(
+                    restore_path=model_name, map_location=torch.device(config.device), strict=False
+                )
+            else:
+                # Niet gated: geen HF-token nodig. Wordt de eerste keer gedownload
+                # naar de HuggingFace-cache (~500 MB).
+                self._model = SortformerEncLabelModel.from_pretrained(
+                    model_name, map_location=torch.device(config.device)
+                )
+        except Exception as e:
+            raise RuntimeError(f"Could not load Sortformer model '{model_name}'. Original error: {e}") from e
+
+        self._model.eval()
+
+        streaming = dict(SORTFORMER_STREAMING_DEFAULTS)
+        streaming.update(config.sortformer_streaming or {})
+        modules = self._model.sortformer_modules
+        for key, value in streaming.items():
+            if hasattr(modules, key):
+                setattr(modules, key, value)
+        self._streaming = streaming
+
+    def _postprocessing_yaml(self, tmp_dir: Path) -> Optional[str]:
+        """NeMo leest postprocessing-instellingen alleen uit een yaml-bestand.
+        We schrijven de dict uit de config even naar een tijdelijk bestand."""
+        params = self.config.sortformer_postprocessing
+        if not params:
+            return None
+        if isinstance(params, (str, Path)):
+            return str(params)
+        lines = ["parameters:"] + [f"  {k}: {float(v)}" for k, v in params.items()]
+        path = tmp_dir / "sortformer_postprocessing.yaml"
+        path.write_text("\n".join(lines) + "\n", encoding="utf-8")
+        return str(path)
+
+    def diarize(
+        self,
+        audio_path: Path,
+        *,
+        min_speakers: Optional[int] = None,
+        max_speakers: Optional[int] = None,
+    ) -> DiarizationResult:
+        import tempfile
+
+        if min_speakers is not None or max_speakers is not None:
+            print("  (sortformer: min/max speakers worden genegeerd — model heeft vast 4 slots)")
+
+        with tempfile.TemporaryDirectory() as tmp:
+            pp_yaml = self._postprocessing_yaml(Path(tmp))
+            start = time.time()
+            output = self._model.diarize(
+                audio=[str(audio_path)],
+                batch_size=1,
+                postprocessing_yaml=pp_yaml,
+                verbose=False,
+            )
+            runtime = time.time() - start
+
+        # diarize() geeft een lijst (één item per bestand) van regels terug,
+        # of (regels, tensors) als include_tensor_outputs=True.
+        if isinstance(output, tuple):
+            output = output[0]
+        turns = parse_sortformer_lines(output[0] if output else [])
+
+        return DiarizationResult(
+            turns=turns,
+            backend=self.name,
+            model=self.config.sortformer_model,
+            settings={
+                "device": self.config.device,
+                "min_speakers": min_speakers,
+                "max_speakers": max_speakers,
+                "streaming": self._streaming,
+                "postprocessing": self.config.sortformer_postprocessing,
+            },
+            runtime_seconds=round(runtime, 2),
+        )
+
+
+BACKENDS = {
+    PyannoteBackend.name: PyannoteBackend,
+    SortformerBackend.name: SortformerBackend,
+}
+
+
+def get_backend(config: DiarizationConfig):
+    """Kies de backend op basis van config.backend ("pyannote" of "sortformer")."""
+    try:
+        cls = BACKENDS[config.backend]
+    except KeyError:
+        raise ValueError(f"Unknown diarization backend '{config.backend}'. Choose from: {sorted(BACKENDS)}")
+    return cls(config)
+
+
+# ============================================================
 # Turning raw "SPEAKER_00"/"SPEAKER_01" labels into MAIN_SPEAKER/OTHER_SPEAKER_n
 # ============================================================
 
@@ -376,6 +550,10 @@ def main():
     parser.add_argument("--min-speakers", type=int, default=None)
     parser.add_argument("--max-speakers", type=int, default=None)
     parser.add_argument("--device", default="cpu")
+    parser.add_argument("--backend", choices=sorted(BACKENDS), default=None,
+                        help="Diarisatiemodel: pyannote of sortformer (default: DiarizationConfig.backend)")
+    parser.add_argument("--sortformer-model", default=None,
+                        help="Ander Sortformer-model (HF-naam of pad naar .nemo); default uit config.py")
     parser.add_argument("--out", default=None, help="Output JSON path (default: Data-local/processed/diarization/)")
     parser.add_argument("--force", action="store_true", help="Redo wav conversion and overwrite output")
     args = parser.parse_args()
@@ -401,9 +579,14 @@ def main():
         min_speakers=args.min_speakers,
         max_speakers=args.max_speakers,
     )
+    if args.backend:
+        config.backend = args.backend
+    if args.sortformer_model:
+        config.sortformer_model = args.sortformer_model
 
-    print(f"Loading diarization backend '{config.backend}' ({config.hf_model}) on {config.device}...")
-    backend = PyannoteBackend(config)
+    model_name = config.sortformer_model if config.backend == "sortformer" else config.hf_model
+    print(f"Loading diarization backend '{config.backend}' ({model_name}) on {config.device}...")
+    backend = get_backend(config)
 
     print(f"Diarizing {wav_path.name}...")
     result = backend.diarize(

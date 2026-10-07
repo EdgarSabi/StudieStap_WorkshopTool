@@ -68,15 +68,44 @@ class TranscriptionConfig:
     flag_repetition_min_words: int = 6
 
 
+# Postprocessing-instellingen die NVIDIA zelf heeft geoptimaliseerd voor de
+# streaming Sortformer v2 (uit NeMo examples/speaker_tasks/diarization/conf/
+# post_processing/). DIHARD3 bevat rumoerige opnames met veel sprekers en houdt
+# heel korte spraakstukjes over (min_duration_on 0.007), dus waarschijnlijk het
+# dichtst bij een klaslokaal. Geen van beide is op Nederlandse klasaudio getuned.
+SORTFORMER_POSTPROCESSING_PRESETS = {
+    "default": None,
+    "dihard3": {
+        "onset": 0.56, "offset": 1.0, "pad_onset": 0.063, "pad_offset": 0.002,
+        "min_duration_on": 0.007, "min_duration_off": 0.151,
+    },
+    "callhome": {
+        "onset": 0.641, "offset": 0.561, "pad_onset": 0.229, "pad_offset": 0.079,
+        "min_duration_on": 0.511, "min_duration_off": 0.296,
+    },
+}
+
+
 @dataclass
 class DiarizationConfig:
     """
     Phase 2 (speaker diarization). Separate from TranscriptionConfig on purpose:
     diarization is its own layer and its backend is NOT a settled choice yet.
     """
-    backend: str = "pyannote"                       # key into diarization.get_backend()
+    backend: str = "pyannote"                       # "pyannote" of "sortformer" — key into diarization.get_backend()
     hf_model: str = "pyannote/speaker-diarization-3.1"  # gated — needs HF_TOKEN + accepted licence
     device: str = "cpu"                              # "cpu" or "cuda"
+
+    # --- alleen voor backend="sortformer" (NVIDIA NeMo) ---
+    # Niet gated, geen HF-token nodig. NVIDIA Open Model License (commercieel OK).
+    # Mag ook een pad naar een lokaal .nemo-bestand zijn.
+    sortformer_model: str = "nvidia/diar_streaming_sortformer_4spk-v2.1"
+    # None = streaming-instellingen uit diarization.SORTFORMER_STREAMING_DEFAULTS.
+    sortformer_streaming: Optional[dict] = None
+    # None = NeMo-defaults (drempel 0.5, geen padding/filtering). Of een dict met
+    # onset/offset/pad_onset/pad_offset/min_duration_on/min_duration_off, of een
+    # pad naar een NeMo postprocessing-yaml. Zie SORTFORMER_POSTPROCESSING_PRESETS.
+    sortformer_postprocessing: Optional[dict] = None
 
     # Optional priors. Leave both None to let the model decide the speaker count;
     # set them when a fragment is known to have e.g. exactly 2-4 speakers.
