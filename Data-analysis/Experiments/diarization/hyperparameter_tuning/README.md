@@ -157,3 +157,9 @@ spreker bij toekomstige opnames, of een ander soort aanpak
 versie-incompatibiliteit tussen pyannote.audio 4.0.7 en speechbrain 1.1.1 en is
 geparkeerd). Ondertussen blijft het systeem onzekerheid expliciet doorgeven
 (`uncertain_assignment`, `overlap`, `docent_role_note`) in plaats van te gokken.
+
+> **Vervolg:** de aanpak "sprekerscheiding/controle ná diarisatie" is
+> uitgewerkt in [`../boundary_refinement`](../boundary_refinement/README.md):
+> een verfijningsstap die pyannote's beurten per stuk spraak controleert met
+> stem-embeddings. Die maakt een lagere `min_cluster_size` ook weer zinvol,
+> omdat nep-sprekers achteraf worden samengevoegd.

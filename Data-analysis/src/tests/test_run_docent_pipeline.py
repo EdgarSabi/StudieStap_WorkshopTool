@@ -64,5 +64,28 @@ class TestForceFlagPerStep(unittest.TestCase):
         ])
 
 
+class TestRefinementOptionsReachDiarization(unittest.TestCase):
+    def _diar_call(self, argv):
+        calls = []
+        with patch.object(run_docent_pipeline.subprocess, "run",
+                          side_effect=lambda a, **k: calls.append(a) or _fake_completed_process()), \
+             patch.object(sys, "argv", ["run_docent_pipeline.py", *argv]):
+            run_docent_pipeline.main()
+        return calls[1], calls
+
+    def test_defaults_add_nothing(self):
+        diar, _ = self._diar_call(["testaudio1_fragment.mp3"])
+        self.assertNotIn("--no-refine", diar)
+        self.assertNotIn("--min-cluster-size", diar)
+
+    def test_options_only_go_to_diarization(self):
+        diar, calls = self._diar_call(["testaudio1_fragment.mp3", "--no-refine", "--min-cluster-size", "8"])
+        self.assertIn("--no-refine", diar)
+        self.assertEqual(diar[diar.index("--min-cluster-size") + 1], "8")
+        for other in (calls[0], calls[2], calls[3]):
+            self.assertNotIn("--no-refine", other)
+            self.assertNotIn("--min-cluster-size", other)
+
+
 if __name__ == "__main__":
     unittest.main()

@@ -172,6 +172,13 @@ def _slice_waveform(waveform: torch.Tensor, sample_rate: int, start: float, end:
 # found no turn boundary at all), this module has no way to detect that from
 # turn-level flags alone, and will embed the blended clip as if it were one
 # speaker. That is a genuine, known gap.
+#
+# Update: diarization.py heeft nu een stap 2b (speaker_boundaries.py) die dit
+# gat gedeeltelijk dicht: elk stuk spraak tussen Whisper-/pyannote-grenzen
+# wordt met een stem-embedding gecontroleerd, en een stuk dat duidelijk niet
+# bij "zijn" spreker past wordt omgelabeld (of, als het nergens bij past,
+# een nieuwe spreker of uncertain_assignment). Wat er dan nog misgaat — een
+# wissel midden in één Whisper-segment zonder pauze — blijft een bekend gat.
 
 def assign_docent_roles(
     turns: list[SpeakerTurn],

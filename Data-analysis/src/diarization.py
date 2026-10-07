@@ -155,6 +155,21 @@ class PyannoteBackend:
             )
 
         self._pipeline.to(torch.device(config.device))
+        self._apply_clustering_overrides()
+
+    def _apply_clustering_overrides(self) -> None:
+        """Optioneel min_cluster_size / threshold van pyannote's clustering
+        overschrijven (zelfde manier als het hyperparameter-experiment)."""
+        overrides = {}
+        if self.config.clustering_min_cluster_size is not None:
+            overrides["min_cluster_size"] = int(self.config.clustering_min_cluster_size)
+        if self.config.clustering_threshold is not None:
+            overrides["threshold"] = float(self.config.clustering_threshold)
+        if not overrides:
+            return
+        params = json.loads(json.dumps(self._pipeline.parameters(instantiated=True)))
+        params.setdefault("clustering", {}).update(overrides)
+        self._pipeline.instantiate(params)
 
     def diarize(
         self,
@@ -193,6 +208,8 @@ class PyannoteBackend:
                 "device": self.config.device,
                 "min_speakers": min_speakers,
                 "max_speakers": max_speakers,
+                "clustering_min_cluster_size": self.config.clustering_min_cluster_size,
+                "clustering_threshold": self.config.clustering_threshold,
             },
             runtime_seconds=round(runtime, 2),
         )
@@ -268,18 +285,30 @@ def assign_speakers(
     overlap_min_ratio: float = 0.15,
     uncertain_coverage_below: float = 0.60,
     uncertain_margin_below: float = 0.15,
+    turn_confidence_below: Optional[float] = None,
 ) -> list[TranscriptSegment]:
-    """Return a NEW list of segments with speaker fields filled in. Input untouched."""
+    """Return a NEW list of segments with speaker fields filled in. Input untouched.
+
+    turn_confidence_below: alleen relevant voor verfijnde beurten
+    (speaker_boundaries.py zet SpeakerTurn.confidence). Is het tijdgewogen
+    stembewijs van de winnende spreker binnen dit segment lager dan deze
+    waarde, dan wordt het segment uncertain_assignment — de refinement-stap
+    twijfelde daar zelf ook. None = uit (oud gedrag)."""
     out: list[TranscriptSegment] = []
 
     for seg in segments:
         duration = max(0.0, seg.end - seg.start)
 
         per_speaker: dict[str, float] = {}
+        conf_weighted: dict[str, list[float]] = {}  # [som(conf*overlap), som(overlap)]
         for t in turns:
             ov = _overlap_seconds(seg.start, seg.end, t.start, t.end)
             if ov > 0:
                 per_speaker[t.speaker] = per_speaker.get(t.speaker, 0.0) + ov
+                if t.confidence is not None:
+                    acc = conf_weighted.setdefault(t.speaker, [0.0, 0.0])
+                    acc[0] += t.confidence * ov
+                    acc[1] += ov
 
         if not per_speaker or duration <= 0:
             out.append(seg.model_copy(update={
@@ -300,17 +329,71 @@ def assign_speakers(
         margin = (winner_ov - runner_ov) / duration
         confidence = winner_ov / total_ov if total_ov else 0.0
 
+        low_evidence = False
+        if turn_confidence_below is not None and winner_raw in conf_weighted:
+            num, den = conf_weighted[winner_raw]
+            low_evidence = den > 0 and (num / den) < turn_confidence_below
+
         out.append(seg.model_copy(update={
             "speaker": label_map.get(winner_raw, winner_raw),
             "speaker_raw": winner_raw,
             "speaker_confidence": round(confidence, 4),
             "overlap": (runner_ov / duration) >= overlap_min_ratio,
             "uncertain_assignment": (
-                coverage < uncertain_coverage_below or margin < uncertain_margin_below
+                coverage < uncertain_coverage_below
+                or margin < uncertain_margin_below
+                or low_evidence
             ),
         }))
 
     return out
+
+
+# ============================================================
+# Stap 2b — sprekergrenzen verfijnen (zie speaker_boundaries.py)
+# ============================================================
+
+def refine_diarization(
+    result: DiarizationResult,
+    wav_path: Path,
+    segments: list[TranscriptSegment],
+    refine_config=None,
+    embedder=None,
+) -> tuple[DiarizationResult, dict]:
+    """Verfijnt pyannote's beurten met stem-embeddings. Whisper-segmentgrenzen
+    worden als kandidaat-wisselpunten meegegeven. Geeft een NIEUW
+    DiarizationResult terug (origineel ongewijzigd) + metadata voor de JSON."""
+    from config import BoundaryRefinementConfig
+    from speaker_boundaries import PyannoteWindowEmbedder, refine_speaker_boundaries
+
+    cfg = refine_config or BoundaryRefinementConfig()
+    if embedder is None:
+        embedder = PyannoteWindowEmbedder(cfg.embedding_model, device=cfg.device)
+
+    waveform, sample_rate = _load_wav_waveform(Path(wav_path))
+    samples = waveform.mean(dim=0).numpy() if waveform.shape[0] > 1 else waveform[0].numpy()
+
+    asr_spans = [(s.start, s.end) for s in segments]
+
+    t0 = time.time()
+    refined = refine_speaker_boundaries(
+        samples, sample_rate, result.turns, embedder, cfg,
+        asr_spans=asr_spans,
+    )
+    runtime = round(time.time() - t0, 2)
+
+    new_result = DiarizationResult(
+        turns=refined.turns,
+        backend=result.backend,
+        model=result.model,
+        settings=result.settings,
+        runtime_seconds=result.runtime_seconds,
+    )
+    meta = refined.to_metadata()
+    meta["runtime_seconds"] = runtime
+    meta["embedding_model"] = cfg.embedding_model
+    meta["config"] = {k: v for k, v in vars(cfg).items()}
+    return new_result, meta
 
 
 def summarize(segments: list[TranscriptSegment]) -> dict:
@@ -375,6 +458,12 @@ def main():
     parser.add_argument("--dir", choices=["raw", "test"], default="test")
     parser.add_argument("--min-speakers", type=int, default=None)
     parser.add_argument("--max-speakers", type=int, default=None)
+    parser.add_argument("--min-cluster-size", type=int, default=None,
+                        help="Override pyannote clustering.min_cluster_size (default: modelwaarde 12)")
+    parser.add_argument("--clustering-threshold", type=float, default=None,
+                        help="Override pyannote clustering.threshold (default: modelwaarde ~0.7046)")
+    parser.add_argument("--no-refine", action="store_true",
+                        help="Sprekergrens-verfijning (speaker_boundaries.py) overslaan — puur pyannote, oud gedrag")
     parser.add_argument("--device", default="cpu")
     parser.add_argument("--out", default=None, help="Output JSON path (default: Data-local/processed/diarization/)")
     parser.add_argument("--force", action="store_true", help="Redo wav conversion and overwrite output")
@@ -400,6 +489,9 @@ def main():
         device=args.device,
         min_speakers=args.min_speakers,
         max_speakers=args.max_speakers,
+        clustering_min_cluster_size=args.min_cluster_size,
+        clustering_threshold=args.clustering_threshold,
+        refine_boundaries=not args.no_refine,
     )
 
     print(f"Loading diarization backend '{config.backend}' ({config.hf_model}) on {config.device}...")
@@ -409,6 +501,20 @@ def main():
     result = backend.diarize(
         wav_path, min_speakers=config.min_speakers, max_speakers=config.max_speakers
     )
+    pyannote_summary = {
+        "n_turns": len(result.turns),
+        "raw_speakers": result.raw_speakers,
+        "talk_seconds": {k: round(v, 2) for k, v in result.talk_time().items()},
+    }
+
+    refinement_meta = None
+    if config.refine_boundaries:
+        from config import BoundaryRefinementConfig
+        print("Refining speaker boundaries (stem-embeddings per eenheid, zie speaker_boundaries.py)...")
+        result, refinement_meta = refine_diarization(
+            result, wav_path, transcript.segments, BoundaryRefinementConfig(device=config.device)
+        )
+        refinement_meta["pyannote_before_refinement"] = pyannote_summary
 
     label_info = build_label_map(result, main_speaker_min_share=config.main_speaker_min_share)
     new_segments = assign_speakers(
@@ -418,6 +524,7 @@ def main():
         overlap_min_ratio=config.overlap_min_ratio,
         uncertain_coverage_below=config.uncertain_coverage_below,
         uncertain_margin_below=config.uncertain_margin_below,
+        turn_confidence_below=config.turn_confidence_below if config.refine_boundaries else None,
     )
     stats = summarize(new_segments)
 
@@ -435,7 +542,9 @@ def main():
             "overlap_min_ratio": config.overlap_min_ratio,
             "uncertain_coverage_below": config.uncertain_coverage_below,
             "uncertain_margin_below": config.uncertain_margin_below,
+            "turn_confidence_below": config.turn_confidence_below if config.refine_boundaries else None,
         },
+        "boundary_refinement": refinement_meta,   # None = niet verfijnd (--no-refine)
         "assignment": stats,
         "source_transcript": transcript_path.name,
         "audio_file": str(audio_path),
@@ -454,6 +563,19 @@ def main():
     print(f"  uncertain       : {stats['uncertain_segments']}")
     print(f"  unassigned      : {stats['unassigned_segments']}")
     print(f"diarization time  : {result.runtime_seconds}s")
+    if refinement_meta:
+        rs = refinement_meta["stats"]
+        merged = {k: v for k, v in refinement_meta["merge_map"].items() if k != v}
+        print("--- boundary refinement ---")
+        print(f"  pyannote vooraf : {pyannote_summary['raw_speakers']}  ({pyannote_summary['n_turns']} turns)")
+        print(f"  samengevoegd    : {merged or 'geen'}")
+        print(f"  nieuwe sprekers : {[n['label'] for n in refinement_meta['new_speakers']] or 'geen'}")
+        print(f"  omgelabeld      : {rs['relabeled_seconds']}s   aangevuld: {rs['filled_seconds']}s   "
+              f"geknipt: {rs['n_splits']}x   onduidelijk: {rs['unclear_seconds']}s")
+        for c in refinement_meta["changes"]:
+            if not c.get("split"):
+                print(f"    {c['start']:7.2f}-{c['end']:7.2f}s  {c['from']} -> {c['to']}  ({c['reason']})")
+        print(f"  runtime         : {refinement_meta['runtime_seconds']}s")
     print(f"\nwritten to {out_path}")
 
 

@@ -10,6 +10,12 @@ logica — puur orkestratie, zodat je niet elke stap los hoeft te typen.
 Gebruik:
     .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3
 
+    # gevoeliger clusteren (vindt korte sprekers; refinement voegt nep-sprekers weer samen):
+    .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3 --min-cluster-size 8
+
+    # vergelijken met het oude gedrag (zonder verfijning):
+    .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3 --no-refine --force
+
     # met een andere docentreferentie of ander model:
     .venv\\Scripts\\python.exe run_docent_pipeline.py testaudio6_fragment.mp3 --reference test-files/andere_docent.mp3 --model medium
 
@@ -45,6 +51,10 @@ def main():
                          help="Pad naar de docentreferentie-audio (default: test-files/testdocent.mp3)")
     parser.add_argument("--model", default="medium", help="Whisper-modelgrootte (default: medium)")
     parser.add_argument("--threshold", type=float, default=None, help="Override de similarity-drempel voor docentrol")
+    parser.add_argument("--min-cluster-size", type=int, default=None,
+                        help="pyannote clustering.min_cluster_size voor stap 2 (default: modelwaarde 12)")
+    parser.add_argument("--no-refine", action="store_true",
+                        help="Stap 2b (sprekergrens-verfijning) overslaan — puur pyannote, oud gedrag")
     parser.add_argument("--force", action="store_true", help="Bestaande output overschrijven bij elke stap")
     args = parser.parse_args()
 
@@ -58,8 +68,14 @@ def main():
     transcript_path = PROCESSED_DATA_DIR / f"{stem}.json"
 
     # Stap 2: diarisatie
-    run_step(2, "diarisatie", [
-        "diarization.py", "--transcript", str(transcript_path), *force,
+    # Stap 2 doet standaard ook 2b: sprekergrenzen verfijnen (speaker_boundaries.py).
+    diar_extra = []
+    if args.min_cluster_size is not None:
+        diar_extra += ["--min-cluster-size", str(args.min_cluster_size)]
+    if args.no_refine:
+        diar_extra.append("--no-refine")
+    run_step(2, "diarisatie + sprekergrens-verfijning", [
+        "diarization.py", "--transcript", str(transcript_path), *diar_extra, *force,
     ])
     diarized_path = DIARIZATION_OUTPUT_DIR / f"{stem}_diarized.json"
 
