@@ -83,6 +83,25 @@ class DiarizationConfig:
     min_speakers: Optional[int] = None
     max_speakers: Optional[int] = None
 
+    # Optionele overrides van pyannote's eigen clustering (None = modeldefault:
+    # min_cluster_size=12, threshold≈0.7046). Los getest bleek verlagen niet
+    # robuust (Experiments/diarization/hyperparameter_tuning). MET de
+    # refinement-stap hieronder (die nep-sprekers weer samenvoegt) is een
+    # lagere min_cluster_size wél het proberen waard — eerst controleren met
+    # Experiments/diarization/boundary_refinement/evaluate_refinement.py.
+    clustering_min_cluster_size: Optional[int] = None
+    clustering_threshold: Optional[float] = None
+
+    # Na pyannote: sprekergrenzen verfijnen met stem-embeddings
+    # (speaker_boundaries.py). Uitzetten met --no-refine om te vergelijken.
+    refine_boundaries: bool = True
+
+    # Een transcriptsegment wordt uncertain_assignment als de verfijnde beurt
+    # waar het (in tijd) vooral op valt minder dan dit aandeel frames met
+    # duidelijk stembewijs heeft. Alleen van toepassing op verfijnde beurten
+    # (pyannote-beurten zonder refinement hebben geen confidence).
+    turn_confidence_below: float = 0.5
+
     # --- MAIN_SPEAKER vs OTHER_SPEAKER_n labelling (heuristic, not a research claim) ---
     # The raw diarization speaker with the most total speaking time becomes
     # MAIN_SPEAKER; everyone else becomes OTHER_SPEAKER_1, _2, ... by talk time.
@@ -92,6 +111,54 @@ class DiarizationConfig:
     overlap_min_ratio: float = 0.15       # 2nd speaker covers >= 15% of a segment -> mark overlap
     uncertain_coverage_below: float = 0.60  # winning speaker covers < 60% of the segment -> uncertain
     uncertain_margin_below: float = 0.15    # (winner - runner_up) / segment_duration < 15% -> uncertain
+
+
+@dataclass
+class BoundaryRefinementConfig:
+    """
+    Stap 2b (speaker_boundaries.py): pyannote-beurten controleren met
+    stem-embeddings per eenheid (stuk spraak tussen Whisper-/pyannote-grenzen).
+
+    EXPERIMENTELE standaardwaarden. Alle *_z-drempels zijn in "robuuste
+    standaarddeviaties t.o.v. hoe een spreker op zichzelf lijkt" (mediaan/MAD
+    per spreker), niet in ruwe cosine-waarden — zo zitten ze minder vast aan
+    één embeddingmodel. Controleer ze met
+    Experiments/diarization/boundary_refinement/evaluate_refinement.py.
+    """
+    embedding_model: str = "pyannote/wespeaker-voxceleb-resnet34-LM"
+    device: str = "cpu"
+
+    # Eenheden korter dan dit worden niet beoordeeld (embedding te onbetrouwbaar).
+    min_unit_seconds: float = 0.5
+    # Een label alleen omzetten (tegen pyannote in) bij eenheden van minstens
+    # deze lengte: kortere stukjes geven te ruisige embeddings.
+    min_relabel_seconds: float = 0.8
+    min_profile_units: int = 3      # minder eenheden = "zwak profiel", milde inschatting
+    min_sd: float = 0.08            # ondergrens spreiding (cosine), tegen te strenge profielen
+
+    # Beslisregel per eenheid (z-scores per spreker):
+    outlier_z: float = 2.5          # past niet bij eigen spreker als z <= -2.5
+    fit_z: float = 1.5              # past wel bij andere spreker als z >= -1.5
+    min_dz: float = 2.0             # en minstens zoveel beter dan bij de eigen spreker
+    rival_similarity_margin: float = 0.05  # "bijna even goed bij een ander" -> onduidelijk
+
+    # Over-segmentatie: kleiner cluster gaat op in groter als het daar
+    # (mediaan) hooguit zoveel z slechter bij past dan bij zichzelf.
+    merge_clusters: bool = True
+    merge_tolerance: float = 1.0
+    merge_fit_z: float = 1.0        # en X's eenheden moeten voor Y "gewoon" zijn (z >= -1)
+
+    # Lange eenheden op een stilte proberen te knippen.
+    split_long_units: bool = True
+    split_min_seconds: float = 2.0
+    split_min_part_seconds: float = 1.0   # elke helft minstens zo lang
+    max_split_candidates: int = 6
+    pause_energy_ratio: float = 0.25  # frame-energie < 25% van mediane spraakenergie = stilte
+
+    # Nieuwe spreker: eenheden die bij niemand passen en op elkaar lijken.
+    detect_new_speakers: bool = True
+    min_new_unit_seconds: float = 0.8
+    min_new_speaker_seconds: float = 1.5
 
 
 @dataclass

@@ -157,3 +157,87 @@ spreker bij toekomstige opnames, of een ander soort aanpak
 versie-incompatibiliteit tussen pyannote.audio 4.0.7 en speechbrain 1.1.1 en is
 geparkeerd). Ondertussen blijft het systeem onzekerheid expliciet doorgeven
 (`uncertain_assignment`, `overlap`, `docent_role_note`) in plaats van te gokken.
+
+> **Vervolg:** de aanpak "sprekerscheiding/controle ná diarisatie" is
+> uitgewerkt in [`../boundary_refinement`](../boundary_refinement/README.md):
+> een verfijningsstap die pyannote's beurten per stuk spraak controleert met
+> stem-embeddings. Die maakt een lagere `min_cluster_size` ook weer zinvol,
+> omdat nep-sprekers achteraf worden samengevoegd.
+
+---
+
+# Controle van de verfijningsstap op de echte pipeline
+
+De verfijningsstap (`src/speaker_boundaries.py`, standaard aan in
+`diarization.py`) is opnieuw getoetst op de echte pipeline: echte
+Whisper-transcripten, echt pyannote, en de handmatige ground truth uit deze
+map. Dat kan met `Experiments/diarization/boundary_refinement/evaluate_refinement.py`.
+De cijfers in de README van `boundary_refinement` komen uit een nabouw van
+pyannote met de ground-truth-tijden als Whisper-grenzen en zijn dus
+gunstiger dan de werkelijkheid.
+
+Uitleg bij de kolommen: "tijdlijn" is dezelfde score als hierboven,
+"segmenten goed" is het aandeel Whisper-segmenten met de juiste spreker (dat
+is wat preprocessing en docentherkenning gebruiken), "gevaarlijke fouten" zijn
+segmenten met de verkeerde spreker zonder overlap- of onzeker-vlag.
+
+## testaudio2 en testaudio4 (dezelfde fragmenten waarop de regels zijn afgesteld)
+
+| Fragment | Variant | tijdlijn | segmenten goed | gevaarlijke fouten | sprekers (echt) |
+|---|---|---|---|---|---|
+| testaudio2 | alleen pyannote, 12 | 78,0% | 68,4% | 4 | 2 (2) |
+| testaudio2 | + refinement, 12 | 78,0% | 68,4% | 4 | 2 |
+| testaudio2 | alleen pyannote, 8 | 78,0% | 68,4% | 4 | 2 |
+| testaudio2 | + refinement, 8 | 78,0% | 68,4% | 4 | 2 |
+| testaudio4 | alleen pyannote, 12 | 81,0% | 70,1% | 7 | 2 (4) |
+| testaudio4 | + refinement, 12 | 82,1% | 70,1% | 6 | 2 |
+| testaudio4 | alleen pyannote, 8 | 83,2% | 75,9% | 5 | 4 |
+| testaudio4 | + refinement, 8 | 87,1% | 75,9% | 3 | 3 |
+
+## final_testfragment (onafhankelijke toets)
+
+Fragment van 312 s met veel rumoer; 137 regels gelabeld, 11 sprekers, waarvan
+de docent 101 regels heeft en de meeste anderen één zin. Rumoer is niet als
+aparte spreker gelabeld (alleen genoteerd). Dit fragment is niet gebruikt om
+instellingen of regels te kiezen.
+
+| Variant | tijdlijn | segmenten goed | gevaarlijke fouten | sprekers (echt 11) |
+|---|---|---|---|---|
+| alleen pyannote, 12 (huidig vóór de fix) | 68,7% | 73,7% | 7 | 2 |
+| + refinement, 12 (huidige standaard) | 68,7% | 73,7% | 6 | 2 |
+| alleen pyannote, 8 | 67,9% | 80,3% | 4 | 7 |
+| + refinement, 8 | 67,8% | 77,4% | 5 | 4 |
+
+## Conclusie
+
+- **De verfijningsstap geeft geen aantoonbare verbetering.** Bij de
+  standaardinstelling (12) is het verschil op alle drie de fragmenten nul of
+  ongeveer één procentpunt. De grote winst bij testaudio4 met 8 (+6,1 punt
+  tijdlijn ten opzichte van de situatie vóór de fix) komt niet terug op het
+  onafhankelijke fragment, waar de stap met 8 juist iets slechter scoort dan
+  pyannote alleen (77,4% tegen 80,3% op segmentniveau) doordat echte, kleine
+  sprekers worden samengevoegd.
+- Het criterium van minstens ongeveer +3 punt op alle fragmenten is niet gehaald.
+- De stap staat standaard aan en voegt veel code en veel drempels toe
+  (`speaker_boundaries.py` van ongeveer 700 regels, `BoundaryRefinementConfig`).
+  Uitzetten kan met `--no-refine`.
+- `min_cluster_size = 8` zonder refinement verdient een vervolgtest: op
+  segmentniveau, wat downstream gebruikt wordt, is het beter op testaudio4
+  (+5,8) en final_testfragment (+6,6) en gelijk op testaudio2, met minder
+  gevaarlijke fouten (7 naar 5, 7 naar 4). Op de tijdlijn-score zag het er
+  eerder niet beter uit (zie hierboven), dus de keuze van de maat telt. Het
+  zijn kleine aantallen (19, 87 en 137 segmenten) en bij 8 komen er extra
+  sprekers bij (7 in plaats van 2 op final_testfragment), waarvan een deel
+  waarschijnlijk uit rumoer komt.
+
+## Beperkingen
+
+- Drie fragmenten van dezelfde klas en opnameserie; een verschil van 6 punten
+  komt op final_testfragment neer op ongeveer 9 segmenten.
+- Negen van de 11 gelabelde sprekers in final_testfragment zeggen één of twee
+  zinnen en zijn voor pyannote niet te onderscheiden; hun spreker krijgt
+  vrijwel altijd 0%. De tijdlijn-score wordt daardoor vooral door de docent
+  bepaald.
+- Op sommige regels van final_testfragment staat in de `note`-kolom dat het
+  rumoer is of dat de labeler het niet zeker weet; de score gebruikt de
+  `overlap`- en `note`-kolommen niet.

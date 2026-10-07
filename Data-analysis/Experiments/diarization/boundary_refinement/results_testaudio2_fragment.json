@@ -1,0 +1,164 @@
+{
+  "min_cluster_size=12": {
+    "pyannote": {
+      "gt_speakers": 2,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 78.0,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 23.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 96.5
+        },
+        "SPREKER_B": {
+          "seconds": 7.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 17.1
+        }
+      },
+      "segment_level": {
+        "segments": 19,
+        "segment_accuracy": 0.684,
+        "flagged_segments": 5,
+        "wrong_and_not_flagged": 4,
+        "wrong_but_flagged": 2
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 2,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 78.0,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 23.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 96.5
+        },
+        "SPREKER_B": {
+          "seconds": 7.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 17.1
+        }
+      },
+      "segment_level": {
+        "segments": 19,
+        "segment_accuracy": 0.684,
+        "flagged_segments": 6,
+        "wrong_and_not_flagged": 4,
+        "wrong_but_flagged": 2
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_00": "SPEAKER_00",
+        "SPEAKER_01": "SPEAKER_01"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_00",
+          "seconds": 24.2,
+          "n_units": 18,
+          "typical_similarity": 0.616,
+          "spread": 0.1589,
+          "weak_profile": false
+        }
+      ],
+      "changes": [],
+      "stats": {
+        "n_units": 25,
+        "n_units_judged": 18,
+        "unclear_seconds": 1.5,
+        "relabeled_seconds": 0,
+        "filled_seconds": 0,
+        "n_splits": 0,
+        "merge_log": [],
+        "n_turns_before": 8,
+        "n_turns_after": 7
+      },
+      "runtime_seconds": 0.87,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  },
+  "min_cluster_size=8": {
+    "pyannote": {
+      "gt_speakers": 2,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 78.0,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 23.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 96.5
+        },
+        "SPREKER_B": {
+          "seconds": 7.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 17.1
+        }
+      },
+      "segment_level": {
+        "segments": 19,
+        "segment_accuracy": 0.684,
+        "flagged_segments": 5,
+        "wrong_and_not_flagged": 4,
+        "wrong_but_flagged": 2
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 2,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 78.0,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 23.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 96.5
+        },
+        "SPREKER_B": {
+          "seconds": 7.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 17.1
+        }
+      },
+      "segment_level": {
+        "segments": 19,
+        "segment_accuracy": 0.684,
+        "flagged_segments": 6,
+        "wrong_and_not_flagged": 4,
+        "wrong_but_flagged": 2
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_00": "SPEAKER_00",
+        "SPEAKER_01": "SPEAKER_01"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_00",
+          "seconds": 24.2,
+          "n_units": 18,
+          "typical_similarity": 0.616,
+          "spread": 0.1589,
+          "weak_profile": false
+        }
+      ],
+      "changes": [],
+      "stats": {
+        "n_units": 25,
+        "n_units_judged": 18,
+        "unclear_seconds": 1.5,
+        "relabeled_seconds": 0,
+        "filled_seconds": 0,
+        "n_splits": 0,
+        "merge_log": [],
+        "n_turns_before": 8,
+        "n_turns_after": 7
+      },
+      "runtime_seconds": 1.34,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  }
+}

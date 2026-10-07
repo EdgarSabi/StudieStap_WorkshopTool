@@ -1,0 +1,338 @@
+{
+  "min_cluster_size=12": {
+    "pyannote": {
+      "gt_speakers": 4,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 81.0,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 72.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 86.9
+        },
+        "SPREKER_B": {
+          "seconds": 36.9,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 87.3
+        },
+        "SPREKER_C": {
+          "seconds": 7.3,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_D": {
+          "seconds": 0.8,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 87,
+        "segment_accuracy": 0.701,
+        "flagged_segments": 44,
+        "wrong_and_not_flagged": 7,
+        "wrong_but_flagged": 19
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 4,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 82.1,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 72.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 86.9
+        },
+        "SPREKER_B": {
+          "seconds": 36.9,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 90.5
+        },
+        "SPREKER_C": {
+          "seconds": 7.3,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_D": {
+          "seconds": 0.8,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 87,
+        "segment_accuracy": 0.701,
+        "flagged_segments": 41,
+        "wrong_and_not_flagged": 6,
+        "wrong_but_flagged": 20
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_00": "SPEAKER_00",
+        "SPEAKER_01": "SPEAKER_01"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_00",
+          "seconds": 55.7,
+          "n_units": 42,
+          "typical_similarity": 0.6104,
+          "spread": 0.1517,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "seconds": 23.6,
+          "n_units": 22,
+          "typical_similarity": 0.5043,
+          "spread": 0.2906,
+          "weak_profile": false
+        }
+      ],
+      "changes": [
+        {
+          "start": 6.4,
+          "end": 7.6,
+          "from": "SPEAKER_00",
+          "to": "SPEAKER_01",
+          "reason": "omgelabeld: past niet bij SPEAKER_00 (z=-3.6, sim=0.06) maar wel bij SPEAKER_01 (z=0.5, sim=0.65)"
+        }
+      ],
+      "stats": {
+        "n_units": 99,
+        "n_units_judged": 65,
+        "unclear_seconds": 1.3,
+        "relabeled_seconds": 1.2,
+        "filled_seconds": 0,
+        "n_splits": 0,
+        "merge_log": [
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_00",
+            "own_similarity": 0.5043,
+            "cross_similarity": 0.1188,
+            "gap_z": 1.326,
+            "z_in_big": -3.24,
+            "merged": false
+          }
+        ],
+        "n_turns_before": 63,
+        "n_turns_after": 60
+      },
+      "runtime_seconds": 3.86,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  },
+  "min_cluster_size=8": {
+    "pyannote": {
+      "gt_speakers": 4,
+      "pyannote_speakers_found": 4,
+      "overall_correct_pct": 83.2,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 72.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 82.4
+        },
+        "SPREKER_B": {
+          "seconds": 36.9,
+          "matched_pyannote_speaker": "SPEAKER_03",
+          "covered_pct": 84.0
+        },
+        "SPREKER_C": {
+          "seconds": 7.3,
+          "matched_pyannote_speaker": "SPEAKER_02",
+          "covered_pct": 97.3
+        },
+        "SPREKER_D": {
+          "seconds": 0.8,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 87,
+        "segment_accuracy": 0.759,
+        "flagged_segments": 44,
+        "wrong_and_not_flagged": 5,
+        "wrong_but_flagged": 16
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 4,
+      "pyannote_speakers_found": 3,
+      "overall_correct_pct": 87.1,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 72.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 86.9
+        },
+        "SPREKER_B": {
+          "seconds": 36.9,
+          "matched_pyannote_speaker": "SPEAKER_03",
+          "covered_pct": 87.3
+        },
+        "SPREKER_C": {
+          "seconds": 7.3,
+          "matched_pyannote_speaker": "SPEAKER_02",
+          "covered_pct": 97.3
+        },
+        "SPREKER_D": {
+          "seconds": 0.8,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 87,
+        "segment_accuracy": 0.759,
+        "flagged_segments": 42,
+        "wrong_and_not_flagged": 3,
+        "wrong_but_flagged": 18
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_01": "SPEAKER_01",
+        "SPEAKER_03": "SPEAKER_03",
+        "SPEAKER_00": "SPEAKER_01",
+        "SPEAKER_02": "SPEAKER_02"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_01",
+          "seconds": 55.7,
+          "n_units": 42,
+          "typical_similarity": 0.6104,
+          "spread": 0.1517,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_03",
+          "seconds": 19.6,
+          "n_units": 18,
+          "typical_similarity": 0.5414,
+          "spread": 0.2766,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_02",
+          "seconds": 4.0,
+          "n_units": 4,
+          "typical_similarity": 0.4339,
+          "spread": 0.1234,
+          "weak_profile": false
+        }
+      ],
+      "changes": [
+        {
+          "start": 6.4,
+          "end": 7.6,
+          "from": "SPEAKER_01",
+          "to": "SPEAKER_03",
+          "reason": "omgelabeld: past niet bij SPEAKER_01 (z=-3.6, sim=0.06) maar wel bij SPEAKER_03 (z=0.4, sim=0.66)"
+        }
+      ],
+      "stats": {
+        "n_units": 101,
+        "n_units_judged": 65,
+        "unclear_seconds": 2.8,
+        "relabeled_seconds": 1.2,
+        "filled_seconds": 0,
+        "n_splits": 0,
+        "merge_log": [
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.3764,
+            "cross_similarity": 0.0863,
+            "gap_z": 1.255,
+            "z_in_big": -2.817,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.3764,
+            "cross_similarity": 0.1349,
+            "gap_z": 1.045,
+            "z_in_big": -1.47,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.3764,
+            "cross_similarity": 0.4853,
+            "gap_z": -0.471,
+            "z_in_big": -0.845,
+            "merged": true
+          },
+          {
+            "small": "SPEAKER_02",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.3993,
+            "cross_similarity": 0.1762,
+            "gap_z": 1.808,
+            "z_in_big": -1.321,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_02",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.3993,
+            "cross_similarity": 0.0016,
+            "gap_z": 3.222,
+            "z_in_big": -3.984,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5414,
+            "cross_similarity": 0.1468,
+            "gap_z": 1.427,
+            "z_in_big": -3.042,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_02",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.3993,
+            "cross_similarity": 0.1762,
+            "gap_z": 1.808,
+            "z_in_big": -1.321,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_02",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.3993,
+            "cross_similarity": 0.0075,
+            "gap_z": 3.175,
+            "z_in_big": -3.974,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5414,
+            "cross_similarity": 0.1479,
+            "gap_z": 1.423,
+            "z_in_big": -3.048,
+            "merged": false
+          }
+        ],
+        "n_turns_before": 69,
+        "n_turns_after": 63
+      },
+      "runtime_seconds": 3.89,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  }
+}

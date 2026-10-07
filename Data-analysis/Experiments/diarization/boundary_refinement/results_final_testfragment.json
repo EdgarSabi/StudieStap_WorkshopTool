@@ -1,0 +1,883 @@
+{
+  "min_cluster_size=12": {
+    "pyannote": {
+      "gt_speakers": 11,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 68.7,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 202.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 85.4
+        },
+        "SPREKER_B": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_C": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_D": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_E": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_F": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 71.4
+        },
+        "SPREKER_G": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_H": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_I": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_J": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_K": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 137,
+        "segment_accuracy": 0.737,
+        "flagged_segments": 87,
+        "wrong_and_not_flagged": 7,
+        "wrong_but_flagged": 29
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 11,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 68.7,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 202.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 85.4
+        },
+        "SPREKER_B": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_C": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_D": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_E": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_F": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 71.4
+        },
+        "SPREKER_G": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_H": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_I": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_J": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_K": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 137,
+        "segment_accuracy": 0.737,
+        "flagged_segments": 87,
+        "wrong_and_not_flagged": 6,
+        "wrong_but_flagged": 30
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_00": "SPEAKER_00",
+        "SPEAKER_01": "SPEAKER_01"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_00",
+          "seconds": 132.8,
+          "n_units": 112,
+          "typical_similarity": 0.5822,
+          "spread": 0.2111,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "seconds": 31.0,
+          "n_units": 34,
+          "typical_similarity": 0.3479,
+          "spread": 0.0839,
+          "weak_profile": false
+        }
+      ],
+      "changes": [
+        {
+          "start": 81.2,
+          "end": 82.3,
+          "from": null,
+          "to": "SPEAKER_01",
+          "reason": "aangevuld: pyannote zag geen spraak, stem past bij deze spreker"
+        }
+      ],
+      "stats": {
+        "n_units": 271,
+        "n_units_judged": 150,
+        "unclear_seconds": 17.0,
+        "relabeled_seconds": 0,
+        "filled_seconds": 1.1,
+        "n_splits": 0,
+        "merge_log": [
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_00",
+            "own_similarity": 0.3479,
+            "cross_similarity": 0.0693,
+            "gap_z": 3.321,
+            "z_in_big": -2.43,
+            "merged": false
+          }
+        ],
+        "n_turns_before": 175,
+        "n_turns_after": 149
+      },
+      "runtime_seconds": 5.71,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  },
+  "min_cluster_size=8": {
+    "pyannote": {
+      "gt_speakers": 11,
+      "pyannote_speakers_found": 7,
+      "overall_correct_pct": 67.9,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 202.0,
+          "matched_pyannote_speaker": "SPEAKER_02",
+          "covered_pct": 78.5
+        },
+        "SPREKER_B": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": "SPEAKER_00",
+          "covered_pct": 100.0
+        },
+        "SPREKER_C": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_03",
+          "covered_pct": 43.2
+        },
+        "SPREKER_D": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": "SPEAKER_04",
+          "covered_pct": 0.0
+        },
+        "SPREKER_E": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_F": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_05",
+          "covered_pct": 36.4
+        },
+        "SPREKER_G": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_H": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": "SPEAKER_06",
+          "covered_pct": 35.0
+        },
+        "SPREKER_I": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_J": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 98.3
+        },
+        "SPREKER_K": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 137,
+        "segment_accuracy": 0.803,
+        "flagged_segments": 92,
+        "wrong_and_not_flagged": 4,
+        "wrong_but_flagged": 23
+      }
+    },
+    "pyannote+refinement": {
+      "gt_speakers": 11,
+      "pyannote_speakers_found": 4,
+      "overall_correct_pct": 67.8,
+      "per_gt_speaker": {
+        "SPREKER_A": {
+          "seconds": 202.0,
+          "matched_pyannote_speaker": "SPEAKER_02",
+          "covered_pct": 78.5
+        },
+        "SPREKER_B": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_C": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_03",
+          "covered_pct": 43.2
+        },
+        "SPREKER_D": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_E": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_F": {
+          "seconds": 22.0,
+          "matched_pyannote_speaker": "SPEAKER_01",
+          "covered_pct": 71.4
+        },
+        "SPREKER_G": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_H": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": "SPEAKER_06",
+          "covered_pct": 35.0
+        },
+        "SPREKER_I": {
+          "seconds": 4.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_J": {
+          "seconds": 6.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        },
+        "SPREKER_K": {
+          "seconds": 2.0,
+          "matched_pyannote_speaker": null,
+          "covered_pct": 0.0
+        }
+      },
+      "segment_level": {
+        "segments": 137,
+        "segment_accuracy": 0.774,
+        "flagged_segments": 89,
+        "wrong_and_not_flagged": 5,
+        "wrong_but_flagged": 26
+      }
+    },
+    "refinement": {
+      "merge_map": {
+        "SPEAKER_02": "SPEAKER_02",
+        "SPEAKER_01": "SPEAKER_01",
+        "SPEAKER_00": "SPEAKER_06",
+        "SPEAKER_03": "SPEAKER_03",
+        "SPEAKER_04": "SPEAKER_01",
+        "SPEAKER_06": "SPEAKER_06",
+        "SPEAKER_05": "SPEAKER_01"
+      },
+      "new_speakers": [],
+      "profiles": [
+        {
+          "speaker": "SPEAKER_02",
+          "seconds": 116.2,
+          "n_units": 97,
+          "typical_similarity": 0.6231,
+          "spread": 0.1485,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_01",
+          "seconds": 21.0,
+          "n_units": 20,
+          "typical_similarity": 0.291,
+          "spread": 0.1146,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_06",
+          "seconds": 16.3,
+          "n_units": 19,
+          "typical_similarity": 0.4823,
+          "spread": 0.2124,
+          "weak_profile": false
+        },
+        {
+          "speaker": "SPEAKER_03",
+          "seconds": 9.6,
+          "n_units": 10,
+          "typical_similarity": 0.5269,
+          "spread": 0.1851,
+          "weak_profile": false
+        }
+      ],
+      "changes": [
+        {
+          "start": 46.3,
+          "end": 47.1,
+          "from": "SPEAKER_03",
+          "to": "SPEAKER_06",
+          "reason": "omgelabeld: past niet bij SPEAKER_03 (z=-3.2, sim=-0.07) maar wel bij SPEAKER_06 (z=0.3, sim=0.55)"
+        },
+        {
+          "start": 247.2,
+          "end": 248.1,
+          "from": "SPEAKER_02",
+          "to": "SPEAKER_06",
+          "reason": "omgelabeld: past niet bij SPEAKER_02 (z=-4.0, sim=0.03) maar wel bij SPEAKER_06 (z=-0.7, sim=0.33)"
+        }
+      ],
+      "stats": {
+        "n_units": 275,
+        "n_units_judged": 150,
+        "unclear_seconds": 14.2,
+        "relabeled_seconds": 1.7,
+        "filled_seconds": 0,
+        "n_splits": 0,
+        "merge_log": [
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_04",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.1759,
+            "gap_z": 0.768,
+            "z_in_big": -0.954,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_00",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.1683,
+            "gap_z": 0.858,
+            "z_in_big": -0.574,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.0597,
+            "gap_z": 2.145,
+            "z_in_big": -2.524,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.2945,
+            "gap_z": -0.636,
+            "z_in_big": -1.216,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.2413,
+            "gap_z": -0.007,
+            "z_in_big": -0.656,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.0207,
+            "gap_z": 2.607,
+            "z_in_big": -4.056,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_00",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0516,
+            "gap_z": 2.38,
+            "z_in_big": -1.142,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.2032,
+            "gap_z": 0.641,
+            "z_in_big": -1.749,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0764,
+            "gap_z": 2.095,
+            "z_in_big": -2.56,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.095,
+            "gap_z": 1.882,
+            "z_in_big": -1.539,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0421,
+            "gap_z": 2.489,
+            "z_in_big": -3.912,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2863,
+            "cross_similarity": 0.0276,
+            "gap_z": 1.259,
+            "z_in_big": -2.697,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2863,
+            "cross_similarity": 0.4211,
+            "gap_z": -0.656,
+            "z_in_big": -0.435,
+            "merged": true
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2863,
+            "cross_similarity": 0.1803,
+            "gap_z": 0.516,
+            "z_in_big": -1.024,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_00",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2863,
+            "cross_similarity": 0.028,
+            "gap_z": 1.257,
+            "z_in_big": -4.007,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.0896,
+            "gap_z": 2.31,
+            "z_in_big": -2.478,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.113,
+            "gap_z": 2.184,
+            "z_in_big": -1.431,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1355,
+            "gap_z": 2.063,
+            "z_in_big": -3.284,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.4918,
+            "cross_similarity": 0.1615,
+            "gap_z": 2.036,
+            "z_in_big": -1.138,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.4918,
+            "cross_similarity": 0.0139,
+            "gap_z": 2.945,
+            "z_in_big": -4.103,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.3499,
+            "cross_similarity": 0.1388,
+            "gap_z": 1.275,
+            "z_in_big": -3.262,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_04",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.1759,
+            "gap_z": 0.768,
+            "z_in_big": -0.954,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.0597,
+            "gap_z": 2.145,
+            "z_in_big": -2.524,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.2413,
+            "gap_z": -0.007,
+            "z_in_big": -0.656,
+            "merged": true
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.2643,
+            "gap_z": -0.279,
+            "z_in_big": -1.026,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_05",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2408,
+            "cross_similarity": 0.0207,
+            "gap_z": 2.607,
+            "z_in_big": -4.056,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.2032,
+            "gap_z": 0.641,
+            "z_in_big": -1.749,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.095,
+            "gap_z": 1.882,
+            "z_in_big": -1.539,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0652,
+            "gap_z": 2.224,
+            "z_in_big": -1.963,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0421,
+            "gap_z": 2.489,
+            "z_in_big": -3.912,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.113,
+            "gap_z": 2.184,
+            "z_in_big": -1.431,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1165,
+            "gap_z": 2.165,
+            "z_in_big": -1.722,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1355,
+            "gap_z": 2.063,
+            "z_in_big": -3.284,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.3499,
+            "cross_similarity": 0.1656,
+            "gap_z": 1.113,
+            "z_in_big": -1.491,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.3499,
+            "cross_similarity": 0.1388,
+            "gap_z": 1.275,
+            "z_in_big": -3.262,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.4823,
+            "cross_similarity": 0.0236,
+            "gap_z": 2.159,
+            "z_in_big": -4.037,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_03",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.2032,
+            "gap_z": 0.641,
+            "z_in_big": -1.749,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.1947,
+            "gap_z": 0.738,
+            "z_in_big": -0.625,
+            "merged": true
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0652,
+            "gap_z": 2.224,
+            "z_in_big": -1.963,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_04",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.2591,
+            "cross_similarity": 0.0421,
+            "gap_z": 2.489,
+            "z_in_big": -3.912,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.157,
+            "gap_z": 1.946,
+            "z_in_big": -0.895,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1165,
+            "gap_z": 2.165,
+            "z_in_big": -1.722,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1355,
+            "gap_z": 2.063,
+            "z_in_big": -3.284,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.282,
+            "cross_similarity": 0.187,
+            "gap_z": 0.68,
+            "z_in_big": -1.39,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.282,
+            "cross_similarity": 0.1213,
+            "gap_z": 1.15,
+            "z_in_big": -3.379,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.4823,
+            "cross_similarity": 0.0236,
+            "gap_z": 2.159,
+            "z_in_big": -4.037,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_06",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1165,
+            "gap_z": 2.165,
+            "z_in_big": -1.722,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1776,
+            "gap_z": 1.835,
+            "z_in_big": -0.99,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_03",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.5173,
+            "cross_similarity": 0.1355,
+            "gap_z": 2.063,
+            "z_in_big": -3.284,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_01",
+            "own_similarity": 0.4823,
+            "cross_similarity": 0.2235,
+            "gap_z": 1.218,
+            "z_in_big": -0.589,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_06",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.4823,
+            "cross_similarity": 0.0236,
+            "gap_z": 2.159,
+            "z_in_big": -4.037,
+            "merged": false
+          },
+          {
+            "small": "SPEAKER_01",
+            "big": "SPEAKER_02",
+            "own_similarity": 0.291,
+            "cross_similarity": 0.082,
+            "gap_z": 1.824,
+            "z_in_big": -3.644,
+            "merged": false
+          }
+        ],
+        "n_turns_before": 226,
+        "n_turns_after": 181
+      },
+      "runtime_seconds": 5.7,
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM"
+    }
+  }
+}

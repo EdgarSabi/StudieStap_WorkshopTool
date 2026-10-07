@@ -1,138 +1,138 @@
 ﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,overlap,note,transcript_hint
-final_testfragment,0,1.1,3.1,,,,"Jongens, even allemaal aan je werk."
-final_testfragment,1,3.1,4.1,,,,Het gaat goed.
-final_testfragment,2,4.1,5.1,,,,Ik zie nog niks staan.
-final_testfragment,3,5.1,7.1,,,,Je moet wel je pen heen en weer bewegen.
-final_testfragment,4,7.1,9.1,,,,"Luna, dit is nou, wacht even."
-final_testfragment,5,9.1,11.1,,,,Dit is de derde waarschuwing.
-final_testfragment,6,11.1,14.1,,,,"Je zit weer te lachen, maar hup eruit."
-final_testfragment,7,17.1,19.1,,,,Dat had ik inderdaad.
-final_testfragment,8,19.1,21.1,,,,Volgende keer kunnen we jullie uit elkaar halen.
-final_testfragment,9,21.1,23.1,,,,Pak maar even je spullen.
-final_testfragment,10,26.1,29.1,,,,Dit lijkt mij een serieus gezicht.
-final_testfragment,11,29.1,31.1,,,,Dit lijkt mij een serieus.
-final_testfragment,12,31.1,33.1,,,,Gewoon even spullen pakken en weg.
-final_testfragment,13,33.1,35.1,,,,Drie keer heb ik je gewaarschuwd.
-final_testfragment,14,35.1,37.1,,,,"Ja, dag."
-final_testfragment,15,37.1,39.1,,,,Even melden bij.
-final_testfragment,16,39.1,41.1,,,,Hallo Luna.
-final_testfragment,17,41.1,43.1,,,,Hoor je nu dat meneer?
-final_testfragment,18,43.1,45.1,,,,Bij wie?
-final_testfragment,19,45.1,47.1,,,,Dag.
-final_testfragment,20,47.1,49.1,,,,Wat ga jij doen?
-final_testfragment,21,49.1,51.1,,,,Ik ga ook weg.
-final_testfragment,22,51.1,53.1,,,,"Hallo, wat ga je doen?"
-final_testfragment,23,53.1,55.1,,,,"Ik heb jou niet weggestuurd, wat is dit?"
-final_testfragment,24,55.1,57.1,,,,"Nee, maar haar wel."
-final_testfragment,25,57.1,59.1,,,,Ik ga mee.
-final_testfragment,26,59.1,61.1,,,,Waarom?
-final_testfragment,27,61.1,63.1,,,,Omdat ze mijn vriendin is.
-final_testfragment,28,63.1,65.1,,,,Dat snap ik niet.
-final_testfragment,29,65.1,67.1,,,,"Nee, omdat u zelf geen vrienden hebt."
-final_testfragment,30,79.1,81.1,,,,Ga jij even achter Anita aan.
-final_testfragment,31,81.1,83.1,,,,Iedereen lacht.
-final_testfragment,32,83.1,85.1,,,,"Nee, het gaat erom dat ik haar even terug wil hebben."
-final_testfragment,33,85.1,87.1,,,,Iedereen lacht.
-final_testfragment,34,87.1,89.1,,,,Alsof dat een graadmeter is.
-final_testfragment,35,89.1,91.1,,,,Ga even terughalen.
-final_testfragment,36,91.1,93.1,,,,"Ja, haal maar terug."
-final_testfragment,37,93.1,95.1,,,,"Dit is heel raar, toch?"
-final_testfragment,38,95.1,97.1,,,,Ik vond het wel leuk aan je.
-final_testfragment,39,97.1,99.1,,,,Ik snap het niet.
-final_testfragment,40,99.1,101.1,,,,Daar komt ze.
-final_testfragment,41,101.1,103.1,,,,"Anita, nee, niet Luna."
-final_testfragment,42,103.1,105.1,,,,Luna wil ik niet terug.
-final_testfragment,43,105.1,107.1,,,,Ik wil Anita terug.
-final_testfragment,44,107.1,109.1,,,,Luna is weg.
-final_testfragment,45,109.1,111.1,,,,Wat ga ik nou weer niet?
-final_testfragment,46,111.1,113.1,,,,"Ik ben geen hond, wat denk jij?"
-final_testfragment,47,117.1,119.1,,,,Ga maar weg.
-final_testfragment,48,119.1,121.1,,,,Ben je geen hond?
-final_testfragment,49,121.1,123.1,,,,"Nee, ik heb je verstaan."
-final_testfragment,50,123.1,125.1,,,,Maar ik heb jou weggestuurd.
-final_testfragment,51,125.1,127.1,,,,En Anita niet.
-final_testfragment,52,127.1,129.1,,,,"Meneer, u heeft haar eruit gestuurd, toch?"
-final_testfragment,53,129.1,131.1,,,,Ja.
-final_testfragment,54,131.1,133.1,,,,Dus dan ga ik ook mee.
-final_testfragment,55,133.1,135.1,,,,"En als ik terug ga, gaat zij ook terug."
-final_testfragment,56,135.1,137.1,,,,Ik snap deze hele logica niet.
-final_testfragment,57,137.1,139.1,,,,"Omdat jij vriendin bent van haar, ga jij ook weg."
-final_testfragment,58,139.1,141.1,,,,Ga ook maar lekker weg dan.
-final_testfragment,59,141.1,143.1,,,,Ja?
-final_testfragment,60,143.1,145.1,,,,Waarom doet u het terug dan?
-final_testfragment,61,145.1,147.1,,,,Dan snap ik het.
-final_testfragment,62,147.1,149.1,,,,Dank u wel.
-final_testfragment,63,149.1,151.1,,,,Je hebt een even lastig pakket nu als Luna zit.
-final_testfragment,64,151.1,153.1,,,,Waar je niets hebt gedaan.
-final_testfragment,65,153.1,155.1,,,,Een even lastig pakket.
-final_testfragment,66,155.1,157.1,,,,Zoals ik zei.
-final_testfragment,67,157.1,159.1,,,,Je bent een teringhond niet.
-final_testfragment,68,159.1,161.1,,,,"Ja, maar hallo."
-final_testfragment,69,161.1,163.1,,,,Wat fack?
-final_testfragment,70,163.1,165.1,,,,Ik ben geen pakketje.
-final_testfragment,71,165.1,167.1,,,,Ben je naar bed gestapt?
-final_testfragment,72,167.1,169.1,,,,"Ja, best wel."
-final_testfragment,73,169.1,171.1,,,,Jij volgens mij ook.
-final_testfragment,74,171.1,173.1,,,,"Nee, ik niet."
-final_testfragment,75,173.1,175.1,,,,Ik moet een sekkleven gaan zoeken.
-final_testfragment,76,175.1,177.1,,,,"Oké, dag."
-final_testfragment,77,177.1,179.1,,,,Dag.
-final_testfragment,78,179.1,181.1,,,,Zoek maar een grasveld en ga er maar poepen.
-final_testfragment,79,181.1,183.1,,,,Doei.
-final_testfragment,80,183.1,185.1,,,,"Mensen, echt."
-final_testfragment,81,185.1,187.1,,,,Wat is er vandaag aan de hand?
-final_testfragment,82,187.1,189.1,,,,Iedereen lijkt een beetje geïnviteerd.
-final_testfragment,83,189.1,191.1,,,,Dat er een bepaalde periode in de cyclus zit.
-final_testfragment,84,191.1,193.1,,,,Ah!
-final_testfragment,85,193.1,195.1,,,,Ik snap hem.
-final_testfragment,86,195.1,197.1,,,,Cyclus.
-final_testfragment,87,199.1,201.1,,,,Wat ga jij doen?
-final_testfragment,88,201.1,203.1,,,,Jij blijft even zitten daar.
-final_testfragment,89,203.1,205.1,,,,Luna is nu toch weg.
-final_testfragment,90,205.1,207.1,,,,"Nee, ja."
-final_testfragment,91,209.1,211.1,,,,Rens.
-final_testfragment,92,211.1,213.1,,,,"Peter, het is goed dat je het gaat laten."
-final_testfragment,93,213.1,215.1,,,,"Nee, maar jij hoeft maar niet Peter."
-final_testfragment,94,215.1,217.1,,,,Ik ben niet een meneer hoevenaars van jou.
-final_testfragment,95,217.1,219.1,,,,Ik vind Rens even terug.
-final_testfragment,96,219.1,221.1,,,,Ik ga niet in discussie met jou.
-final_testfragment,97,221.1,223.1,,,,Ga ik met jou in discussie?
-final_testfragment,98,223.1,225.1,,,,"Nee, ik ga niet met jou in discussie."
-final_testfragment,99,225.1,227.1,,,,Ga ik even terug.
-final_testfragment,100,227.1,229.1,,,,Anders kan je ook weg.
-final_testfragment,101,229.1,231.1,,,,Wat is het verschil?
-final_testfragment,102,231.1,233.1,,,,Het verschil is dat jij...
-final_testfragment,103,233.1,235.1,,,,dat ik jij daar zit en niet daar.
-final_testfragment,104,235.1,237.1,,,,Moet ik dat altijd alleen?
-final_testfragment,105,237.1,239.1,,,,"Ja, dan heb je pech."
-final_testfragment,106,239.1,241.1,,,,Ja.
-final_testfragment,107,241.1,243.1,,,,"Rens, hup."
-final_testfragment,108,243.1,245.1,,,,Dan kan je ook gaan.
-final_testfragment,109,245.1,247.1,,,,"Ja, ga maar."
-final_testfragment,110,251.1,253.1,,,,"Ja, maar dan."
-final_testfragment,111,253.1,255.1,,,,"Als het zo moet, dan moet het zo."
-final_testfragment,112,257.1,259.1,,,,"Zo stoer is het niet, Rens."
-final_testfragment,113,259.1,261.1,,,,"Nee, je gaat naar Mini Mulder."
-final_testfragment,114,263.1,265.1,,,,"Nee, nee."
-final_testfragment,115,265.1,267.1,,,,Ja.
-final_testfragment,116,267.1,269.1,,,,Oké.
-final_testfragment,117,269.1,271.1,,,,"Dames en heren, hallo."
-final_testfragment,118,271.1,273.1,,,,Ik wil even aandacht.
-final_testfragment,119,273.1,275.1,,,,Hallo.
-final_testfragment,120,275.1,277.1,,,,Oké.
-final_testfragment,121,277.1,279.1,,,,Ja.
-final_testfragment,122,279.1,281.1,,,,Dat is inderdaad een beetje de vreemde logica hier.
-final_testfragment,123,281.1,283.1,,,,"Als ik Luna weg stuurde,"
-final_testfragment,124,283.1,285.1,,,,gaat Anita weg.
-final_testfragment,125,285.1,287.1,,,,"Nee, wij zijn een klant."
-final_testfragment,126,287.1,289.1,,,,Wij zijn een bank.
-final_testfragment,127,289.1,291.1,,,,"Als ik daar waarschijnlijk ga zitten,"
-final_testfragment,128,291.1,293.1,,,,moet ik daar ook even sturen.
-final_testfragment,129,295.1,297.1,,,,"Ja, dan heb je een grote kans van ja."
-final_testfragment,130,297.1,299.1,,,,Ik denk dat jij vroeg kan komen.
-final_testfragment,131,299.1,301.1,,,,"Op die stoel heerst een vroeg, inderdaad."
-final_testfragment,132,301.1,303.1,,,,Ga ook maar weg.
-final_testfragment,133,303.1,305.1,,,,"Nee, nee, nee."
-final_testfragment,134,305.1,307.1,,,,"Oké, stoppen, jongens."
-final_testfragment,135,307.1,309.1,,,,"Alsjeblieft, dit loopt uit de hand."
-final_testfragment,136,309.1,311.1,,,,"Abonneer, like en share."
+final_testfragment,0,1.1,3.1,SPREKER_A,nee,,"Jongens, even allemaal aan je werk."
+final_testfragment,1,3.1,4.1,SPREKER_A,nee,,Het gaat goed.
+final_testfragment,2,4.1,5.1,SPREKER_A,nee,,Ik zie nog niks staan.
+final_testfragment,3,5.1,7.1,SPREKER_A,nee,,Je moet wel je pen heen en weer bewegen.
+final_testfragment,4,7.1,9.1,SPREKER_A,nee,,"Luna, dit is nou, wacht even."
+final_testfragment,5,9.1,11.1,SPREKER_A,nee,,Dit is de derde waarschuwing.
+final_testfragment,6,11.1,14.1,SPREKER_A,nee,,"Je zit weer te lachen, maar hup eruit."
+final_testfragment,7,17.1,19.1,SPREKER_A,ja,er werd hiervoor wel iets onverstaanbaars gezegd door een leerling,Dat had ik inderdaad.
+final_testfragment,8,19.1,21.1,SPREKER_A,nee,,Volgende keer kunnen we jullie uit elkaar halen.
+final_testfragment,9,21.1,23.1,SPREKER_A,ja,,Pak maar even je spullen.
+final_testfragment,10,26.1,29.1,SPREKER_A,nee,rumoer,Dit lijkt mij een serieus gezicht.
+final_testfragment,11,29.1,31.1,SPREKER_A,nee,,Dit lijkt mij een serieus.
+final_testfragment,12,31.1,33.1,SPREKER_A,nee,,Gewoon even spullen pakken en weg.
+final_testfragment,13,33.1,35.1,SPREKER_A,nee,,Drie keer heb ik je gewaarschuwd.
+final_testfragment,14,35.1,37.1,SPREKER_A,nee,,"Ja, dag."
+final_testfragment,15,37.1,39.1,SPREKER_A,nee,,Even melden bij.
+final_testfragment,16,39.1,41.1,SPREKER_A,nee,,Hallo Luna.
+final_testfragment,17,41.1,43.1,SPREKER_B,nee,een leerling die een keer een zinnetje zegt,Hoor je nu dat meneer?
+final_testfragment,18,43.1,45.1,SPREKER_A,nee,,Bij wie?
+final_testfragment,19,45.1,47.1,SPREKER_A,nee,,Dag.
+final_testfragment,20,47.1,49.1,SPREKER_A,nee,,Wat ga jij doen?
+final_testfragment,21,49.1,51.1,SPREKER_C,nee,dit is overduidelijk anita,Ik ga ook weg.
+final_testfragment,22,51.1,53.1,SPREKER_A,nee,,"Hallo, wat ga je doen?"
+final_testfragment,23,53.1,55.1,SPREKER_A,nee,,"Ik heb jou niet weggestuurd, wat is dit?"
+final_testfragment,24,55.1,57.1,SPREKER_C,nee,gelach in de achtergrond,"Nee, maar haar wel."
+final_testfragment,25,57.1,59.1,SPREKER_C,nee,rumoer,Ik ga mee.
+final_testfragment,26,59.1,61.1,SPREKER_A,nee,rumoer,Waarom?
+final_testfragment,27,61.1,63.1,SPREKER_C,nee,rumoer,Omdat ze mijn vriendin is.
+final_testfragment,28,63.1,65.1,SPREKER_A,nee,rumoer,Dat snap ik niet.
+final_testfragment,29,65.1,67.1,SPREKER_C,nee,rumoer,"Nee, omdat u zelf geen vrienden hebt."
+final_testfragment,30,79.1,81.1,SPREKER_A,nee,rumoer,Ga jij even achter Anita aan.
+final_testfragment,31,81.1,83.1,SPREKER_D,ja,ook weer een leerling die een zinnetje zegt,Iedereen lacht.
+final_testfragment,32,83.1,85.1,SPREKER_A,nee,,"Nee, het gaat erom dat ik haar even terug wil hebben."
+final_testfragment,33,85.1,87.1,SPREKER_A,nee,,Iedereen lacht.
+final_testfragment,34,87.1,89.1,SPREKER_A,nee,,Alsof dat een graadmeter is.
+final_testfragment,35,89.1,91.1,SPREKER_D,nee,,Ga even terughalen.
+final_testfragment,36,91.1,93.1,SPREKER_A,nee,,"Ja, haal maar terug."
+final_testfragment,37,93.1,95.1,SPREKER_A,nee,,"Dit is heel raar, toch?"
+final_testfragment,38,95.1,97.1,SPREKER_E,nee,ik kan zelf niet goed horen of dit een leerling is die eerder heeft gesproken,Ik vond het wel leuk aan je.
+final_testfragment,39,97.1,99.1,SPREKER_A,nee,,Ik snap het niet.
+final_testfragment,40,99.1,101.1,SPREKER_A,nee,,Daar komt ze.
+final_testfragment,41,101.1,103.1,SPREKER_A,nee,,"Anita, nee, niet Luna."
+final_testfragment,42,103.1,105.1,SPREKER_A,nee,,Luna wil ik niet terug.
+final_testfragment,43,105.1,107.1,SPREKER_A,nee,,Ik wil Anita terug.
+final_testfragment,44,107.1,109.1,SPREKER_A,nee,,Luna is weg.
+final_testfragment,45,109.1,111.1,SPREKER_C,nee,,Wat ga ik nou weer niet?
+final_testfragment,46,111.1,113.1,SPREKER_F,ja,"dit is luna, die uit de klas is gestuurd","Ik ben geen hond, wat denk jij?"
+final_testfragment,47,117.1,119.1,SPREKER_F,nee,gelach,Ga maar weg.
+final_testfragment,48,119.1,121.1,SPREKER_F,nee,niet helemaal exact getranscribeerd. Ze zegt: ik ben je fucking hond niet,Ben je geen hond?
+final_testfragment,49,121.1,123.1,SPREKER_A,nee,,"Nee, ik heb je verstaan."
+final_testfragment,50,123.1,125.1,SPREKER_A,nee,,Maar ik heb jou weggestuurd.
+final_testfragment,51,125.1,127.1,SPREKER_A,nee,,En Anita niet.
+final_testfragment,52,127.1,129.1,SPREKER_C,nee,,"Meneer, u heeft haar eruit gestuurd, toch?"
+final_testfragment,53,129.1,131.1,SPREKER_A,nee,,Ja.
+final_testfragment,54,131.1,133.1,SPREKER_C,nee,,Dus dan ga ik ook mee.
+final_testfragment,55,133.1,135.1,SPREKER_C,nee,,"En als ik terug ga, gaat zij ook terug."
+final_testfragment,56,135.1,137.1,SPREKER_A,nee,,Ik snap deze hele logica niet.
+final_testfragment,57,137.1,139.1,SPREKER_A,nee,,"Omdat jij vriendin bent van haar, ga jij ook weg."
+final_testfragment,58,139.1,141.1,SPREKER_A,nee,,Ga ook maar lekker weg dan.
+final_testfragment,59,141.1,143.1,SPREKER_C,nee,,Ja?
+final_testfragment,60,143.1,145.1,SPREKER_C,nee,,Waarom doet u het terug dan?
+final_testfragment,61,145.1,147.1,SPREKER_A,nee,,Dan snap ik het.
+final_testfragment,62,147.1,149.1,SPREKER_A,nee,,Dank u wel.
+final_testfragment,63,149.1,151.1,SPREKER_A,ja,anita praat erdoorheen,Je hebt een even lastig pakket nu als Luna zit.
+final_testfragment,64,151.1,153.1,SPREKER_A,nee,,Waar je niets hebt gedaan.
+final_testfragment,65,153.1,155.1,SPREKER_F,nee,,Een even lastig pakket.
+final_testfragment,66,155.1,157.1,SPREKER_F,nee,,Zoals ik zei.
+final_testfragment,67,157.1,159.1,SPREKER_F,nee,,Je bent een teringhond niet.
+final_testfragment,68,159.1,161.1,SPREKER_A,nee,,"Ja, maar hallo."
+final_testfragment,69,161.1,163.1,SPREKER_F,nee,,Wat fack?
+final_testfragment,70,163.1,165.1,SPREKER_F,nee,,Ik ben geen pakketje.
+final_testfragment,71,165.1,167.1,SPREKER_A,nee,,Ben je naar bed gestapt?
+final_testfragment,72,167.1,169.1,SPREKER_F,nee,,"Ja, best wel."
+final_testfragment,73,169.1,171.1,SPREKER_F,nee,,Jij volgens mij ook.
+final_testfragment,74,171.1,173.1,SPREKER_A,nee,,"Nee, ik niet."
+final_testfragment,75,173.1,175.1,SPREKER_F,nee,,Ik moet een sekkleven gaan zoeken.
+final_testfragment,76,175.1,177.1,SPREKER_A,nee,,"Oké, dag."
+final_testfragment,77,177.1,179.1,SPREKER_A,nee,,Dag.
+final_testfragment,78,179.1,181.1,SPREKER_A,nee,,Zoek maar een grasveld en ga er maar poepen.
+final_testfragment,79,181.1,183.1,SPREKER_A,nee,,Doei.
+final_testfragment,80,183.1,185.1,SPREKER_A,nee,,"Mensen, echt."
+final_testfragment,81,185.1,187.1,SPREKER_A,nee,,Wat is er vandaag aan de hand?
+final_testfragment,82,187.1,189.1,SPREKER_A,nee,,Iedereen lijkt een beetje geïnviteerd.
+final_testfragment,83,189.1,191.1,SPREKER_G,ja,ook weer een leerling die een zinnetje zegt,Dat er een bepaalde periode in de cyclus zit.
+final_testfragment,84,191.1,193.1,SPREKER_A,nee,rumoer,Ah!
+final_testfragment,85,193.1,195.1,SPREKER_A,nee,rumoer,Ik snap hem.
+final_testfragment,86,195.1,197.1,SPREKER_A,nee,rumoer,Cyclus.
+final_testfragment,87,199.1,201.1,SPREKER_A,nee,rumoer,Wat ga jij doen?
+final_testfragment,88,201.1,203.1,SPREKER_A,nee,rumoer,Jij blijft even zitten daar.
+final_testfragment,89,203.1,205.1,SPREKER_H,nee,ook weer een leerling die een zinnetje zegt,Luna is nu toch weg.
+final_testfragment,90,205.1,207.1,SPREKER_A,nee,deze weet ik niet zeker,"Nee, ja."
+final_testfragment,91,209.1,211.1,SPREKER_A,nee,rumoer,Rens.
+final_testfragment,92,211.1,213.1,SPREKER_H,nee,rumoer,"Peter, het is goed dat je het gaat laten."
+final_testfragment,93,213.1,215.1,SPREKER_A,nee,rumoer,"Nee, maar jij hoeft maar niet Peter."
+final_testfragment,94,215.1,217.1,SPREKER_A,nee,rumoer,Ik ben niet een meneer hoevenaars van jou.
+final_testfragment,95,217.1,219.1,SPREKER_A,nee,rumoer,Ik vind Rens even terug.
+final_testfragment,96,219.1,221.1,SPREKER_A,nee,rumoer,Ik ga niet in discussie met jou.
+final_testfragment,97,221.1,223.1,SPREKER_A,nee,rumoer,Ga ik met jou in discussie?
+final_testfragment,98,223.1,225.1,SPREKER_A,nee,rumoer,"Nee, ik ga niet met jou in discussie."
+final_testfragment,99,225.1,227.1,SPREKER_A,nee,rumoer,Ga ik even terug.
+final_testfragment,100,227.1,229.1,SPREKER_A,nee,rumoer,Anders kan je ook weg.
+final_testfragment,101,229.1,231.1,SPREKER_A,nee,rumoer,Wat is het verschil?
+final_testfragment,102,231.1,233.1,SPREKER_A,nee,rumoer,Het verschil is dat jij...
+final_testfragment,103,233.1,235.1,SPREKER_A,nee,rumoer,dat ik jij daar zit en niet daar.
+final_testfragment,104,235.1,237.1,SPREKER_H,nee,rumoer,Moet ik dat altijd alleen?
+final_testfragment,105,237.1,239.1,SPREKER_A,nee,rumoer,"Ja, dan heb je pech."
+final_testfragment,106,239.1,241.1,SPREKER_A,nee,rumoer,Ja.
+final_testfragment,107,241.1,243.1,SPREKER_A,nee,rumoer,"Rens, hup."
+final_testfragment,108,243.1,245.1,SPREKER_A,nee,rumoer,Dan kan je ook gaan.
+final_testfragment,109,245.1,247.1,SPREKER_A,nee,rumoer,"Ja, ga maar."
+final_testfragment,110,251.1,253.1,SPREKER_A,nee,rumoer,"Ja, maar dan."
+final_testfragment,111,253.1,255.1,SPREKER_A,nee,rumoer,"Als het zo moet, dan moet het zo."
+final_testfragment,112,257.1,259.1,SPREKER_A,nee,rumoer,"Zo stoer is het niet, Rens."
+final_testfragment,113,259.1,261.1,SPREKER_A,nee,rumoer,"Nee, je gaat naar Mini Mulder."
+final_testfragment,114,263.1,265.1,SPREKER_A,nee,rumoer,"Nee, nee."
+final_testfragment,115,265.1,267.1,SPREKER_A,nee,rumoer,Ja.
+final_testfragment,116,267.1,269.1,SPREKER_A,nee,rumoer,Oké.
+final_testfragment,117,269.1,271.1,SPREKER_A,nee,rumoer,"Dames en heren, hallo."
+final_testfragment,118,271.1,273.1,SPREKER_A,nee,rumoer,Ik wil even aandacht.
+final_testfragment,119,273.1,275.1,SPREKER_A,nee,rumoer,Hallo.
+final_testfragment,120,275.1,277.1,SPREKER_A,nee,rumoer,Oké.
+final_testfragment,121,277.1,279.1,SPREKER_A,nee,rumoer,Ja.
+final_testfragment,122,279.1,281.1,SPREKER_A,nee,rumoer,Dat is inderdaad een beetje de vreemde logica hier.
+final_testfragment,123,281.1,283.1,SPREKER_A,nee,rumoer,"Als ik Luna weg stuurde,"
+final_testfragment,124,283.1,285.1,SPREKER_A,nee,rumoer,gaat Anita weg.
+final_testfragment,125,285.1,287.1,SPREKER_I,nee,rumoer,"Nee, wij zijn een klant."
+final_testfragment,126,287.1,289.1,SPREKER_I,nee,rumoer,Wij zijn een bank.
+final_testfragment,127,289.1,291.1,SPREKER_J,nee,rumoer,"Als ik daar waarschijnlijk ga zitten,"
+final_testfragment,128,291.1,293.1,SPREKER_J,nee,rumoer,moet ik daar ook even sturen.
+final_testfragment,129,295.1,297.1,SPREKER_A,nee,rumoer,"Ja, dan heb je een grote kans van ja."
+final_testfragment,130,297.1,299.1,SPREKER_J,nee,rumoer,Ik denk dat jij vroeg kan komen.
+final_testfragment,131,299.1,301.1,SPREKER_A,nee,rumoer,"Op die stoel heerst een vroeg, inderdaad."
+final_testfragment,132,301.1,303.1,SPREKER_A,nee,rumoer,Ga ook maar weg.
+final_testfragment,133,303.1,305.1,SPREKER_A,nee,rumoer,"Nee, nee, nee."
+final_testfragment,134,305.1,307.1,SPREKER_A,nee,rumoer,"Oké, stoppen, jongens."
+final_testfragment,135,307.1,309.1,SPREKER_A,nee,rumoer,"Alsjeblieft, dit loopt uit de hand."
+final_testfragment,136,309.1,311.1,SPREKER_K,nee,dit is een hele groep. deze zin mag eruit blijven,"Abonneer, like en share."
