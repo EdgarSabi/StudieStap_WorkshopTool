@@ -1,0 +1,13 @@
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,speaker_role,overlap,intelligible,note,transcript
+testaudio1_fragment,0,0.0,2.1,SPREKER_A,leerling,nee,nee,,Dit is mijn presentatie.
+testaudio1_fragment,1,2.2,4.0,GEEN,GEEN,,,,APPLAUS
+testaudio1_fragment,2,4.1,9.4,SPREKER_B,docent,nee,nee,,"Oké, heel mooi."
+testaudio1_fragment,3,9.5,10.47,SPREKER_B,docent,nee,nee,,Dit ben jij.
+testaudio1_fragment,3,10.6,11.6,SPREKER_A,leerling,nee,nee,,Dit ben ik.
+testaudio1_fragment,4,11.8,15.6,SPREKER_B,docent,nee,nee,,Zit er ook nog in je karaktereigenschap iets met opruimen?
+testaudio1_fragment,5,14.8,20.3,SPREKER_A,leerling,ja,nee,,Nee.
+testaudio1_fragment,5,15.2,20.3,SPREKER_B,docent,nee,nee,,Dit is een heel originele manier om te laten zien wie je bent.
+testaudio1_fragment,6,20.4,22.2,SPREKER_B,docent,nee,nee,,Er zitten alle ingrediënten in.
+testaudio1_fragment,6,22.1,24.5,SPREKER_A,leerling,nee,nee,,Wie wil er nog opeten? Ja?
+testaudio1_fragment,7,24.6,29.5,SPREKER_B,docent,nee,nee,,"Floris, wil jij een stukje van Maxime, dan proef je de ware Maxime."
+testaudio1_fragment,8,29.5,30.6,SPREKER_B,docent,nee,nee,,Bitter.

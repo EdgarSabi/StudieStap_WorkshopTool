@@ -1,0 +1,33 @@
+{
+  "completed_at_utc": "2026-10-09T14:57:21.504652+00:00",
+  "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool",
+  "commands": [
+    {
+      "command": "python -B Validatie_fase1_stap2_2026-10-09\\validate.py",
+      "returncode": 0
+    },
+    {
+      "command": "python -B Validatie_fase1_stap2_2026-10-09\\falsification.py > Validatie_fase1_stap2_2026-10-09\\falsification.log",
+      "returncode": 0,
+      "note": "Tweemaal: tweede run voert tevens daadwerkelijke alignment uit in V03."
+    },
+    {
+      "command": "python -B Validatie_fase1_stap2_2026-10-09\\supplemental.py",
+      "returncode": 0
+    },
+    {
+      "command": "python -B Data-analysis\\Audit\\scripts\\validate_json.py 'Validatie_fase1_stap2_2026-10-09/teruggevonden_bewijs/asr/*.json' > Validatie_fase1_stap2_2026-10-09\\json_herhaling.log",
+      "returncode": 0
+    },
+    {
+      "command": "python -B Validatie_fase1_stap2_2026-10-09\\build_report.py",
+      "returncode": 0
+    },
+    {
+      "command": "python -B Validatie_fase1_stap2_2026-10-09\\finalize.py",
+      "returncode": 0
+    }
+  ],
+  "original_changes": [],
+  "final_git_status": " M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_final_testfragment.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_template.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv\n M Data-analysis/Notebooks/03-transcription-evaluation.ipynb\n?? Audit_fase1_2026-10-09/\n?? Data-analysis/Audit/\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv\n?? Validatie_fase1_stap2/\n?? Validatie_fase1_stap2_2026-10-09/\n?? manifest_omgeving_chatgpt.json\n?? omgeving_chatgpt.md\n"
+}

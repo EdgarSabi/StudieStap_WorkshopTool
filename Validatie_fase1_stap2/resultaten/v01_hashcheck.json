@@ -1,0 +1,56 @@
+{
+ "chatgpt_manifest": {
+  "n": 102,
+  "missing": [],
+  "diff": [],
+  "ok": 102
+ },
+ "claude_manifest_columns": [
+  "pad",
+  "bytes",
+  "sha256",
+  "git_status"
+ ],
+ "claude_manifest": {
+  "n": 117,
+  "missing": [],
+  "diff": [],
+  "ok": 117
+ },
+ "zip_sums_vs_extracted": {
+  "bad": [],
+  "ok": 33,
+  "badformat": []
+ },
+ "zip_vs_repo": {
+  "Data-analysis\\Audit\\edge_results.json": true,
+  "Data-analysis\\Audit\\synth_results.json": true,
+  "Data-analysis\\Audit\\wer_results.json": true,
+  "Data-analysis\\Audit\\scripts\\der.py": true,
+  "Data-analysis\\Audit\\scripts\\edge_tests.py": true,
+  "Data-analysis\\Audit\\scripts\\extract_nb.py": true,
+  "Data-analysis\\Audit\\scripts\\run_asr_baseline.py": true,
+  "Data-analysis\\Audit\\scripts\\run_synth.py": true,
+  "Data-analysis\\Audit\\scripts\\validate_json.py": true,
+  "Data-analysis\\Audit\\scripts\\wer_eval.py": true,
+  "Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio1_fragment.csv": true,
+  "Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio2_fragment.csv": true,
+  "Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio4_fragment.csv": true,
+  "Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio5_fragment.csv": true,
+  "Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio7_fragment.csv": true
+ },
+ "hashes_referenties_vs_repo": {
+  "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv": true,
+  "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv": true,
+  "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv": true,
+  "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv": true,
+  "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv": true,
+  "Data-analysis/src/test-files/testaudio1_fragment.mp3": true,
+  "Data-analysis/src/test-files/testaudio2_fragment.mp3": true,
+  "Data-analysis/src/test-files/testaudio4_fragment.mp3": true,
+  "Data-analysis/src/test-files/testaudio5_fragment.mp3": true,
+  "Data-analysis/src/test-files/testaudio7_fragment.mp3": true,
+  "Data-analysis/Notebooks/03-transcription-evaluation.ipynb": true,
+  "Data-analysis/Notebooks/05-fixing-diarization-problems.ipynb": true
+ }
+}

@@ -1,0 +1,309 @@
+{
+ "silence_30s.wav": {
+  "n_segments": 0,
+  "text": "",
+  "flags": [],
+  "no_speech": [],
+  "avg_logprob": [],
+  "first_start": [],
+  "secs": 0.3
+ },
+ "speech_8khz_mono.wav": {
+  "n_segments": 18,
+  "text": "Vier, Rick. Zegt u het maar. Ja, kijk maar even in je schrift op de vier. Ruud heeft een brommer. De tekst gaat toch niet over brommer, of wel? Nee, maar het gaat toch niet om de brommer. Maar Ruud heeft een probleem, dat is de vraag. Wat voor probleem heeft-ie? Met zijn vrouw. Nee, klopt niet. Ik b",
+  "flags": [
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   []
+  ],
+  "no_speech": [
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23,
+   0.23
+  ],
+  "avg_logprob": [
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24
+  ],
+  "first_start": [
+   [
+    0.0,
+    2.0
+   ],
+   [
+    2.0,
+    4.0
+   ],
+   [
+    4.0,
+    5.0
+   ],
+   [
+    5.0,
+    7.0
+   ],
+   [
+    7.0,
+    9.0
+   ],
+   [
+    9.0,
+    11.0
+   ]
+  ],
+  "secs": 31.4,
+  "WER_vs_testaudio2_GT": 0.102
+ },
+ "speech_after_15s_silence.wav": {
+  "n_segments": 9,
+  "text": "Vier, Rick. Zegt u het maar. Ja, kijk maar even in je schrift op de vier. Ruud heeft een brommer. De tekst gaat toch niet over brommer, of wel? Nee, maar het gaat ook niet om de brommer. Maar Ruud heeft een probleem, dat is de vraag. Wat voor probleem heeft-ie? Met zijn vrouw. Nee, klopt niet.",
+  "flags": [
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   []
+  ],
+  "no_speech": [
+   0.12,
+   0.12,
+   0.12,
+   0.12,
+   0.12,
+   0.12,
+   0.12,
+   0.12,
+   0.12
+  ],
+  "avg_logprob": [
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24,
+   -0.24
+  ],
+  "first_start": [
+   [
+    14.8,
+    16.8
+   ],
+   [
+    16.8,
+    18.8
+   ],
+   [
+    18.8,
+    19.8
+   ],
+   [
+    19.8,
+    21.8
+   ],
+   [
+    21.8,
+    23.8
+   ],
+   [
+    23.8,
+    25.8
+   ]
+  ],
+  "secs": 13.1,
+  "WER_vs_testaudio2_GT": 0.508
+ },
+ "speech_pinknoise_a.wav": {
+  "n_segments": 19,
+  "text": "Vier, Rick. Zegt u het maar. Ja, kijk maar even in je schrift. De tekst gaat toch niet over bronnen, of wel? Nee, maar het gaat toch niet om de bronnen. Maar Ruud heeft een probleem, dat is de vraag. Wat is het probleem? Heeft-ie? Ja, met zijn vrouw. Nee, klopt niet. Ik bedoel, met zijn hond. Ja, je",
+  "flags": [
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   [],
+   []
+  ],
+  "no_speech": [
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46,
+   0.46
+  ],
+  "avg_logprob": [
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25,
+   -0.25
+  ],
+  "first_start": [
+   [
+    0.0,
+    2.0
+   ],
+   [
+    2.0,
+    4.0
+   ],
+   [
+    4.0,
+    6.0
+   ],
+   [
+    6.0,
+    8.0
+   ],
+   [
+    8.0,
+    10.0
+   ],
+   [
+    10.0,
+    12.0
+   ]
+  ],
+  "secs": 34.8,
+  "WER_vs_testaudio2_GT": 0.229
+ },
+ "speech_pinknoise_b.wav": {
+  "n_segments": 17,
+  "text": "Vier. Zegt u het maar. Jij krijgt me even in je schip of vieren. De Ruud heeft een bronnen. Dat betekent dat gaat er niet over bronnen, of wel? Nee, maar het gaat er niet over bronnen. De Ruud heeft een probleem. Dat is de vraag. Wat is het probleem dat hij heeft? Ja, met zijn vrouw. Nee, klopt. Ik ",
+  "flags": [
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ],
+   [
+    "high_no_speech_prob"
+   ]
+  ],
+  "no_speech": [
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63,
+   0.63
+  ],
+  "avg_logprob": [
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37,
+   -0.37
+  ],
+  "first_start": [
+   [
+    0.0,
+    4.0
+   ],
+   [
+    4.0,
+    5.0
+   ],
+   [
+    5.0,
+    7.0
+   ],
+   [
+    7.0,
+    8.0
+   ],
+   [
+    8.0,
+    10.0
+   ],
+   [
+    10.0,
+    12.0
+   ]
+  ],
+  "secs": 30.7,
+  "WER_vs_testaudio2_GT": 0.441
+ },
+ "whitenoise_30s.wav": {
+  "n_segments": 0,
+  "text": "",
+  "flags": [],
+  "no_speech": [],
+  "avg_logprob": [],
+  "first_start": [],
+  "secs": 0.1
+ }
+}

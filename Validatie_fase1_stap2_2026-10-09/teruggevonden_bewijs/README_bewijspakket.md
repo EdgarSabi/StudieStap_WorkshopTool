@@ -1,0 +1,3 @@
+# Bewijspakket StudieStap fase-1-audit (Claude)
+Samengesteld NA de audit, zonder nieuwe transcriptie/diarizatie. Originele, tijdens de audit geschreven bestanden: nb_hyp.json, asr/*.json, asr_log.txt, wer_results.json, synth_results.json, edge_results.json (mtime 2026-10-09 13:28-13:36), taak-outputs in tasks/. Reconstructies/samenvattingen (gemarkeerd): commando_overzicht_RECONSTRUCTIE.md, hashes_referenties.md, instellingen.md, SHA256SUMS.txt (nu berekend).
+Ontbrekend/niet meer bestaand: de eerste (cp1252) versie van nb_hyp.json; eerdere tussenversies van wer_results.json; een bestand met de DER-uitvoer; shell-history; invoerbestanden Data-local/processed (bestonden nooit in deze omgeving). De notebooks zelf zitten niet in het zip (alleen hun hash).

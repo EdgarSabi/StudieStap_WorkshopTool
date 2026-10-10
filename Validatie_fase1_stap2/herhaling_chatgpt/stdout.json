@@ -1,0 +1,215 @@
+{
+  "tests": [
+    {
+      "id": "T01",
+      "geslaagd": false
+    },
+    {
+      "id": "T02",
+      "geslaagd": true
+    },
+    {
+      "id": "T03",
+      "geslaagd": true
+    },
+    {
+      "id": "T04",
+      "geslaagd": false
+    },
+    {
+      "id": "T05",
+      "geslaagd": false
+    },
+    {
+      "id": "T06",
+      "geslaagd": true
+    },
+    {
+      "id": "T07",
+      "geslaagd": true
+    },
+    {
+      "id": "T08",
+      "geslaagd": false
+    },
+    {
+      "id": "T09",
+      "geslaagd": true
+    },
+    {
+      "id": "T10",
+      "geslaagd": false
+    },
+    {
+      "id": "T11",
+      "geslaagd": false
+    },
+    {
+      "id": "T12",
+      "geslaagd": false
+    },
+    {
+      "id": "T13",
+      "geslaagd": true
+    },
+    {
+      "id": "T14",
+      "geslaagd": true
+    },
+    {
+      "id": "T15",
+      "geslaagd": false
+    },
+    {
+      "id": "T16",
+      "geslaagd": false
+    },
+    {
+      "id": "T17",
+      "geslaagd": true
+    },
+    {
+      "id": "T18",
+      "geslaagd": false
+    },
+    {
+      "id": "T19",
+      "geslaagd": true
+    },
+    {
+      "id": "T20",
+      "geslaagd": false
+    },
+    {
+      "id": "T21",
+      "geslaagd": false
+    },
+    {
+      "id": "T22",
+      "geslaagd": false
+    },
+    {
+      "id": "T23",
+      "geslaagd": false
+    },
+    {
+      "id": "T24",
+      "geslaagd": false
+    },
+    {
+      "id": "T25",
+      "geslaagd": false
+    },
+    {
+      "id": "T26",
+      "geslaagd": false
+    },
+    {
+      "id": "T27",
+      "geslaagd": false
+    },
+    {
+      "id": "T28",
+      "geslaagd": false
+    },
+    {
+      "id": "T29",
+      "geslaagd": false
+    },
+    {
+      "id": "T30",
+      "geslaagd": false
+    },
+    {
+      "id": "T31",
+      "geslaagd": false
+    },
+    {
+      "id": "T32",
+      "geslaagd": false
+    }
+  ],
+  "notebooks": [
+    {
+      "path": "01-exploring_data.ipynb",
+      "code_cells": 5,
+      "first_failure": {
+        "cell": 5,
+        "error_type": "FileNotFoundError",
+        "message": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\raw\\\\Breinschade_Uitleg_Sara.txt'"
+      },
+      "executed_cells": [
+        3
+      ]
+    },
+    {
+      "path": "02-benchmarking.ipynb",
+      "code_cells": 22,
+      "first_failure": {
+        "cell": 6,
+        "error_type": "IndexError",
+        "message": "list index out of range"
+      },
+      "executed_cells": [
+        2,
+        3,
+        5
+      ]
+    },
+    {
+      "path": "03-transcription-evaluation.ipynb",
+      "code_cells": 9,
+      "first_failure": {
+        "cell": 12,
+        "error_type": "FileNotFoundError",
+        "message": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\diarization\\\\testaudio1_fragment_diarized.json'"
+      },
+      "executed_cells": [
+        5,
+        7,
+        9
+      ]
+    },
+    {
+      "path": "04-diarization.ipynb",
+      "code_cells": 11,
+      "first_failure": {
+        "cell": 7,
+        "error_type": "FileNotFoundError",
+        "message": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\speaker_recognition\\\\pyannote_teacher_similarity.csv'"
+      },
+      "executed_cells": [
+        6
+      ]
+    },
+    {
+      "path": "05-fixing-diarization-problems.ipynb",
+      "code_cells": 7,
+      "first_failure": {
+        "cell": 3,
+        "error_type": "FileNotFoundError",
+        "message": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\docent_recognition\\\\testaudio6_fragment_diarized_turns_docent_roles_BEFORE.json'"
+      },
+      "executed_cells": []
+    },
+    {
+      "path": "06-diarization-hyperparameter-tuning.ipynb",
+      "code_cells": 10,
+      "first_failure": null,
+      "executed_cells": [
+        3,
+        4,
+        5,
+        6,
+        8,
+        9,
+        12,
+        15,
+        16,
+        17
+      ]
+    }
+  ],
+  "json_count": 62,
+  "python_count": 35
+}

@@ -1,0 +1,293 @@
+[
+  {
+    "id": "V01",
+    "question": "Is MAIN een docentlabel?",
+    "hypothesis": "Claude E1 verwacht docent=MAIN, maar functiecontract is spreektijdrang.",
+    "input": [
+      [
+        0,
+        10,
+        "docent"
+      ],
+      [
+        10,
+        40,
+        "leerling"
+      ]
+    ],
+    "expected": {
+      "docent": "OTHER_SPEAKER_1",
+      "leerling": "MAIN_SPEAKER"
+    },
+    "actual": {
+      "map": {
+        "leerling": "MAIN_SPEAKER",
+        "docent": "OTHER_SPEAKER_1"
+      },
+      "inventory": [
+        {
+          "raw": "leerling",
+          "label": "MAIN_SPEAKER",
+          "talk_seconds": 30.0,
+          "share": 0.75
+        },
+        {
+          "raw": "docent",
+          "label": "OTHER_SPEAKER_1",
+          "talk_seconds": 10.0,
+          "share": 0.25
+        }
+      ],
+      "main_speaker_uncertain": false
+    },
+    "error": null,
+    "conclusion": "E1 toont de gedocumenteerde rangschikking; geen fout in rolherkenning.",
+    "limitation": "Rollen in synthetische invoer bekend; geen embeddings."
+  },
+  {
+    "id": "V02",
+    "question": "Verbergt alignment korte simultane spraak?",
+    "hypothesis": "Ook echte overlap kan onder de vlagdrempel verdwijnen.",
+    "input": [
+      [
+        0,
+        10,
+        "A"
+      ],
+      [
+        9,
+        10,
+        "B"
+      ]
+    ],
+    "expected": {
+      "overlap": true,
+      "second_speaker_activity_seconds": 1
+    },
+    "actual": {
+      "start": 0.0,
+      "end": 10.0,
+      "speaker": "A",
+      "text": "x",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": "A",
+      "speaker_confidence": 0.9091,
+      "overlap": false,
+      "uncertain_assignment": false
+    },
+    "error": null,
+    "conclusion": "Werkelijke overlap is 1 s, maar vlag is False. T03/E5 generaliseren niet naar alle overlap.",
+    "limitation": "Pure geometrie; geen modeltest."
+  },
+  {
+    "id": "V03",
+    "question": "Is segment-DER altijd een ondergrens voor raw-DER?",
+    "hypothesis": "Er is geen gegarandeerde ordening.",
+    "input": {
+      "ref": "A 0–1; B 1–2",
+      "raw_bad": "X+Y 0–1, daarna niets",
+      "segment": "X 0–2"
+    },
+    "expected": {
+      "raw_bad_der": 1.0,
+      "raw_good_der": 0.0,
+      "same_segment_der": 0.5
+    },
+    "actual": {
+      "raw_bad_der": 1.0,
+      "raw_good_der": 0.0,
+      "same_segment_der": 0.5
+    },
+    "error": null,
+    "conclusion": "Segmentrepresentatie kan DER verhogen of verlagen; ondergrensclaim weerlegd.",
+    "limitation": "Synthetisch; toont geen richting van bias in echte fragmenten."
+  },
+  {
+    "id": "V04",
+    "question": "Bewaart Claude DER twee identieke overlapintervallen?",
+    "hypothesis": "Zonder track-ID wordt eerste spreker overschreven.",
+    "input": "A en B beide 0–1",
+    "expected": {
+      "labels": [
+        "A",
+        "B"
+      ],
+      "tracks": 2
+    },
+    "actual": {
+      "tracks": [
+        [
+          "[ 00:00:00.000 -->  00:00:01.000]",
+          "_",
+          "B"
+        ]
+      ],
+      "labels": [
+        "B"
+      ]
+    },
+    "error": null,
+    "conclusion": "ref_ann verliest een spreker bij identieke intervallen; overlap=ja alleen voegt evenmin een tweede track toe.",
+    "limitation": "Dit tegenvoorbeeld bewijst niet dat alle huidige CSV-rijen identiek overlappen."
+  },
+  {
+    "id": "V05",
+    "question": "Zijn opgeslagen WER/CER aritmetisch juist?",
+    "hypothesis": "Onafhankelijke edit distance geeft dezelfde cijfers.",
+    "input": "5 teruggevonden ASR-JSON + huidige hashgelijke CSV",
+    "expected": "WER afgerond 0.032/0/0/0.123/0.031; CER 0.035/0/0/0.100/0.022",
+    "actual": {
+      "testaudio1_fragment": {
+        "words": 62,
+        "word_edits": 2,
+        "WER": 0.03225806451612903,
+        "char_edits": 11,
+        "CER": 0.035256410256410256,
+        "jiwer_WER": 0.03225806451612903,
+        "jiwer_CER": 0.035256410256410256,
+        "same_intervals": 6,
+        "rows": 12,
+        "end_reference": 30.6,
+        "duration": 29.9765625
+      },
+      "testaudio2_fragment": {
+        "words": 118,
+        "word_edits": 0,
+        "WER": 0.0,
+        "char_edits": 0,
+        "CER": 0.0,
+        "jiwer_WER": 0.0,
+        "jiwer_CER": 0.0,
+        "same_intervals": 19,
+        "rows": 19,
+        "end_reference": 30.0,
+        "duration": 30.0026875
+      },
+      "testaudio4_fragment": {
+        "words": 420,
+        "word_edits": 0,
+        "WER": 0.0,
+        "char_edits": 0,
+        "CER": 0.0,
+        "jiwer_WER": 0.0,
+        "jiwer_CER": 0.0,
+        "same_intervals": 87,
+        "rows": 87,
+        "end_reference": 120.0,
+        "duration": 120.0
+      },
+      "testaudio5_fragment": {
+        "words": 154,
+        "word_edits": 19,
+        "WER": 0.12337662337662338,
+        "char_edits": 71,
+        "CER": 0.0997191011235955,
+        "jiwer_WER": 0.12337662337662338,
+        "jiwer_CER": 0.0997191011235955,
+        "same_intervals": 12,
+        "rows": 20,
+        "end_reference": 46.1,
+        "duration": 45.989625
+      },
+      "testaudio7_fragment": {
+        "words": 196,
+        "word_edits": 6,
+        "WER": 0.030612244897959183,
+        "char_edits": 21,
+        "CER": 0.02151639344262295,
+        "jiwer_WER": 0.030612244897959183,
+        "jiwer_CER": 0.02151639344262295,
+        "same_intervals": 38,
+        "rows": 38,
+        "end_reference": 62.0,
+        "duration": 64.0
+      }
+    },
+    "error": null,
+    "conclusion": "Rekenkundige replicatie; geen ASR-run en geen onafhankelijkheid van annotaties bewezen.",
+    "limitation": "Normalisatie gelijk gehouden voor vergelijking; spreker- en tijdcorrectheid niet getoetst."
+  },
+  {
+    "id": "V06",
+    "question": "Heeft to_wav contractuele plicht elke WAV te converteren?",
+    "hypothesis": "Docstring belooft conversie van non-WAV; bestaand WAV blijft geldig pad.",
+    "input": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Audit_fase1_2026-10-09\\synthetic_48_stereo.wav",
+    "expected": "zelfde pad (gedocumenteerd non-WAV contract)",
+    "actual": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Audit_fase1_2026-10-09\\synthetic_48_stereo.wav",
+    "error": null,
+    "conclusion": "Claude E16 is geen bewijs van contractbreuk; formaatcompatibiliteit is aparte vraag (T18).",
+    "limitation": "Geen backendrun of interne resampling."
+  },
+  {
+    "id": "V07",
+    "question": "Kan cache modelconfig beoordelen?",
+    "hypothesis": "Helpers hebben geen modelconfigargument.",
+    "input": "x.json met base; aanvraag medium",
+    "expected": "cache moet modelmismatch onderscheiden",
+    "actual": {
+      "cached": true,
+      "signature": "(audio_path: pathlib.Path, processed_dir: pathlib.Path) -> bool",
+      "stored_model": "base",
+      "requested_model": "medium"
+    },
+    "error": null,
+    "conclusion": "Helpers tonen bestaan-only cache; CLI-inspectie bevestigt check vóór modelconstructie.",
+    "limitation": "Geen model aangeroepen; verzoek medium is scenario, niet CLI-inference."
+  },
+  {
+    "id": "V08",
+    "question": "Bewijst T07 dat elk bronsegment exact eenmaal behouden is?",
+    "hypothesis": "Een telling alleen kan duplicatie missen.",
+    "input": "Fake preprocessing levert [2,1,1] maar herhaalt alleen eerste bron",
+    "expected": "T07 moet False geven bij gedupliceerde/ontbrekende bronnen",
+    "actual": {
+      "actual": [
+        [
+          {
+            "fake": "duplicated source"
+          },
+          {
+            "fake": "duplicated source"
+          },
+          {
+            "fake": "duplicated source"
+          }
+        ],
+        true
+      ],
+      "duplicate_source_indices": [
+        0,
+        0,
+        0,
+        0
+      ]
+    },
+    "error": null,
+    "conclusion": "T07 blijft True bij vier kopieën van bron 0; oorspronkelijke test is voor bronbehoud onvolledig.",
+    "limitation": "Mutatie van afzonderlijke testdouble, geen originele bestanden gewijzigd."
+  },
+  {
+    "id": "V09",
+    "question": "Komt teruggevonden nb_hyp overeen met huidige opgeslagen notebookuitvoer?",
+    "hypothesis": "Parser herhaalt dezelfde tabellen.",
+    "input": "notebook 03/05 HTML + extract_nb.py",
+    "expected": "inhoud gelijk",
+    "actual": {
+      "equal": true,
+      "counts": {
+        "testaudio1": 5,
+        "testaudio2": 19,
+        "testaudio5": 20,
+        "testaudio6_before": 39,
+        "testaudio6_after": 39,
+        "testaudio7": 26
+      }
+    },
+    "error": null,
+    "conclusion": "Toetst extractie en koppeling aan huidige snapshot; geen notebookbrondata/modelrun.",
+    "limitation": "Historische invoerhash bij oorspronkelijke run ontbreekt."
+  }
+]

@@ -1,0 +1,62 @@
+{
+ "ground_truth_testaudio2_fragment.csv": {
+  "head_columns": [
+   "fragment",
+   "turn_index",
+   "start_seconds",
+   "end_seconds",
+   "speaker_id",
+   "overlap",
+   "note",
+   "transcript_hint"
+  ],
+  "worktree_columns": [
+   "fragment",
+   "turn_index",
+   "start_seconds",
+   "end_seconds",
+   "speaker_id",
+   "speaker_role",
+   "overlap",
+   "transcript",
+   "intelligible",
+   "note"
+  ],
+  "rows": [
+   19,
+   19
+  ],
+  "text_hint_equals_transcript": 19,
+  "time_speaker_overlap_equal": 19
+ },
+ "ground_truth_testaudio4_fragment.csv": {
+  "head_columns": [
+   "fragment",
+   "turn_index",
+   "start_seconds",
+   "end_seconds",
+   "speaker_id",
+   "overlap",
+   "note",
+   "transcript_hint"
+  ],
+  "worktree_columns": [
+   "fragment",
+   "turn_index",
+   "start_seconds",
+   "end_seconds",
+   "speaker_id",
+   "speaker_role",
+   "overlap",
+   "intelligible",
+   "note",
+   "transcript"
+  ],
+  "rows": [
+   87,
+   87
+  ],
+  "text_hint_equals_transcript": 87,
+  "time_speaker_overlap_equal": 87
+ }
+}

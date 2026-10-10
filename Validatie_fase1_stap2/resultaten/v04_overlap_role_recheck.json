@@ -1,0 +1,85 @@
+{
+ "T9_testaudio2": {
+  "any_time_overlap": {
+   "flagged": 5,
+   "TP": 1,
+   "FP": 4,
+   "FN_gt_rows": 1
+  },
+  "majority>0.5": {
+   "flagged": 5,
+   "TP": 1,
+   "FP": 4,
+   "FN_gt_rows": 1
+  },
+  "gt_rows_ja": 2,
+  "n_hyp_segments": 19
+ },
+ "T9_testaudio5": {
+  "any_time_overlap": {
+   "flagged": 3,
+   "TP": 1,
+   "FP": 2,
+   "FN_gt_rows": 3
+  },
+  "majority>0.5": {
+   "flagged": 3,
+   "TP": 1,
+   "FP": 2,
+   "FN_gt_rows": 3
+  },
+  "gt_rows_ja": 4,
+  "n_hyp_segments": 20
+ },
+ "T9_testaudio7": {
+  "any_time_overlap": {
+   "flagged": 14,
+   "TP": 4,
+   "FP": 10,
+   "FN_gt_rows": 1
+  },
+  "majority>0.5": {
+   "flagged": 14,
+   "TP": 4,
+   "FP": 10,
+   "FN_gt_rows": 1
+  },
+  "gt_rows_ja": 5,
+  "n_hyp_segments": 26
+ },
+ "T10_testaudio7_alleen_overlap_nee": {
+  "docent": {
+   "DOCENT": 31.0,
+   "ONZEKER": 6.0,
+   "OTHER": 6.0
+  },
+  "leerling": {
+   "ONZEKER": 5.0,
+   "OTHER": 6.0,
+   "DOCENT": 2.0
+  }
+ },
+ "T10_testaudio7_alle_rijen": {
+  "docent": {
+   "DOCENT": 31.0,
+   "ONZEKER": 7.0,
+   "OTHER": 7.0
+  },
+  "leerling": {
+   "ONZEKER": 5.0,
+   "OTHER": 10.0,
+   "DOCENT": 2.0
+  }
+ },
+ "T10b_diar_label_per_gt_role_s": {
+  "docent": {
+   "MAIN_SPEAKER": 43.0,
+   "OTHER_SPEAKER_1": 2.0
+  },
+  "leerling": {
+   "MAIN_SPEAKER": 8.0,
+   "OTHER_SPEAKER_1": 8.0,
+   "None": 1.0
+  }
+ }
+}

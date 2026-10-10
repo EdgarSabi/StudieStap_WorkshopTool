@@ -1,0 +1,69 @@
+
+=== Stap 1/4: transcriptie ===
+
+=== Stap 2/4: diarisatie ===
+
+=== Stap 3/4: preprocessing ===
+
+=== Stap 4/4: docentherkenning ===
+
+Klaar. Eindresultaat (spreekbeurten + docentrol):
+  C:\Users\School\Projects\StudieStap_WorkshopTool\Data-local\processed\docent_recognition\testaudio1_fragment_diarized_turns_docent_roles.json
+
+=== Stap 1/4: transcriptie ===
+
+=== Stap 2/4: diarisatie ===
+
+=== Stap 3/4: preprocessing ===
+
+=== Stap 4/4: docentherkenning ===
+
+Klaar. Eindresultaat (spreekbeurten + docentrol):
+  C:\Users\School\Projects\StudieStap_WorkshopTool\Data-local\processed\docent_recognition\testaudio1_fragment_diarized_turns_docent_roles.json
+
+=== Stap 1/4: transcriptie ===
+
+=== Stap 2/4: diarisatie ===
+
+=== Stap 3/4: preprocessing ===
+
+=== Stap 4/4: docentherkenning ===
+
+Klaar. Eindresultaat (spreekbeurten + docentrol):
+  C:\Users\School\Projects\StudieStap_WorkshopTool\Data-local\processed\docent_recognition\testaudio1_fragment_diarized_turns_docent_roles.json
+
+=== Stap 1/4: transcriptie ===
+
+=== Stap 2/4: diarisatie ===
+
+=== Stap 3/4: preprocessing ===
+
+=== Stap 4/4: docentherkenning ===
+
+Klaar. Eindresultaat (spreekbeurten + docentrol):
+  C:\Users\School\Projects\StudieStap_WorkshopTool\Data-local\processed\docent_recognition\testaudio1_fragment_diarized_turns_docent_roles.json
+test_input_turns_not_mutated (tests.test_docent_recognition.TestExistingMetadataPreserved.test_input_turns_not_mutated) ... ok
+test_metadata_present_on_docent_result (tests.test_docent_recognition.TestExistingMetadataPreserved.test_metadata_present_on_docent_result) ... ok
+test_metadata_present_on_onzeker_result (tests.test_docent_recognition.TestExistingMetadataPreserved.test_metadata_present_on_onzeker_result) ... ok
+test_never_reorders_or_drops_turns (tests.test_docent_recognition.TestExistingMetadataPreserved.test_never_reorders_or_drops_turns) ... ok
+test_clip_too_short_is_onzeker_without_calling_embedding (tests.test_docent_recognition.TestOtherRulesUnchanged.test_clip_too_short_is_onzeker_without_calling_embedding) ... ok
+test_embedding_failure_is_onzeker (tests.test_docent_recognition.TestOtherRulesUnchanged.test_embedding_failure_is_onzeker) ... ok
+test_threshold_is_configurable_and_unchanged_default (tests.test_docent_recognition.TestOtherRulesUnchanged.test_threshold_is_configurable_and_unchanged_default) ... ok
+test_overlap_false_gives_no_overlap_warning (tests.test_docent_recognition.TestOverlapNoLongerBlocksRecognition.test_overlap_false_gives_no_overlap_warning)
+Sanity check: the overlap caution must only appear when overlap ... ok
+test_overlap_true_still_recorded_as_a_warning_in_the_note (tests.test_docent_recognition.TestOverlapNoLongerBlocksRecognition.test_overlap_true_still_recorded_as_a_warning_in_the_note) ... ok
+test_overlap_true_with_clear_high_similarity_gives_docent (tests.test_docent_recognition.TestOverlapNoLongerBlocksRecognition.test_overlap_true_with_clear_high_similarity_gives_docent) ... ok
+test_overlap_true_with_clear_low_similarity_gives_other (tests.test_docent_recognition.TestOverlapNoLongerBlocksRecognition.test_overlap_true_with_clear_low_similarity_gives_other) ... ok
+test_uncertain_assignment_true_forces_onzeker_without_embedding (tests.test_docent_recognition.TestUncertainAssignmentAlwaysBlocks.test_uncertain_assignment_true_forces_onzeker_without_embedding)
+Rule 1: uncertain_assignment=True -> ONZEKER, and the embedding ... ok
+test_uncertain_assignment_true_wins_even_if_overlap_is_also_true (tests.test_docent_recognition.TestUncertainAssignmentAlwaysBlocks.test_uncertain_assignment_true_wins_even_if_overlap_is_also_true) ... ok
+test_all_four_steps_still_run_in_order (tests.test_run_docent_pipeline.TestForceFlagPerStep.test_all_four_steps_still_run_in_order) ... ok
+test_force_flag_does_not_reach_preprocessing (tests.test_run_docent_pipeline.TestForceFlagPerStep.test_force_flag_does_not_reach_preprocessing)
+The actual bug: preprocessing.py doesn't accept --force, so the ... ok
+test_force_flag_reaches_transcription_diarization_and_docent_recognition (tests.test_run_docent_pipeline.TestForceFlagPerStep.test_force_flag_reaches_transcription_diarization_and_docent_recognition) ... ok
+test_without_force_flag_nothing_gets_force (tests.test_run_docent_pipeline.TestForceFlagPerStep.test_without_force_flag_nothing_gets_force) ... ok
+
+----------------------------------------------------------------------
+Ran 17 tests in 0.012s
+
+OK

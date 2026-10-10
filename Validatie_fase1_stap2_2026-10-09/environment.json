@@ -1,0 +1,24 @@
+{
+  "python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+  "executable": "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+  "packages": {
+    "pydantic": "2.13.5",
+    "numpy": "2.4.6",
+    "torch": "2.14.0",
+    "torchaudio": "2.11.0",
+    "faster-whisper": "1.2.1",
+    "pyannote.audio": "4.0.7",
+    "pyannote.core": "6.0.1",
+    "pyannote.metrics": "4.1",
+    "jiwer": "4.0.0",
+    "scipy": "1.17.1",
+    "nbformat": "5.10.4",
+    "nbclient": "0.10.0",
+    "matplotlib": "3.10.3",
+    "pandas": "2.2.3",
+    "python-dotenv": "1.1.1"
+  },
+  "commit": "33cc8a10eb2aea0a161b387f08ce0192b46e89bc",
+  "initial_git_status": " M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_final_testfragment.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_template.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv\n M Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv\n M Data-analysis/Notebooks/03-transcription-evaluation.ipynb\n?? Audit_fase1_2026-10-09/\n?? Data-analysis/Audit/\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv\n?? Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv\n?? Validatie_fase1_stap2/\n?? Validatie_fase1_stap2_2026-10-09/\n?? manifest_omgeving_chatgpt.json\n?? omgeving_chatgpt.md\n",
+  "specified_zip_exists": false
+}

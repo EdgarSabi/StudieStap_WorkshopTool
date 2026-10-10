@@ -1,0 +1,126 @@
+{
+  "testaudio2": {
+    "overlap_counts": {
+      "TN": 13,
+      "FP": 4,
+      "TP": 1,
+      "FN": 1
+    },
+    "role_seconds": {},
+    "rule": "GT overlap=ja met positieve tijdsnijding; gehele rij is referentiepositief, halfopen intervallen"
+  },
+  "testaudio5": {
+    "overlap_counts": {
+      "TN": 14,
+      "FP": 2,
+      "FN": 3,
+      "TP": 1
+    },
+    "role_seconds": {},
+    "rule": "GT overlap=ja met positieve tijdsnijding; gehele rij is referentiepositief, halfopen intervallen"
+  },
+  "testaudio7": {
+    "overlap_counts": {
+      "TN": 11,
+      "FP": 10,
+      "TP": 4,
+      "FN": 1
+    },
+    "role_seconds": {
+      "docent/DOCENT": 31.0,
+      "leerling/ONZEKER": 5.0,
+      "leerling/OTHER": 6.0,
+      "docent/ONZEKER": 6.0,
+      "docent/OTHER": 6.0,
+      "leerling/DOCENT": 2.0
+    },
+    "rule": "GT overlap=ja met positieve tijdsnijding; gehele rij is referentiepositief, halfopen intervallen"
+  },
+  "package_repo_equality": [
+    {
+      "member": "wer_results.json",
+      "repo_path": "Data-analysis/Audit/wer_results.json",
+      "equal": true
+    },
+    {
+      "member": "synth_results.json",
+      "repo_path": "Data-analysis/Audit/synth_results.json",
+      "equal": true
+    },
+    {
+      "member": "edge_results.json",
+      "repo_path": "Data-analysis/Audit/edge_results.json",
+      "equal": true
+    },
+    {
+      "member": "referenties/ground_truth_testaudio1_fragment.csv",
+      "repo_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv",
+      "equal": true
+    },
+    {
+      "member": "referenties/ground_truth_testaudio2_fragment.csv",
+      "repo_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv",
+      "equal": true
+    },
+    {
+      "member": "referenties/ground_truth_testaudio4_fragment.csv",
+      "repo_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv",
+      "equal": true
+    },
+    {
+      "member": "referenties/ground_truth_testaudio5_fragment.csv",
+      "repo_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv",
+      "equal": true
+    },
+    {
+      "member": "referenties/ground_truth_testaudio7_fragment.csv",
+      "repo_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv",
+      "equal": true
+    },
+    {
+      "member": "scripts/der.py",
+      "repo_path": "Data-analysis/Audit/scripts/der.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/edge_tests.py",
+      "repo_path": "Data-analysis/Audit/scripts/edge_tests.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/extract_nb.py",
+      "repo_path": "Data-analysis/Audit/scripts/extract_nb.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/run_asr_baseline.py",
+      "repo_path": "Data-analysis/Audit/scripts/run_asr_baseline.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/run_synth.py",
+      "repo_path": "Data-analysis/Audit/scripts/run_synth.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/validate_json.py",
+      "repo_path": "Data-analysis/Audit/scripts/validate_json.py",
+      "equal": true
+    },
+    {
+      "member": "scripts/wer_eval.py",
+      "repo_path": "Data-analysis/Audit/scripts/wer_eval.py",
+      "equal": true
+    }
+  ],
+  "library_quality_assignment": {
+    "path": "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\Lib\\site-packages\\faster_whisper\\transcribe.py",
+    "sha256": "5d5ffb00018561d3d529b2c72e1d9f5fff055bea725f3cccc7c6c67f5cc8ffe4",
+    "snippets": [
+      {
+        "line": 1362,
+        "text": "                    text=text,\n                    tokens=tokens,\n                    temperature=temperature,\n                    avg_logprob=avg_logprob,\n                    compression_ratio=compression_ratio,\n                    no_speech_prob=result.no_speech_prob,\n                    words=("
+      }
+    ]
+  }
+}

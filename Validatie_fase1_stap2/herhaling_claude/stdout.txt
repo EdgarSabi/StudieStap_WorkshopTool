@@ -1,0 +1,70 @@
+[FAIL] E1: Docent (S0) spreekt 10 s, leerling (S1) 30 s: wie wordt MAIN_SPEAKER?
+    verwacht: label mag niet blind aan spreektijd hangen (docent niet 'OTHER')
+    werkelijk: map={'S1': 'MAIN_SPEAKER', 'S0': 'OTHER_SPEAKER_1'}
+[FAIL] E2: Gelijke spreektijd (10 s/10 s), turns in omgekeerde volgorde aangeleverd
+    verwacht: zelfde toekenning of main_speaker_uncertain=True
+    werkelijk: volgorde1={'S0': 'MAIN_SPEAKER', 'S1': 'OTHER_SPEAKER_1'}; volgorde2={'S1': 'MAIN_SPEAKER', 'S0': 'OTHER_SPEAKER_1'}; uncertain=False
+[FAIL] E3: 4 sprekers met 25% spreektijd elk, default-config: main_speaker_uncertain?
+    verwacht: True (geen duidelijke hoofdspreker)
+    werkelijk: False (default main_speaker_min_share=0.0)
+[FAIL] E4: Sprekerwissel BINNEN een segment (S0 0-4 s, S1 4-5 s), niemand praat tegelijk: overlap?
+    verwacht: overlap=False
+    werkelijk: overlap=True, uncertain=False, speaker=MAIN_SPEAKER, conf=0.8
+[PASS] E5: Echt gelijktijdig praten (S1 3 s binnen S0)
+    verwacht: overlap=True
+    werkelijk: overlap=True, uncertain=False, conf=0.625
+[PASS] E6: ASR-segment zonder enige diarization-spraak
+    verwacht: speaker=None, uncertain=True
+    werkelijk: speaker=None, uncertain=True
+[PASS] E7: Slechts 20% van segment door diarization gedekt (rest onbekend)
+    verwacht: uncertain=True
+    werkelijk: confidence=1.0, uncertain=True
+[PASS] E7b: 60/40 verdeling S0/S1 binnen een segment
+    verwacht: confidence 0.6 is 'aandeel van overlap-tijd', geen kans
+    werkelijk: speaker=MAIN_SPEAKER, conf=0.6, overlap=True, uncertain=False
+[FAIL] E8: Segment met end < start
+    verwacht: ValidationError
+    werkelijk: geaccepteerd (start=5, end=2)
+[FAIL] E9: JSON met typfout in veldnaam / onbekend veld
+    verwacht: ValidationError of waarschuwing
+    werkelijk: geaccepteerd; typfout-veld 'spekaer' en 'onbekend' stil genegeerd
+[PASS] E10: Segment zonder text-veld
+    verwacht: afgewezen
+    werkelijk: afgewezen (text verplicht)
+[FAIL] E11: Segment met willekeurig speaker-label
+    verwacht: alleen toegestane labels/None
+    werkelijk: geaccepteerd, speaker='Docent' (geen vocabulaire-check)
+[PASS] E12: Segmenten A(0-2), A(1-3, overlapt in tijd), A(10-12): turns?
+    verwacht: 2 turns
+    werkelijk: 2 turns: [(0.0, 3.0), (10.0, 12.0)]
+[FAIL] E13: Zelfde friendly label, andere speaker_raw
+    verwacht: niet samenvoegen
+    werkelijk: 1 turn(s)
+[FAIL] E14: Merged turn: span vs. werkelijke spraak (docent_recognition min-duur check gebruikt end-start)
+    verwacht: check op spraaktijd (1.1 s)
+    werkelijk: span=2.5s, spraak=1.1s
+[PASS] E15-8000Hz-2ch-16bit: WAV-loader met afwijkend formaat
+    verwacht: geladen of duidelijke fout
+    werkelijk: geladen shape=(2, 8000) sr=8000 (loader doet zelf geen resample/downmix)
+[PASS] E15-44100Hz-1ch-16bit: WAV-loader met afwijkend formaat
+    verwacht: geladen of duidelijke fout
+    werkelijk: geladen shape=(1, 44100) sr=44100 (loader doet zelf geen resample/downmix)
+[PASS] E15-16000Hz-1ch-24bit: WAV-loader met afwijkend formaat
+    verwacht: geladen of duidelijke fout
+    werkelijk: RuntimeError: t_16000_1_3.wav has 24-bit samples; to_wav() should produce 16-bit PCM.
+[PASS] E15-16000Hz-1ch-8bit: WAV-loader met afwijkend formaat
+    verwacht: geladen of duidelijke fout
+    werkelijk: RuntimeError: t_16000_1_1.wav has 8-bit samples; to_wav() should produce 16-bit PCM.
+[FAIL] E16: to_wav() met 8 kHz stereo WAV (docstring: 'convert non-wav inputs')
+    verwacht: pipeline krijgt 16 kHz mono of weet dat het afwijkt
+    werkelijk: ongewijzigd doorgegeven
+Converting fragment.mp3 -> fragment_16k_mono.wav (16 kHz mono)...
+Reusing existing fragment_16k_mono.wav (use --force to reconvert).
+[FAIL] E17: Twee verschillende bestanden met dezelfde naam (map A: 1 s, map B: 2 s) -> WAV-cache
+    verwacht: tweede bestand krijgt eigen WAV van 2 s
+    werkelijk: WAV na 2e aanroep = 1.0s (1e was 1.0s); zelfde cachepad: True
+[FAIL] E18: transcription.output_path_for: zelfde bestandsnaam in raw/ en test-files/
+    verwacht: verschillende outputpaden
+    werkelijk: P\x.json == P\x.json: True
+
+samenvatting: 10 pass / 22

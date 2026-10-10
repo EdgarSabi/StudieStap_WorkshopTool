@@ -1,0 +1,5 @@
+testaudio2_fragment 19 segs 34.6 s
+testaudio1_fragment 9 segs 20.7 s
+testaudio5_fragment 21 segs 81.0 s
+testaudio7_fragment 38 segs 61.3 s
+testaudio4_fragment 87 segs 143.4 s

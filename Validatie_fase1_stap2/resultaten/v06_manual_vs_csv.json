@@ -1,0 +1,19 @@
+{
+ "manual_words": 61,
+ "WER_asr_vs_csv": [
+  0.017,
+  58
+ ],
+ "WER_asr_vs_manual": [
+  0.213,
+  61
+ ],
+ "WER_csv_vs_manual": [
+  0.197,
+  61
+ ],
+ "WER_manual_vs_csv": [
+  0.207,
+  58
+ ]
+}

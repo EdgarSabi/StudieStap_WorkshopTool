@@ -1,0 +1,64 @@
+test_prompt_shows_docent_role_per_turn (tests.test_classification.TestBuildPrompt.test_prompt_shows_docent_role_per_turn) ... ok
+test_prompt_shows_onbekend_when_docent_role_missing (tests.test_classification.TestBuildPrompt.test_prompt_shows_onbekend_when_docent_role_missing) ... ok
+test_docent_role_unresolved_flag_present_in_raw_outputs (tests.test_classification.TestRunEndToEnd.test_docent_role_unresolved_flag_present_in_raw_outputs) ... ok
+test_full_route_with_docent_role_produces_no_errors (tests.test_classification.TestRunEndToEnd.test_full_route_with_docent_role_produces_no_errors) ... ok
+test_manual_fixture_all_modes (tests.test_classification.TestRunEndToEnd.test_manual_fixture_all_modes) ... ok
+test_manual_results_flag_unknown_reliability (tests.test_classification.TestRunEndToEnd.test_manual_results_flag_unknown_reliability) ... ok
+test_old_format_without_docent_role_still_works_end_to_end (tests.test_classification.TestRunEndToEnd.test_old_format_without_docent_role_still_works_end_to_end)
+Backward compatibility: a Phase 3 file with no docent_role at all ... ok
+test_pipeline_fixture_same_pipeline (tests.test_classification.TestRunEndToEnd.test_pipeline_fixture_same_pipeline) ... ok
+test_pipeline_results_use_known_reliability (tests.test_classification.TestRunEndToEnd.test_pipeline_results_use_known_reliability) ... ok
+test_reproducibility_record_has_required_fields (tests.test_classification.TestRunEndToEnd.test_reproducibility_record_has_required_fields) ... ok
+test_unknown_status_is_handled_not_dropped (tests.test_classification.TestRunEndToEnd.test_unknown_status_is_handled_not_dropped) ... ok
+test_center_turn_must_be_in_context_turn_ids (tests.test_classification_data.TestClassificationResultSchema.test_center_turn_must_be_in_context_turn_ids) ... ok
+test_invalid_status_rejected (tests.test_classification_data.TestClassificationResultSchema.test_invalid_status_rejected) ... ok
+test_missing_required_field_rejected (tests.test_classification_data.TestClassificationResultSchema.test_missing_required_field_rejected) ... ok
+test_unknown_status_allows_none_detected_and_evidence (tests.test_classification_data.TestClassificationResultSchema.test_unknown_status_allows_none_detected_and_evidence) ... ok
+test_valid_ok_result (tests.test_classification_data.TestClassificationResultSchema.test_valid_ok_result) ... ok
+test_different_other_speakers_keep_separate_identity (tests.test_classification_data.TestDocentRolePassthrough.test_different_other_speakers_keep_separate_identity)
+Requirement: don't conflate different raw speakers just because ... ok
+test_docent_role_carried_over_unchanged (tests.test_classification_data.TestDocentRolePassthrough.test_docent_role_carried_over_unchanged) ... ok
+test_missing_recognition_stays_unknown_not_inferred_from_main_speaker (tests.test_classification_data.TestDocentRolePassthrough.test_missing_recognition_stays_unknown_not_inferred_from_main_speaker)
+Requirement: MAIN_SPEAKER does not automatically mean DOCENT. ... ok
+test_mixed_speech_stays_onzeker_with_no_similarity (tests.test_classification_data.TestDocentRolePassthrough.test_mixed_speech_stays_onzeker_with_no_similarity)
+Requirement: 'gemengde spraak' (overlap) must not be silently ... ok
+test_one_window_per_turn_no_duplicates (tests.test_classification_data.TestIterContextWindows.test_one_window_per_turn_no_duplicates) ... ok
+test_both_formats_produce_the_same_turn_shape (tests.test_classification_data.TestLoadFragmentDispatch.test_both_formats_produce_the_same_turn_shape) ... ok
+test_dispatches_docent_role_enriched_file (tests.test_classification_data.TestLoadFragmentDispatch.test_dispatches_docent_role_enriched_file) ... ok
+test_dispatches_manual_format (tests.test_classification_data.TestLoadFragmentDispatch.test_dispatches_manual_format) ... ok
+test_dispatches_pipeline_format (tests.test_classification_data.TestLoadFragmentDispatch.test_dispatches_pipeline_format) ... ok
+test_unrecognized_format_raises (tests.test_classification_data.TestLoadFragmentDispatch.test_unrecognized_format_raises) ... ok
+test_loads_correct_turn_count_and_order (tests.test_classification_data.TestManualLoader.test_loads_correct_turn_count_and_order) ... ok
+test_manual_transcript_never_gets_a_docent_role (tests.test_classification_data.TestManualLoader.test_manual_transcript_never_gets_a_docent_role)
+speaker_mapping is informational only � never wired into docent_role. ... ok
+test_missing_timestamps_do_not_break_loading (tests.test_classification_data.TestManualLoader.test_missing_timestamps_do_not_break_loading) ... ok
+test_missing_uncertainty_info_is_unknown_not_reliable (tests.test_classification_data.TestManualLoader.test_missing_uncertainty_info_is_unknown_not_reliable)
+Requirement: missing speaker-uncertainty info must be treated as ... ok
+test_original_input_file_not_modified (tests.test_classification_data.TestManualLoader.test_original_input_file_not_modified) ... ok
+test_speaker_mapping_preserved (tests.test_classification_data.TestManualLoader.test_speaker_mapping_preserved) ... ok
+test_loads_correct_turn_count (tests.test_classification_data.TestPipelineLoader.test_loads_correct_turn_count) ... ok
+test_original_input_file_not_modified (tests.test_classification_data.TestPipelineLoader.test_original_input_file_not_modified) ... ok
+test_pre_phase4_file_has_no_docent_role_at_all (tests.test_classification_data.TestPipelineLoader.test_pre_phase4_file_has_no_docent_role_at_all)
+Old Phase 3 output (before docent recognition existed) must still ... ok
+test_real_uncertainty_info_preserved_as_known_values (tests.test_classification_data.TestPipelineLoader.test_real_uncertainty_info_preserved_as_known_values)
+Requirement: automated-pipeline uncertainty/overlap info must be ... ok
+test_timestamps_preserved (tests.test_classification_data.TestPipelineLoader.test_timestamps_preserved) ... ok
+test_docent_role_unresolved_false_for_clean_resolved_window (tests.test_classification_data.TestReliabilityFlags.test_docent_role_unresolved_false_for_clean_resolved_window) ... ok
+test_docent_role_unresolved_true_when_missing_turn_in_window (tests.test_classification_data.TestReliabilityFlags.test_docent_role_unresolved_true_when_missing_turn_in_window) ... ok
+test_docent_role_unresolved_true_when_onzeker_turn_in_window (tests.test_classification_data.TestReliabilityFlags.test_docent_role_unresolved_true_when_onzeker_turn_in_window) ... ok
+test_manual_turns_are_unknown_reliability (tests.test_classification_data.TestReliabilityFlags.test_manual_turns_are_unknown_reliability) ... ok
+test_pipeline_clean_turn_is_known_and_not_flagged (tests.test_classification_data.TestReliabilityFlags.test_pipeline_clean_turn_is_known_and_not_flagged) ... ok
+test_pipeline_turns_use_real_flags (tests.test_classification_data.TestReliabilityFlags.test_pipeline_turns_use_real_flags) ... ok
+test_center_always_included_in_context (tests.test_classification_data.TestSelectContext.test_center_always_included_in_context) ... ok
+test_mode_A_only_current_turn (tests.test_classification_data.TestSelectContext.test_mode_A_only_current_turn) ... ok
+test_mode_B_clips_at_start (tests.test_classification_data.TestSelectContext.test_mode_B_clips_at_start) ... ok
+test_mode_B_previous_plus_current (tests.test_classification_data.TestSelectContext.test_mode_B_previous_plus_current) ... ok
+test_mode_C_clips_at_end (tests.test_classification_data.TestSelectContext.test_mode_C_clips_at_end) ... ok
+test_mode_C_two_previous_plus_current_plus_next (tests.test_classification_data.TestSelectContext.test_mode_C_two_previous_plus_current_plus_next) ... ok
+test_out_of_range_index_raises (tests.test_classification_data.TestSelectContext.test_out_of_range_index_raises) ... ok
+test_unknown_mode_raises (tests.test_classification_data.TestSelectContext.test_unknown_mode_raises) ... ok
+
+----------------------------------------------------------------------
+Ran 51 tests in 0.030s
+
+OK

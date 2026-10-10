@@ -1,0 +1,21 @@
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,speaker_role,overlap,intelligible,note,transcript
+testaudio5_fragment,0,0.8,3.3,SPREKER_A,docent,nee,nee,,"Oswaldo is jouw beste vriend, hè? Of niet?"
+testaudio5_fragment,1,3.4,4.4,SPREKER_A,docent,nee,nee,,"Hier in de klas, ja."
+testaudio5_fragment,2,4.5,9.0,SPREKER_A,docent,nee,nee,,Stel je nou voor dat Oswaldo homo is.
+testaudio5_fragment,3,9.1,10.8,SPREKER_A,docent,nee,nee,,Zou dat invloed hebben op je vriendschap?
+testaudio5_fragment,4,10.9,12.5,SPREKER_B,leerling,nee,nee,,Jazeker. Dat zou wel invloed hebben.
+testaudio5_fragment,5,12.7,13.7,SPREKER_C,leerling,nee,nee,,Wat bedoel je?
+testaudio5_fragment,6,13.8,14.7,SPREKER_B,leerling,nee,nee,,"Gewoon, toch?"
+testaudio5_fragment,7,14.9,17.2,SPREKER_B,leerling,nee,nee,,Dat heeft invloed op onze vriendschap.
+testaudio5_fragment,8,17.3,20.5,SPREKER_C,leerling,nee,nee,,"Als ik zeg dat ik homo ben, dan ga je niet meer met me om."
+testaudio5_fragment,9,20.7,22.8,SPREKER_B,leerling,nee,nee,,"Dan komt het wel op neer, ja."
+testaudio5_fragment,10,22.9,25.1,SPREKER_C,leerling,nee,nee,,Wat is er met me huis geweest?
+testaudio5_fragment,11,25.3,27.8,SPREKER_B,leerling,nee,nee,,"Als jij nu zegt dat je homo bent, dan gaan mensen denken dat ik ook..."
+testaudio5_fragment,12,27.9,31.2,SPREKER_B,leerling,nee,ja,spreker zit verder weg van de microfoon,"Omdat ik met jou nu, Safi, zeg nu, ik ben met jou naar huis geweest."
+testaudio5_fragment,13,31.3,33.3,ONBEKEND,,,ja,"rumoer, niet duidelijk wie er spreekt",Kerel.
+testaudio5_fragment,14,33.5,36.1,ONBEKEND,,,ja,"rumoer, niet duidelijk wie er spreekt",Dat krijgen we nooit doen.
+testaudio5_fragment,15,36.3,38.3,SPREKER_C,leerling,ja,nee,,Dat ligt gewoon aan jou en aan die mensen.
+testaudio5_fragment,16,38.4,40.8,SPREKER_B,leerling,ja,nee,,"Op dat moment ligt het aan jou, want jij bent dan homo."
+testaudio5_fragment,17,40.9,42.9,SPREKER_B,leerling,ja,ja,meerdere mensen spreken door elkaar,"Dat ligt gewoon aan jou, want jij bent dan homo."
+testaudio5_fragment,18,43.0,45.0,SPREKER_A,docent,ja,nee,,"Wacht even, wat is er aan de hand?"
+testaudio5_fragment,19,45.1,46.1,ONBEKEND,,,,"fragment knipt hier af, niet meenemen",Hoe is het een fackie...

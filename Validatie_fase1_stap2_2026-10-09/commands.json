@@ -1,0 +1,73 @@
+[
+  {
+    "command": "AST-prefix run_audit.py tot manifest=[], OUT/ROOT omgeleid; geen verdere audit/notebook-loop",
+    "log": "chatgpt_herhaling.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Data-analysis\\Audit\\scripts\\edge_tests.py",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2_2026-10-09\\claude_herhaling"
+    ],
+    "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool",
+    "returncode": 0,
+    "log": "claude_edge.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-t",
+      ".",
+      "-v"
+    ],
+    "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Data-analysis\\src",
+    "returncode": 0,
+    "log": "unittest_src.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "-m",
+      "unittest",
+      "discover",
+      "-s",
+      "tests",
+      "-t",
+      ".",
+      "-v"
+    ],
+    "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Data-analysis\\Experiments\\classification",
+    "returncode": 0,
+    "log": "unittest_classification.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Data-analysis\\Audit\\scripts\\wer_eval.py",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2_2026-10-09\\teruggevonden_bewijs"
+    ],
+    "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool",
+    "returncode": 0,
+    "log": "wer_herberekening.log"
+  },
+  {
+    "command": [
+      "C:\\Users\\School\\AppData\\Local\\Programs\\Python\\Python311\\python.exe",
+      "-B",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Data-analysis\\Audit\\scripts\\der.py",
+      "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2_2026-10-09\\teruggevonden_bewijs"
+    ],
+    "cwd": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool",
+    "returncode": 0,
+    "log": "der_herberekening.log"
+  }
+]

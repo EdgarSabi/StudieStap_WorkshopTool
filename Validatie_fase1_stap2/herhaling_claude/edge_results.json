@@ -1,0 +1,156 @@
+[
+ {
+  "id": "E1",
+  "question": "Docent (S0) spreekt 10 s, leerling (S1) 30 s: wie wordt MAIN_SPEAKER?",
+  "expected": "label mag niet blind aan spreektijd hangen (docent niet 'OTHER')",
+  "actual": "map={'S1': 'MAIN_SPEAKER', 'S0': 'OTHER_SPEAKER_1'}",
+  "passed": false
+ },
+ {
+  "id": "E2",
+  "question": "Gelijke spreektijd (10 s/10 s), turns in omgekeerde volgorde aangeleverd",
+  "expected": "zelfde toekenning of main_speaker_uncertain=True",
+  "actual": "volgorde1={'S0': 'MAIN_SPEAKER', 'S1': 'OTHER_SPEAKER_1'}; volgorde2={'S1': 'MAIN_SPEAKER', 'S0': 'OTHER_SPEAKER_1'}; uncertain=False",
+  "passed": false
+ },
+ {
+  "id": "E3",
+  "question": "4 sprekers met 25% spreektijd elk, default-config: main_speaker_uncertain?",
+  "expected": "True (geen duidelijke hoofdspreker)",
+  "actual": "False (default main_speaker_min_share=0.0)",
+  "passed": false
+ },
+ {
+  "id": "E4",
+  "question": "Sprekerwissel BINNEN een segment (S0 0-4 s, S1 4-5 s), niemand praat tegelijk: overlap?",
+  "expected": "overlap=False",
+  "actual": "overlap=True, uncertain=False, speaker=MAIN_SPEAKER, conf=0.8",
+  "passed": false
+ },
+ {
+  "id": "E5",
+  "question": "Echt gelijktijdig praten (S1 3 s binnen S0)",
+  "expected": "overlap=True",
+  "actual": "overlap=True, uncertain=False, conf=0.625",
+  "passed": true
+ },
+ {
+  "id": "E6",
+  "question": "ASR-segment zonder enige diarization-spraak",
+  "expected": "speaker=None, uncertain=True",
+  "actual": "speaker=None, uncertain=True",
+  "passed": true
+ },
+ {
+  "id": "E7",
+  "question": "Slechts 20% van segment door diarization gedekt (rest onbekend)",
+  "expected": "uncertain=True",
+  "actual": "confidence=1.0, uncertain=True",
+  "passed": true
+ },
+ {
+  "id": "E7b",
+  "question": "60/40 verdeling S0/S1 binnen een segment",
+  "expected": "confidence 0.6 is 'aandeel van overlap-tijd', geen kans",
+  "actual": "speaker=MAIN_SPEAKER, conf=0.6, overlap=True, uncertain=False",
+  "passed": true
+ },
+ {
+  "id": "E8",
+  "question": "Segment met end < start",
+  "expected": "ValidationError",
+  "actual": "geaccepteerd (start=5, end=2)",
+  "passed": false
+ },
+ {
+  "id": "E9",
+  "question": "JSON met typfout in veldnaam / onbekend veld",
+  "expected": "ValidationError of waarschuwing",
+  "actual": "geaccepteerd; typfout-veld 'spekaer' en 'onbekend' stil genegeerd",
+  "passed": false
+ },
+ {
+  "id": "E10",
+  "question": "Segment zonder text-veld",
+  "expected": "afgewezen",
+  "actual": "afgewezen (text verplicht)",
+  "passed": true
+ },
+ {
+  "id": "E11",
+  "question": "Segment met willekeurig speaker-label",
+  "expected": "alleen toegestane labels/None",
+  "actual": "geaccepteerd, speaker='Docent' (geen vocabulaire-check)",
+  "passed": false
+ },
+ {
+  "id": "E12",
+  "question": "Segmenten A(0-2), A(1-3, overlapt in tijd), A(10-12): turns?",
+  "expected": "2 turns",
+  "actual": "2 turns: [(0.0, 3.0), (10.0, 12.0)]",
+  "passed": true
+ },
+ {
+  "id": "E13",
+  "question": "Zelfde friendly label, andere speaker_raw",
+  "expected": "niet samenvoegen",
+  "actual": "1 turn(s)",
+  "passed": false
+ },
+ {
+  "id": "E14",
+  "question": "Merged turn: span vs. werkelijke spraak (docent_recognition min-duur check gebruikt end-start)",
+  "expected": "check op spraaktijd (1.1 s)",
+  "actual": "span=2.5s, spraak=1.1s",
+  "passed": false
+ },
+ {
+  "id": "E15-8000Hz-2ch-16bit",
+  "question": "WAV-loader met afwijkend formaat",
+  "expected": "geladen of duidelijke fout",
+  "actual": "geladen shape=(2, 8000) sr=8000 (loader doet zelf geen resample/downmix)",
+  "passed": true
+ },
+ {
+  "id": "E15-44100Hz-1ch-16bit",
+  "question": "WAV-loader met afwijkend formaat",
+  "expected": "geladen of duidelijke fout",
+  "actual": "geladen shape=(1, 44100) sr=44100 (loader doet zelf geen resample/downmix)",
+  "passed": true
+ },
+ {
+  "id": "E15-16000Hz-1ch-24bit",
+  "question": "WAV-loader met afwijkend formaat",
+  "expected": "geladen of duidelijke fout",
+  "actual": "RuntimeError: t_16000_1_3.wav has 24-bit samples; to_wav() should produce 16-bit PCM.",
+  "passed": true
+ },
+ {
+  "id": "E15-16000Hz-1ch-8bit",
+  "question": "WAV-loader met afwijkend formaat",
+  "expected": "geladen of duidelijke fout",
+  "actual": "RuntimeError: t_16000_1_1.wav has 8-bit samples; to_wav() should produce 16-bit PCM.",
+  "passed": true
+ },
+ {
+  "id": "E16",
+  "question": "to_wav() met 8 kHz stereo WAV (docstring: 'convert non-wav inputs')",
+  "expected": "pipeline krijgt 16 kHz mono of weet dat het afwijkt",
+  "actual": "ongewijzigd doorgegeven",
+  "passed": false
+ },
+ {
+  "id": "E17",
+  "question": "Twee verschillende bestanden met dezelfde naam (map A: 1 s, map B: 2 s) -> WAV-cache",
+  "expected": "tweede bestand krijgt eigen WAV van 2 s",
+  "actual": "WAV na 2e aanroep = 1.0s (1e was 1.0s); zelfde cachepad: True",
+  "passed": false
+ },
+ {
+  "id": "E18",
+  "question": "transcription.output_path_for: zelfde bestandsnaam in raw/ en test-files/",
+  "expected": "verschillende outputpaden",
+  "actual": "P\\x.json == P\\x.json: True",
+  "passed": false
+ }
+]

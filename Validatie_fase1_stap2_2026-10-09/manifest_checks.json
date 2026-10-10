@@ -1,0 +1,1535 @@
+[
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": ".gitignore",
+    "expected": "d171c47d2beaa99e1d013d5678ee22530bfc0434023c77bfe16e0ed3f070da5a",
+    "actual": "d171c47d2beaa99e1d013d5678ee22530bfc0434023c77bfe16e0ed3f070da5a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "App/Backend/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "App/Frontend/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/community1/community1_test.py",
+    "expected": "dae2cd62396b3b801d1f0ddcf52f4fc446399350b207700872d41a49328719e2",
+    "actual": "dae2cd62396b3b801d1f0ddcf52f4fc446399350b207700872d41a49328719e2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/community1/README.md",
+    "expected": "2a822d6a9c32a602a325ffe789eec8b0863df356238e587e8ef7d5de146a70af",
+    "actual": "2a822d6a9c32a602a325ffe789eec8b0863df356238e587e8ef7d5de146a70af",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/comparison/experiment_notes.md",
+    "expected": "fb6a603d02756d7987fc355627a660b74caa77db9795d6cd20974f67d82e82e4",
+    "actual": "fb6a603d02756d7987fc355627a660b74caa77db9795d6cd20974f67d82e82e4",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Afgeronde_experimenten/README.md",
+    "expected": "d5ea116a543bf5ba8d4956e2f43bc4bf795fcccfd2029c37967970ce6b95600a",
+    "actual": "d5ea116a543bf5ba8d4956e2f43bc4bf795fcccfd2029c37967970ce6b95600a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Docs/Verdiepend_Onderzoek_Patty_s1146363.pdf",
+    "expected": "c6f2d13be9ab3b3d2b80d332c42ce76108c22b80f7f1b663c78eb05267919681",
+    "actual": "c6f2d13be9ab3b3d2b80d332c42ce76108c22b80f7f1b663c78eb05267919681",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/classification.py",
+    "expected": "d772203494da1d310e414a6175cade53e241127aadb26ebb9937061e167d3d23",
+    "actual": "d772203494da1d310e414a6175cade53e241127aadb26ebb9937061e167d3d23",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/classification_data.py",
+    "expected": "93e9f3a0cda23923508838d8e4fa67357f8e0e9f0328c3ff8974efe56cb41d59",
+    "actual": "93e9f3a0cda23923508838d8e4fa67357f8e0e9f0328c3ff8974efe56cb41d59",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/README.md",
+    "expected": "d66d9a7e957a630b2e3df79c6e2c0dbdd62cc5a3d58e58c02291e270b617a886",
+    "actual": "d66d9a7e957a630b2e3df79c6e2c0dbdd62cc5a3d58e58c02291e270b617a886",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/__init__.py",
+    "expected": "e751e868a815157cdef0a049a0c1a79de3cbe70d19eeb381aea44b1e2204a729",
+    "actual": "e751e868a815157cdef0a049a0c1a79de3cbe70d19eeb381aea44b1e2204a729",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_manual.json",
+    "expected": "7be80b294cfca0e860767dc5344924e0eae3c1f0685d163aae6acdfd8e27f0b5",
+    "actual": "7be80b294cfca0e860767dc5344924e0eae3c1f0685d163aae6acdfd8e27f0b5",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_pipeline.json",
+    "expected": "9ffb43ed0c581879e63150cc646896f57a0bce827a5206a68e43921ffff8b9fe",
+    "actual": "9ffb43ed0c581879e63150cc646896f57a0bce827a5206a68e43921ffff8b9fe",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_pipeline_with_docent_role.json",
+    "expected": "58e508da2700a659e0225e34765e213ea5ef1899311f5a62df074ddab026c3d6",
+    "actual": "58e508da2700a659e0225e34765e213ea5ef1899311f5a62df074ddab026c3d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/test_classification.py",
+    "expected": "901480753acbc81b5ff87258da947dc0a4553ae23171035aa9e109e077d3c76a",
+    "actual": "901480753acbc81b5ff87258da947dc0a4553ae23171035aa9e109e077d3c76a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/classification/tests/test_classification_data.py",
+    "expected": "6af2edfbca9788a3802f53bd45280448caacd8ef1a65704a1b24d5ab585ba492",
+    "actual": "6af2edfbca9788a3802f53bd45280448caacd8ef1a65704a1b24d5ab585ba492",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/evaluate_min_cluster_size.py",
+    "expected": "da4a0092f4094c4fe11b3f31a78dfad4944bcfdcc06c1ee0f9982292b67f2608",
+    "actual": "da4a0092f4094c4fe11b3f31a78dfad4944bcfdcc06c1ee0f9982292b67f2608",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_final_testfragment.csv",
+    "expected": "8894a2bb5d7b0adcb541630de00c50910faa1675fed518626489354f2cc04e7c",
+    "actual": "8894a2bb5d7b0adcb541630de00c50910faa1675fed518626489354f2cc04e7c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_template.csv",
+    "expected": "e224e0130d99b58d2573aeade2c0e2b8b720cd41013b20315071e1d24a53f7df",
+    "actual": "e224e0130d99b58d2573aeade2c0e2b8b720cd41013b20315071e1d24a53f7df",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv",
+    "expected": "bce4069a5156970e57df495a652c21199bb7e8cf44601647b0334e2c0c9978fa",
+    "actual": "bce4069a5156970e57df495a652c21199bb7e8cf44601647b0334e2c0c9978fa",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv",
+    "expected": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03",
+    "actual": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv",
+    "expected": "83417b95d88d1a0ba476b6e86f792f7beb287d0a2b74eef9ba310a48d8f12a4c",
+    "actual": "83417b95d88d1a0ba476b6e86f792f7beb287d0a2b74eef9ba310a48d8f12a4c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv",
+    "expected": "e629ddecc383f4d413060e67ce42d1a49e725baa121ad61640008cbcdbdae1f6",
+    "actual": "e629ddecc383f4d413060e67ce42d1a49e725baa121ad61640008cbcdbdae1f6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv",
+    "expected": "35c296f8f2e7bbef2e4ddc4644117d0d72bf58abd7b81220683ca71d46c4cef2",
+    "actual": "35c296f8f2e7bbef2e4ddc4644117d0d72bf58abd7b81220683ca71d46c4cef2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/README.md",
+    "expected": "edc7a6f562f7f8620fa62e680735d51cc851e08a8be07230d6d1d28fb52b6f13",
+    "actual": "edc7a6f562f7f8620fa62e680735d51cc851e08a8be07230d6d1d28fb52b6f13",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio2_fragment.json",
+    "expected": "d0ad3f54ef18c888f87f643b3a76066a235431670267bc1a960d4d2bfc49229e",
+    "actual": "d0ad3f54ef18c888f87f643b3a76066a235431670267bc1a960d4d2bfc49229e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio4_fragment.json",
+    "expected": "b4968a0e381cd82656a63cf8374e501b65ba52b6e80949b4c2248ed5ea39eeff",
+    "actual": "b4968a0e381cd82656a63cf8374e501b65ba52b6e80949b4c2248ed5ea39eeff",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio4_fragment_run1_12-6-3.json",
+    "expected": "7b77caf7b58a1e95557c4907c922a60498bdf83d02918dab5da1ef0b8f0392d2",
+    "actual": "7b77caf7b58a1e95557c4907c922a60498bdf83d02918dab5da1ef0b8f0392d2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_threshold_testaudio2_fragment.json",
+    "expected": "6906e3493caf0974a5e149ab6f3157d719c4d0b880fc158cfb36f4777e0aea12",
+    "actual": "6906e3493caf0974a5e149ab6f3157d719c4d0b880fc158cfb36f4777e0aea12",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_threshold_testaudio4_fragment.json",
+    "expected": "23c1efdc2b9852b71e2e812887e00e0bb44c7840a9f461b48cb875cd878fc619",
+    "actual": "23c1efdc2b9852b71e2e812887e00e0bb44c7840a9f461b48cb875cd878fc619",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/whisperx/README.md",
+    "expected": "d50dac3d19dd5ee7828ae15b8bef04644ec2f92a81670976336c1cd0bbc3712f",
+    "actual": "d50dac3d19dd5ee7828ae15b8bef04644ec2f92a81670976336c1cd0bbc3712f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/whisperx/requirements-whisperx.txt",
+    "expected": "692ab2a0db5627177fa4fb97df932bb278d51515e8c8bc27c28a39466d42b212",
+    "actual": "692ab2a0db5627177fa4fb97df932bb278d51515e8c8bc27c28a39466d42b212",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization/whisperx/whisperx_test.py",
+    "expected": "7773394c3fba2dde6ef3de146b3d1be909a9ba6b71f045ba6234091e75a7371a",
+    "actual": "7773394c3fba2dde6ef3de146b3d1be909a9ba6b71f045ba6234091e75a7371a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/diarization_test_01.md",
+    "expected": "7d54b1d7505da1d56f699cd1c4f194f2610991795d7b9dd60d417ae6b7ca1438",
+    "actual": "7d54b1d7505da1d56f699cd1c4f194f2610991795d7b9dd60d417ae6b7ca1438",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/preprocessing_test_01.md",
+    "expected": "d17d744f4d902152f5b2cce82aa7914529542e4ea2c71f4d8e1c00be2603f191",
+    "actual": "d17d744f4d902152f5b2cce82aa7914529542e4ea2c71f4d8e1c00be2603f191",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/speaker_recognition/_common.py",
+    "expected": "f2063a7dcd87908718377edf4afe7eb85893c15b771acc6f2ec70d722bedfbf4",
+    "actual": "f2063a7dcd87908718377edf4afe7eb85893c15b771acc6f2ec70d722bedfbf4",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/speaker_recognition/comparison/results.md",
+    "expected": "1103c8a3701bf456d5e0454881f34497b8c1e7befc7bffe8a0d6b11a529753dc",
+    "actual": "1103c8a3701bf456d5e0454881f34497b8c1e7befc7bffe8a0d6b11a529753dc",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/speaker_recognition/pyannote_embeddings/test_teacher_recognition.py",
+    "expected": "f29190146dd6676010747b1539fdb5afdf2fee9757e5f12b4ff110592547c312",
+    "actual": "f29190146dd6676010747b1539fdb5afdf2fee9757e5f12b4ff110592547c312",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/speaker_recognition/README.md",
+    "expected": "297f55bba5b2e2d88ae6f9a367ee8f557149daba5abd06a61f6230b19abd4742",
+    "actual": "297f55bba5b2e2d88ae6f9a367ee8f557149daba5abd06a61f6230b19abd4742",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/speaker_recognition/speechbrain_ecapa/test_teacher_recognition.py",
+    "expected": "dcb65cedbdfc2c708468dec51251728163fe2c545ddb571cc7b8590771f3e3a8",
+    "actual": "dcb65cedbdfc2c708468dec51251728163fe2c545ddb571cc7b8590771f3e3a8",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/01_word_timestamps/extract_word_timestamps.py",
+    "expected": "b0ed69c4ccdb94ce8755f5f6124e780aefb7c395b8608ad5fd9a2b3ced0c33eb",
+    "actual": "b0ed69c4ccdb94ce8755f5f6124e780aefb7c395b8608ad5fd9a2b3ced0c33eb",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/02_word_level_attribution/attribute_words_to_speakers.py",
+    "expected": "47b77c013a03fe8f5a9dfd40e75562e1ef8c108247b2eaf16b0a03c53ecffe49",
+    "actual": "47b77c013a03fe8f5a9dfd40e75562e1ef8c108247b2eaf16b0a03c53ecffe49",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/03_recognition_refinement/refine_with_speaker_recognition.py",
+    "expected": "986a1164f27b63d959a88038ddc3b3bfb7faa52e40b6b0c531b6938fe8abc6fa",
+    "actual": "986a1164f27b63d959a88038ddc3b3bfb7faa52e40b6b0c531b6938fe8abc6fa",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/_common.py",
+    "expected": "2e7e71bfd555b95d31d3772bdada4564fc8812fcb54f66f796b6bcdd7ce34509",
+    "actual": "2e7e71bfd555b95d31d3772bdada4564fc8812fcb54f66f796b6bcdd7ce34509",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/comparison/results.md",
+    "expected": "5f6d96ca72648ca1db7b5e14725571ac45c43e01d3e0a0d2f8fa59319762c4ef",
+    "actual": "5f6d96ca72648ca1db7b5e14725571ac45c43e01d3e0a0d2f8fa59319762c4ef",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/README.md",
+    "expected": "6c7949e51af013bcd3d12fa2b24d723efbcee879f17f1dcd79654ef9ae040db3",
+    "actual": "6c7949e51af013bcd3d12fa2b24d723efbcee879f17f1dcd79654ef9ae040db3",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/.ipynb_checkpoints/02-benchmarking-checkpoint.ipynb",
+    "expected": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "actual": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/.ipynb_checkpoints/03-transcription-evaluation-checkpoint.ipynb",
+    "expected": "ac8b1a5b4913a402225f99310987b27a92ba4fb24599f45cb3bd3559deb3e09d",
+    "actual": "ac8b1a5b4913a402225f99310987b27a92ba4fb24599f45cb3bd3559deb3e09d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/01-exploring_data.ipynb",
+    "expected": "55a608668e08c602d0d93f857ba3814aa0bc3c03dd63f91a1d8aadc91835c210",
+    "actual": "55a608668e08c602d0d93f857ba3814aa0bc3c03dd63f91a1d8aadc91835c210",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/02-benchmarking.ipynb",
+    "expected": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "actual": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/03-transcription-evaluation.ipynb",
+    "expected": "09379e5c5860389988793ee4436e95e5b3071de69f98622868bc789407f40b6d",
+    "actual": "09379e5c5860389988793ee4436e95e5b3071de69f98622868bc789407f40b6d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/04-diarization.ipynb",
+    "expected": "8753979a759e2d9f75e8b86fa27cecd91d0d7cbde393a0f40214dfd83deb9dae",
+    "actual": "8753979a759e2d9f75e8b86fa27cecd91d0d7cbde393a0f40214dfd83deb9dae",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/05-fixing-diarization-problems.ipynb",
+    "expected": "0b4a51d5522d17f4a077d3142c7237de590b840910f0f53268e57c5366d5eb2f",
+    "actual": "0b4a51d5522d17f4a077d3142c7237de590b840910f0f53268e57c5366d5eb2f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/Notebooks/06-diarization-hyperparameter-tuning.ipynb",
+    "expected": "ca2988747b08208a14920b709119ccdc5122784f95af4b64ce20d9f80cede041",
+    "actual": "ca2988747b08208a14920b709119ccdc5122784f95af4b64ce20d9f80cede041",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/config.py",
+    "expected": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+    "actual": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/diarization.py",
+    "expected": "cfa384c53dfc53821ee8470110fad4a1ca5e20464ef2043efa7e2136b0dc246b",
+    "actual": "cfa384c53dfc53821ee8470110fad4a1ca5e20464ef2043efa7e2136b0dc246b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/docent_recognition.py",
+    "expected": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+    "actual": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/evaluation/__init__.py",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/evaluation/wer.py",
+    "expected": "6e4de1e2b5c2c967475ab1ad4b8fbe541939092bef819c27894dba3ef36cf8e1",
+    "actual": "6e4de1e2b5c2c967475ab1ad4b8fbe541939092bef819c27894dba3ef36cf8e1",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/models.py",
+    "expected": "dcbb063bebcb56656d1f0d84fc1d5419ea095adef7b1b93299285cdc9832832f",
+    "actual": "dcbb063bebcb56656d1f0d84fc1d5419ea095adef7b1b93299285cdc9832832f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/None/speechbrain/classifier.ckpt",
+    "expected": "2206f17396d8da912c76688dec2e5b0c1fededa40162537ab82238488071d0d6",
+    "actual": "2206f17396d8da912c76688dec2e5b0c1fededa40162537ab82238488071d0d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/None/speechbrain/embedding_model.ckpt",
+    "expected": "c7ffcdfb07d5cee7a08e0de9e0e2dcaa7306a8e1a70895b8af228cc9788f7af2",
+    "actual": "c7ffcdfb07d5cee7a08e0de9e0e2dcaa7306a8e1a70895b8af228cc9788f7af2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/None/speechbrain/hyperparams.yaml",
+    "expected": "d3adf671c4ae7394414938b127ec5eb292ab9762411395d0a00f70b014b6e263",
+    "actual": "d3adf671c4ae7394414938b127ec5eb292ab9762411395d0a00f70b014b6e263",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/None/speechbrain/label_encoder.ckpt",
+    "expected": "e06adc94d03e24ba1f5721124f7c0081fffee283701e8dd110b7f5751564e91c",
+    "actual": "e06adc94d03e24ba1f5721124f7c0081fffee283701e8dd110b7f5751564e91c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/None/speechbrain/mean_var_norm_emb.ckpt",
+    "expected": "18fed5245442f1745bcda95b8d5e7121f020693b0d0a13538c9dcdf04b52070c",
+    "actual": "18fed5245442f1745bcda95b8d5e7121f020693b0d0a13538c9dcdf04b52070c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/OLD_benchmark_transcription.py",
+    "expected": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+    "actual": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/preprocessing.py",
+    "expected": "4ba85fc3730fc563f8c4fa46ae4b405b7c79b74ab8fc97f6b771ddf9eafd9b6a",
+    "actual": "4ba85fc3730fc563f8c4fa46ae4b405b7c79b74ab8fc97f6b771ddf9eafd9b6a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/requirements.txt",
+    "expected": "c455b81a655e768112ef9185776c3061c499312009a6e3bcf119e9e2ec5b1a36",
+    "actual": "c455b81a655e768112ef9185776c3061c499312009a6e3bcf119e9e2ec5b1a36",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/run_docent_pipeline.py",
+    "expected": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+    "actual": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio1.mp3",
+    "expected": "d7ea833ccfee76c37bb55ced15b7679b81a920a42381900c4fd5af2364795485",
+    "actual": "d7ea833ccfee76c37bb55ced15b7679b81a920a42381900c4fd5af2364795485",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio1_fragment.mp3",
+    "expected": "9b77c0fd4409d3addcaf3432d8786225198d9b8194432abff11a8a66cb097010",
+    "actual": "9b77c0fd4409d3addcaf3432d8786225198d9b8194432abff11a8a66cb097010",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio2.mp3",
+    "expected": "24b56f09a08c185776f58d9d68713d20949025cdbef4fbc1abb348b3901b3246",
+    "actual": "24b56f09a08c185776f58d9d68713d20949025cdbef4fbc1abb348b3901b3246",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio2_fragment.mp3",
+    "expected": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "actual": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio3.mp3",
+    "expected": "c3c9e3a7032a72dec4117f85be470199909e18b01f232b67356f2f9e94ca9244",
+    "actual": "c3c9e3a7032a72dec4117f85be470199909e18b01f232b67356f2f9e94ca9244",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio4.mp3",
+    "expected": "e0d5b944ddba077453f7103d714dbd097b2f07551d399d07bf200129b7ede4c2",
+    "actual": "e0d5b944ddba077453f7103d714dbd097b2f07551d399d07bf200129b7ede4c2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio4_fragment.mp3",
+    "expected": "c42516ed660a2f3c74591fcd8103a86f72f9ec56ac5a1f0f7996f0275ecb61d6",
+    "actual": "c42516ed660a2f3c74591fcd8103a86f72f9ec56ac5a1f0f7996f0275ecb61d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio5.mp3",
+    "expected": "85b2a3677e529979290db40b41a9a3b5be44643e17dcea209d95fba7ce9cf05b",
+    "actual": "85b2a3677e529979290db40b41a9a3b5be44643e17dcea209d95fba7ce9cf05b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio5_fragment.mp3",
+    "expected": "72a7802554c93624aaac116a38b92ec719bd7322e076d4fcbc053ed7846150ad",
+    "actual": "72a7802554c93624aaac116a38b92ec719bd7322e076d4fcbc053ed7846150ad",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio6_fragment.mp3",
+    "expected": "2ac5d8024aae47854f83d7799249d6b014faedfe16e03c5d1497e45428ea5976",
+    "actual": "2ac5d8024aae47854f83d7799249d6b014faedfe16e03c5d1497e45428ea5976",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio7_fragment.mp3",
+    "expected": "85e625e12334c13a3acfc2e50194e43394f41dc0ee072a44a4b34008741ca389",
+    "actual": "85e625e12334c13a3acfc2e50194e43394f41dc0ee072a44a4b34008741ca389",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testaudio8_fragment.mp3",
+    "expected": "7b0948bf3da81eaac0437540455f342725a05b7180af2790e401f623c49f9f10",
+    "actual": "7b0948bf3da81eaac0437540455f342725a05b7180af2790e401f623c49f9f10",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/test-files/testdocent.mp3",
+    "expected": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e",
+    "actual": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/tests/__init__.py",
+    "expected": "66cc92e064ea6e1cd056bd05f75f4933bf96cb741d7c46c896b2e6ef5a702ce1",
+    "actual": "66cc92e064ea6e1cd056bd05f75f4933bf96cb741d7c46c896b2e6ef5a702ce1",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/tests/test_docent_recognition.py",
+    "expected": "b373e2f1db8f123534a22e3621005415ce4ebced938741c6c15b40141ceb8f1b",
+    "actual": "b373e2f1db8f123534a22e3621005415ce4ebced938741c6c15b40141ceb8f1b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/tests/test_run_docent_pipeline.py",
+    "expected": "685f182193ed6adc3704015fa7f5ac987537a614cc68c05e6052269bb9cf3083",
+    "actual": "685f182193ed6adc3704015fa7f5ac987537a614cc68c05e6052269bb9cf3083",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-analysis/src/transcription.py",
+    "expected": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d",
+    "actual": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Data-local/raw/testaudio1_manual.txt",
+    "expected": "cf1e7097ab90957f9dd4e9f0344b04e64a952277122db148c0d63a6e702351e0",
+    "actual": "cf1e7097ab90957f9dd4e9f0344b04e64a952277122db148c0d63a6e702351e0",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Shared/Test-results/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "Shared/Test-results/Requirements_Samen.docx",
+    "expected": "567cebca4d0a343a885c24dbbdd4872ec16d14094b34a1ed03d4be60cc3c73bf",
+    "actual": "567cebca4d0a343a885c24dbbdd4872ec16d14094b34a1ed03d4be60cc3c73bf",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Docs/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Docs/PVA_AI-coach_StudieStap.docx",
+    "expected": "c827a7c2c565167001b3ef9847b3d0f7786c3955c8b9565b8d8888ab3ab38100",
+    "actual": "c827a7c2c565167001b3ef9847b3d0f7786c3955c8b9565b8d8888ab3ab38100",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Prototypes/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/daan-de-vries-persona.png",
+    "expected": "8b5dd4ca6898854c8c87f50092a427453f3ff37245d96e0b444b6107246f6aa9",
+    "actual": "8b5dd4ca6898854c8c87f50092a427453f3ff37245d96e0b444b6107246f6aa9",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/Design_Challenge_AI-coach_StudieStap.docx",
+    "expected": "d24c80a53bed0bf18238c1536e6565cdca71f9cf442d5505f1346ee67c556946",
+    "actual": "d24c80a53bed0bf18238c1536e6565cdca71f9cf442d5505f1346ee67c556946",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/Gebruikersonderzoek.docx",
+    "expected": "1ed1e4d7245f6af0362a0e6fd8d75281ed66d40438e1d814241ff997522bc831",
+    "actual": "1ed1e4d7245f6af0362a0e6fd8d75281ed66d40438e1d814241ff997522bc831",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/literatuuronderzoek.docx",
+    "expected": "9f211e468b642f2de6fea4a48e19b87bce4f1f897869dc6ca65788efa30b9141",
+    "actual": "9f211e468b642f2de6fea4a48e19b87bce4f1f897869dc6ca65788efa30b9141",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/omar-el-idrissi-persona.png",
+    "expected": "306e78e0a04ec6057d4b6d223d68bdcf7f1d81aaa57e0fab5fc115b2f3767407",
+    "actual": "306e78e0a04ec6057d4b6d223d68bdcf7f1d81aaa57e0fab5fc115b2f3767407",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/sanne-bakker-persona.png",
+    "expected": "acf959785064b9c13491b891cd55fea2aab17994171e9e1b8fb8a9bc22af3893",
+    "actual": "acf959785064b9c13491b891cd55fea2aab17994171e9e1b8fb8a9bc22af3893",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Research/Vooronderzoek_AI-coach_StudieStap.docx",
+    "expected": "90eac0aab6f34ea4181a9295efb828168c6d53747db5ab861fafce04e71b8a84",
+    "actual": "90eac0aab6f34ea4181a9295efb828168c6d53747db5ab861fafce04e71b8a84",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Audit_fase1_2026-10-09/manifest.json",
+    "path": "UX/Wireframes/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".gitignore",
+    "expected": "d171c47d2beaa99e1d013d5678ee22530bfc0434023c77bfe16e0ed3f070da5a",
+    "actual": "d171c47d2beaa99e1d013d5678ee22530bfc0434023c77bfe16e0ed3f070da5a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/.gitignore",
+    "expected": "4d4bf7821823e4011771702449065544347784ecf4cbde265125a36c0d8e31b0",
+    "actual": "4d4bf7821823e4011771702449065544347784ecf4cbde265125a36c0d8e31b0",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/StudieStap_WorkshopTool.iml",
+    "expected": "497263cfda824072a8d25981ad1fa47d1688c9810ae9f56b89ff282e47715313",
+    "actual": "497263cfda824072a8d25981ad1fa47d1688c9810ae9f56b89ff282e47715313",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/inspectionProfiles/profiles_settings.xml",
+    "expected": "6172c5997eeb3cd19c9ca2b5b97d6e2983cdd1fa60b2460d7bbb74055edcaa46",
+    "actual": "6172c5997eeb3cd19c9ca2b5b97d6e2983cdd1fa60b2460d7bbb74055edcaa46",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/modules.xml",
+    "expected": "dcb1b516c9d399bada14300cf9699494181dee707ed97afea9fb4621aa57aa2d",
+    "actual": "dcb1b516c9d399bada14300cf9699494181dee707ed97afea9fb4621aa57aa2d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/vcs.xml",
+    "expected": "62be7e0a7f84ab3c35b4d4bafb890a4951d061eadafde1a10aa3f5d0406db5df",
+    "actual": "62be7e0a7f84ab3c35b4d4bafb890a4951d061eadafde1a10aa3f5d0406db5df",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": ".idea/workspace.xml",
+    "expected": "f40b3f03723a3fb174307ea9e1728c1883746ceb0081c45f9aa5daa303c4517c",
+    "actual": "f40b3f03723a3fb174307ea9e1728c1883746ceb0081c45f9aa5daa303c4517c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "App/Backend/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "App/Frontend/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Afgeronde_experimenten/README.md",
+    "expected": "d5ea116a543bf5ba8d4956e2f43bc4bf795fcccfd2029c37967970ce6b95600a",
+    "actual": "d5ea116a543bf5ba8d4956e2f43bc4bf795fcccfd2029c37967970ce6b95600a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/community1/README.md",
+    "expected": "2a822d6a9c32a602a325ffe789eec8b0863df356238e587e8ef7d5de146a70af",
+    "actual": "2a822d6a9c32a602a325ffe789eec8b0863df356238e587e8ef7d5de146a70af",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/community1/community1_test.py",
+    "expected": "dae2cd62396b3b801d1f0ddcf52f4fc446399350b207700872d41a49328719e2",
+    "actual": "dae2cd62396b3b801d1f0ddcf52f4fc446399350b207700872d41a49328719e2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Afgeronde_experimenten/diarization/comparison/experiment_notes.md",
+    "expected": "fb6a603d02756d7987fc355627a660b74caa77db9795d6cd20974f67d82e82e4",
+    "actual": "fb6a603d02756d7987fc355627a660b74caa77db9795d6cd20974f67d82e82e4",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/auditrapport_fase1.md",
+    "expected": "86788f9f032efa7bb35b163fd1b3e5905ad2321f0bb401c11c10868c5e5cb026",
+    "actual": "86788f9f032efa7bb35b163fd1b3e5905ad2321f0bb401c11c10868c5e5cb026",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/edge_results.json",
+    "expected": "a74e76492f59576ea3bbb3e039dd56213e7c930d5b599fb65a76fbca9f264f5f",
+    "actual": "a74e76492f59576ea3bbb3e039dd56213e7c930d5b599fb65a76fbca9f264f5f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/der.py",
+    "expected": "f0bc25cc43390c0a076be8d7c3d8ab36e8ea2d18f21aa94702dc3d1ecc54d36e",
+    "actual": "f0bc25cc43390c0a076be8d7c3d8ab36e8ea2d18f21aa94702dc3d1ecc54d36e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/edge_tests.py",
+    "expected": "e135994834e9723bc88dffbedf9d2879f45349061b7337b7c175f0ff14e141da",
+    "actual": "e135994834e9723bc88dffbedf9d2879f45349061b7337b7c175f0ff14e141da",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/extract_nb.py",
+    "expected": "c76a2495c3d277b8668190a6ca43950e4ff2e634eb348e807c0153f9eebad22e",
+    "actual": "c76a2495c3d277b8668190a6ca43950e4ff2e634eb348e807c0153f9eebad22e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/run_asr_baseline.py",
+    "expected": "2766d0bb3349c7505ab78c4c19378f16470443b04f17ba0c3a33c4498d027a54",
+    "actual": "2766d0bb3349c7505ab78c4c19378f16470443b04f17ba0c3a33c4498d027a54",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/run_synth.py",
+    "expected": "c9245c676b7f9dc86b43549f94c966689dd36a5c49032d76b99a7b7a5108a63e",
+    "actual": "c9245c676b7f9dc86b43549f94c966689dd36a5c49032d76b99a7b7a5108a63e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/validate_json.py",
+    "expected": "fb45ecc6ca36958261ba255ab6e261bae659b3c71156a3b867ad1d9722ce35b2",
+    "actual": "fb45ecc6ca36958261ba255ab6e261bae659b3c71156a3b867ad1d9722ce35b2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/scripts/wer_eval.py",
+    "expected": "bef930c8ff4ee5dacef7e7cc429de7cfd4018c9ed09de9a8bb2179b35a19bc26",
+    "actual": "bef930c8ff4ee5dacef7e7cc429de7cfd4018c9ed09de9a8bb2179b35a19bc26",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/synth_results.json",
+    "expected": "a28f4d93b05cf2828701c45cc371b00a51547ddad015ac7588da9fb5b54a3be5",
+    "actual": "a28f4d93b05cf2828701c45cc371b00a51547ddad015ac7588da9fb5b54a3be5",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Audit/wer_results.json",
+    "expected": "a1b056da2b7dba308fbdb143909208b07796eef589e79424f6f250e7288898ae",
+    "actual": "a1b056da2b7dba308fbdb143909208b07796eef589e79424f6f250e7288898ae",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Docs/Verdiepend_Onderzoek_Patty_s1146363.pdf",
+    "expected": "c6f2d13be9ab3b3d2b80d332c42ce76108c22b80f7f1b663c78eb05267919681",
+    "actual": "c6f2d13be9ab3b3d2b80d332c42ce76108c22b80f7f1b663c78eb05267919681",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/README.md",
+    "expected": "d66d9a7e957a630b2e3df79c6e2c0dbdd62cc5a3d58e58c02291e270b617a886",
+    "actual": "d66d9a7e957a630b2e3df79c6e2c0dbdd62cc5a3d58e58c02291e270b617a886",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/classification.py",
+    "expected": "d772203494da1d310e414a6175cade53e241127aadb26ebb9937061e167d3d23",
+    "actual": "d772203494da1d310e414a6175cade53e241127aadb26ebb9937061e167d3d23",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/classification_data.py",
+    "expected": "93e9f3a0cda23923508838d8e4fa67357f8e0e9f0328c3ff8974efe56cb41d59",
+    "actual": "93e9f3a0cda23923508838d8e4fa67357f8e0e9f0328c3ff8974efe56cb41d59",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/__init__.py",
+    "expected": "e751e868a815157cdef0a049a0c1a79de3cbe70d19eeb381aea44b1e2204a729",
+    "actual": "e751e868a815157cdef0a049a0c1a79de3cbe70d19eeb381aea44b1e2204a729",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_manual.json",
+    "expected": "7be80b294cfca0e860767dc5344924e0eae3c1f0685d163aae6acdfd8e27f0b5",
+    "actual": "7be80b294cfca0e860767dc5344924e0eae3c1f0685d163aae6acdfd8e27f0b5",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_pipeline.json",
+    "expected": "9ffb43ed0c581879e63150cc646896f57a0bce827a5206a68e43921ffff8b9fe",
+    "actual": "9ffb43ed0c581879e63150cc646896f57a0bce827a5206a68e43921ffff8b9fe",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/fixtures/tiny_pipeline_with_docent_role.json",
+    "expected": "58e508da2700a659e0225e34765e213ea5ef1899311f5a62df074ddab026c3d6",
+    "actual": "58e508da2700a659e0225e34765e213ea5ef1899311f5a62df074ddab026c3d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/test_classification.py",
+    "expected": "901480753acbc81b5ff87258da947dc0a4553ae23171035aa9e109e077d3c76a",
+    "actual": "901480753acbc81b5ff87258da947dc0a4553ae23171035aa9e109e077d3c76a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/classification/tests/test_classification_data.py",
+    "expected": "6af2edfbca9788a3802f53bd45280448caacd8ef1a65704a1b24d5ab585ba492",
+    "actual": "6af2edfbca9788a3802f53bd45280448caacd8ef1a65704a1b24d5ab585ba492",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/README.md",
+    "expected": "edc7a6f562f7f8620fa62e680735d51cc851e08a8be07230d6d1d28fb52b6f13",
+    "actual": "edc7a6f562f7f8620fa62e680735d51cc851e08a8be07230d6d1d28fb52b6f13",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/evaluate_min_cluster_size.py",
+    "expected": "da4a0092f4094c4fe11b3f31a78dfad4944bcfdcc06c1ee0f9982292b67f2608",
+    "actual": "da4a0092f4094c4fe11b3f31a78dfad4944bcfdcc06c1ee0f9982292b67f2608",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_final_testfragment.csv",
+    "expected": "8894a2bb5d7b0adcb541630de00c50910faa1675fed518626489354f2cc04e7c",
+    "actual": "8894a2bb5d7b0adcb541630de00c50910faa1675fed518626489354f2cc04e7c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_template.csv",
+    "expected": "e224e0130d99b58d2573aeade2c0e2b8b720cd41013b20315071e1d24a53f7df",
+    "actual": "e224e0130d99b58d2573aeade2c0e2b8b720cd41013b20315071e1d24a53f7df",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio1_fragment.csv",
+    "expected": "bce4069a5156970e57df495a652c21199bb7e8cf44601647b0334e2c0c9978fa",
+    "actual": "bce4069a5156970e57df495a652c21199bb7e8cf44601647b0334e2c0c9978fa",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment.csv",
+    "expected": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03",
+    "actual": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio4_fragment.csv",
+    "expected": "83417b95d88d1a0ba476b6e86f792f7beb287d0a2b74eef9ba310a48d8f12a4c",
+    "actual": "83417b95d88d1a0ba476b6e86f792f7beb287d0a2b74eef9ba310a48d8f12a4c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio5_fragment.csv",
+    "expected": "e629ddecc383f4d413060e67ce42d1a49e725baa121ad61640008cbcdbdae1f6",
+    "actual": "e629ddecc383f4d413060e67ce42d1a49e725baa121ad61640008cbcdbdae1f6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio7_fragment.csv",
+    "expected": "35c296f8f2e7bbef2e4ddc4644117d0d72bf58abd7b81220683ca71d46c4cef2",
+    "actual": "35c296f8f2e7bbef2e4ddc4644117d0d72bf58abd7b81220683ca71d46c4cef2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio2_fragment.json",
+    "expected": "d0ad3f54ef18c888f87f643b3a76066a235431670267bc1a960d4d2bfc49229e",
+    "actual": "d0ad3f54ef18c888f87f643b3a76066a235431670267bc1a960d4d2bfc49229e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio4_fragment.json",
+    "expected": "b4968a0e381cd82656a63cf8374e501b65ba52b6e80949b4c2248ed5ea39eeff",
+    "actual": "b4968a0e381cd82656a63cf8374e501b65ba52b6e80949b4c2248ed5ea39eeff",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_min_cluster_size_testaudio4_fragment_run1_12-6-3.json",
+    "expected": "7b77caf7b58a1e95557c4907c922a60498bdf83d02918dab5da1ef0b8f0392d2",
+    "actual": "7b77caf7b58a1e95557c4907c922a60498bdf83d02918dab5da1ef0b8f0392d2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_threshold_testaudio2_fragment.json",
+    "expected": "6906e3493caf0974a5e149ab6f3157d719c4d0b880fc158cfb36f4777e0aea12",
+    "actual": "6906e3493caf0974a5e149ab6f3157d719c4d0b880fc158cfb36f4777e0aea12",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/results_threshold_testaudio4_fragment.json",
+    "expected": "23c1efdc2b9852b71e2e812887e00e0bb44c7840a9f461b48cb875cd878fc619",
+    "actual": "23c1efdc2b9852b71e2e812887e00e0bb44c7840a9f461b48cb875cd878fc619",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/whisperx/README.md",
+    "expected": "d50dac3d19dd5ee7828ae15b8bef04644ec2f92a81670976336c1cd0bbc3712f",
+    "actual": "d50dac3d19dd5ee7828ae15b8bef04644ec2f92a81670976336c1cd0bbc3712f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/whisperx/requirements-whisperx.txt",
+    "expected": "692ab2a0db5627177fa4fb97df932bb278d51515e8c8bc27c28a39466d42b212",
+    "actual": "692ab2a0db5627177fa4fb97df932bb278d51515e8c8bc27c28a39466d42b212",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization/whisperx/whisperx_test.py",
+    "expected": "7773394c3fba2dde6ef3de146b3d1be909a9ba6b71f045ba6234091e75a7371a",
+    "actual": "7773394c3fba2dde6ef3de146b3d1be909a9ba6b71f045ba6234091e75a7371a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/diarization_test_01.md",
+    "expected": "7d54b1d7505da1d56f699cd1c4f194f2610991795d7b9dd60d417ae6b7ca1438",
+    "actual": "7d54b1d7505da1d56f699cd1c4f194f2610991795d7b9dd60d417ae6b7ca1438",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/preprocessing_test_01.md",
+    "expected": "d17d744f4d902152f5b2cce82aa7914529542e4ea2c71f4d8e1c00be2603f191",
+    "actual": "d17d744f4d902152f5b2cce82aa7914529542e4ea2c71f4d8e1c00be2603f191",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/speaker_recognition/README.md",
+    "expected": "297f55bba5b2e2d88ae6f9a367ee8f557149daba5abd06a61f6230b19abd4742",
+    "actual": "297f55bba5b2e2d88ae6f9a367ee8f557149daba5abd06a61f6230b19abd4742",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/speaker_recognition/_common.py",
+    "expected": "f2063a7dcd87908718377edf4afe7eb85893c15b771acc6f2ec70d722bedfbf4",
+    "actual": "f2063a7dcd87908718377edf4afe7eb85893c15b771acc6f2ec70d722bedfbf4",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/speaker_recognition/comparison/results.md",
+    "expected": "1103c8a3701bf456d5e0454881f34497b8c1e7befc7bffe8a0d6b11a529753dc",
+    "actual": "1103c8a3701bf456d5e0454881f34497b8c1e7befc7bffe8a0d6b11a529753dc",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/speaker_recognition/pyannote_embeddings/test_teacher_recognition.py",
+    "expected": "f29190146dd6676010747b1539fdb5afdf2fee9757e5f12b4ff110592547c312",
+    "actual": "f29190146dd6676010747b1539fdb5afdf2fee9757e5f12b4ff110592547c312",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/speaker_recognition/speechbrain_ecapa/test_teacher_recognition.py",
+    "expected": "dcb65cedbdfc2c708468dec51251728163fe2c545ddb571cc7b8590771f3e3a8",
+    "actual": "dcb65cedbdfc2c708468dec51251728163fe2c545ddb571cc7b8590771f3e3a8",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/01_word_timestamps/extract_word_timestamps.py",
+    "expected": "b0ed69c4ccdb94ce8755f5f6124e780aefb7c395b8608ad5fd9a2b3ced0c33eb",
+    "actual": "b0ed69c4ccdb94ce8755f5f6124e780aefb7c395b8608ad5fd9a2b3ced0c33eb",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/02_word_level_attribution/attribute_words_to_speakers.py",
+    "expected": "47b77c013a03fe8f5a9dfd40e75562e1ef8c108247b2eaf16b0a03c53ecffe49",
+    "actual": "47b77c013a03fe8f5a9dfd40e75562e1ef8c108247b2eaf16b0a03c53ecffe49",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/03_recognition_refinement/refine_with_speaker_recognition.py",
+    "expected": "986a1164f27b63d959a88038ddc3b3bfb7faa52e40b6b0c531b6938fe8abc6fa",
+    "actual": "986a1164f27b63d959a88038ddc3b3bfb7faa52e40b6b0c531b6938fe8abc6fa",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/README.md",
+    "expected": "6c7949e51af013bcd3d12fa2b24d723efbcee879f17f1dcd79654ef9ae040db3",
+    "actual": "6c7949e51af013bcd3d12fa2b24d723efbcee879f17f1dcd79654ef9ae040db3",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/_common.py",
+    "expected": "2e7e71bfd555b95d31d3772bdada4564fc8812fcb54f66f796b6bcdd7ce34509",
+    "actual": "2e7e71bfd555b95d31d3772bdada4564fc8812fcb54f66f796b6bcdd7ce34509",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Experiments/word_level_speaker_attribution/comparison/results.md",
+    "expected": "5f6d96ca72648ca1db7b5e14725571ac45c43e01d3e0a0d2f8fa59319762c4ef",
+    "actual": "5f6d96ca72648ca1db7b5e14725571ac45c43e01d3e0a0d2f8fa59319762c4ef",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/01-exploring_data.ipynb",
+    "expected": "55a608668e08c602d0d93f857ba3814aa0bc3c03dd63f91a1d8aadc91835c210",
+    "actual": "55a608668e08c602d0d93f857ba3814aa0bc3c03dd63f91a1d8aadc91835c210",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/02-benchmarking.ipynb",
+    "expected": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "actual": "117c8a9be3e794832e4b648a74194963d9171b6273621e89fd74f14b1d1a117b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/03-transcription-evaluation.ipynb",
+    "expected": "09379e5c5860389988793ee4436e95e5b3071de69f98622868bc789407f40b6d",
+    "actual": "09379e5c5860389988793ee4436e95e5b3071de69f98622868bc789407f40b6d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/04-diarization.ipynb",
+    "expected": "8753979a759e2d9f75e8b86fa27cecd91d0d7cbde393a0f40214dfd83deb9dae",
+    "actual": "8753979a759e2d9f75e8b86fa27cecd91d0d7cbde393a0f40214dfd83deb9dae",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/05-fixing-diarization-problems.ipynb",
+    "expected": "0b4a51d5522d17f4a077d3142c7237de590b840910f0f53268e57c5366d5eb2f",
+    "actual": "0b4a51d5522d17f4a077d3142c7237de590b840910f0f53268e57c5366d5eb2f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/Notebooks/06-diarization-hyperparameter-tuning.ipynb",
+    "expected": "ca2988747b08208a14920b709119ccdc5122784f95af4b64ce20d9f80cede041",
+    "actual": "ca2988747b08208a14920b709119ccdc5122784f95af4b64ce20d9f80cede041",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/None/speechbrain/classifier.ckpt",
+    "expected": "2206f17396d8da912c76688dec2e5b0c1fededa40162537ab82238488071d0d6",
+    "actual": "2206f17396d8da912c76688dec2e5b0c1fededa40162537ab82238488071d0d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/None/speechbrain/embedding_model.ckpt",
+    "expected": "c7ffcdfb07d5cee7a08e0de9e0e2dcaa7306a8e1a70895b8af228cc9788f7af2",
+    "actual": "c7ffcdfb07d5cee7a08e0de9e0e2dcaa7306a8e1a70895b8af228cc9788f7af2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/None/speechbrain/hyperparams.yaml",
+    "expected": "d3adf671c4ae7394414938b127ec5eb292ab9762411395d0a00f70b014b6e263",
+    "actual": "d3adf671c4ae7394414938b127ec5eb292ab9762411395d0a00f70b014b6e263",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/None/speechbrain/label_encoder.ckpt",
+    "expected": "e06adc94d03e24ba1f5721124f7c0081fffee283701e8dd110b7f5751564e91c",
+    "actual": "e06adc94d03e24ba1f5721124f7c0081fffee283701e8dd110b7f5751564e91c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/None/speechbrain/mean_var_norm_emb.ckpt",
+    "expected": "18fed5245442f1745bcda95b8d5e7121f020693b0d0a13538c9dcdf04b52070c",
+    "actual": "18fed5245442f1745bcda95b8d5e7121f020693b0d0a13538c9dcdf04b52070c",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/OLD_benchmark_transcription.py",
+    "expected": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+    "actual": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/config.py",
+    "expected": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+    "actual": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/diarization.py",
+    "expected": "cfa384c53dfc53821ee8470110fad4a1ca5e20464ef2043efa7e2136b0dc246b",
+    "actual": "cfa384c53dfc53821ee8470110fad4a1ca5e20464ef2043efa7e2136b0dc246b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/docent_recognition.py",
+    "expected": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+    "actual": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/evaluation/__init__.py",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/evaluation/wer.py",
+    "expected": "6e4de1e2b5c2c967475ab1ad4b8fbe541939092bef819c27894dba3ef36cf8e1",
+    "actual": "6e4de1e2b5c2c967475ab1ad4b8fbe541939092bef819c27894dba3ef36cf8e1",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/models.py",
+    "expected": "dcbb063bebcb56656d1f0d84fc1d5419ea095adef7b1b93299285cdc9832832f",
+    "actual": "dcbb063bebcb56656d1f0d84fc1d5419ea095adef7b1b93299285cdc9832832f",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/preprocessing.py",
+    "expected": "4ba85fc3730fc563f8c4fa46ae4b405b7c79b74ab8fc97f6b771ddf9eafd9b6a",
+    "actual": "4ba85fc3730fc563f8c4fa46ae4b405b7c79b74ab8fc97f6b771ddf9eafd9b6a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/requirements.txt",
+    "expected": "c455b81a655e768112ef9185776c3061c499312009a6e3bcf119e9e2ec5b1a36",
+    "actual": "c455b81a655e768112ef9185776c3061c499312009a6e3bcf119e9e2ec5b1a36",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/run_docent_pipeline.py",
+    "expected": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+    "actual": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio1.mp3",
+    "expected": "d7ea833ccfee76c37bb55ced15b7679b81a920a42381900c4fd5af2364795485",
+    "actual": "d7ea833ccfee76c37bb55ced15b7679b81a920a42381900c4fd5af2364795485",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio1_fragment.mp3",
+    "expected": "9b77c0fd4409d3addcaf3432d8786225198d9b8194432abff11a8a66cb097010",
+    "actual": "9b77c0fd4409d3addcaf3432d8786225198d9b8194432abff11a8a66cb097010",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio2.mp3",
+    "expected": "24b56f09a08c185776f58d9d68713d20949025cdbef4fbc1abb348b3901b3246",
+    "actual": "24b56f09a08c185776f58d9d68713d20949025cdbef4fbc1abb348b3901b3246",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio2_fragment.mp3",
+    "expected": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "actual": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio3.mp3",
+    "expected": "c3c9e3a7032a72dec4117f85be470199909e18b01f232b67356f2f9e94ca9244",
+    "actual": "c3c9e3a7032a72dec4117f85be470199909e18b01f232b67356f2f9e94ca9244",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio4.mp3",
+    "expected": "e0d5b944ddba077453f7103d714dbd097b2f07551d399d07bf200129b7ede4c2",
+    "actual": "e0d5b944ddba077453f7103d714dbd097b2f07551d399d07bf200129b7ede4c2",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio4_fragment.mp3",
+    "expected": "c42516ed660a2f3c74591fcd8103a86f72f9ec56ac5a1f0f7996f0275ecb61d6",
+    "actual": "c42516ed660a2f3c74591fcd8103a86f72f9ec56ac5a1f0f7996f0275ecb61d6",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio5.mp3",
+    "expected": "85b2a3677e529979290db40b41a9a3b5be44643e17dcea209d95fba7ce9cf05b",
+    "actual": "85b2a3677e529979290db40b41a9a3b5be44643e17dcea209d95fba7ce9cf05b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio5_fragment.mp3",
+    "expected": "72a7802554c93624aaac116a38b92ec719bd7322e076d4fcbc053ed7846150ad",
+    "actual": "72a7802554c93624aaac116a38b92ec719bd7322e076d4fcbc053ed7846150ad",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio6_fragment.mp3",
+    "expected": "2ac5d8024aae47854f83d7799249d6b014faedfe16e03c5d1497e45428ea5976",
+    "actual": "2ac5d8024aae47854f83d7799249d6b014faedfe16e03c5d1497e45428ea5976",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio7_fragment.mp3",
+    "expected": "85e625e12334c13a3acfc2e50194e43394f41dc0ee072a44a4b34008741ca389",
+    "actual": "85e625e12334c13a3acfc2e50194e43394f41dc0ee072a44a4b34008741ca389",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testaudio8_fragment.mp3",
+    "expected": "7b0948bf3da81eaac0437540455f342725a05b7180af2790e401f623c49f9f10",
+    "actual": "7b0948bf3da81eaac0437540455f342725a05b7180af2790e401f623c49f9f10",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/test-files/testdocent.mp3",
+    "expected": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e",
+    "actual": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/tests/__init__.py",
+    "expected": "66cc92e064ea6e1cd056bd05f75f4933bf96cb741d7c46c896b2e6ef5a702ce1",
+    "actual": "66cc92e064ea6e1cd056bd05f75f4933bf96cb741d7c46c896b2e6ef5a702ce1",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/tests/test_docent_recognition.py",
+    "expected": "b373e2f1db8f123534a22e3621005415ce4ebced938741c6c15b40141ceb8f1b",
+    "actual": "b373e2f1db8f123534a22e3621005415ce4ebced938741c6c15b40141ceb8f1b",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/tests/test_run_docent_pipeline.py",
+    "expected": "685f182193ed6adc3704015fa7f5ac987537a614cc68c05e6052269bb9cf3083",
+    "actual": "685f182193ed6adc3704015fa7f5ac987537a614cc68c05e6052269bb9cf3083",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-analysis/src/transcription.py",
+    "expected": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d",
+    "actual": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Data-local/raw/testaudio1_manual.txt",
+    "expected": "cf1e7097ab90957f9dd4e9f0344b04e64a952277122db148c0d63a6e702351e0",
+    "actual": "cf1e7097ab90957f9dd4e9f0344b04e64a952277122db148c0d63a6e702351e0",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Shared/Test-results/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "Shared/Test-results/Requirements_Samen.docx",
+    "expected": "567cebca4d0a343a885c24dbbdd4872ec16d14094b34a1ed03d4be60cc3c73bf",
+    "actual": "567cebca4d0a343a885c24dbbdd4872ec16d14094b34a1ed03d4be60cc3c73bf",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Docs/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Docs/PVA_AI-coach_StudieStap.docx",
+    "expected": "c827a7c2c565167001b3ef9847b3d0f7786c3955c8b9565b8d8888ab3ab38100",
+    "actual": "c827a7c2c565167001b3ef9847b3d0f7786c3955c8b9565b8d8888ab3ab38100",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Prototypes/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/Design_Challenge_AI-coach_StudieStap.docx",
+    "expected": "d24c80a53bed0bf18238c1536e6565cdca71f9cf442d5505f1346ee67c556946",
+    "actual": "d24c80a53bed0bf18238c1536e6565cdca71f9cf442d5505f1346ee67c556946",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/Gebruikersonderzoek.docx",
+    "expected": "1ed1e4d7245f6af0362a0e6fd8d75281ed66d40438e1d814241ff997522bc831",
+    "actual": "1ed1e4d7245f6af0362a0e6fd8d75281ed66d40438e1d814241ff997522bc831",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/Vooronderzoek_AI-coach_StudieStap.docx",
+    "expected": "90eac0aab6f34ea4181a9295efb828168c6d53747db5ab861fafce04e71b8a84",
+    "actual": "90eac0aab6f34ea4181a9295efb828168c6d53747db5ab861fafce04e71b8a84",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/daan-de-vries-persona.png",
+    "expected": "8b5dd4ca6898854c8c87f50092a427453f3ff37245d96e0b444b6107246f6aa9",
+    "actual": "8b5dd4ca6898854c8c87f50092a427453f3ff37245d96e0b444b6107246f6aa9",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/literatuuronderzoek.docx",
+    "expected": "9f211e468b642f2de6fea4a48e19b87bce4f1f897869dc6ca65788efa30b9141",
+    "actual": "9f211e468b642f2de6fea4a48e19b87bce4f1f897869dc6ca65788efa30b9141",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/omar-el-idrissi-persona.png",
+    "expected": "306e78e0a04ec6057d4b6d223d68bdcf7f1d81aaa57e0fab5fc115b2f3767407",
+    "actual": "306e78e0a04ec6057d4b6d223d68bdcf7f1d81aaa57e0fab5fc115b2f3767407",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Research/sanne-bakker-persona.png",
+    "expected": "acf959785064b9c13491b891cd55fea2aab17994171e9e1b8fb8a9bc22af3893",
+    "actual": "acf959785064b9c13491b891cd55fea2aab17994171e9e1b8fb8a9bc22af3893",
+    "status": "MATCH"
+  },
+  {
+    "manifest": "Data-analysis/Audit/manifest_claude.csv",
+    "path": "UX/Wireframes/.gitkeep",
+    "expected": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "actual": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+    "status": "MATCH"
+  }
+]

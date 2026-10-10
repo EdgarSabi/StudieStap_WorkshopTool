@@ -1,0 +1,75 @@
+{
+ "01-exploring_data.ipynb": {
+  "code_cells": 5,
+  "executed_ok": [
+   3
+  ],
+  "first_failure": {
+   "cell": 5,
+   "error": "FileNotFoundError",
+   "msg": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\raw\\\\Breinschade_Uitleg_Sara.txt'"
+  }
+ },
+ "02-benchmarking.ipynb": {
+  "code_cells": 22,
+  "executed_ok": [
+   2,
+   3,
+   5
+  ],
+  "first_failure": {
+   "cell": 6,
+   "error": "IndexError",
+   "msg": "list index out of range"
+  }
+ },
+ "03-transcription-evaluation.ipynb": {
+  "code_cells": 9,
+  "executed_ok": [
+   5,
+   7,
+   9
+  ],
+  "first_failure": {
+   "cell": 12,
+   "error": "FileNotFoundError",
+   "msg": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\diarization\\\\testaudio1_fragment_diarized.json'"
+  }
+ },
+ "04-diarization.ipynb": {
+  "code_cells": 11,
+  "executed_ok": [
+   6
+  ],
+  "first_failure": {
+   "cell": 7,
+   "error": "FileNotFoundError",
+   "msg": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\speaker_recognition\\\\pyannote_teacher_similarity.csv'"
+  }
+ },
+ "05-fixing-diarization-problems.ipynb": {
+  "code_cells": 7,
+  "executed_ok": [],
+  "first_failure": {
+   "cell": 3,
+   "error": "FileNotFoundError",
+   "msg": "[Errno 2] No such file or directory: '..\\\\..\\\\Data-local\\\\processed\\\\docent_recognition\\\\testaudio6_fragment_diarized_turns_docent_roles_BEFORE.json'"
+  }
+ },
+ "06-diarization-hyperparameter-tuning.ipynb": {
+  "code_cells": 10,
+  "executed_ok": [
+   3,
+   4,
+   5,
+   6,
+   8,
+   9,
+   12,
+   15,
+   16,
+   17
+  ],
+  "first_failure": null
+ }
+}

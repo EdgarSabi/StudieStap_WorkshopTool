@@ -1,0 +1,686 @@
+[
+  {
+    "audit": "ChatGPT Work",
+    "id": "T01",
+    "question": "Wordt opeenvolgende spraak onderscheiden van simultane spraak?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Opeenvolgend A 0–8/B 8–10 geeft overlap=True. Bewijst dat vlag geen simultaniteit meet.",
+    "limitation": "Verwachte False is een semantische eis; implementatie documenteert tweede-sprekerdekking."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T02",
+    "question": "Wordt ontbrekende diarizatie onzeker?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Zonder turns: speaker=None en uncertain_assignment=True; exacte conditie opnieuw bevestigd.",
+    "limitation": "Eén geometrisch scenario; geen modeluitval onderzocht."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T03",
+    "question": "Wordt volledige gelijktijdige spraak onzeker?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Volledige A/B-overlap geeft uncertain=True en overlap=True in opgeslagen uitvoer.",
+    "limitation": "Predicate controleert alleen uncertain; V02 weerlegt dekking van korte overlap."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T04",
+    "question": "Kan een korte tweede spreker onzichtbaar blijven?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "A 0–9/B 9–10 eindigt met alleen A en beide vlaggen False.",
+    "limitation": "Correct tegenvoorbeeld voor informatieverlies; waarschuwing is geen vastgelegd contract."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T05",
+    "question": "Worden onlogische tijden en confidence geweigerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Negatieve/omgekeerde tijden en confidence=3 worden daadwerkelijk geaccepteerd.",
+    "limitation": "bad_model retourneert altijd False; verwachte ValidationError zou als geblokkeerd worden geregistreerd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T06",
+    "question": "Wordt verplicht tekstveld gecontroleerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Ontbrekend text wordt afgewezen; herhaling bevestigt dit.",
+    "limitation": "Elke Exception geldt als geslaagd; test controleert niet specifiek ValidationError/text-locatie."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T07",
+    "question": "Blijven onzekere segmenten apart en bronsegmenten behouden?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Merge-aantallen [2,1,1] en brontelling 4 kloppen.",
+    "limitation": "V08: duplicatie van bron 0 passeert dezelfde predicate; exact-eenmaal behoud onvoldoende getest."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T08",
+    "question": "Is preprocessing bestand tegen ongeordende segmenten?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Ongeordende input 5–6,0–1 wordt turn 5–1; gedrag gereproduceerd.",
+    "limitation": "Tijdvolgorde is impliciete invoervoorwaarde; geen bewijs dat echte upstreamdata ongeordend is."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T09",
+    "question": "Wordt lange stilte in context gemarkeerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "9 s stilte geeft context-onzeker na/voor bij grens 3 s.",
+    "limitation": "Test van ingestelde heuristiek, geen validatie van pedagogische context."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T10",
+    "question": "Wordt NaN-similarity als onbruikbaar behandeld?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Mockscore NaN geeft OTHER in plaats van onzeker; onbruikbare getallen niet afgevangen.",
+    "limitation": "Geen echte NaN-embedding of incidentfrequentie aangetoond."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T11",
+    "question": "Is een nulvector bewijs voor OTHER?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Twee nulvectoren geven cosine 0 en vervolgens OTHER.",
+    "limitation": "Toetst helper + mockbeslissing; geen echte embeddingmeting."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T12",
+    "question": "Wordt werkelijke cliplengte gecontroleerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Turnspan 2 s met 0,25 s beschikbare audio roept mock aan met 4000 samples en geeft DOCENT.",
+    "limitation": "Bewijst clipduurcontrole op metadata; mockscore bewijst geen werkelijke valse docentherkenning."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T13",
+    "question": "Is docentrol onafhankelijk van MAIN_SPEAKER?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "OTHER_SPEAKER_1 + mockscore 0,8 geeft DOCENT.",
+    "limitation": "Rolbeslisregel is onafhankelijk van spreektijdlabel; geen accuracymeting."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T14",
+    "question": "Blijven meerdere leerlingidentiteiten afzonderlijk?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Drie raw-ID’s leveren drie friendly labels.",
+    "limitation": "Assert controleert slechts aantal; geen injectiviteit, permutatiestabiliteit of downstreamidentiteiten."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T15",
+    "question": "Hebben verschillende bronnen verschillende cachepaden?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Verschillende bronpaden/extensies met gelijke stem geven hetzelfde JSON-cachepad.",
+    "limitation": "Padbotsing aangetoond; feitelijke verkeerde transcriptinhoud niet gemeten."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T16",
+    "question": "Komen batchinginstellingen overeen met opgeslagen config?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Fake batching-call bevat alleen language/batch_size; opgeslagen config vermeldt beam/VAD/words.",
+    "limitation": "Predicate controleert beam/VAD, niet alle opties of werkelijk modelgedrag; testdouble wel passend."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T17",
+    "question": "Wordt herhalende tekst gemarkeerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Vaste herhaling krijgt possible_repetition_hallucination.",
+    "limitation": "Test heuristiek; bewijst niet dat herhaling hallucinatie is."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T18",
+    "question": "Kan WAV met 24-bit samples via conversie worden verwerkt?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "24-bit PCM passeert to_wav en loader geeft unsupported sample width.",
+    "limitation": "Formaat incompatibel; duidelijke fout is geen bewijs van stille datacorruptie."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T19",
+    "question": "Wordt onverwachte sample rate correct doorgegeven door WAV-loader?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "48 kHz stereo wordt gelezen als sr=48000, shape=[2,48000].",
+    "limitation": "Nul-audio en alleen loader; geen resampling/modelkwaliteit."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T20",
+    "question": "Wordt een gedeeltelijke WAV gedetecteerd?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Afgekapt WAV met header 16000 frames levert 28 samples zonder fout.",
+    "limitation": "Predicate is hardcoded False; verwachte fout zou als geblokkeerd worden geregistreerd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T21",
+    "question": "Bestraft de bestaande score false alarms en extra speakers?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Scorer geeft 100% ondanks 99 s extra spraak en extra spreker.",
+    "limitation": "Dit is conform bewust milde scorer; weerlegt algemene accuracy/DER, niet het dekkingcontract."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T22",
+    "question": "Kan lege referentie veilig worden gescoord?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Lege GT en hypothese geven ZeroDivisionError.",
+    "limitation": "Concrete grensgevalfout; geen historische tuningrun met lege GT bewezen."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T23",
+    "question": "Dwingt status OK een bruikbaar resultaat af?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "OK met detected/evidence=None wordt geaccepteerd, tegen beschreven bruikbaar-paar-semantiek.",
+    "limitation": "Hardcoded False en uitzonderingsregistratie niet geschikt voor toekomstige regressiecontrole."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T24",
+    "question": "Weigert schema niet-eindige tijdstempels?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "NaN/Inf worden geaccepteerd en als null geschreven.",
+    "limitation": "Hardcoded False; ontbreken eindigheidscontrole is bewezen, type-afwijzing bij een fix wordt geblokkeerd genoemd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T25",
+    "question": "Blijft een onbekend extra bronveld behouden?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "extra_marker wordt weggegooid bij modelconstructie.",
+    "limitation": "Pydantic extra-ignore is ontwerpkeuze; eis alles behouden niet afgeleid uit schema."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T26",
+    "question": "Blijven ontbrekende kwaliteitsvelden onbekend?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Ontbrekende kwaliteitsvelden worden False/defaults.",
+    "limitation": "Geen verplichte provenance-eis vastgelegd; bewijst defaultgedrag, niet dat schone segmenten fout zijn."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T27",
+    "question": "Worden niet-spraak en onbekende identiteit apart gehouden in scoring?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "GEEN/ONBEKEND worden als gewone speaker-ID geladen.",
+    "limitation": "Semantisch risico overtuigend, maar annotatiecodeboek en audioverificatie ontbreken."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T28",
+    "question": "Wordt een corrupte transcriptcache afgewezen?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Bestand met alleen { geldt als aanwezige cache.",
+    "limitation": "Bestaan-only helper/CLI bewezen; geen historische cachecorruptie."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T29",
+    "question": "Blijven ongelabelde tekstregels van de bestaande handmatige referentie behouden?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Originele manual-parser bewaart 5 van 9 niet-lege regels en verliest vier vervolgregels.",
+    "limitation": "Tekststructuur bewijst verlies; inhoud niet opnieuw beluisterd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T30",
+    "question": "Is agreement vrij van de aanname MAIN=docent?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "MAIN + recognition OTHER wordt conflict in experimentele helper.",
+    "limitation": "Scenario MAIN=leerling is logisch, maar helper documenteert eigen MAIN=docentheuristiek; productie niet geraakt."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T31",
+    "question": "Volgt refinement de gedocumenteerde overlapratio?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "AST-extractie originele pure functie: overlap 1/1 op kortste versus 1/10 op nieuwe segmentduur geeft None.",
+    "limitation": "Bewijst documentatie/codeverschil; volledige refinement niet uitgevoerd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "T32",
+    "question": "Blokkeren slechte ASR-signalen een stellige docentrol?",
+    "evidence": "script + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Hoge mockscore geeft DOCENT ondanks twee ASR-quality_flags.",
+    "limitation": "Automatische blokkade niet vastgelegd; slechte tekst betekent niet automatisch onherkenbare stem."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E1",
+    "question": "Docent (S0) spreekt 10 s, leerling (S1) 30 s: wie wordt MAIN_SPEAKER?",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "ONGELDIG",
+    "reason": "Verwachting docent=MAIN strijdt met expliciet spreektijdcontract; V01 bevestigt juiste rangschikking.",
+    "limitation": "Geen geldige test van docentidentiteit."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E2",
+    "question": "Gelijke spreektijd (10 s/10 s), turns in omgekeerde volgorde aangeleverd",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Gelijke spreektijd: invoervolgorde beïnvloedt tie-label.",
+    "limitation": "Onzekerheid of stabiele tie-break is ontwerpeis, geen bewezen persoonsverwisseling."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E3",
+    "question": "4 sprekers met 25% spreektijd elk, default-config: main_speaker_uncertain?",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Default min_share=0 maakt flag False bij 25% hoofdspreker.",
+    "limitation": "True wordt door test geëist zonder geldend configuratiecontract; toont defaultwerking."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E4",
+    "question": "Sprekerwissel BINNEN een segment (S0 0-4 s, S1 4-5 s), niemand praat tegelijk: overlap?",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "A 0–4/B 4–5 geeft overlap=True zonder simultaniteit.",
+    "limitation": "Geometrie geldig; vlagcontract is tweede-sprekerdekking."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E5",
+    "question": "Echt gelijktijdig praten (S1 3 s binnen S0)",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "3 s echte overlap binnen 5 s geeft overlap=True.",
+    "limitation": "Geen bewijs dat kortere overlap wordt gevonden (V02)."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E6",
+    "question": "ASR-segment zonder enige diarization-spraak",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "Geen tijdsnijding geeft None en uncertain=True.",
+    "limitation": "Pure Python-logica, geen diarizatiemodeltest."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E7",
+    "question": "Slechts 20% van segment door diarization gedekt (rest onbekend)",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "20% dekking geeft confidence=1 maar uncertain=True.",
+    "limitation": "Confidence is gedocumenteerde share; audit mag dit niet als onterechte zekere toewijzing framen."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E7b",
+    "question": "60/40 verdeling S0/S1 binnen een segment",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "60/40 geeft confidence=0,6 en uncertain=False.",
+    "limitation": "rec(..., True) bevat geen assertion; resultaat is observatie."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E8",
+    "question": "Segment met end < start",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Omgekeerde tijden geaccepteerd; numeriek gebrek bewezen.",
+    "limitation": "Elke uitzondering zou als correcte afwijzing gelden."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E9",
+    "question": "JSON met typfout in veldnaam / onbekend veld",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Typfoutveld en extra top-levelveld worden genegeerd.",
+    "limitation": "Extra-ignore is toegestaan schemaontwerp; generieke except kan verkeerde oorzaak maskeren."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E10",
+    "question": "Segment zonder text-veld",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Ontbrekende text afgewezen.",
+    "limitation": "Vangt iedere Exception; test valideert niet de afwijzingsreden."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E11",
+    "question": "Segment met willekeurig speaker-label",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "ONGELDIG",
+    "reason": "Vrij string-speakerlabel wordt als fout gezien.",
+    "limitation": "Raw labels/labels A zijn geldig in dit ontwerp; gesloten vocabulaire is niet het contract."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E12",
+    "question": "Segmenten A(0-2), A(1-3, overlapt in tijd), A(10-12): turns?",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Overlappende A-segmenten en grote gap leveren twee turns.",
+    "limitation": "Aantal alleen; geen source- of spancontrole en geen echte simultane sprekers."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E13",
+    "question": "Zelfde friendly label, andere speaker_raw",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "ONGELDIG",
+    "reason": "Invoer gebruikt één friendly label voor twee verschillende raw-ID’s en eist splitsing.",
+    "limitation": "Niet mogelijk via normale injectieve build_label_map; audit erkent dit zelf."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E14",
+    "question": "Merged turn: span vs. werkelijke spraak (docent_recognition min-duur check gebruikt end-start)",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Gemergde turn: span 2,5 s, segmentduursom 1,1 s.",
+    "limitation": "rec(...,False) zonder embeddingaanroep; span is geen bewezen verkeerde rol, duur som telt stilte binnen segment mee."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E15-8000Hz-2ch-16bit",
+    "question": "WAV-loader met afwijkend formaat",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Loader laadt 8 kHz stereo.",
+    "limitation": "Elke Exception krijgt ok=True; duidelijke versus onverwachte fout niet onderscheiden."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E15-44100Hz-1ch-16bit",
+    "question": "WAV-loader met afwijkend formaat",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Loader laadt 44,1 kHz mono.",
+    "limitation": "Gelijk permissief testontwerp als overige E15-formaten; geen amplitude/samples-inhoudcheck."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E15-16000Hz-1ch-24bit",
+    "question": "WAV-loader met afwijkend formaat",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "24-bit wordt expliciet geweigerd.",
+    "limitation": "Passed betekent afwijzing acceptabel, niet dat formaat ondersteund wordt."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E15-16000Hz-1ch-8bit",
+    "question": "WAV-loader met afwijkend formaat",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "8-bit wordt expliciet geweigerd.",
+    "limitation": "Passed betekent afwijzing acceptabel, niet dat formaat ondersteund wordt."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E16",
+    "question": "to_wav() met 8 kHz stereo WAV (docstring: 'convert non-wav inputs')",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "ONGELDIG",
+    "reason": "Test eist WAV-conversie, terwijl to_wav alleen non-WAV conversie belooft.",
+    "limitation": "Geen backendrun; 8 kHz/stereo op zich geen bewezen pipelinefout."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E17",
+    "question": "Twee verschillende bestanden met dezelfde naam (map A: 1 s, map B: 2 s) -> WAV-cache",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "1 s/2 s mp3 met dezelfde naam hergebruiken 1 s WAV; lokaal herhaald.",
+    "limitation": "Geen controls op ffmpeg-returncodes in generatie; geslaagde output bevestigt hier invoerduur."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "E18",
+    "question": "transcription.output_path_for: zelfde bestandsnaam in raw/ en test-files/",
+    "evidence": "edge_tests.py + origineel JSON + offline herhaling",
+    "status": "GELDIG",
+    "reason": "raw/x en test/x geven gelijk transcriptpad.",
+    "limitation": "Padbotsing, geen accuracymeting."
+  },
+  {
+    "audit": "Beide",
+    "id": "UNIT-SRC",
+    "question": "Werken rolbeslisregels en runnerorkestratie?",
+    "evidence": "originele tests/logs + herhaling 17/17",
+    "status": "GELDIG",
+    "reason": "Mocks passen bij unitniveau; metadata, onzekerheid, rolbeslissingen en force-doorvoer worden getest.",
+    "limitation": "Geen echte subprocessketen/modelkwaliteit; oorspronkelijke verwachting is ontwerpregel."
+  },
+  {
+    "audit": "Beide",
+    "id": "UNIT-CLASS",
+    "question": "Werken datamodellen, context, prompt en mockintegratie?",
+    "evidence": "originele tests/logs + herhaling 51/51",
+    "status": "GELDIG",
+    "reason": "Technische verwachtingen bevestigd in juiste cwd.",
+    "limitation": "Geen didactische validiteit; classifier is mock en fixtures zijn synthetisch."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "INVENTARIS-AUDIO",
+    "question": "Ontbraken audio en docentreferentie?",
+    "evidence": "manifest + inventory + inventarisbijlage",
+    "status": "ONGELDIG",
+    "reason": "Eigen oorspronkelijke bewijs bevat 13 MP3’s inclusief testdocent; huidige hashes gelijk.",
+    "limitation": "Rapportagefout; geen modelrun alsnog uitgevoerd."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "SYNTAX",
+    "question": "Zijn 28 Python en 8 oorspronkelijke JSON syntactisch geldig?",
+    "evidence": "inventory.json + broninspectie",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Geldigheidsscan interpreteert parsing correct; schema en runtime zijn afzonderlijke vragen.",
+    "limitation": "Geen uitgebreide nieuwe syntaxscan/modeluitvoering; telling heeft oorspronkelijk scope."
+  },
+  {
+    "audit": "ChatGPT Work",
+    "id": "DEPENDENCIES",
+    "question": "Zijn dependencies consistent?",
+    "evidence": "dependency_check + metadata",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "pip-check conflict en versiedrift zijn controleerbaar; geen bewijs dat alle modellen falen.",
+    "limitation": "Geen volledige nieuwe import-/inferencecontrole; oorspronkelijke dependencies niet gewijzigd."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T2-ASR",
+    "question": "Zijn vijf baselines uitgevoerd en identiek aan eerdere uitvoer?",
+    "evidence": "teruggevonden asr/*.json + asr_log + notebooks",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Opgeslagen outputs en kleine uitvoeringslog ondersteunen baseline; geen nieuwe ASR-run.",
+    "limitation": "Modelrevisie/hash niet destijds vastgelegd; matching grenzen/tekst is smaller dan totale gelijkheid."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T3-WER/CER",
+    "question": "Meten WER/CER transcriptienauwkeurigheid?",
+    "evidence": "wer_eval.py + vijf ASR/CSV + V05",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Aritmetiek exact gerepliceerd, maar referentieonafhankelijkheid onvoldoende aangetoond.",
+    "limitation": "Voor accuracyclaim ONGELDIG; als tekstafstand GELDIG. WER=0 bewijst op zichzelf geen circulariteit."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T4-DER",
+    "question": "Meet gerapporteerde DER het diarizatiemodel?",
+    "evidence": "der.py + nb_hyp + CSV + nieuw DER-log",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Alle getallen reproduceerbaar voor gekozen segment-/turnhypothese en UEM.",
+    "limitation": "Geen raw-DER; overlapreferentie onvolledig; ondergrensclaim ONGELDIG (V03), identieke intervals overschrijven (V04)."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T6-SILENCE",
+    "question": "Werkt VAD en is lege uitvoer correct afgehandeld?",
+    "evidence": "synth_results + run_synth.py",
+    "status": "NIET TE VERIFIËREN",
+    "reason": "Log meldt nul segmenten voor stilte/witte ruis; audio/generatie ontbreken.",
+    "limitation": "Nul segmenten bewijst niet specifiek VAD-effect, geen VAD-uit ablatietest; leeg kan juist zijn."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T7-NOISE",
+    "question": "Hoe verandert ASR bij twee roze-ruiscondities?",
+    "evidence": "synth_results + run_synth.py",
+    "status": "NIET TE VERIFIËREN",
+    "reason": "Historische WER-afstanden 0,229/0,441 opgeslagen; kwaliteitflags beschreven.",
+    "limitation": "Geen wav/generatiescript/seed/RMS; SNR niet controleerbaar en schone ASR is geen onafhankelijke waarheid."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T8-8KHZ",
+    "question": "Is lagere samplefrequentie robuust?",
+    "evidence": "synth_results + run_synth.py",
+    "status": "NIET TE VERIFIËREN",
+    "reason": "Eén historisch verschil 0,102 opgeslagen.",
+    "limitation": "Invoeraudio/conversie ontbreekt; acceptabel heeft geen vooraf vastgelegd criterium."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "SYNTH-SILENCE-PREFIX",
+    "question": "Blijven tijden correct na 15 s stilte?",
+    "evidence": "synth_results",
+    "status": "NIET TE VERIFIËREN",
+    "reason": "Eerste start 14,8 s; WER tegen volledige t2-referentie 0,508.",
+    "limitation": "Audio ontbreekt; waarschijnlijk verkort spraakfragment maar niet bewezen. Gelijke inhoud/duur niet vastgesteld."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T9-OVERLAP",
+    "question": "Zijn 16 van 22 vlaggen fout?",
+    "evidence": "nb_hyp + GT + aanvullende intervaltelling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "TP/FP/FN opnieuw 1/4/1,1/2/3,4/10/1; dus 16/22 niet positief volgens rijproxy.",
+    "limitation": "Geen definitieve simultaniteitswaarheid; testaudio7 is processed-turnniveau (26 turns), overige tabellen segmentniveau."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T10-ROL",
+    "question": "Wat is docentrecall op testaudio7?",
+    "evidence": "notebook05 + GT + nieuwe duursom",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "31 s DOCENT,6 s OTHER,6 s ONZEKER op docent; leerling 6/2/5 s; sommen gerepliceerd.",
+    "limitation": "31/37 is secondenrecall onder besliste cases, geen 37 onafhankelijke beslissingen; in-sample/één fragment."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "T11-JSON",
+    "question": "Zijn baseline-JSON schema-valide en tijden consistent?",
+    "evidence": "validate_json.py + vijf JSON + nieuwe log",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Schema valide; eindovershoot en gehele seconden reproduceerbaar; 5 absolute paden, niet 4.",
+    "limitation": "Geen diarization-blok hoort bij ASR-stadium; checker waarschuwt ook toegestane toestanden en mist NaN/negatieve start."
+  },
+  {
+    "audit": "Claude Code",
+    "id": "F5-QUALITY",
+    "question": "Zijn qualitygetallen onafhankelijk per segment?",
+    "evidence": "baseline-JSON + lokale faster-whisper-bron",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Vensterwaarden worden hergebruikt in niet-batched bibliotheekpad; losse waarden zijn geen per-woordscore.",
+    "limitation": "Weinig unieke waarden alleen is geen bewijs; tekstherhalingsflag is juist per segment en bibliotheekclaim niet universeel."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB01",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: cel 5 FileNotFoundError.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB02",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: cel 6 IndexError.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB03",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: cel 12 FileNotFoundError.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB04",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: cel 7 FileNotFoundError.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB05",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: cel 3 FileNotFoundError.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  },
+  {
+    "audit": "Beide",
+    "id": "NB06",
+    "question": "Zijn notebookberekeningen herhaalbaar?",
+    "evidence": "oorspronkelijke bron/output + nieuwe exec-herhaling",
+    "status": "GEDEELTELIJK GELDIG",
+    "reason": "Huidige uitvoering: alle 10 niet-lege codecellen voltooid.",
+    "limitation": "Verse namespace, gedeeld proces; geen schone Jupyter-kernel. 06 leest historische tuningresultaten, genereert ze niet."
+  }
+]

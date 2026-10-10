@@ -1,5 +1,5 @@
-fragment,turn_index,start_seconds,end_seconds,speaker_id,overlap,note
-VOORBEELD_testaudio4_fragment,0,0.0,4.2,SPREKER_A,nee,
-VOORBEELD_testaudio4_fragment,1,4.2,4.9,SPREKER_B,nee,korte tussenkomst - let op of dit straks nog als eigen spreker terugkomt
-VOORBEELD_testaudio4_fragment,2,4.9,9.3,SPREKER_A,nee,
-VOORBEELD_testaudio4_fragment,3,9.3,11.0,SPREKER_A,ja,SPREKER_C praat er doorheen - twee sprekers tegelijk
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,speaker_role,overlap,intelligible,note
+VOORBEELD_testaudio4_fragment,0,0.0,4.2,SPREKER_A,,nee,,
+VOORBEELD_testaudio4_fragment,1,4.2,4.9,SPREKER_B,,nee,,korte tussenkomst - let op of dit straks nog als eigen spreker terugkomt
+VOORBEELD_testaudio4_fragment,2,4.9,9.3,SPREKER_A,,nee,,
+VOORBEELD_testaudio4_fragment,3,9.3,11.0,SPREKER_A,,ja,,SPREKER_C praat er doorheen - twee sprekers tegelijk

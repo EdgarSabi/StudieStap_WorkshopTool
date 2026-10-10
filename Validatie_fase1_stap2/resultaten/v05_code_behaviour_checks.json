@@ -1,0 +1,286 @@
+{
+ "V05-1_sweep_sequential_second_speaker": [
+  {
+   "B_seconds": 0.5,
+   "spec_overlap": false,
+   "spec_uncertain": false,
+   "got_overlap": false,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": false,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 1.0,
+   "spec_overlap": false,
+   "spec_uncertain": false,
+   "got_overlap": false,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": false,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 1.4,
+   "spec_overlap": false,
+   "spec_uncertain": false,
+   "got_overlap": false,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": false,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 1.5,
+   "spec_overlap": true,
+   "spec_uncertain": false,
+   "got_overlap": true,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": true,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 2.0,
+   "spec_overlap": true,
+   "spec_uncertain": false,
+   "got_overlap": true,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": true,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 3.0,
+   "spec_overlap": true,
+   "spec_uncertain": false,
+   "got_overlap": true,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": true,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 4.0,
+   "spec_overlap": true,
+   "spec_uncertain": false,
+   "got_overlap": true,
+   "got_uncertain": false,
+   "matches_spec": true,
+   "B_visible": true,
+   "label": "MAIN_SPEAKER"
+  },
+  {
+   "B_seconds": 5.0,
+   "spec_overlap": true,
+   "spec_uncertain": true,
+   "got_overlap": true,
+   "got_uncertain": true,
+   "matches_spec": true,
+   "B_visible": true,
+   "label": "MAIN_SPEAKER"
+  }
+ ],
+ "V05-2_sequential_vs_simultaneous": {
+  "sequential": {
+   "overlap": true,
+   "uncertain": false,
+   "conf": 0.7
+  },
+  "simultaneous": {
+   "overlap": true,
+   "uncertain": false,
+   "conf": 0.7692
+  },
+  "flags_identical": true
+ },
+ "V05-3_tie_order_dependence_5s_5s": {
+  "order1": "MAIN_SPEAKER",
+  "order2": "OTHER_SPEAKER_1",
+  "uncertain": [
+   true,
+   true
+  ]
+ },
+ "V05-4_cache_reuse_other_model_e2e": {
+  "cached_json_model": "base",
+  "requested_model": "medium",
+  "exit_code": 0,
+  "stdout": "Cached transcript already exists at C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2\\tmp\\tmpltab9bac\\processed\\clip.json. Use --force to redo.",
+  "engine_constructed": false
+ },
+ "V05-4b_same_stem_other_folder": {
+  "path_a": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2\\tmp\\tmpltab9bac\\processed\\x.json",
+  "path_b": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Validatie_fase1_stap2\\tmp\\tmpltab9bac\\processed\\x.json"
+ },
+ "V05-5_nan_timestamp_roundtrip": {
+  "json": "{\"start\":null,\"end\":1.0,\"speaker\":null,\"text\":\"x\",\"avg_logpr",
+  "roundtrip": "roundtrip faalt: ValidationError"
+ },
+ "V05-6_truncated_wav": {
+  "bytes": 100,
+  "samples_loaded": 28,
+  "header_claims": 16000
+ },
+ "V05-7_real_asr_json_properties": {
+  "testaudio1": {
+   "n": 9,
+   "end_le_start": 0,
+   "non_monotone": 0,
+   "beyond_duration_s": 0.58,
+   "unique_avg_logprob": 2,
+   "unique_no_speech": 2,
+   "flags_nonempty": 1,
+   "audio_file_absolute": true
+  },
+  "testaudio2": {
+   "n": 19,
+   "end_le_start": 0,
+   "non_monotone": 0,
+   "beyond_duration_s": 0,
+   "unique_avg_logprob": 2,
+   "unique_no_speech": 2,
+   "flags_nonempty": 1,
+   "audio_file_absolute": true
+  },
+  "testaudio4": {
+   "n": 87,
+   "end_le_start": 0,
+   "non_monotone": 0,
+   "beyond_duration_s": 0,
+   "unique_avg_logprob": 5,
+   "unique_no_speech": 5,
+   "flags_nonempty": 0,
+   "audio_file_absolute": true
+  },
+  "testaudio5": {
+   "n": 21,
+   "end_le_start": 0,
+   "non_monotone": 0,
+   "beyond_duration_s": 0,
+   "unique_avg_logprob": 2,
+   "unique_no_speech": 2,
+   "flags_nonempty": 0,
+   "audio_file_absolute": true
+  },
+  "testaudio7": {
+   "n": 38,
+   "end_le_start": 0,
+   "non_monotone": 0,
+   "beyond_duration_s": 0,
+   "unique_avg_logprob": 3,
+   "unique_no_speech": 3,
+   "flags_nonempty": 0,
+   "audio_file_absolute": true
+  }
+ },
+ "V05-8_gt_csv_codebook": {
+  "ground_truth_final_testfragment.csv": {
+   "rows": 137,
+   "speaker_ids": {
+    "": 137
+   },
+   "intelligible": {
+    "": 137
+   },
+   "overlap": {
+    "": 137
+   }
+  },
+  "ground_truth_template.csv": {
+   "rows": 4,
+   "speaker_ids": {
+    "SPREKER_A": 3,
+    "SPREKER_B": 1
+   },
+   "intelligible": {
+    "": 4
+   },
+   "overlap": {
+    "nee": 3,
+    "ja": 1
+   }
+  },
+  "ground_truth_testaudio1_fragment.csv": {
+   "rows": 12,
+   "speaker_ids": {
+    "SPREKER_A": 4,
+    "GEEN": 1,
+    "SPREKER_B": 7
+   },
+   "intelligible": {
+    "nee": 11,
+    "": 1
+   },
+   "overlap": {
+    "nee": 10,
+    "": 1,
+    "ja": 1
+   }
+  },
+  "ground_truth_testaudio2_fragment.csv": {
+   "rows": 19,
+   "speaker_ids": {
+    "SPREKER_A": 13,
+    "SPREKER_B": 6
+   },
+   "intelligible": {
+    "nee": 19
+   },
+   "overlap": {
+    "nee": 17,
+    "ja": 2
+   }
+  },
+  "ground_truth_testaudio4_fragment.csv": {
+   "rows": 87,
+   "speaker_ids": {
+    "SPREKER_A": 50,
+    "SPREKER_B": 31,
+    "SPREKER_C": 5,
+    "SPREKER_D": 1
+   },
+   "intelligible": {
+    "": 87
+   },
+   "overlap": {
+    "nee": 76,
+    "ja": 11
+   }
+  },
+  "ground_truth_testaudio5_fragment.csv": {
+   "rows": 20,
+   "speaker_ids": {
+    "SPREKER_A": 5,
+    "SPREKER_B": 8,
+    "SPREKER_C": 4,
+    "ONBEKEND": 3
+   },
+   "intelligible": {
+    "nee": 15,
+    "ja": 4,
+    "": 1
+   },
+   "overlap": {
+    "nee": 13,
+    "": 3,
+    "ja": 4
+   }
+  },
+  "ground_truth_testaudio7_fragment.csv": {
+   "rows": 38,
+   "speaker_ids": {
+    "SPREKER_A": 25,
+    "SPREKER_B": 9,
+    "SPREKER_C": 4
+   },
+   "intelligible": {
+    "nee": 38
+   },
+   "overlap": {
+    "nee": 33,
+    "ja": 5
+   }
+  }
+ }
+}

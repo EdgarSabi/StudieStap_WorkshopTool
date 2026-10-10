@@ -1,0 +1,39 @@
+﻿fragment,turn_index,start_seconds,end_seconds,speaker_id,speaker_role,overlap,intelligible,note,transcript
+testaudio7_fragment,0,0.0,3.0,SPREKER_A,docent,nee,nee,constant rumoer,"Ja, dames en heren, mag ik de aandacht, wat heb ik hier?"
+testaudio7_fragment,1,3.0,4.0,SPREKER_B,leerling,nee,nee,constant rumoer,Heb je de cijfers?
+testaudio7_fragment,2,4.0,6.0,SPREKER_B,leerling,nee,nee,constant rumoer,"Ja, meneer, dat doet u wel heel lang."
+testaudio7_fragment,3,6.0,7.0,SPREKER_A,docent,nee,nee,constant rumoer,"Nee, helemaal niets."
+testaudio7_fragment,4,7.0,9.0,SPREKER_B,leerling,nee,nee,constant rumoer,U heeft twee weken erover gedaan.
+testaudio7_fragment,5,9.0,12.0,SPREKER_A,docent,nee,nee,constant rumoer,"Guus, echt serieus, echt niet waar wat je zegt."
+testaudio7_fragment,6,12.0,14.0,SPREKER_A,docent,nee,nee,constant rumoer,Waarom zeg je dingen die niet waar zijn?
+testaudio7_fragment,7,14.0,16.0,SPREKER_A,docent,nee,nee,constant rumoer,Vorige week hebben jullie deze gehad.
+testaudio7_fragment,8,16.0,19.0,SPREKER_A,docent,nee,nee,constant rumoer,"En binnen een week, welke leraar doet het tegenwoordig nog?"
+testaudio7_fragment,9,19.0,20.0,SPREKER_A,docent,nee,nee,constant rumoer,Deze leraar.
+testaudio7_fragment,10,20.0,22.0,SPREKER_B,leerling,ja,nee,constant rumoer,"Nou, die wiskundige leraar doet altijd binnen een dag."
+testaudio7_fragment,11,22.0,23.0,SPREKER_B,leerling,ja,nee,constant rumoer,Ja.
+testaudio7_fragment,12,23.0,24.0,SPREKER_A,docent,ja,nee,constant rumoer,"Nee, dat is onzin."
+testaudio7_fragment,13,24.0,25.0,SPREKER_B,leerling,nee,nee,constant rumoer,Echt wel.
+testaudio7_fragment,14,25.0,26.0,SPREKER_A,docent,ja,nee,constant rumoer,"Nee, maar die hebben nog geen leven."
+testaudio7_fragment,15,26.0,28.0,SPREKER_B,leerling,nee,nee,constant rumoer,"Ja, nou, of u wel een leven heeft."
+testaudio7_fragment,16,28.0,29.0,SPREKER_A,docent,nee,nee,constant rumoer,Ik heb wel een leven.
+testaudio7_fragment,17,29.0,32.0,SPREKER_A,docent,nee,nee,constant rumoer,"Maar ik heb het binnen een week, heb ik het nagekeken."
+testaudio7_fragment,18,32.0,34.0,SPREKER_A,docent,nee,nee,constant rumoer,Het is niet zo goed gemaakt.
+testaudio7_fragment,19,34.0,35.0,SPREKER_A,docent,nee,nee,constant rumoer,Nee.
+testaudio7_fragment,20,35.0,36.0,SPREKER_A,docent,nee,nee,constant rumoer,"Nee, ik vind het jammer."
+testaudio7_fragment,21,36.0,37.0,SPREKER_B,leerling,ja,nee,constant rumoer,Hoeveel voldoende zijn er?
+testaudio7_fragment,22,37.0,39.0,SPREKER_A,docent,nee,nee,constant rumoer,Volgens mij hadden we heel goed geoefend.
+testaudio7_fragment,23,39.0,40.0,SPREKER_B,leerling,nee,nee,constant rumoer,Hoeveel voldoende zijn er?
+testaudio7_fragment,24,40.0,41.0,SPREKER_A,docent,nee,nee,constant rumoer,"Ja, niet veel."
+testaudio7_fragment,25,41.0,43.0,SPREKER_A,docent,nee,nee,constant rumoer,Ik ga het een beetje uitdelen.
+testaudio7_fragment,26,43.0,44.0,SPREKER_A,docent,nee,nee,constant rumoer,Ik begin met Mille.
+testaudio7_fragment,27,44.0,47.0,SPREKER_A,docent,nee,nee,,"Mille, ja, wat denk je?"
+testaudio7_fragment,28,47.0,48.0,SPREKER_C,leerling,nee,nee,,Twee zeker.
+testaudio7_fragment,29,48.0,49.0,SPREKER_A,docent,nee,nee,,Twee?
+testaudio7_fragment,30,49.0,50.0,SPREKER_C,leerling,nee,nee,,Ja.
+testaudio7_fragment,31,50.0,51.0,SPREKER_A,docent,nee,nee,,Jij begint voortvarend.
+testaudio7_fragment,32,51.0,53.0,SPREKER_A,docent,nee,nee,,Maar het is geen twee.
+testaudio7_fragment,33,53.0,55.0,SPREKER_A,docent,nee,nee,,Dan valt het 100% mee in jouw geval.
+testaudio7_fragment,34,55.0,58.0,SPREKER_A,docent,nee,nee,,"Dan heb je dus een, als het 100% meevalt."
+testaudio7_fragment,35,58.0,59.0,SPREKER_C,leerling,nee,nee,,Zeven.
+testaudio7_fragment,36,59.0,60.0,SPREKER_C,leerling,nee,nee,,Nee.
+testaudio7_fragment,37,60.0,62.0,SPREKER_A,docent,nee,nee,constant rumoer,Wat heb je voor wiskunde?

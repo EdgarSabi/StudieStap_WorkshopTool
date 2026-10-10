@@ -1,0 +1,86 @@
+{
+ "testaudio1_fragment": {
+  "ref_words": 62,
+  "hyp_words": 62,
+  "WER": 0.032,
+  "S": 0,
+  "D": 1,
+  "I": 1,
+  "CER": 0.035,
+  "n_segments": 9,
+  "duration": 29.9765625,
+  "first_logprob_values": [
+   -0.8487,
+   -0.424
+  ],
+  "n_distinct_logprob": 2
+ },
+ "testaudio2_fragment": {
+  "ref_words": 118,
+  "hyp_words": 118,
+  "WER": 0.0,
+  "S": 0,
+  "D": 0,
+  "I": 0,
+  "CER": 0.0,
+  "n_segments": 19,
+  "duration": 30.0026875,
+  "first_logprob_values": [
+   -0.5439,
+   -0.2306
+  ],
+  "n_distinct_logprob": 2
+ },
+ "testaudio4_fragment": {
+  "ref_words": 420,
+  "hyp_words": 420,
+  "WER": 0.0,
+  "S": 0,
+  "D": 0,
+  "I": 0,
+  "CER": 0.0,
+  "n_segments": 87,
+  "duration": 120.0,
+  "first_logprob_values": [
+   -0.4555,
+   -0.3321,
+   -0.3259,
+   -0.2439,
+   -0.22
+  ],
+  "n_distinct_logprob": 5
+ },
+ "testaudio5_fragment": {
+  "ref_words": 154,
+  "hyp_words": 152,
+  "WER": 0.123,
+  "S": 5,
+  "D": 8,
+  "I": 6,
+  "CER": 0.1,
+  "n_segments": 21,
+  "duration": 45.989625,
+  "first_logprob_values": [
+   -0.6229,
+   -0.3319
+  ],
+  "n_distinct_logprob": 2
+ },
+ "testaudio7_fragment": {
+  "ref_words": 196,
+  "hyp_words": 195,
+  "WER": 0.031,
+  "S": 3,
+  "D": 2,
+  "I": 1,
+  "CER": 0.022,
+  "n_segments": 38,
+  "duration": 64.0,
+  "first_logprob_values": [
+   -0.3797,
+   -0.2205,
+   -0.145
+  ],
+  "n_distinct_logprob": 3
+ }
+}

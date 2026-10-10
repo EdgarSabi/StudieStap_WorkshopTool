@@ -1,0 +1,131 @@
+{
+ "testaudio2": {
+  "strict": {
+   "total_s": 30.0,
+   "miss": 0.0,
+   "fa": 0.0,
+   "conf": 0.233,
+   "DER": 0.233,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "none_dropped": {
+   "total_s": 30.0,
+   "miss": 0.0,
+   "fa": 0.0,
+   "conf": 0.233,
+   "DER": 0.233,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "gt_rows_overlap_flag_ja": 2,
+  "gt_rows_with_time_overlap": 0,
+  "hyp_label_None_s": 0,
+  "gt_speakers": [
+   "SPREKER_A",
+   "SPREKER_B"
+  ],
+  "hyp_speakers": [
+   "MAIN_SPEAKER"
+  ]
+ },
+ "testaudio5": {
+  "strict": {
+   "total_s": 37.2,
+   "miss": 0.021,
+   "fa": 0.027,
+   "conf": 0.375,
+   "DER": 0.424,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "none_dropped": {
+   "total_s": 37.2,
+   "miss": 0.021,
+   "fa": 0.027,
+   "conf": 0.375,
+   "DER": 0.424,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "gt_rows_overlap_flag_ja": 4,
+  "gt_rows_with_time_overlap": 0,
+  "hyp_label_None_s": 0,
+  "gt_speakers": [
+   "SPREKER_A",
+   "SPREKER_B",
+   "SPREKER_C"
+  ],
+  "hyp_speakers": [
+   "MAIN_SPEAKER",
+   "OTHER_SPEAKER_1",
+   "OTHER_SPEAKER_2",
+   "OTHER_SPEAKER_3",
+   "OTHER_SPEAKER_4"
+  ]
+ },
+ "testaudio7": {
+  "strict": {
+   "total_s": 62.0,
+   "miss": 0.0,
+   "fa": 0.0,
+   "conf": 0.177,
+   "DER": 0.177,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "none_dropped": {
+   "total_s": 62.0,
+   "miss": 0.016,
+   "fa": 0.0,
+   "conf": 0.177,
+   "DER": 0.194,
+   "ref_overlap_s": 0.0,
+   "hyp_overlap_s": 0.0
+  },
+  "gt_rows_overlap_flag_ja": 5,
+  "gt_rows_with_time_overlap": 0,
+  "hyp_label_None_s": 1.0,
+  "gt_speakers": [
+   "SPREKER_A",
+   "SPREKER_B",
+   "SPREKER_C"
+  ],
+  "hyp_speakers": [
+   "MAIN_SPEAKER",
+   "None",
+   "OTHER_SPEAKER_1"
+  ]
+ },
+ "testaudio1": {
+  "strict": {
+   "total_s": 25.47,
+   "miss": 0.232,
+   "fa": 0.007,
+   "conf": 0.104,
+   "DER": 0.344,
+   "ref_overlap_s": 5.6,
+   "hyp_overlap_s": 0.0
+  },
+  "none_dropped": {
+   "total_s": 25.47,
+   "miss": 0.232,
+   "fa": 0.007,
+   "conf": 0.104,
+   "DER": 0.344,
+   "ref_overlap_s": 5.6,
+   "hyp_overlap_s": 0.0
+  },
+  "gt_rows_overlap_flag_ja": 1,
+  "gt_rows_with_time_overlap": 5,
+  "hyp_label_None_s": 0,
+  "gt_speakers": [
+   "SPREKER_A",
+   "SPREKER_B"
+  ],
+  "hyp_speakers": [
+   "MAIN_SPEAKER",
+   "OTHER_SPEAKER_1"
+  ]
+ }
+}

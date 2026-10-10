@@ -1,0 +1,1 @@
+numba 0.61.2 has requirement numpy<2.3,>=1.24, but you have numpy 2.4.6.

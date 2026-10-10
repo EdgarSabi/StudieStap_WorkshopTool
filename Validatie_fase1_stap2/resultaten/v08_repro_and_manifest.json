@@ -1,0 +1,37 @@
+{
+ "testaudio1": {
+  "nb_segments": 5,
+  "identical_in_fresh_run": 2
+ },
+ "testaudio2": {
+  "nb_segments": 19,
+  "identical_in_fresh_run": 18
+ },
+ "testaudio5": {
+  "nb_segments": 20,
+  "identical_in_fresh_run": 10
+ },
+ "chatgpt_manifest_mp3_count": 13,
+ "chatgpt_manifest_mp3_dirs": [
+  "Data-analysis/src/test-files"
+ ],
+ "chatgpt_inventory_python": "3.11.5 (tags/v3.11.5:cce6ba9, Aug 24 2023, 14:38:34) [MSC v.1936 64 bit (AMD64)]",
+ "chatgpt_inventory_pkgs": {
+  "faster-whisper": "1.2.1",
+  "pydantic": "2.13.5",
+  "numpy": "2.4.6",
+  "torch": "2.14.0",
+  "torchaudio": "2.11.0",
+  "pyannote.audio": "4.0.7",
+  "python-dotenv": "1.1.1",
+  "jiwer": "4.0.0",
+  "scipy": "1.17.1",
+  "pandas": "2.2.3",
+  "matplotlib": "3.10.3",
+  "scikit-learn": "1.9.0",
+  "speechbrain": null,
+  "whisperx": null,
+  "nbclient": "0.10.0",
+  "soundfile": null
+ }
+}

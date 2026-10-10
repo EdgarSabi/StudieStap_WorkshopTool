@@ -1,0 +1,921 @@
+[
+  {
+    "id": "T01",
+    "vraag": "Wordt opeenvolgende spraak onderscheiden van simultane spraak?",
+    "invoer": "A 0–8 s; B 8–10 s; ASR 0–10 s",
+    "verwacht": "overlap=False",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 10.0,
+      "speaker": "MAIN_SPEAKER",
+      "text": "synthetische tekst",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": "A",
+      "speaker_confidence": 0.8,
+      "overlap": true,
+      "uncertain_assignment": false
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T02",
+    "vraag": "Wordt ontbrekende diarizatie onzeker?",
+    "invoer": "ASR 0–10 s; geen turns",
+    "verwacht": "speaker=None; onzeker=True",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 10.0,
+      "speaker": null,
+      "text": "synthetische tekst",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": null,
+      "speaker_confidence": null,
+      "overlap": false,
+      "uncertain_assignment": true
+    },
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T03",
+    "vraag": "Wordt volledige gelijktijdige spraak onzeker?",
+    "invoer": "A en B beide 0–10 s",
+    "verwacht": "overlap=True; onzeker=True",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 10.0,
+      "speaker": "MAIN_SPEAKER",
+      "text": "synthetische tekst",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": "A",
+      "speaker_confidence": 0.5,
+      "overlap": true,
+      "uncertain_assignment": true
+    },
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T04",
+    "vraag": "Kan een korte tweede spreker onzichtbaar blijven?",
+    "invoer": "A 0–9 s; B 9–10 s; ASR 0–10 s",
+    "verwacht": "Tweede spreker zichtbaar als waarschuwing",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 10.0,
+      "speaker": "MAIN_SPEAKER",
+      "text": "synthetische tekst",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": "A",
+      "speaker_confidence": 0.9,
+      "overlap": false,
+      "uncertain_assignment": false
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T05",
+    "vraag": "Worden onlogische tijden en confidence geweigerd?",
+    "invoer": "start=-1; end=-2; confidence=3",
+    "verwacht": "ValidationError",
+    "werkelijk": {
+      "start": -1.0,
+      "end": -2.0,
+      "speaker": null,
+      "text": "x",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": null,
+      "speaker_confidence": 3.0,
+      "overlap": false,
+      "uncertain_assignment": false
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T06",
+    "vraag": "Wordt verplicht tekstveld gecontroleerd?",
+    "invoer": "segment zonder text",
+    "verwacht": "ValidationError",
+    "werkelijk": "ValidationError",
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T07",
+    "vraag": "Blijven onzekere segmenten apart en bronsegmenten behouden?",
+    "invoer": "Twee schone, één onzeker, één schoon segment",
+    "verwacht": "merge-aantallen [2,1,1]; alle vier bronnen",
+    "werkelijk": [
+      {
+        "turn_id": 0,
+        "speaker": "A",
+        "start": 0.0,
+        "end": 2.0,
+        "text": "synthetische tekst synthetische tekst",
+        "source_indices": [
+          0,
+          1
+        ],
+        "source_segments": [
+          {
+            "start": 0.0,
+            "end": 1.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": false
+          },
+          {
+            "start": 1.2,
+            "end": 2.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": false
+          }
+        ],
+        "n_segments_merged": 2,
+        "overlap": false,
+        "uncertain_assignment": false,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": null,
+        "next_turn_id": null,
+        "gap_before_seconds": null,
+        "gap_after_seconds": null,
+        "context_available_before": false,
+        "context_available_after": false,
+        "context_uncertain_before": false,
+        "context_uncertain_after": false,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      },
+      {
+        "turn_id": 1,
+        "speaker": "A",
+        "start": 2.0,
+        "end": 3.0,
+        "text": "synthetische tekst",
+        "source_indices": [
+          2
+        ],
+        "source_segments": [
+          {
+            "start": 2.0,
+            "end": 3.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": true
+          }
+        ],
+        "n_segments_merged": 1,
+        "overlap": false,
+        "uncertain_assignment": true,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": null,
+        "next_turn_id": null,
+        "gap_before_seconds": null,
+        "gap_after_seconds": null,
+        "context_available_before": false,
+        "context_available_after": false,
+        "context_uncertain_before": false,
+        "context_uncertain_after": false,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      },
+      {
+        "turn_id": 2,
+        "speaker": "A",
+        "start": 3.0,
+        "end": 4.0,
+        "text": "synthetische tekst",
+        "source_indices": [
+          3
+        ],
+        "source_segments": [
+          {
+            "start": 3.0,
+            "end": 4.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": false
+          }
+        ],
+        "n_segments_merged": 1,
+        "overlap": false,
+        "uncertain_assignment": false,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": null,
+        "next_turn_id": null,
+        "gap_before_seconds": null,
+        "gap_after_seconds": null,
+        "context_available_before": false,
+        "context_available_after": false,
+        "context_uncertain_before": false,
+        "context_uncertain_after": false,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      }
+    ],
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T08",
+    "vraag": "Is preprocessing bestand tegen ongeordende segmenten?",
+    "invoer": "A 5–6 s gevolgd door A 0–1 s",
+    "verwacht": "Geen turn met end<start",
+    "werkelijk": [
+      {
+        "turn_id": 0,
+        "speaker": "A",
+        "start": 5.0,
+        "end": 1.0,
+        "text": "synthetische tekst synthetische tekst",
+        "source_indices": [
+          0,
+          1
+        ],
+        "source_segments": [
+          {
+            "start": 5.0,
+            "end": 6.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": false
+          },
+          {
+            "start": 0.0,
+            "end": 1.0,
+            "speaker": "A",
+            "text": "synthetische tekst",
+            "avg_logprob": null,
+            "no_speech_prob": null,
+            "compression_ratio": null,
+            "quality_flags": [],
+            "speaker_raw": null,
+            "speaker_confidence": null,
+            "overlap": false,
+            "uncertain_assignment": false
+          }
+        ],
+        "n_segments_merged": 2,
+        "overlap": false,
+        "uncertain_assignment": false,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": null,
+        "next_turn_id": null,
+        "gap_before_seconds": null,
+        "gap_after_seconds": null,
+        "context_available_before": false,
+        "context_available_after": false,
+        "context_uncertain_before": false,
+        "context_uncertain_after": false,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      }
+    ],
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T09",
+    "vraag": "Wordt lange stilte in context gemarkeerd?",
+    "invoer": "9 s tussen twee turns",
+    "verwacht": "Context onzeker",
+    "werkelijk": [
+      {
+        "turn_id": 0,
+        "speaker": null,
+        "start": 0.0,
+        "end": 1.0,
+        "text": "x",
+        "source_indices": [],
+        "source_segments": [],
+        "n_segments_merged": 0,
+        "overlap": false,
+        "uncertain_assignment": false,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": null,
+        "next_turn_id": 1,
+        "gap_before_seconds": null,
+        "gap_after_seconds": 9.0,
+        "context_available_before": false,
+        "context_available_after": true,
+        "context_uncertain_before": false,
+        "context_uncertain_after": true,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      },
+      {
+        "turn_id": 1,
+        "speaker": null,
+        "start": 10.0,
+        "end": 11.0,
+        "text": "y",
+        "source_indices": [],
+        "source_segments": [],
+        "n_segments_merged": 0,
+        "overlap": false,
+        "uncertain_assignment": false,
+        "speaker_confidence_min": null,
+        "speaker_confidence_mean": null,
+        "prev_turn_id": 0,
+        "next_turn_id": null,
+        "gap_before_seconds": 9.0,
+        "gap_after_seconds": null,
+        "context_available_before": true,
+        "context_available_after": false,
+        "context_uncertain_before": true,
+        "context_uncertain_after": false,
+        "overlap_in_context": false,
+        "docent_role": null,
+        "docent_role_similarity": null,
+        "docent_role_threshold": null,
+        "docent_role_reference_audio": null,
+        "docent_role_note": null
+      }
+    ],
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T10",
+    "vraag": "Wordt NaN-similarity als onbruikbaar behandeld?",
+    "invoer": "Fake recognizer retourneert NaN",
+    "verwacht": "ONZEKER",
+    "werkelijk": {
+      "turn_id": 0,
+      "speaker": "OTHER_SPEAKER_1",
+      "start": 0.0,
+      "end": 2.0,
+      "text": "x",
+      "source_indices": [],
+      "source_segments": [],
+      "n_segments_merged": 0,
+      "overlap": false,
+      "uncertain_assignment": false,
+      "speaker_confidence_min": null,
+      "speaker_confidence_mean": null,
+      "prev_turn_id": null,
+      "next_turn_id": null,
+      "gap_before_seconds": null,
+      "gap_after_seconds": null,
+      "context_available_before": false,
+      "context_available_after": false,
+      "context_uncertain_before": false,
+      "context_uncertain_after": false,
+      "overlap_in_context": false,
+      "docent_role": "OTHER",
+      "docent_role_similarity": "nan",
+      "docent_role_threshold": 0.35,
+      "docent_role_reference_audio": "synthetic.wav",
+      "docent_role_note": null
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T11",
+    "vraag": "Is een nulvector bewijs voor OTHER?",
+    "invoer": "Cosine van twee nulvectoren",
+    "verwacht": "ONZEKER bij onbruikbare embedding",
+    "werkelijk": {
+      "similarity": 0.0,
+      "role": "OTHER"
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T12",
+    "vraag": "Wordt werkelijke cliplengte gecontroleerd?",
+    "invoer": "Turn 0–2 s; audio slechts 0.25 s; similarity 0.8",
+    "verwacht": "ONZEKER zonder embedding",
+    "werkelijk": {
+      "role": "DOCENT",
+      "samples": [
+        4000
+      ]
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T13",
+    "vraag": "Is docentrol onafhankelijk van MAIN_SPEAKER?",
+    "invoer": "OTHER_SPEAKER_1; similarity 0.8",
+    "verwacht": "DOCENT",
+    "werkelijk": {
+      "turn_id": 0,
+      "speaker": "OTHER_SPEAKER_1",
+      "start": 0.0,
+      "end": 2.0,
+      "text": "x",
+      "source_indices": [],
+      "source_segments": [],
+      "n_segments_merged": 0,
+      "overlap": false,
+      "uncertain_assignment": false,
+      "speaker_confidence_min": null,
+      "speaker_confidence_mean": null,
+      "prev_turn_id": null,
+      "next_turn_id": null,
+      "gap_before_seconds": null,
+      "gap_after_seconds": null,
+      "context_available_before": false,
+      "context_available_after": false,
+      "context_uncertain_before": false,
+      "context_uncertain_after": false,
+      "overlap_in_context": false,
+      "docent_role": "DOCENT",
+      "docent_role_similarity": 0.8,
+      "docent_role_threshold": 0.35,
+      "docent_role_reference_audio": "synthetic.wav",
+      "docent_role_note": null
+    },
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T14",
+    "vraag": "Blijven meerdere leerlingidentiteiten afzonderlijk?",
+    "invoer": "A/B/C; A spreekt korter dan B",
+    "verwacht": "Drie afzonderlijke friendly labels",
+    "werkelijk": {
+      "map": {
+        "B": "MAIN_SPEAKER",
+        "A": "OTHER_SPEAKER_1",
+        "C": "OTHER_SPEAKER_2"
+      },
+      "inventory": [
+        {
+          "raw": "B",
+          "label": "MAIN_SPEAKER",
+          "talk_seconds": 3.0,
+          "share": 0.6
+        },
+        {
+          "raw": "A",
+          "label": "OTHER_SPEAKER_1",
+          "talk_seconds": 1.0,
+          "share": 0.2
+        },
+        {
+          "raw": "C",
+          "label": "OTHER_SPEAKER_2",
+          "talk_seconds": 1.0,
+          "share": 0.2
+        }
+      ],
+      "main_speaker_uncertain": false
+    },
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T15",
+    "vraag": "Hebben verschillende bronnen verschillende cachepaden?",
+    "invoer": "/a/clip.mp3 en /b/clip.wav",
+    "verwacht": "Verschillende outputpaden",
+    "werkelijk": "C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Audit_fase1_2026-10-09\\clip.json | C:\\Users\\School\\Projects\\StudieStap_WorkshopTool\\Audit_fase1_2026-10-09\\clip.json",
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T16",
+    "vraag": "Komen batchinginstellingen overeen met opgeslagen config?",
+    "invoer": "Fake Whisper; beam=2; VAD=False; words=True",
+    "verwacht": "Alle ingestelde parameters doorgestuurd",
+    "werkelijk": {
+      "actual_call": [
+        {
+          "language": "nl",
+          "batch_size": 8
+        }
+      ],
+      "recorded": {
+        "language": "nl",
+        "beam_size": 2,
+        "condition_on_previous_text": true,
+        "repetition_penalty": 1.0,
+        "no_repeat_ngram_size": 0,
+        "word_timestamps": true,
+        "hallucination_silence_threshold": null,
+        "vad_filter": false,
+        "vad_parameters": null,
+        "log_prob_threshold": -1.0,
+        "no_speech_threshold": 0.6,
+        "compression_ratio_threshold": 2.4
+      },
+      "segment": {
+        "start": 0.0,
+        "end": 1.0,
+        "speaker": null,
+        "text": "x",
+        "avg_logprob": -0.1,
+        "no_speech_prob": 0.1,
+        "compression_ratio": 1.0,
+        "quality_flags": [],
+        "speaker_raw": null,
+        "speaker_confidence": null,
+        "overlap": false,
+        "uncertain_assignment": false
+      }
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Modelaanroepen vervangen door testdoubles; uitsluitend wrapperlogica getest."
+  },
+  {
+    "id": "T17",
+    "vraag": "Wordt herhalende tekst gemarkeerd?",
+    "invoer": "de de de de de de",
+    "verwacht": "possible_repetition_hallucination",
+    "werkelijk": [
+      "possible_repetition_hallucination"
+    ],
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T18",
+    "vraag": "Kan WAV met 24-bit samples via conversie worden verwerkt?",
+    "invoer": "Synthetisch geldige 24-bit PCM WAV",
+    "verwacht": "Conversie of succesvolle verwerking",
+    "werkelijk": {
+      "returned_unchanged": true,
+      "error": "synthetic_24.wav has 24-bit samples; to_wav() should produce 16-bit PCM."
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T19",
+    "vraag": "Wordt onverwachte sample rate correct doorgegeven door WAV-loader?",
+    "invoer": "48 kHz; stereo; één seconde",
+    "verwacht": "sample_rate=48000; shape [2,48000]",
+    "werkelijk": {
+      "sr": 48000,
+      "shape": [
+        2,
+        48000
+      ]
+    },
+    "geslaagd": true,
+    "conclusie": "Verwachte eigenschap bevestigd.",
+    "beperking": "Geen test van resampling binnen pyannote."
+  },
+  {
+    "id": "T20",
+    "vraag": "Wordt een gedeeltelijke WAV gedetecteerd?",
+    "invoer": "Header zegt 16000 frames; bestand afgekapt tot 100 bytes",
+    "verwacht": "Expliciete fout of incompleet-status",
+    "werkelijk": {
+      "samples": 28,
+      "header_samples": 16000
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T21",
+    "vraag": "Bestraft de bestaande score false alarms en extra speakers?",
+    "invoer": "GT A 0–1 s; hyp X 0–100 s plus Y 0–1 s",
+    "verwacht": "Score lager dan 100%",
+    "werkelijk": {
+      "gt_speakers": 1,
+      "pyannote_speakers_found": 2,
+      "overall_correct_pct": 100.0,
+      "per_gt_speaker": {
+        "A": {
+          "seconds": 1.0,
+          "matched_pyannote_speaker": "X",
+          "covered_pct": 100.0
+        }
+      }
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T22",
+    "vraag": "Kan lege referentie veilig worden gescoord?",
+    "invoer": "Geen GT; geen hypothese",
+    "verwacht": "Geen score; expliciete onbruikbare referentie",
+    "werkelijk": "ZeroDivisionError: division by zero",
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T23",
+    "vraag": "Dwingt status OK een bruikbaar resultaat af?",
+    "invoer": "OK; detected=None; evidence=None",
+    "verwacht": "ValidationError",
+    "werkelijk": {
+      "fragment_id": "x",
+      "center_turn_id": 0,
+      "context_turn_ids": [
+        0
+      ],
+      "indicator_id": "placeholder",
+      "detected": null,
+      "evidence": null,
+      "status": "OK",
+      "model_name": "mock",
+      "model_version": "0",
+      "prompt_version": "0"
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T24",
+    "vraag": "Weigert schema niet-eindige tijdstempels?",
+    "invoer": "start NaN; end Infinity",
+    "verwacht": "ValidationError",
+    "werkelijk": {
+      "start_is_nan": true,
+      "json": "{\"start\":null,\"end\":null,\"speaker\":null,\"text\":\"x\",\"avg_logprob\":null,\"no_speech_prob\":null,\"compression_ratio\":null,\"quality_flags\":[],\"speaker_raw\":null,\"speaker_confidence\":null,\"overlap\":false,\"uncertain_assignment\":false}"
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T25",
+    "vraag": "Blijft een onbekend extra bronveld behouden?",
+    "invoer": "TranscriptSegment met extra_marker=preserve",
+    "verwacht": "Extra bronveld in JSON",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 1.0,
+      "speaker": null,
+      "text": "x",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": null,
+      "speaker_confidence": null,
+      "overlap": false,
+      "uncertain_assignment": false
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T26",
+    "vraag": "Blijven ontbrekende kwaliteitsvelden onbekend?",
+    "invoer": "Segment met alleen start,end,text,speaker",
+    "verwacht": "Niet automatisch als schoon behandeld",
+    "werkelijk": {
+      "start": 0.0,
+      "end": 1.0,
+      "speaker": "A",
+      "text": "x",
+      "avg_logprob": null,
+      "no_speech_prob": null,
+      "compression_ratio": null,
+      "quality_flags": [],
+      "speaker_raw": null,
+      "speaker_confidence": null,
+      "overlap": false,
+      "uncertain_assignment": false
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T27",
+    "vraag": "Worden niet-spraak en onbekende identiteit apart gehouden in scoring?",
+    "invoer": "Bestaande CSV 1 en 5",
+    "verwacht": "GEEN/ONBEKEND geen gewone sprekeridentiteit",
+    "werkelijk": {
+      "audio1": [
+        "GEEN",
+        "SPREKER_A",
+        "SPREKER_B"
+      ],
+      "audio5": [
+        "ONBEKEND",
+        "SPREKER_A",
+        "SPREKER_B",
+        "SPREKER_C"
+      ]
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "CSV gelezen; geen verificatie van annotaties tegen audio."
+  },
+  {
+    "id": "T28",
+    "vraag": "Wordt een corrupte transcriptcache afgewezen?",
+    "invoer": "Bestaand cachebestand met alleen {",
+    "verwacht": "Cache niet bruikbaar",
+    "werkelijk": {
+      "cache_found": true,
+      "contents": "{"
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T29",
+    "vraag": "Blijven ongelabelde tekstregels van de bestaande handmatige referentie behouden?",
+    "invoer": "testaudio1_manual.txt via Notebook 03 cel 5",
+    "verwacht": "Alle niet-lege gesproken regels behouden",
+    "werkelijk": {
+      "nonempty_lines": 9,
+      "loaded_rows": 5,
+      "omitted_lines": 4
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Geen controle van de woorden tegen ontbrekende audio."
+  },
+  {
+    "id": "T30",
+    "vraag": "Is agreement vrij van de aanname MAIN=docent?",
+    "invoer": "MAIN is leerling; recognition OTHER",
+    "verwacht": "Geen conflict over correct herkende leerling",
+    "werkelijk": {
+      "scenario": "Leerling spreekt het meest; recognizer correct OTHER",
+      "agreement": [
+        "conflict_diar_main_sim_low",
+        true
+      ]
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Synthetisch; geen meting van modelkwaliteit."
+  },
+  {
+    "id": "T31",
+    "vraag": "Volgt refinement de gedocumenteerde overlapratio?",
+    "invoer": "Nieuw segment 0–10 s; baseline 0–1 s",
+    "verwacht": "A: volledige overlap van kortste segment",
+    "werkelijk": {
+      "result": null,
+      "overlap_over_shorter": 1.0,
+      "overlap_over_new_segment": 0.1
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Originele functie uit AST uitgevoerd; rest van experimentele module niet uitgevoerd."
+  },
+  {
+    "id": "T32",
+    "vraag": "Blokkeren slechte ASR-signalen een stellige docentrol?",
+    "invoer": "Schone diarizatie; twee ASR-quality_flags; fake similarity 0.8",
+    "verwacht": "Rol onzeker of expliciet kwaliteitsvoorbehoud",
+    "werkelijk": {
+      "turn_id": 0,
+      "speaker": "A",
+      "start": 0.0,
+      "end": 2.0,
+      "text": "x",
+      "source_indices": [],
+      "source_segments": [
+        {
+          "start": 0.0,
+          "end": 2.0,
+          "speaker": null,
+          "text": "x",
+          "avg_logprob": null,
+          "no_speech_prob": null,
+          "compression_ratio": null,
+          "quality_flags": [
+            "high_no_speech_prob",
+            "low_avg_logprob"
+          ],
+          "speaker_raw": null,
+          "speaker_confidence": null,
+          "overlap": false,
+          "uncertain_assignment": false
+        }
+      ],
+      "n_segments_merged": 0,
+      "overlap": false,
+      "uncertain_assignment": false,
+      "speaker_confidence_min": null,
+      "speaker_confidence_mean": null,
+      "prev_turn_id": null,
+      "next_turn_id": null,
+      "gap_before_seconds": null,
+      "gap_after_seconds": null,
+      "context_available_before": false,
+      "context_available_after": false,
+      "context_uncertain_before": false,
+      "context_uncertain_after": false,
+      "overlap_in_context": false,
+      "docent_role": "DOCENT",
+      "docent_role_similarity": 0.8,
+      "docent_role_threshold": 0.35,
+      "docent_role_reference_audio": "synthetic.wav",
+      "docent_role_note": null
+    },
+    "geslaagd": false,
+    "conclusie": "Verwachte eigenschap weerlegd.",
+    "beperking": "Bewezen gedrag; ontbreken blokkade is een methodologisch risico, geen bewezen verkeerde stemherkenning."
+  }
+]
