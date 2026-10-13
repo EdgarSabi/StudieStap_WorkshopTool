@@ -1,0 +1,42 @@
+{
+  "_comment": "Template. run_baseline.py schrijft per fragment een ingevulde run_manifest.json (modus 'x') VOORDAT de eerste stap start; run_result.json volgt erna. Waarden hieronder zijn voorbeelden/ontbrekend.",
+  "protocol": "v1",
+  "fragment": "testaudio2_fragment",
+  "run_id": "20261012_dev_run1",
+  "started_utc": "<ingevuld door runner>",
+  "command": ["<sys.argv>"],
+  "inputs": {
+    "audio_path": "Data-analysis/src/test-files/testaudio2_fragment.mp3",
+    "audio_sha256": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "audio_duration_s": 30.014694,
+    "reference_path": "Data-analysis/Experiments/diarization/hyperparameter_tuning/ground_truth_testaudio2_fragment_raster.csv",
+    "reference_sha256": "4b2a99321c0e81648c35a3af901461abc649ffb96a6af3c6cc09dc53f7abbf4b",
+    "role_source": {"path": ".../ground_truth_testaudio2_fragment.csv", "sha256": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03"},
+    "manual_txt": {"path": "Data-local/raw/testaudio2_manual.txt", "sha256": "96cbf8548c70521dc0e87c3cc8fde388e2f1d5120658580030c4bd0277b7d21e"},
+    "docent_reference_audio": "Data-analysis/src/test-files/testdocent.mp3",
+    "docent_reference_sha256": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e"
+  },
+  "pipeline_settings": {
+    "transcription": {"language": "nl", "model_size": "medium", "device": "cpu", "compute_type": "int8", "beam_size": 5, "condition_on_previous_text": true, "vad_filter": true, "word_timestamps": false, "...": "volledige asdict(TranscriptionConfig) wordt ingevuld"},
+    "diarization": {"hf_model": "pyannote/speaker-diarization-3.1", "device": "cpu", "min_speakers": null, "max_speakers": null, "...": "volledige asdict(DiarizationConfig)"},
+    "preprocessing": {"max_gap_within_turn_seconds": 1.5, "large_context_gap_seconds": 3.0},
+    "docent_recognition": {"embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM", "similarity_threshold": 0.35, "min_clip_duration_seconds": 1.0},
+    "note": "Identiek aan run_docent_pipeline.py: --model medium, geen min/max-speakers, geen --threshold."
+  },
+  "git": {"head": "<sha>", "branch": "<naam>", "status_short": ["<regels van git status --short>"]},
+  "environment": {
+    "python": "<versie>", "platform": "<os>", "cpu_count": 12,
+    "packages": {"faster-whisper": "1.2.1", "pyannote.audio": "4.0.7", "torch": "2.14.0+cpu", "pyannote.metrics": "4.1", "...": "..."},
+    "hf_snapshots": {"Systran/faster-whisper-medium": ["08e178d48790749d25932bbc082711ddcfdfbc4f"], "...": "..."},
+    "hf_token_present": true,
+    "hf_hub_offline": "1",
+    "src_sha256": {"config.py": "<sha>", "...": "..."}
+  },
+  "seeds": "geen (de pipeline zet geen seed; Whisper-temperatuurfallback kan niet-deterministisch zijn)",
+  "output_dir": "Data-local/evaluation/baseline_v1/runs/<run_id>/<fragment>",
+  "run_result_fields_after_run": {
+    "all_stages_ok": "bool",
+    "stages": [{"name": "01_transcribe", "status": "ok|exit|error|missing_output|skipped_after_failure", "detail": "foutmelding/traceback of null", "seconds": 0.0, "outputs": {"transcript": "<sha256>"}}],
+    "no_touch_check": {"data_local_processed_diff": {"added": [], "removed": [], "changed": []}, "src_py_unchanged": true, "reference_csv_unchanged": true}
+  }
+}

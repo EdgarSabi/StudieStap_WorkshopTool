@@ -1,0 +1,854 @@
+{
+  "fragment": "testaudio2_fragment",
+  "run_a": "Data-local\\evaluation\\baseline_v1\\runs\\20261012_dev_run1\\testaudio2_fragment",
+  "run_b": "Data-local\\evaluation\\baseline_v1\\runs\\20261012_dev_run2\\testaudio2_fragment",
+  "setup_identical": {
+    "inputs_and_settings": {
+      "inputs": true,
+      "pipeline_settings": true
+    },
+    "environment": {
+      "packages": true,
+      "hf_snapshots": true,
+      "src_sha256": true,
+      "python": true
+    },
+    "git_head": true
+  },
+  "runtimes_s": {
+    "01_transcribe": [
+      36.94,
+      36.5
+    ],
+    "02_diarize": [
+      32.76,
+      32.22
+    ],
+    "03_preprocess": [
+      0.0,
+      0.0
+    ],
+    "04_docent": [
+      1.74,
+      1.78
+    ]
+  },
+  "stage_output_sha256_equal": {
+    "01_transcribe": false,
+    "02_diarize": false,
+    "03_preprocess": false,
+    "04_docent": false
+  },
+  "whisper": {
+    "n_segments": [
+      19,
+      19
+    ],
+    "field_differences": [],
+    "text_identical": true
+  },
+  "raw_pyannote": {
+    "n_turns": [
+      8,
+      8
+    ],
+    "turn_differences": [],
+    "max_abs_boundary_diff_s": 0.0,
+    "raw_speakers": [
+      [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ]
+    ]
+  },
+  "coupling": {
+    "segment_label_differences": [],
+    "label_map": [
+      {
+        "SPEAKER_00": "MAIN_SPEAKER",
+        "SPEAKER_01": "OTHER_SPEAKER_1"
+      },
+      {
+        "SPEAKER_00": "MAIN_SPEAKER",
+        "SPEAKER_01": "OTHER_SPEAKER_1"
+      }
+    ],
+    "assignment": [
+      {
+        "segments": 19,
+        "per_label": {
+          "MAIN_SPEAKER": 19
+        },
+        "overlap_segments": 5,
+        "uncertain_segments": 0,
+        "unassigned_segments": 0
+      },
+      {
+        "segments": 19,
+        "per_label": {
+          "MAIN_SPEAKER": 19
+        },
+        "overlap_segments": 5,
+        "uncertain_segments": 0,
+        "unassigned_segments": 0
+      }
+    ],
+    "speakers_kept_after_coupling": [
+      [
+        "SPEAKER_00"
+      ],
+      [
+        "SPEAKER_00"
+      ]
+    ]
+  },
+  "preprocessing": {
+    "n_turns": [
+      10,
+      10
+    ],
+    "differences": []
+  },
+  "docent_roles": {
+    "roles_a": [
+      "DOCENT",
+      "DOCENT",
+      "DOCENT",
+      "OTHER",
+      "DOCENT",
+      "DOCENT",
+      "OTHER",
+      "DOCENT",
+      "DOCENT",
+      "DOCENT"
+    ],
+    "roles_b": [
+      "DOCENT",
+      "DOCENT",
+      "DOCENT",
+      "OTHER",
+      "DOCENT",
+      "DOCENT",
+      "OTHER",
+      "DOCENT",
+      "DOCENT",
+      "DOCENT"
+    ],
+    "role_differences": [],
+    "similarity_max_abs_diff": 0.0,
+    "similarities": [
+      [
+        0.5694,
+        0.5694
+      ],
+      [
+        0.5779,
+        0.5779
+      ],
+      [
+        0.518,
+        0.518
+      ],
+      [
+        0.1427,
+        0.1427
+      ],
+      [
+        0.6251,
+        0.6251
+      ],
+      [
+        0.4916,
+        0.4916
+      ],
+      [
+        0.2189,
+        0.2189
+      ],
+      [
+        0.6006,
+        0.6006
+      ],
+      [
+        0.5319,
+        0.5319
+      ],
+      [
+        0.6355,
+        0.6355
+      ]
+    ]
+  },
+  "scores": {
+    "n_values": 293,
+    "differing": {},
+    "WER": [
+      0.075,
+      0.075
+    ],
+    "DER_headline": [
+      0.11135922330097052,
+      0.11135922330097052
+    ],
+    "coverage": [
+      10.3,
+      10.3
+    ],
+    "segment_status_counts": [
+      {
+        "single": 12,
+        "mixed": 4,
+        "no_ref_speech": 3
+      },
+      {
+        "single": 12,
+        "mixed": 4,
+        "no_ref_speech": 3
+      }
+    ]
+  },
+  "second_speaker": {
+    "run_a": {
+      "raw_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "raw_seconds": {
+        "SPEAKER_00": 29.194,
+        "SPEAKER_01": 3.898
+      },
+      "ref_B_all": {
+        "ref_seconds": 4.0,
+        "in_SPEAKER_00": 3.892,
+        "in_SPEAKER_01": 0.621,
+        "in_no_raw_speaker": 0.108
+      },
+      "ref_B_flagged_overlap_ja": {
+        "ref_seconds": 2.5,
+        "in_SPEAKER_00": 2.392,
+        "in_SPEAKER_01": 0.621,
+        "in_no_raw_speaker": 0.108
+      },
+      "ref_B_not_flagged_overlap": {
+        "ref_seconds": 1.5,
+        "in_SPEAKER_00": 1.5,
+        "in_SPEAKER_01": 0,
+        "in_no_raw_speaker": 0
+      },
+      "ref_A_all": {
+        "ref_seconds": 18.7,
+        "in_SPEAKER_00": 18.202,
+        "in_SPEAKER_01": 3.078,
+        "in_no_raw_speaker": 0.497
+      },
+      "raw_SPEAKER_01_intervals": [
+        [
+          2.984,
+          3.71
+        ],
+        [
+          8.35,
+          10.072
+        ],
+        [
+          17.429,
+          18.02
+        ],
+        [
+          22.728,
+          23.588
+        ]
+      ],
+      "raw_turns": [
+        [
+          0.031,
+          6.663,
+          "SPEAKER_00"
+        ],
+        [
+          2.984,
+          3.71,
+          "SPEAKER_01"
+        ],
+        [
+          6.73,
+          18.492,
+          "SPEAKER_00"
+        ],
+        [
+          8.35,
+          10.072,
+          "SPEAKER_01"
+        ],
+        [
+          17.429,
+          18.02,
+          "SPEAKER_01"
+        ],
+        [
+          18.695,
+          27.301,
+          "SPEAKER_00"
+        ],
+        [
+          22.728,
+          23.588,
+          "SPEAKER_01"
+        ],
+        [
+          27.858,
+          30.052,
+          "SPEAKER_00"
+        ]
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "start": 0.0,
+          "end": 2.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.969,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 2.0
+        },
+        {
+          "segment": 1,
+          "start": 2.0,
+          "end": 4.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.726,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.9
+        },
+        {
+          "segment": 2,
+          "start": 4.0,
+          "end": 5.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.4,
+          "ref_A_sec": 0.1
+        },
+        {
+          "segment": 3,
+          "start": 5.0,
+          "end": 7.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.932,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.5,
+          "ref_A_sec": 1.4
+        },
+        {
+          "segment": 4,
+          "start": 7.0,
+          "end": 9.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.65,
+          "ref_B_sec": 1.7,
+          "ref_A_sec": 0.2
+        },
+        {
+          "segment": 5,
+          "start": 9.0,
+          "end": 11.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 1.072,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.8
+        },
+        {
+          "segment": 6,
+          "start": 11.0,
+          "end": 13.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.9
+        },
+        {
+          "segment": 7,
+          "start": 13.0,
+          "end": 14.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.1,
+          "ref_A_sec": 0
+        },
+        {
+          "segment": 8,
+          "start": 14.0,
+          "end": 15.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.3,
+          "ref_A_sec": 0.6
+        },
+        {
+          "segment": 9,
+          "start": 15.0,
+          "end": 16.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.6,
+          "ref_A_sec": 0.3
+        },
+        {
+          "segment": 10,
+          "start": 16.0,
+          "end": 17.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.9
+        },
+        {
+          "segment": 11,
+          "start": 17.0,
+          "end": 18.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0.571,
+          "ref_B_sec": 0.1,
+          "ref_A_sec": 0.8
+        },
+        {
+          "segment": 12,
+          "start": 18.0,
+          "end": 19.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 0.797,
+          "sec_SPEAKER_01": 0.02,
+          "ref_B_sec": 0.3,
+          "ref_A_sec": 0.4
+        },
+        {
+          "segment": 13,
+          "start": 19.0,
+          "end": 20.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.6
+        },
+        {
+          "segment": 14,
+          "start": 20.0,
+          "end": 21.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.2
+        },
+        {
+          "segment": 15,
+          "start": 21.0,
+          "end": 23.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.272,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.6
+        },
+        {
+          "segment": 16,
+          "start": 23.0,
+          "end": 25.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.588,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.8
+        },
+        {
+          "segment": 17,
+          "start": 25.0,
+          "end": 28.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.443,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 2.7
+        },
+        {
+          "segment": 18,
+          "start": 28.0,
+          "end": 30.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.5
+        }
+      ],
+      "alignment": {
+        "segments_won_by": {
+          "SPEAKER_00": 19,
+          "SPEAKER_01": 0
+        },
+        "SPEAKER_01_seconds_total": 3.899,
+        "SPEAKER_01_seconds_in_segments_it_lost": 3.899,
+        "max_SPEAKER_01_share_in_any_segment": 0.571,
+        "segments_where_ref_B_gt_half_of_segment": [
+          4,
+          9
+        ],
+        "of_those_labelled_B_like_raw_SPEAKER_01": []
+      }
+    },
+    "run_b": {
+      "raw_speakers": [
+        "SPEAKER_00",
+        "SPEAKER_01"
+      ],
+      "raw_seconds": {
+        "SPEAKER_00": 29.194,
+        "SPEAKER_01": 3.898
+      },
+      "ref_B_all": {
+        "ref_seconds": 4.0,
+        "in_SPEAKER_00": 3.892,
+        "in_SPEAKER_01": 0.621,
+        "in_no_raw_speaker": 0.108
+      },
+      "ref_B_flagged_overlap_ja": {
+        "ref_seconds": 2.5,
+        "in_SPEAKER_00": 2.392,
+        "in_SPEAKER_01": 0.621,
+        "in_no_raw_speaker": 0.108
+      },
+      "ref_B_not_flagged_overlap": {
+        "ref_seconds": 1.5,
+        "in_SPEAKER_00": 1.5,
+        "in_SPEAKER_01": 0,
+        "in_no_raw_speaker": 0
+      },
+      "ref_A_all": {
+        "ref_seconds": 18.7,
+        "in_SPEAKER_00": 18.202,
+        "in_SPEAKER_01": 3.078,
+        "in_no_raw_speaker": 0.497
+      },
+      "raw_SPEAKER_01_intervals": [
+        [
+          2.984,
+          3.71
+        ],
+        [
+          8.35,
+          10.072
+        ],
+        [
+          17.429,
+          18.02
+        ],
+        [
+          22.728,
+          23.588
+        ]
+      ],
+      "raw_turns": [
+        [
+          0.031,
+          6.663,
+          "SPEAKER_00"
+        ],
+        [
+          2.984,
+          3.71,
+          "SPEAKER_01"
+        ],
+        [
+          6.73,
+          18.492,
+          "SPEAKER_00"
+        ],
+        [
+          8.35,
+          10.072,
+          "SPEAKER_01"
+        ],
+        [
+          17.429,
+          18.02,
+          "SPEAKER_01"
+        ],
+        [
+          18.695,
+          27.301,
+          "SPEAKER_00"
+        ],
+        [
+          22.728,
+          23.588,
+          "SPEAKER_01"
+        ],
+        [
+          27.858,
+          30.052,
+          "SPEAKER_00"
+        ]
+      ],
+      "segments": [
+        {
+          "segment": 0,
+          "start": 0.0,
+          "end": 2.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.969,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 2.0
+        },
+        {
+          "segment": 1,
+          "start": 2.0,
+          "end": 4.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.726,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.9
+        },
+        {
+          "segment": 2,
+          "start": 4.0,
+          "end": 5.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.4,
+          "ref_A_sec": 0.1
+        },
+        {
+          "segment": 3,
+          "start": 5.0,
+          "end": 7.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.932,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.5,
+          "ref_A_sec": 1.4
+        },
+        {
+          "segment": 4,
+          "start": 7.0,
+          "end": 9.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.65,
+          "ref_B_sec": 1.7,
+          "ref_A_sec": 0.2
+        },
+        {
+          "segment": 5,
+          "start": 9.0,
+          "end": 11.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 1.072,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.8
+        },
+        {
+          "segment": 6,
+          "start": 11.0,
+          "end": 13.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.9
+        },
+        {
+          "segment": 7,
+          "start": 13.0,
+          "end": 14.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.1,
+          "ref_A_sec": 0
+        },
+        {
+          "segment": 8,
+          "start": 14.0,
+          "end": 15.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.3,
+          "ref_A_sec": 0.6
+        },
+        {
+          "segment": 9,
+          "start": 15.0,
+          "end": 16.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0.6,
+          "ref_A_sec": 0.3
+        },
+        {
+          "segment": 10,
+          "start": 16.0,
+          "end": 17.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.9
+        },
+        {
+          "segment": 11,
+          "start": 17.0,
+          "end": 18.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0.571,
+          "ref_B_sec": 0.1,
+          "ref_A_sec": 0.8
+        },
+        {
+          "segment": 12,
+          "start": 18.0,
+          "end": 19.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 0.797,
+          "sec_SPEAKER_01": 0.02,
+          "ref_B_sec": 0.3,
+          "ref_A_sec": 0.4
+        },
+        {
+          "segment": 13,
+          "start": 19.0,
+          "end": 20.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.6
+        },
+        {
+          "segment": 14,
+          "start": 20.0,
+          "end": 21.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 1.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.2
+        },
+        {
+          "segment": 15,
+          "start": 21.0,
+          "end": 23.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.272,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.6
+        },
+        {
+          "segment": 16,
+          "start": 23.0,
+          "end": 25.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": true,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0.588,
+          "ref_B_sec": 0,
+          "ref_A_sec": 1.8
+        },
+        {
+          "segment": 17,
+          "start": 25.0,
+          "end": 28.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.443,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 2.7
+        },
+        {
+          "segment": 18,
+          "start": 28.0,
+          "end": 30.0,
+          "winner": "SPEAKER_00",
+          "overlap_flag": false,
+          "sec_SPEAKER_00": 2.0,
+          "sec_SPEAKER_01": 0,
+          "ref_B_sec": 0,
+          "ref_A_sec": 0.5
+        }
+      ],
+      "alignment": {
+        "segments_won_by": {
+          "SPEAKER_00": 19,
+          "SPEAKER_01": 0
+        },
+        "SPEAKER_01_seconds_total": 3.899,
+        "SPEAKER_01_seconds_in_segments_it_lost": 3.899,
+        "max_SPEAKER_01_share_in_any_segment": 0.571,
+        "segments_where_ref_B_gt_half_of_segment": [
+          4,
+          9
+        ],
+        "of_those_labelled_B_like_raw_SPEAKER_01": []
+      }
+    }
+  }
+}

@@ -1,0 +1,119 @@
+diff --git a/Data-analysis/src/diarization.py b/Data-analysis/src/diarization.py
+index 21b31a0..ce02b03 100644
+--- a/Data-analysis/src/diarization.py
++++ b/Data-analysis/src/diarization.py
+@@ -33,7 +33,7 @@ from pathlib import Path
+ from typing import Optional
+ 
+ from config import DiarizationConfig, DIARIZATION_OUTPUT_DIR, RAW_DATA_DIR, TEST_FILES_DIR, get_hf_token
+-from models import TranscriptSegment, WorkshopTranscript
++from models import RawSpeakerIntersection, TranscriptSegment, WorkshopTranscript
+ 
+ MAIN_SPEAKER = "MAIN_SPEAKER"
+ 
+@@ -276,10 +276,15 @@ def assign_speakers(
+         duration = max(0.0, seg.end - seg.start)
+ 
+         per_speaker: dict[str, float] = {}
++        intersections: list[RawSpeakerIntersection] = []
+         for t in turns:
+             ov = _overlap_seconds(seg.start, seg.end, t.start, t.end)
+             if ov > 0:
+                 per_speaker[t.speaker] = per_speaker.get(t.speaker, 0.0) + ov
++                # lossless record of EVERY overlapping raw turn (interval arithmetic only; the winner logic below is untouched)
++                i0, i1 = max(seg.start, t.start), min(seg.end, t.end)
++                intersections.append(RawSpeakerIntersection(speaker_raw=t.speaker, start=i0, end=i1, duration=i1 - i0))
++        intersections.sort(key=lambda x: (x.start, x.end, x.speaker_raw))
+ 
+         if not per_speaker or duration <= 0:
+             out.append(seg.model_copy(update={
+@@ -308,6 +313,8 @@ def assign_speakers(
+             "uncertain_assignment": (
+                 coverage < uncertain_coverage_below or margin < uncertain_margin_below
+             ),
++            "raw_speaker_intersections": intersections,
++            "multiple_raw_speakers": len({x.speaker_raw for x in intersections}) >= 2,
+         }))
+ 
+     return out
+diff --git a/Data-analysis/src/models.py b/Data-analysis/src/models.py
+index ecfed47..c434665 100644
+--- a/Data-analysis/src/models.py
++++ b/Data-analysis/src/models.py
+@@ -20,6 +20,19 @@ from pydantic import BaseModel, Field
+ # Transcription + diarization (Phase 1 + 2)
+ # ============================================================
+ 
++class RawSpeakerIntersection(BaseModel):
++    """The time overlap between ONE raw diarization turn and ONE transcript segment.
++
++    Pure interval arithmetic on segment/turn boundaries: NOT a word-level
++    assignment (the segment text is not split) and NOT a claim about who
++    physically spoke — `speaker_raw` is the diarization backend's own cluster
++    label (e.g. "SPEAKER_01"), which can be wrong, merged or split."""
++    speaker_raw: str
++    start: float
++    end: float
++    duration: float
++
++
+ class TranscriptSegment(BaseModel):
+     start: float
+     end: float
+@@ -41,6 +54,17 @@ class TranscriptSegment(BaseModel):
+     overlap: bool = False                       # another speaker also covers a meaningful part of the segment
+     uncertain_assignment: bool = False          # low coverage or near-tie -> treat the speaker label with caution
+ 
++    # --- Phase 2 (lossless addition): ALL raw diarization turns that overlap this segment in time ---
++    # `speaker`/`speaker_raw` above stay the single dominant (largest-overlap) label for backward
++    # compatibility. This list keeps what that single label drops: one entry per raw turn with
++    # positive overlap, sorted by (start, end, speaker_raw) so it does not depend on turn order.
++    # Empty for segments coupled before this field existed or with no overlapping turn.
++    raw_speaker_intersections: list[RawSpeakerIntersection] = Field(default_factory=list)
++    # True when >= 2 DISTINCT raw speaker labels have positive overlap with this segment. This says
++    # "more than one raw label is present in the segment's time span" — not that they speak
++    # simultaneously (see the intersections), not how much, and not that the labels are real people.
++    multiple_raw_speakers: bool = False
++
+ 
+ class WorkshopTranscript(BaseModel):
+     audio_file: str
+@@ -108,6 +132,14 @@ class SpeakerTurn(BaseModel):
+ 
+     overlap_in_context: bool = False   # this turn or either available neighbour overlaps
+ 
++    # --- lossless raw-speaker summary over source_segments (see TranscriptSegment.raw_speaker_intersections) ---
++    # Seconds of positive overlap per raw diarization label, summed over this turn's source segments. The full
++    # intersections (with start/end) stay available per segment in `source_segments`. Grouping into turns is
++    # unchanged: this only records what the single `speaker` label would otherwise hide.
++    raw_speaker_seconds: dict[str, float] = Field(default_factory=dict)
++    # True if any source segment has >= 2 distinct raw labels in its time span.
++    multiple_raw_speakers: bool = False
++
+     # NOTE for later classifiers: judging a turn (e.g. as gerichte feedback)
+     # requires checking BOTH that the turn itself is clean
+     # (overlap is False and uncertain_assignment is False) AND that the
+diff --git a/Data-analysis/src/preprocessing.py b/Data-analysis/src/preprocessing.py
+index 227d01e..c9da67b 100644
+--- a/Data-analysis/src/preprocessing.py
++++ b/Data-analysis/src/preprocessing.py
+@@ -57,6 +57,10 @@ def build_speaker_turns(
+     def close(indices: list[int]) -> None:
+         subset = [segments[j] for j in indices]
+         confidences = [s.speaker_confidence for s in subset if s.speaker_confidence is not None]
++        raw_seconds: dict[str, float] = {}
++        for s in subset:
++            for x in s.raw_speaker_intersections:
++                raw_seconds[x.speaker_raw] = raw_seconds.get(x.speaker_raw, 0.0) + x.duration
+         turns.append(SpeakerTurn(
+             turn_id=len(turns),
+             speaker=subset[0].speaker,
+@@ -70,6 +74,8 @@ def build_speaker_turns(
+             uncertain_assignment=any(s.uncertain_assignment for s in subset),
+             speaker_confidence_min=min(confidences) if confidences else None,
+             speaker_confidence_mean=(sum(confidences) / len(confidences)) if confidences else None,
++            raw_speaker_seconds=dict(sorted(raw_seconds.items())),
++            multiple_raw_speakers=any(s.multiple_raw_speakers for s in subset),
+         ))
+ 
+     current: list[int] = []  # indices of an in-progress CLEAN, mergeable turn

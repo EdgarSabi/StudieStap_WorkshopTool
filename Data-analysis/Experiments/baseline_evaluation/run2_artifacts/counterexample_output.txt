@@ -1,0 +1,8 @@
+(A) herberekening met originele assign_speakers == bewaarde run-uitvoer: True
+    ruwe sprekers: ['SPEAKER_00', 'SPEAKER_01']; behouden na koppeling: ['SPEAKER_00']
+    segment 7.0-9.0 s (referentie: B spreekt 7.2-8.9 s): winnaar SPEAKER_00, overlap-vlag True
+(B) synthetisch, pyannote vindt B PERFECT (B spreekt 4-6 s):
+    B1 niet-exclusieve beurten (A loopt door, B erbij) + ASR-segment 4-6: winnaar SPEAKER_00 (verwacht SPEAKER_00)
+    B2 exclusieve beurten A|B|A + een ASR-segment 2,5-7 s dat de wissel omvat: winnaar SPEAKER_00 (verwacht SPEAKER_00; B heeft 2,0 s, A 2,5 s)
+(C) controle, exclusieve beurten en ASR-grenzen vallen samen: winnaars ['SPEAKER_00', 'SPEAKER_01', 'SPEAKER_00'] (verwacht 00, 01, 00)
+ALLE VERWACHTINGEN KLOPPEN

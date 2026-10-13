@@ -1,0 +1,24 @@
+20261012_dev_run1
+  n_segments: 19
+  all_legacy_fields_equal: True
+  dominant_labels_before: ['SPEAKER_00']
+  dominant_labels_after: ['SPEAKER_00']
+  raw_speakers_visible_before_in_segments: ['SPEAKER_00']
+  raw_speakers_visible_after_in_segments: ['SPEAKER_00', 'SPEAKER_01']
+  segments_with_multiple_raw_speakers_after: [1, 4, 5, 11, 12, 15, 16]
+  seconds_per_raw_speaker_in_segments_after: {'SPEAKER_00': 29.142156, 'SPEAKER_01': 3.898125}
+  turns_before: 10
+  turns_after: 10
+  turn_grouping_unchanged: True
+20261012_dev_run2
+  n_segments: 19
+  all_legacy_fields_equal: True
+  dominant_labels_before: ['SPEAKER_00']
+  dominant_labels_after: ['SPEAKER_00']
+  raw_speakers_visible_before_in_segments: ['SPEAKER_00']
+  raw_speakers_visible_after_in_segments: ['SPEAKER_00', 'SPEAKER_01']
+  segments_with_multiple_raw_speakers_after: [1, 4, 5, 11, 12, 15, 16]
+  seconds_per_raw_speaker_in_segments_after: {'SPEAKER_00': 29.142156, 'SPEAKER_01': 3.898125}
+  turns_before: 10
+  turns_after: 10
+  turn_grouping_unchanged: True

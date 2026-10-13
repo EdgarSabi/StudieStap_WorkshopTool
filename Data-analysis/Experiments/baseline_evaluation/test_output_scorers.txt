@@ -1,0 +1,57 @@
+test_changed_reference_hash_blocks_scoring (test_score_run_mechanics.ScoreRunMechanics.test_changed_reference_hash_blocks_scoring) ... ok
+test_circular_reference_is_flagged_for_testaudio4_and_not_for_raster (test_score_run_mechanics.ScoreRunMechanics.test_circular_reference_is_flagged_for_testaudio4_and_not_for_raster) ... ok
+test_scores_all_parts_and_refuses_to_overwrite (test_score_run_mechanics.ScoreRunMechanics.test_scores_all_parts_and_refuses_to_overwrite) ... ok
+test_3_correct_intervals_der_zero_even_with_swapped_label_names (test_scorers.DerChecks.test_3_correct_intervals_der_zero_even_with_swapped_label_names) ... ok
+test_4a_confusion_two_speakers_merged_into_one (test_scorers.DerChecks.test_4a_confusion_two_speakers_merged_into_one) ... ok
+test_4b_missed_speech (test_scorers.DerChecks.test_4b_missed_speech) ... ok
+test_4c_false_alarm_extra_activity_in_silence (test_scorers.DerChecks.test_4c_false_alarm_extra_activity_in_silence) ... ok
+test_5_simultaneous_speakers_are_kept (test_scorers.DerChecks.test_5_simultaneous_speakers_are_kept) ... ok
+test_6_unknown_speaker_is_not_a_new_person (test_scorers.DerChecks.test_6_unknown_speaker_is_not_a_new_person) ... ok
+test_collar_is_per_side (test_scorers.DerChecks.test_collar_is_per_side) ... ok
+test_empty_uem_is_explicit (test_scorers.DerChecks.test_empty_uem_is_explicit) ... ok
+test_nonspeech_and_cut_rows_are_masked_not_speakers (test_scorers.DerChecks.test_nonspeech_and_cut_rows_are_masked_not_speakers) ... ok
+test_overlap_flag_rows_masked_in_exclude_mode (test_scorers.DerChecks.test_overlap_flag_rows_masked_in_exclude_mode) ... ok
+test_reference_beyond_audio_is_clipped (test_scorers.DerChecks.test_reference_beyond_audio_is_clipped) ... ok
+test_rttm_roundtrip_and_no_overwrite (test_scorers.DerChecks.test_rttm_roundtrip_and_no_overwrite) ... ok
+test_10_existing_output_dir_and_file_are_not_overwritten (test_scorers.ErrorAndSafetyChecks.test_10_existing_output_dir_and_file_are_not_overwritten) ... ok
+test_9_missing_reference_has_clear_error (test_scorers.ErrorAndSafetyChecks.test_9_missing_reference_has_clear_error) ... ok
+test_9_reference_missing_columns_and_bad_times (test_scorers.ErrorAndSafetyChecks.test_9_reference_missing_columns_and_bad_times) ... ok
+test_9_unreadable_and_missing_audio (test_scorers.ErrorAndSafetyChecks.test_9_unreadable_and_missing_audio) ... ok
+test_real_audio_is_readable_and_duration_plausible (test_scorers.ErrorAndSafetyChecks.test_real_audio_is_readable_and_duration_plausible) ... ok
+test_run_original_main_patches_restores_and_records_failures (test_scorers.ErrorAndSafetyChecks.test_run_original_main_patches_restores_and_records_failures) ... ok
+test_unintelligible_is_derived_warning_only_not_an_exclusion (test_scorers.ErrorAndSafetyChecks.test_unintelligible_is_derived_warning_only_not_an_exclusion) ... ok
+test_kapotte_der_wordt_ontdekt (test_scorers.MutationSensitivity.test_kapotte_der_wordt_ontdekt) ... ok
+test_kapotte_wer_wordt_ontdekt (test_scorers.MutationSensitivity.test_kapotte_wer_wordt_ontdekt) ... ok
+test_rolscorer_die_onzeker_wegfiltert_wordt_ontdekt (test_scorers.MutationSensitivity.test_rolscorer_die_onzeker_wegfiltert_wordt_ontdekt) ... ok
+test_segmentscorer_die_alles_single_noemt_wordt_ontdekt (test_scorers.MutationSensitivity.test_segmentscorer_die_alles_single_noemt_wordt_ontdekt) ... ok
+test_known_facts_per_file (test_scorers.RealReferenceChecks.test_known_facts_per_file) ... ok
+test_originals_are_not_modified_by_loading (test_scorers.RealReferenceChecks.test_originals_are_not_modified_by_loading) ... ok
+test_testaudio5_cut_region_is_excluded_from_text_and_uem (test_scorers.RealReferenceChecks.test_testaudio5_cut_region_is_excluded_from_text_and_uem) ... ok
+test_8_onzeker_is_reported_separately_never_filtered (test_scorers.RoleChecks.test_8_onzeker_is_reported_separately_never_filtered) ... ok
+test_all_correct_gives_one_and_all_wrong_gives_zero (test_scorers.RoleChecks.test_all_correct_gives_one_and_all_wrong_gives_zero) ... ok
+test_no_reference_roles_is_explicit (test_scorers.RoleChecks.test_no_reference_roles_is_explicit) ... ok
+test_not_evaluated_is_its_own_column (test_scorers.RoleChecks.test_not_evaluated_is_its_own_column) ... ok
+test_7_two_speakers_in_one_asr_segment_are_not_lost (test_scorers.SegmentChecks.test_7_two_speakers_in_one_asr_segment_are_not_lost) ... ok
+test_circularity_detector_flags_copied_text_and_not_independent_text (test_scorers.SegmentChecks.test_circularity_detector_flags_copied_text_and_not_independent_text) ... ok
+test_segment_in_unknown_region_is_masked_not_scored (test_scorers.SegmentChecks.test_segment_in_unknown_region_is_masked_not_scored) ... ok
+test_segment_matching_is_time_based_and_label_names_irrelevant (test_scorers.SegmentChecks.test_segment_matching_is_time_based_and_label_names_irrelevant) ... ok
+test_unassigned_segment_counts_as_wrong_not_dropped (test_scorers.SegmentChecks.test_unassigned_segment_counts_as_wrong_not_dropped) ... ok
+test_wrong_hypothesis_scores_lower (test_scorers.SegmentChecks.test_wrong_hypothesis_scores_lower) ... ok
+test_1_perfect_transcript_wer_zero (test_scorers.TextChecks.test_1_perfect_transcript_wer_zero) ... ok
+test_2_one_wrong_word (test_scorers.TextChecks.test_2_one_wrong_word) ... ok
+test_cer_known_value (test_scorers.TextChecks.test_cer_known_value) ... ok
+test_completely_wrong_hypothesis_is_one (test_scorers.TextChecks.test_completely_wrong_hypothesis_is_one) ... ok
+test_deletion_and_insertion_counted_separately (test_scorers.TextChecks.test_deletion_and_insertion_counted_separately) ... ok
+test_empty_reference_is_not_silently_zero (test_scorers.TextChecks.test_empty_reference_is_not_silently_zero) ... ok
+test_filler_variants_differ (test_scorers.TextChecks.test_filler_variants_differ) ... ok
+test_manual_txt_parsing_drops_labels_and_quotes (test_scorers.TextChecks.test_manual_txt_parsing_drops_labels_and_quotes) ... ok
+test_normalisation_rules (test_scorers.TextChecks.test_normalisation_rules) ... ok
+test_all_patch_targets_exist_in_the_original_modules (test_wiring_no_models.Wiring.test_all_patch_targets_exist_in_the_original_modules) ... ok
+test_default_pipeline_settings_match_what_the_pipeline_script_uses (test_wiring_no_models.Wiring.test_default_pipeline_settings_match_what_the_pipeline_script_uses) ... ok
+test_missing_input_in_original_stage_is_reported_not_swallowed (test_wiring_no_models.Wiring.test_missing_input_in_original_stage_is_reported_not_swallowed) ... ok
+test_preprocessing_is_redirected_and_nothing_else_is_touched (test_wiring_no_models.Wiring.test_preprocessing_is_redirected_and_nothing_else_is_touched) ... ok
+
+----------------------------------------------------------------------
+Ran 52 tests in 14.940s
+
+OK

@@ -1,0 +1,12 @@
+test_input_segment_keeps_its_original_information_after_recoupling  ... ok
+test_precondition_first_coupling_has_both_speakers  ... ok
+test_recoupling_with_empty_raw_input_clears_old_information  ... FAIL
+test_recoupling_with_invalid_segment_duration_clears_old_information  ... FAIL
+test_recoupling_with_non_overlapping_raw_input_clears_old_information  ... FAIL
+test_recoupling_with_valid_new_input_replaces_instead_of_appending  ... ok
+test_variant_that_keeps_stale_fields_is_rejected_by_the_same_check  ... ok
+AssertionError: Lists differ: [RawSpeakerIntersection(speaker_raw='A', s[103 chars]0.5)] != []
+AssertionError: Lists differ: [RawSpeakerIntersection(speaker_raw='A', s[103 chars]0.5)] != []
+AssertionError: Lists differ: [RawSpeakerIntersection(speaker_raw='A', s[103 chars]0.5)] != []
+Ran 7 tests in 0.005s
+FAILED (failures=3)

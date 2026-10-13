@@ -1,0 +1,14 @@
+{
+ "whisper_medium": {
+  "ok": true,
+  "seconds": 5.0
+ },
+ "pyannote_diarization_3.1": {
+  "ok": true,
+  "seconds": 12.6
+ },
+ "wespeaker_docent": {
+  "ok": true,
+  "seconds": 1.5
+ }
+}
