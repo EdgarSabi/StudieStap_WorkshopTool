@@ -1,0 +1,348 @@
+{
+  "schema_version": "1.0",
+  "audio": {
+    "source_path": "voorbeeld.wav",
+    "sha256": "de518556583cafb746dd2a07b9f79afd7ff4ee4aded3438bcea70ceb96a44b36",
+    "size_bytes": 128044,
+    "duration_seconds": 4.0,
+    "source_format": "wav"
+  },
+  "language": "nl",
+  "raw_speakers": [
+    "SPEAKER_00",
+    "SPEAKER_01"
+  ],
+  "speaker_roles": [
+    {
+      "speaker": "SPEAKER_00",
+      "identity_status": "MATCH",
+      "role": "docent",
+      "similarity": 0.6,
+      "n_clips": 3,
+      "note": ""
+    },
+    {
+      "speaker": "SPEAKER_01",
+      "identity_status": "NO_MATCH",
+      "role": "onbekend",
+      "similarity": 0.1,
+      "n_clips": 2,
+      "note": ""
+    }
+  ],
+  "segments": [
+    {
+      "id": 0,
+      "start": 0.0,
+      "end": 2.0,
+      "text": "welkom allemaal",
+      "asr": {
+        "avg_logprob": -0.2,
+        "no_speech_prob": 0.01,
+        "compression_ratio": 1.1
+      },
+      "speakers": {
+        "segment_id": 0,
+        "intersections": [
+          {
+            "speaker": "SPEAKER_00",
+            "start": 0.0,
+            "end": 2.0,
+            "duration": 2.0
+          }
+        ],
+        "seconds_per_speaker": {
+          "SPEAKER_00": 2.0
+        },
+        "simultaneous_seconds": 0.0,
+        "uncovered_seconds": 0.0,
+        "attribution": "SINGLE",
+        "dominant_speaker": "SPEAKER_00",
+        "dominant_share": 1.0,
+        "words": [
+          {
+            "index": 0,
+            "text": "welkom",
+            "start": 0.1,
+            "end": 0.9,
+            "status": "SINGLE",
+            "speaker": "SPEAKER_00",
+            "candidates": [
+              "SPEAKER_00"
+            ]
+          },
+          {
+            "index": 1,
+            "text": "allemaal",
+            "start": 1.0,
+            "end": 1.9,
+            "status": "SINGLE",
+            "speaker": "SPEAKER_00",
+            "candidates": [
+              "SPEAKER_00"
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "segment_id": 0,
+        "status": "ASSESSABLE",
+        "signals": []
+      }
+    },
+    {
+      "id": 1,
+      "start": 2.0,
+      "end": 4.0,
+      "text": "vragen jullie dat",
+      "asr": {
+        "avg_logprob": -1.5,
+        "no_speech_prob": 0.02,
+        "compression_ratio": 1.0
+      },
+      "speakers": {
+        "segment_id": 1,
+        "intersections": [
+          {
+            "speaker": "SPEAKER_00",
+            "start": 2.0,
+            "end": 2.5,
+            "duration": 0.5
+          },
+          {
+            "speaker": "SPEAKER_01",
+            "start": 2.0,
+            "end": 4.0,
+            "duration": 2.0
+          }
+        ],
+        "seconds_per_speaker": {
+          "SPEAKER_00": 0.5,
+          "SPEAKER_01": 2.0
+        },
+        "simultaneous_seconds": 0.5,
+        "uncovered_seconds": 0.0,
+        "attribution": "MIXED",
+        "dominant_speaker": "SPEAKER_01",
+        "dominant_share": 1.0,
+        "words": [
+          {
+            "index": 0,
+            "text": "vragen",
+            "start": 2.1,
+            "end": 2.6,
+            "status": "AMBIGUOUS",
+            "speaker": null,
+            "candidates": [
+              "SPEAKER_00",
+              "SPEAKER_01"
+            ]
+          },
+          {
+            "index": 1,
+            "text": "jullie",
+            "start": 2.7,
+            "end": 3.0,
+            "status": "SINGLE",
+            "speaker": "SPEAKER_01",
+            "candidates": [
+              "SPEAKER_01"
+            ]
+          },
+          {
+            "index": 2,
+            "text": "dat",
+            "start": 3.1,
+            "end": 3.9,
+            "status": "SINGLE",
+            "speaker": "SPEAKER_01",
+            "candidates": [
+              "SPEAKER_01"
+            ]
+          }
+        ]
+      },
+      "quality": {
+        "segment_id": 1,
+        "status": "REVIEW_REQUIRED",
+        "signals": [
+          {
+            "code": "ASR_LOW_AVG_LOGPROB",
+            "detail": "avg_logprob -1.50 < -1.0",
+            "segment_id": 1,
+            "kind": "observed"
+          },
+          {
+            "code": "SPEAKER_MIXED",
+            "detail": "Meerdere ruwe sprekers in dit segment: ['SPEAKER_00', 'SPEAKER_01'].",
+            "segment_id": 1,
+            "kind": "observed"
+          },
+          {
+            "code": "POSSIBLE_SIMULTANEOUS_SPEECH",
+            "detail": "0.50 s waarin het model twee sprekers tegelijk actief meldt.",
+            "segment_id": 1,
+            "kind": "observed"
+          },
+          {
+            "code": "AMBIGUOUS_WORD_SPEAKERS",
+            "detail": "1 woord(en) overlappen meerdere sprekers; niet toegewezen.",
+            "segment_id": 1,
+            "kind": "observed"
+          }
+        ]
+      }
+    }
+  ],
+  "quality": {
+    "note": "Signalen zijn waarnemingen, geen bewijs van onbetrouwbaarheid. ASSESSABLE betekent alleen: geen signalen waargenomen. Definitieve kwaliteitsregels volgen uit onderzoeksfases 3 en 4.",
+    "global_signals": []
+  },
+  "classification": {
+    "status": "NOT_IMPLEMENTED",
+    "note": "Geen didactische indicatoren ingebouwd; voeg ze toe in classification/indicators.py.",
+    "indicators": []
+  },
+  "provenance": {
+    "versions": {
+      "studiestap": "0.1.0",
+      "python": "3.12.6",
+      "faster-whisper": null,
+      "pyannote.audio": null,
+      "whisperx": null,
+      "torch": null,
+      "ctranslate2": null
+    },
+    "settings": {
+      "transcription": {
+        "model_size": "medium",
+        "language": "nl",
+        "device": "cpu",
+        "compute_type": "int8",
+        "beam_size": 5,
+        "condition_on_previous_text": true,
+        "vad_filter": true,
+        "word_timestamps": false
+      },
+      "diarization": {
+        "backend": "pyannote",
+        "model": "pyannote/speaker-diarization-3.1",
+        "device": "cpu",
+        "min_speakers": null,
+        "max_speakers": null
+      },
+      "alignment": {
+        "enabled": true,
+        "device": "cpu"
+      },
+      "speakers": {
+        "min_single_speaker_coverage": 0.6
+      },
+      "teacher_recognition": {
+        "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM",
+        "device": "cpu",
+        "similarity_threshold": 0.35,
+        "min_clip_seconds": 1.0
+      },
+      "quality": {
+        "whisper_avg_logprob_below": -1.0,
+        "whisper_no_speech_prob_above": 0.6,
+        "whisper_compression_ratio_above": 2.4
+      },
+      "huggingface": {
+        "offline": false
+      },
+      "output": {
+        "directory": "output",
+        "keep_audio": false
+      }
+    },
+    "parts": {
+      "transcription": {
+        "file": "01_transcript.json",
+        "sha256": "df276c5283c39c2727d26af70ece046c20f0c20b1f3f1c87315295d82b0871e0"
+      },
+      "diarization": {
+        "file": "02_diarization_raw.json",
+        "sha256": "e0cfaa23cdc7c78ea2319eb13ce7e7f32f3fc94eba48317d83a79db2f1e70d8a"
+      },
+      "word_alignment": {
+        "file": "03_word_alignment.json",
+        "sha256": "b9008a39a3e1a7ac65e8e200887f6520494d4d1362d79760ee4b94fe19aace54"
+      },
+      "speaker_assignment": {
+        "file": "04_speaker_assignment.json",
+        "sha256": "d8bdb2d34a5a1180efb0508c7bc78be4881af0d3c3947291f35f4f0dc3505d71"
+      },
+      "teacher_roles": {
+        "file": "05_teacher_roles.json",
+        "sha256": "81a89f887227f664e6763e292aea3aebc1575958dd684f3e045e24e2712d2227"
+      },
+      "quality": {
+        "file": "06_quality.json",
+        "sha256": "2e9f021d9826a053f2d7a8dd90c7236f09bfa393d95d6c274ec811992fc2ca09"
+      }
+    },
+    "note": "Elk deelbestand is los bewaard; de sha256 hoort bij de inhoud van dat bestand."
+  },
+  "steps": {
+    "transcription": {
+      "name": "transcription",
+      "status": "succeeded",
+      "message": "Transcriptie klaar.",
+      "output_file": "01_transcript.json",
+      "runtime_seconds": 0.0,
+      "reused_from_cache": false,
+      "sha256": "df276c5283c39c2727d26af70ece046c20f0c20b1f3f1c87315295d82b0871e0"
+    },
+    "diarization": {
+      "name": "diarization",
+      "status": "succeeded",
+      "message": "Diarizatie klaar.",
+      "output_file": "02_diarization_raw.json",
+      "runtime_seconds": 0.0,
+      "reused_from_cache": false,
+      "sha256": "e0cfaa23cdc7c78ea2319eb13ce7e7f32f3fc94eba48317d83a79db2f1e70d8a"
+    },
+    "word_alignment": {
+      "name": "word_alignment",
+      "status": "succeeded",
+      "message": "ok",
+      "output_file": "03_word_alignment.json",
+      "runtime_seconds": 0.0,
+      "reused_from_cache": false,
+      "sha256": "b9008a39a3e1a7ac65e8e200887f6520494d4d1362d79760ee4b94fe19aace54"
+    },
+    "speaker_assignment": {
+      "name": "speaker_assignment",
+      "status": "succeeded",
+      "message": "Alle intersecties bewaard.",
+      "output_file": "04_speaker_assignment.json",
+      "runtime_seconds": 0.0,
+      "reused_from_cache": false,
+      "sha256": "d8bdb2d34a5a1180efb0508c7bc78be4881af0d3c3947291f35f4f0dc3505d71"
+    },
+    "teacher_roles": {
+      "name": "teacher_roles",
+      "status": "succeeded",
+      "message": "Vergeleken met referentie (sha256 87318127).",
+      "output_file": "05_teacher_roles.json",
+      "runtime_seconds": 0.07,
+      "reused_from_cache": false,
+      "sha256": "81a89f887227f664e6763e292aea3aebc1575958dd684f3e045e24e2712d2227"
+    },
+    "quality": {
+      "name": "quality",
+      "status": "succeeded",
+      "message": "Signalen verzameld (waarnemingen, geen oordeel).",
+      "output_file": "06_quality.json",
+      "runtime_seconds": 0.0,
+      "reused_from_cache": false,
+      "sha256": "2e9f021d9826a053f2d7a8dd90c7236f09bfa393d95d6c274ec811992fc2ca09"
+    },
+    "classification": {
+      "status": "not_implemented"
+    }
+  },
+  "_let_op": "SYNTHETISCH VOORBEELD: nep-modellen en verzonnen tekst; alleen bedoeld om de structuur te tonen."
+}

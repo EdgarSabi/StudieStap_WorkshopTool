@@ -1,0 +1,51 @@
+# StudieStap 2.0 - instellingen. Alles wat je hier niet invult, krijgt de standaardwaarde.
+# Onbekende sleutels geven een foutmelding (zo vang je typfouten).
+
+transcription:               # faster-whisper
+  model_size: medium         # baseline van de oude pipeline
+  language: nl
+  device: cpu                # "cpu" of "cuda"
+  compute_type: int8         # oude baseline: int8 op CPU
+  beam_size: 5
+  condition_on_previous_text: true
+  vad_filter: true
+  word_timestamps: false     # woordtijden komen uit de aparte alignment-stap
+
+diarization:                 # wie spreekt wanneer
+  backend: pyannote
+  model: pyannote/speaker-diarization-3.1
+  device: cpu
+  min_speakers: null
+  max_speakers: null
+
+alignment:                   # WhisperX-woorduitlijning op de bestaande Whisper-segmenten
+  enabled: true
+  device: cpu
+
+speakers:                    # koppeling van sprekerintervallen aan segmenten/woorden
+  # Eén spreker die minder dan dit deel van het segment dekt -> "PARTIAL". EXPERIMENTEEL,
+  # overgenomen uit de oude pipeline (0.60); niet gevalideerd.
+  min_single_speaker_coverage: 0.60
+
+teacher_recognition:         # docentherkenning met WeSpeaker (alleen met referentieopname)
+  embedding_model: pyannote/wespeaker-voxceleb-resnet34-LM
+  device: cpu
+  # EXPERIMENTEEL: overgenomen uit oude experimenten; geen bewezen criterium.
+  similarity_threshold: 0.35
+  min_clip_seconds: 1.0
+
+voice_consistency:           # OPTIONEEL: controleert per segment of de stem bij het sprekerlabel past
+  enabled: false             # standaard uit; zet op true om aan te zetten (zie docs/HOW_IT_WORKS.md)
+
+quality:                     # alleen signalen verzamelen, geen gekalibreerde drempels
+  # Standaardwaarden van Whisper zelf (niet door ons gekalibreerd).
+  whisper_avg_logprob_below: -1.0
+  whisper_no_speech_prob_above: 0.6
+  whisper_compression_ratio_above: 2.4
+
+huggingface:
+  offline: false             # true = alleen lokaal gecachete modellen gebruiken (geen token nodig)
+
+output:
+  directory: output          # staat in .gitignore
+  keep_audio: false          # true = bewaar de 16 kHz-werkkopie van de audio in de runmap

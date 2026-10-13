@@ -1,0 +1,8 @@
+20261012_dev_run1/testaudio2_fragment/02_diarization
+20261012_dev_run2/testaudio2_fragment/02_diarization
+20261013_final_dev_run1/testaudio4_fragment/02_diarization
+{"file": "testaudio4_fragment_diarized.json", "segments": 87, "intersections_gelijk": 87, "intersections_verschillend": 0, "dominant_gelijk": 80, "dominant_verschillend": 0, "dominant_beide_geen": 0, "dominant_alleen_nieuw_geen_door_gelijkspel": 7, "multiple_raw_speakers_oud": 57, "MIXED_nieuw": 57}
+20261013_final_dev_run1/testaudio5_fragment/02_diarization
+{"file": "testaudio5_fragment_diarized.json", "segments": 24, "intersections_gelijk": 24, "intersections_verschillend": 0, "dominant_gelijk": 22, "dominant_verschillend": 0, "dominant_beide_geen": 0, "dominant_alleen_nieuw_geen_door_gelijkspel": 2, "multiple_raw_speakers_oud": 11, "MIXED_nieuw": 11}
+20261013_lossless_run1/testaudio2_fragment/02_diarization
+{"file": "testaudio2_fragment_diarized.json", "segments": 19, "intersections_gelijk": 19, "intersections_verschillend": 0, "dominant_gelijk": 19, "dominant_verschillend": 0, "dominant_beide_geen": 0, "dominant_alleen_nieuw_geen_door_gelijkspel": 0, "multiple_raw_speakers_oud": 7, "MIXED_nieuw": 7}
