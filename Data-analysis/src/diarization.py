@@ -33,7 +33,7 @@ from pathlib import Path
 from typing import Optional
 
 from config import DiarizationConfig, DIARIZATION_OUTPUT_DIR, RAW_DATA_DIR, TEST_FILES_DIR, get_hf_token
-from models import TranscriptSegment, WorkshopTranscript
+from models import RawSpeakerIntersection, TranscriptSegment, WorkshopTranscript
 
 MAIN_SPEAKER = "MAIN_SPEAKER"
 
@@ -276,10 +276,15 @@ def assign_speakers(
         duration = max(0.0, seg.end - seg.start)
 
         per_speaker: dict[str, float] = {}
+        intersections: list[RawSpeakerIntersection] = []
         for t in turns:
             ov = _overlap_seconds(seg.start, seg.end, t.start, t.end)
             if ov > 0:
                 per_speaker[t.speaker] = per_speaker.get(t.speaker, 0.0) + ov
+                # lossless record of EVERY overlapping raw turn (interval arithmetic only; the winner logic below is untouched)
+                i0, i1 = max(seg.start, t.start), min(seg.end, t.end)
+                intersections.append(RawSpeakerIntersection(speaker_raw=t.speaker, start=i0, end=i1, duration=i1 - i0))
+        intersections.sort(key=lambda x: (x.start, x.end, x.speaker_raw))
 
         if not per_speaker or duration <= 0:
             out.append(seg.model_copy(update={
@@ -288,6 +293,11 @@ def assign_speakers(
                 "speaker_confidence": None,
                 "overlap": False,
                 "uncertain_assignment": True,
+                # model_copy keeps every field that is not updated: without these two, a segment that was
+                # enriched earlier would keep STALE intersections when it is coupled again with empty,
+                # non-overlapping or invalid-duration input.
+                "raw_speaker_intersections": [],
+                "multiple_raw_speakers": False,
             }))
             continue
 
@@ -308,6 +318,8 @@ def assign_speakers(
             "uncertain_assignment": (
                 coverage < uncertain_coverage_below or margin < uncertain_margin_below
             ),
+            "raw_speaker_intersections": intersections,
+            "multiple_raw_speakers": len({x.speaker_raw for x in intersections}) >= 2,
         }))
 
     return out

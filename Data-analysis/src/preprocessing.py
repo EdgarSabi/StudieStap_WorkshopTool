@@ -57,6 +57,10 @@ def build_speaker_turns(
     def close(indices: list[int]) -> None:
         subset = [segments[j] for j in indices]
         confidences = [s.speaker_confidence for s in subset if s.speaker_confidence is not None]
+        raw_seconds: dict[str, float] = {}
+        for s in subset:
+            for x in s.raw_speaker_intersections:
+                raw_seconds[x.speaker_raw] = raw_seconds.get(x.speaker_raw, 0.0) + x.duration
         turns.append(SpeakerTurn(
             turn_id=len(turns),
             speaker=subset[0].speaker,
@@ -70,6 +74,8 @@ def build_speaker_turns(
             uncertain_assignment=any(s.uncertain_assignment for s in subset),
             speaker_confidence_min=min(confidences) if confidences else None,
             speaker_confidence_mean=(sum(confidences) / len(confidences)) if confidences else None,
+            raw_speaker_seconds=dict(sorted(raw_seconds.items())),
+            multiple_raw_speakers=any(s.multiple_raw_speakers for s in subset),
         ))
 
     current: list[int] = []  # indices of an in-progress CLEAN, mergeable turn

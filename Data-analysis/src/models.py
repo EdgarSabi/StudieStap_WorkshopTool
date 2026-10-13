@@ -20,6 +20,19 @@ from pydantic import BaseModel, Field
 # Transcription + diarization (Phase 1 + 2)
 # ============================================================
 
+class RawSpeakerIntersection(BaseModel):
+    """The time overlap between ONE raw diarization turn and ONE transcript segment.
+
+    Pure interval arithmetic on segment/turn boundaries: NOT a word-level
+    assignment (the segment text is not split) and NOT a claim about who
+    physically spoke — `speaker_raw` is the diarization backend's own cluster
+    label (e.g. "SPEAKER_01"), which can be wrong, merged or split."""
+    speaker_raw: str
+    start: float
+    end: float
+    duration: float
+
+
 class TranscriptSegment(BaseModel):
     start: float
     end: float
@@ -40,6 +53,17 @@ class TranscriptSegment(BaseModel):
     speaker_confidence: Optional[float] = None  # winning speaker's share of this segment's speech time
     overlap: bool = False                       # another speaker also covers a meaningful part of the segment
     uncertain_assignment: bool = False          # low coverage or near-tie -> treat the speaker label with caution
+
+    # --- Phase 2 (lossless addition): ALL raw diarization turns that overlap this segment in time ---
+    # `speaker`/`speaker_raw` above stay the single dominant (largest-overlap) label for backward
+    # compatibility. This list keeps what that single label drops: one entry per raw turn with
+    # positive overlap, sorted by (start, end, speaker_raw) so it does not depend on turn order.
+    # Empty for segments coupled before this field existed or with no overlapping turn.
+    raw_speaker_intersections: list[RawSpeakerIntersection] = Field(default_factory=list)
+    # True when >= 2 DISTINCT raw speaker labels have positive overlap with this segment. This says
+    # "more than one raw label is present in the segment's time span" — not that they speak
+    # simultaneously (see the intersections), not how much, and not that the labels are real people.
+    multiple_raw_speakers: bool = False
 
 
 class WorkshopTranscript(BaseModel):
@@ -107,6 +131,14 @@ class SpeakerTurn(BaseModel):
     context_uncertain_after: bool = False
 
     overlap_in_context: bool = False   # this turn or either available neighbour overlaps
+
+    # --- lossless raw-speaker summary over source_segments (see TranscriptSegment.raw_speaker_intersections) ---
+    # Seconds of positive overlap per raw diarization label, summed over this turn's source segments. The full
+    # intersections (with start/end) stay available per segment in `source_segments`. Grouping into turns is
+    # unchanged: this only records what the single `speaker` label would otherwise hide.
+    raw_speaker_seconds: dict[str, float] = Field(default_factory=dict)
+    # True if any source segment has >= 2 distinct raw labels in its time span.
+    multiple_raw_speakers: bool = False
 
     # NOTE for later classifiers: judging a turn (e.g. as gerichte feedback)
     # requires checking BOTH that the turn itself is clean
