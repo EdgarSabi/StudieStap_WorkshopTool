@@ -1,0 +1,996 @@
+{
+  "protocol": "PROTOCOL.md v1",
+  "fragment": "testaudio5_fragment",
+  "run_dir": "Data-local\\evaluation\\baseline_v1\\runs\\20261013_final_dev_run1\\testaudio5_fragment",
+  "audio_duration_s": 46.001633,
+  "reference": {
+    "path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio5_fragment.csv",
+    "sha256": "e629ddecc383f4d413060e67ce42d1a49e725baa121ad61640008cbcdbdae1f6",
+    "rows": 20,
+    "speakers": [
+      "SPREKER_A",
+      "SPREKER_B",
+      "SPREKER_C"
+    ],
+    "row_kinds": {
+      "cut": 1,
+      "unknown": 2,
+      "speech": 17
+    },
+    "role_map": {
+      "SPREKER_A": "docent",
+      "SPREKER_B": "leerling",
+      "SPREKER_C": "leerling"
+    },
+    "role_source": null
+  },
+  "quality_warning_unintelligible": {
+    "rows_ja": 4,
+    "seconds_ja": 9.9,
+    "used_for_exclusion": false
+  },
+  "circularity": {
+    "status": "ok",
+    "rows": 19,
+    "identical_rows": 15,
+    "ratio": 0.7894736842105263,
+    "circular": false
+  },
+  "text": {
+    "hyp_segments_used": 23,
+    "hyp_segments_masked": 1,
+    "primary_fillers_removed": {
+      "errors": 13,
+      "substitutions": 5,
+      "deletions": 4,
+      "insertions": 4,
+      "ref_len": 149,
+      "hyp_len": 149,
+      "unit": "words",
+      "rate": 0.087248322147651
+    },
+    "fillers_kept": {
+      "errors": 13,
+      "substitutions": 5,
+      "deletions": 4,
+      "insertions": 4,
+      "ref_len": 149,
+      "hyp_len": 149,
+      "unit": "words",
+      "rate": 0.087248322147651
+    },
+    "cer_fillers_removed": {
+      "errors": 47,
+      "substitutions": 22,
+      "deletions": 11,
+      "insertions": 14,
+      "ref_len": 690,
+      "hyp_len": 693,
+      "unit": "chars",
+      "rate": 0.06811594202898551
+    },
+    "status": "ok",
+    "vs_manual_txt": {
+      "wer": {
+        "errors": 42,
+        "substitutions": 17,
+        "deletions": 13,
+        "insertions": 12,
+        "ref_len": 150,
+        "hyp_len": 149,
+        "unit": "words",
+        "rate": 0.28
+      },
+      "cer": {
+        "errors": 145,
+        "substitutions": 27,
+        "deletions": 52,
+        "insertions": 66,
+        "ref_len": 679,
+        "hyp_len": 693,
+        "unit": "chars",
+        "rate": 0.21354933726067746
+      },
+      "ref_vs_manual_wer": {
+        "errors": 47,
+        "substitutions": 18,
+        "deletions": 15,
+        "insertions": 14,
+        "ref_len": 150,
+        "hyp_len": 149,
+        "unit": "words",
+        "rate": 0.31333333333333335
+      }
+    }
+  },
+  "evidence": {
+    "wer_cer": "exploratory",
+    "wer_cer_reasons": [
+      "referentie is (deels) voorgevuld vanuit Whisper (README hyperparameter_tuning)"
+    ],
+    "der_overlap_exclude": "exploratory",
+    "der_overlap_exclude_reasons": [
+      "ONBEKEND-gebieden gemaskeerd"
+    ],
+    "der_overlap_keep": "exploratory",
+    "der_overlap_keep_reasons": [
+      "4 rijen met overlap=ja zonder tweede spreker geannoteerd",
+      "ONBEKEND-gebieden gemaskeerd"
+    ],
+    "segment_eval": "exploratory",
+    "docent_roles": "exploratory",
+    "docent_roles_reasons": [
+      "dev-data; drempel 0,35 is in-sample gekozen op testaudio1/2/5"
+    ],
+    "all_metrics": "dev, optimistisch: geen achtergehouden testdata"
+  },
+  "der_raw_turns": {
+    "uem=labelled|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 37.2,
+      "missed_s": 4.689,
+      "false_alarm_s": 1.859,
+      "confusion_s": 12.16,
+      "uem_s": 37.2,
+      "der": 0.5029032258064516,
+      "missed_rate": 0.1260483870967744,
+      "false_alarm_rate": 0.049973118279569934,
+      "confusion_rate": 0.32688172043010727,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 28.7,
+      "missed_s": 2.089,
+      "false_alarm_s": 1.241,
+      "confusion_s": 9.091,
+      "uem_s": 37.2,
+      "der": 0.43278745644599304,
+      "missed_rate": 0.07278745644599308,
+      "false_alarm_rate": 0.043240418118466885,
+      "confusion_rate": 0.316759581881533,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 28.8,
+      "missed_s": 4.689,
+      "false_alarm_s": 0.001,
+      "confusion_s": 5.777,
+      "uem_s": 28.8,
+      "der": 0.3634375000000001,
+      "missed_rate": 0.16281250000000028,
+      "false_alarm_rate": 3.47222222221413e-05,
+      "confusion_rate": 0.20059027777777763,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 22.3,
+      "missed_s": 2.089,
+      "false_alarm_s": 0.001,
+      "confusion_s": 4.191,
+      "uem_s": 28.8,
+      "der": 0.281659192825112,
+      "missed_rate": 0.0936771300448431,
+      "false_alarm_rate": 4.484304932724975e-05,
+      "confusion_rate": 0.18793721973094166,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 37.2,
+      "missed_s": 4.689,
+      "false_alarm_s": 3.706,
+      "confusion_s": 12.16,
+      "uem_s": 40.5,
+      "der": 0.5525537634408604,
+      "missed_rate": 0.1260483870967744,
+      "false_alarm_rate": 0.09962365591397866,
+      "confusion_rate": 0.32688172043010727,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 28.7,
+      "missed_s": 2.089,
+      "false_alarm_s": 1.641,
+      "confusion_s": 9.091,
+      "uem_s": 40.5,
+      "der": 0.44672473867595835,
+      "missed_rate": 0.07278745644599308,
+      "false_alarm_rate": 0.057177700348432246,
+      "confusion_rate": 0.316759581881533,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 28.8,
+      "missed_s": 4.689,
+      "false_alarm_s": 1.848,
+      "confusion_s": 5.777,
+      "uem_s": 32.1,
+      "der": 0.42756944444444467,
+      "missed_rate": 0.16281250000000028,
+      "false_alarm_rate": 0.06416666666666675,
+      "confusion_rate": 0.20059027777777763,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 22.3,
+      "missed_s": 2.089,
+      "false_alarm_s": 0.401,
+      "confusion_s": 4.191,
+      "uem_s": 32.1,
+      "der": 0.29959641255605396,
+      "missed_rate": 0.0936771300448431,
+      "false_alarm_rate": 0.017982062780269207,
+      "confusion_rate": 0.18793721973094166,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    }
+  },
+  "der_segment_level_hypothesis": {
+    "uem=labelled|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 37.2,
+      "missed_s": 0.86,
+      "false_alarm_s": 0.0,
+      "confusion_s": 13.96,
+      "uem_s": 37.2,
+      "der": 0.3983870967741936,
+      "missed_rate": 0.023118279569892704,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.3752688172043009,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 28.7,
+      "missed_s": 0.36,
+      "false_alarm_s": 0.0,
+      "confusion_s": 10.18,
+      "uem_s": 37.2,
+      "der": 0.36724738675958174,
+      "missed_rate": 0.012543554006968497,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.35470383275261325,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 28.8,
+      "missed_s": 0.58,
+      "false_alarm_s": 0.0,
+      "confusion_s": 7.82,
+      "uem_s": 28.8,
+      "der": 0.2916666666666667,
+      "missed_rate": 0.020138888888888904,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.27152777777777776,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=labelled|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 22.3,
+      "missed_s": 0.24,
+      "false_alarm_s": 0.0,
+      "confusion_s": 5.4,
+      "uem_s": 28.8,
+      "der": 0.2529147982062779,
+      "missed_rate": 0.010762331838564952,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.24215246636771293,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 37.2,
+      "missed_s": 0.86,
+      "false_alarm_s": 0.9,
+      "confusion_s": 13.96,
+      "uem_s": 40.5,
+      "der": 0.42258064516129035,
+      "missed_rate": 0.023118279569892704,
+      "false_alarm_rate": 0.024193548387096794,
+      "confusion_rate": 0.3752688172043009,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 28.7,
+      "missed_s": 0.36,
+      "false_alarm_s": 0.08,
+      "confusion_s": 10.18,
+      "uem_s": 40.5,
+      "der": 0.37003484320557495,
+      "missed_rate": 0.012543554006968497,
+      "false_alarm_rate": 0.0027874564459932196,
+      "confusion_rate": 0.35470383275261325,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 28.8,
+      "missed_s": 0.58,
+      "false_alarm_s": 0.9,
+      "confusion_s": 7.82,
+      "uem_s": 32.1,
+      "der": 0.3229166666666667,
+      "missed_rate": 0.020138888888888904,
+      "false_alarm_rate": 0.03125000000000003,
+      "confusion_rate": 0.27152777777777776,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    },
+    "uem=strict|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 22.3,
+      "missed_s": 0.24,
+      "false_alarm_s": 0.08,
+      "confusion_s": 5.4,
+      "uem_s": 32.1,
+      "der": 0.2565022421524665,
+      "missed_rate": 0.010762331838564952,
+      "false_alarm_rate": 0.003587443946188583,
+      "confusion_rate": 0.24215246636771293,
+      "n_ref_speakers": 3,
+      "n_hyp_speakers_total": 5
+    }
+  },
+  "segment_eval": {
+    "status": "ok",
+    "mapping_hyp_to_ref": {
+      "SPEAKER_01": "SPREKER_C",
+      "SPEAKER_02": "SPREKER_A",
+      "SPEAKER_03": "SPREKER_B"
+    },
+    "status_counts": {
+      "single": 20,
+      "masked": 4
+    },
+    "single_segments_seconds": 37.56,
+    "single_correct_seconds": 22.64,
+    "single_accuracy_seconds": 0.6027689030883918,
+    "mixed_segments": [],
+    "n_hyp_labels_in_single": 5,
+    "n_ref_speakers": 3,
+    "segments": [
+      {
+        "segment": 0,
+        "start": 0.82,
+        "end": 3.26,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.44,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 1,
+        "start": 3.38,
+        "end": 4.38,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.98,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 2,
+        "start": 4.5,
+        "end": 8.98,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 4.48,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 3,
+        "start": 9.1,
+        "end": 10.82,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.988,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.72,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 4,
+        "start": 10.94,
+        "end": 12.54,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.975,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.6,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 5,
+        "start": 12.66,
+        "end": 13.66,
+        "hyp_label": "SPEAKER_04",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.96,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 6,
+        "start": 13.78,
+        "end": 14.74,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.937,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.96,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 7,
+        "start": 14.86,
+        "end": 17.22,
+        "hyp_label": "SPEAKER_04",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.975,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.36,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 8,
+        "start": 17.34,
+        "end": 20.54,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.988,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 3.2,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 9,
+        "start": 20.66,
+        "end": 22.82,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.972,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.16,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 10,
+        "start": 22.94,
+        "end": 25.14,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.982,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.2,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 11,
+        "start": 25.26,
+        "end": 27.82,
+        "hyp_label": "SPEAKER_03",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.977,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.56,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 12,
+        "start": 27.98,
+        "end": 28.98,
+        "hyp_label": "SPEAKER_03",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 13,
+        "start": 29.1,
+        "end": 30.1,
+        "hyp_label": "SPEAKER_03",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 14,
+        "start": 30.22,
+        "end": 31.22,
+        "hyp_label": "SPEAKER_03",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.98,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 15,
+        "start": 31.34,
+        "end": 33.34,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": null,
+        "ref_top_share": 0.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.98,
+        "ref_masked_share": 0.0,
+        "status": "masked",
+        "seconds": 2.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        }
+      },
+      {
+        "segment": 16,
+        "start": 33.46,
+        "end": 34.46,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": null,
+        "ref_top_share": 0.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.96,
+        "ref_masked_share": 0.0,
+        "status": "masked",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        }
+      },
+      {
+        "segment": 17,
+        "start": 34.58,
+        "end": 35.58,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": null,
+        "ref_top_share": 0.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 1.0,
+        "ref_masked_share": 0.0,
+        "status": "masked",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        }
+      },
+      {
+        "segment": 18,
+        "start": 35.7,
+        "end": 36.7,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.4,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.4,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 19,
+        "start": 36.82,
+        "end": 38.3,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.48,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 20,
+        "start": 38.42,
+        "end": 40.9,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.96,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.48,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 21,
+        "start": 41.02,
+        "end": 42.9,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.88,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 22,
+        "start": 43.02,
+        "end": 45.06,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.971,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.04,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 23,
+        "start": 45.18,
+        "end": 46.18,
+        "hyp_label": "SPEAKER_02",
+        "ref_top": null,
+        "ref_top_share": 0.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 1.0,
+        "status": "masked",
+        "seconds": 0.822,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        }
+      }
+    ]
+  },
+  "docent_roles": {
+    "status": "ok",
+    "matrix_ref_role_by_pred": {
+      "docent": {
+        "DOCENT": {
+          "turns": 2,
+          "seconds": 13.76
+        }
+      },
+      "leerling": {
+        "OTHER": {
+          "turns": 9,
+          "seconds": 21.56
+        },
+        "ONZEKER": {
+          "turns": 2,
+          "seconds": 3.12
+        }
+      },
+      "none": {
+        "OTHER": {
+          "turns": 1,
+          "seconds": 2.0
+        },
+        "ONZEKER": {
+          "turns": 3,
+          "seconds": 2.822
+        }
+      }
+    },
+    "scored_turns": 13,
+    "decided_turns": 11,
+    "onzeker_turns": 2,
+    "coverage": 0.8461538461538461,
+    "decided_accuracy": 1.0,
+    "strict_accuracy_onzeker_counts_wrong": 0.8461538461538461,
+    "turns_total": 17,
+    "turns": [
+      {
+        "turn": 0,
+        "start": 0.82,
+        "end": 12.54,
+        "ref_role": "docent",
+        "pred": "DOCENT",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 1,
+        "start": 12.66,
+        "end": 13.66,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 2,
+        "start": 13.78,
+        "end": 14.74,
+        "ref_role": "leerling",
+        "pred": "ONZEKER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 3,
+        "start": 14.86,
+        "end": 17.22,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 4,
+        "start": 17.34,
+        "end": 20.54,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 5,
+        "start": 20.66,
+        "end": 22.82,
+        "ref_role": "leerling",
+        "pred": "ONZEKER",
+        "uncertain_assignment": true,
+        "overlap": false
+      },
+      {
+        "turn": 6,
+        "start": 22.94,
+        "end": 25.14,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 7,
+        "start": 25.26,
+        "end": 31.22,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 8,
+        "start": 31.34,
+        "end": 33.34,
+        "ref_role": "none",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": true
+      },
+      {
+        "turn": 9,
+        "start": 33.46,
+        "end": 34.46,
+        "ref_role": "none",
+        "pred": "ONZEKER",
+        "uncertain_assignment": true,
+        "overlap": true
+      },
+      {
+        "turn": 10,
+        "start": 34.58,
+        "end": 35.58,
+        "ref_role": "none",
+        "pred": "ONZEKER",
+        "uncertain_assignment": true,
+        "overlap": true
+      },
+      {
+        "turn": 11,
+        "start": 35.7,
+        "end": 36.7,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": true
+      },
+      {
+        "turn": 12,
+        "start": 36.82,
+        "end": 38.3,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 13,
+        "start": 38.42,
+        "end": 40.9,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": true
+      },
+      {
+        "turn": 14,
+        "start": 41.02,
+        "end": 42.9,
+        "ref_role": "leerling",
+        "pred": "OTHER",
+        "uncertain_assignment": false,
+        "overlap": true
+      },
+      {
+        "turn": 15,
+        "start": 43.02,
+        "end": 45.06,
+        "ref_role": "docent",
+        "pred": "DOCENT",
+        "uncertain_assignment": false,
+        "overlap": false
+      },
+      {
+        "turn": 16,
+        "start": 45.18,
+        "end": 46.18,
+        "ref_role": "none",
+        "pred": "ONZEKER",
+        "uncertain_assignment": true,
+        "overlap": true
+      }
+    ]
+  }
+}

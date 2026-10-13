@@ -1,0 +1,400 @@
+{
+ "summary": {
+  "passed": 32,
+  "failed": 0,
+  "raw_turns_identical_to_baseline": true
+ },
+ "checks": [
+  {
+   "check": "A1 alle vier stappen ok",
+   "ok": true,
+   "detail": [
+    [
+     "01_transcribe",
+     "ok",
+     41.42
+    ],
+    [
+     "02_diarize",
+     "ok",
+     34.37
+    ],
+    [
+     "03_preprocess",
+     "ok",
+     0.0
+    ],
+    [
+     "04_docent",
+     "ok",
+     1.33
+    ]
+   ]
+  },
+  {
+   "check": "A2 no_touch_check schoon (Data-local/processed, src, referenties)",
+   "ok": true,
+   "detail": {
+    "data_local_processed_diff": {
+     "added": [],
+     "removed": [],
+     "changed": []
+    },
+    "src_py_unchanged": true,
+    "reference_csv_unchanged": true
+   }
+  },
+  {
+   "check": "A3 invoer (audio-, referentie-, rolbron-, docentreferentiehash) gelijk aan baseline",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "A4 pipeline-instellingen gelijk",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "A5 packages en modelrevisies gelijk",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "A6 bronhashes: alleen models/diarization/preprocessing verschillen met de baseline",
+   "ok": true,
+   "detail": [
+    "diarization.py",
+    "models.py",
+    "preprocessing.py"
+   ]
+  },
+  {
+   "check": "B1 Whisper: 19 segmenten, alle bestaande velden gelijk aan run 1 en run 2 (nieuwe velden alleen als lege standaardwaarde)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "C1 ruwe beurten: 8 beurten, tijden en labels gelijk aan run 1",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "C2 RTTM byte-gelijk aan run 1 en run 2",
+   "ok": true,
+   "detail": "24ce70f0aed02604ca90019454f94b5d0a96de76430006194159adca3a480bf9"
+  },
+  {
+   "check": "D1 19 dominante labels identiek (speaker, speaker_raw)",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "D2 alle bestaande segmentvelden gelijk (confidence, overlap, uncertain, tekst, tijden, kwaliteitsmaten)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "D3 bestaande diarization-metadata gelijk (zonder runtime/paden)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "E1 tien turns, alle bestaande velden gelijk (grenzen, tekst, speaker, flags, context, bron-indices, bronsegmenten)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "E2 preprocessing-configuratie gelijk",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "F1 alle intersections van alle 19 segmenten gelijk aan onafhankelijke exacte berekening (aantal, label, begin, eind, duur)",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "F2 precies de 7 verwachte segmenten hebben meerdere ruwe sprekers",
+   "ok": true,
+   "detail": [
+    1,
+    4,
+    5,
+    11,
+    12,
+    15,
+    16
+   ]
+  },
+  {
+   "check": "F3 SPEAKER_01 = 3,898125 s in de aanvullende informatie (= totaal ruwe SPEAKER_01)",
+   "ok": true,
+   "detail": [
+    3.898125,
+    3.898125
+   ]
+  },
+  {
+   "check": "F4 tegenvoorbeeldzoektocht: geen intersection buiten segmentgrenzen, duur klopt, gesorteerd, dominant altijd aanwezig, vlag consistent, geen leeg segment, overlapvlag altijd met multi",
+   "ok": true,
+   "detail": {}
+  },
+  {
+   "check": "F5 intersections gelijk aan de eerdere replay op de opgeslagen ruwe beurten (zonder modelrun)",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "G1 na preprocessing: raw_speaker_seconds/vlag per turn kloppen met de bronsegmenten",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "G2 SPEAKER_01 zichtbaar in turns 1, 3, 4, 6, 7, 8 (samen 3,898125 s)",
+   "ok": true,
+   "detail": {
+    "1": 0.726,
+    "3": 0.65,
+    "4": 1.072,
+    "6": 0.571,
+    "7": 0.292,
+    "8": 0.588
+   }
+  },
+  {
+   "check": "G3 docentrollen, similarities, noten en alle bestaande turnvelden gelijk aan run 1",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "G4 rolreeks D D D O D D O D D D",
+   "ok": true,
+   "detail": [
+    "DOCENT",
+    "DOCENT",
+    "DOCENT",
+    "OTHER",
+    "DOCENT",
+    "DOCENT",
+    "OTHER",
+    "DOCENT",
+    "DOCENT",
+    "DOCENT"
+   ]
+  },
+  {
+   "check": "G5 docentuitvoer bewaart de nieuwe velden (turnsamenvatting en intersections in bronsegmenten) ongewijzigd t.o.v. preprocessing",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "H1 alle scores (WER/CER, DER-raster, segment, docentrol, circulariteit, evidence) gelijk aan run 1",
+   "ok": true,
+   "detail": []
+  },
+  {
+   "check": "I1 gediarizeerd transcript: herladen en opnieuw serialiseren behoudt alle intersections",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "I2 preprocessing: herladen en opnieuw serialiseren behoudt turnsamenvatting en intersections in bronsegmenten",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "I2 docentrol-uitvoer: herladen en opnieuw serialiseren behoudt turnsamenvatting en intersections in bronsegmenten",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "J1 git: HEAD ongewijzigd t.o.v. de run, werkboom schoon, src gelijk aan commit",
+   "ok": true,
+   "detail": [
+    "afefb0a6866f4d5342d2f4ab67777f24e4b4f1cc",
+    "",
+    ""
+   ]
+  },
+  {
+   "check": "J2 huidige src-hashes gelijk aan het nieuwe runmanifest",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "J3 uitvoer van baselinerun 1 en 2 nog gelijk aan hun run_result-hashes",
+   "ok": true,
+   "detail": null
+  },
+  {
+   "check": "J4 audio, rasterreferentie, rolbron, handmatige tekst en docentreferentie nog gelijk aan de baseline-hashes",
+   "ok": true,
+   "detail": null
+  }
+ ],
+ "evidence": {
+  "git": {
+   "head": "afefb0a6866f4d5342d2f4ab67777f24e4b4f1cc",
+   "branch": "feature/lossless-speaker-intersections",
+   "status_short": []
+  },
+  "src_sha256_new": {
+   "config.py": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+   "diarization.py": "364196b88920c32e7121dcf456107aa1385b9a5d86535e18a30526b7bd1973ee",
+   "docent_recognition.py": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+   "models.py": "102232b4a7057f5520a2e7db4ad9a6f389e123d71b09ca13c7f5d99914925439",
+   "OLD_benchmark_transcription.py": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+   "preprocessing.py": "6248979dc53d322366acc71e569867e4b4a1f2e277b270e02346cbac5c3559ed",
+   "run_docent_pipeline.py": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+   "transcription.py": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d"
+  },
+  "runtimes_s_new_vs_run1": {
+   "01_transcribe": [
+    41.42,
+    36.94
+   ],
+   "02_diarize": [
+    34.37,
+    32.76
+   ],
+   "03_preprocess": [
+    0.0,
+    0.0
+   ],
+   "04_docent": [
+    1.33,
+    1.74
+   ]
+  },
+  "transcript_json_new_fields_are_only_empty_defaults": true,
+  "rttm_sha256": "24ce70f0aed02604ca90019454f94b5d0a96de76430006194159adca3a480bf9",
+  "speaker_01_seconds": 3.898125,
+  "speaker_00_seconds_in_segments": 29.14215625,
+  "intersections_segments_multi": {
+   "1": [
+    [
+     "SPEAKER_00",
+     2.0,
+     4.0,
+     2.0
+    ],
+    [
+     "SPEAKER_01",
+     2.984,
+     3.71,
+     0.726
+    ]
+   ],
+   "4": [
+    [
+     "SPEAKER_00",
+     7.0,
+     9.0,
+     2.0
+    ],
+    [
+     "SPEAKER_01",
+     8.35,
+     9.0,
+     0.65
+    ]
+   ],
+   "5": [
+    [
+     "SPEAKER_01",
+     9.0,
+     10.072,
+     1.072
+    ],
+    [
+     "SPEAKER_00",
+     9.0,
+     11.0,
+     2.0
+    ]
+   ],
+   "11": [
+    [
+     "SPEAKER_00",
+     17.0,
+     18.0,
+     1.0
+    ],
+    [
+     "SPEAKER_01",
+     17.429,
+     18.0,
+     0.571
+    ]
+   ],
+   "12": [
+    [
+     "SPEAKER_01",
+     18.0,
+     18.02,
+     0.02
+    ],
+    [
+     "SPEAKER_00",
+     18.0,
+     18.492,
+     0.492
+    ],
+    [
+     "SPEAKER_00",
+     18.695,
+     19.0,
+     0.305
+    ]
+   ],
+   "15": [
+    [
+     "SPEAKER_00",
+     21.0,
+     23.0,
+     2.0
+    ],
+    [
+     "SPEAKER_01",
+     22.728,
+     23.0,
+     0.272
+    ]
+   ],
+   "16": [
+    [
+     "SPEAKER_01",
+     23.0,
+     23.588,
+     0.588
+    ],
+    [
+     "SPEAKER_00",
+     23.0,
+     25.0,
+     2.0
+    ]
+   ]
+  },
+  "probes": {
+   "buiten_segmentgrenzen": 0,
+   "duur_ongelijk_eind_min_begin": 0,
+   "niet_gesorteerd": 0,
+   "dominant_niet_in_intersections": 0,
+   "enkelvoudig_maar_gemarkeerd_multi": 0,
+   "multi_maar_niet_gemarkeerd": 0,
+   "segment_zonder_intersections": 0,
+   "overlapvlag_zonder_multi": 0
+  },
+  "speaker_01_per_turn": {
+   "1": 0.726,
+   "3": 0.65,
+   "4": 1.072,
+   "6": 0.571,
+   "7": 0.292,
+   "8": 0.588
+  },
+  "WER": 0.075,
+  "DER_headline": 0.11135922330097052
+ }
+}

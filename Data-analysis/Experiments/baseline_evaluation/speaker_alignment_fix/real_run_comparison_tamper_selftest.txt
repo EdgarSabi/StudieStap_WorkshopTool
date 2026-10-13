@@ -1,0 +1,11 @@
+FAIL D1 19 dominante labels identiek (speaker, speaker_raw)
+FAIL D2 alle bestaande segmentvelden gelijk (confidence, overlap, uncertain, tekst, tijden, kwaliteitsmaten)  -> [(3, [('speaker_raw', 'SPEAKER_00', 'SPEAKER_01')])]
+FAIL F1 alle intersections van alle 19 segmenten gelijk aan onafhankelijke exacte berekening (aantal, label, begin, eind, duur)  -> [(4, 'aantal', 1, 2, 7.0, 9.0)]
+FAIL F2 precies de 7 verwachte segmenten hebben meerdere ruwe sprekers  -> [1, 5, 11, 12, 15, 16]
+FAIL F3 SPEAKER_01 = 3,898125 s in de aanvullende informatie (= totaal ruwe SPEAKER_01)  -> (3.2484687500000002, 3.898125)
+FAIL F4 tegenvoorbeeldzoektocht: geen intersection buiten segmentgrenzen, duur klopt, gesorteerd, dominant altijd aanwezig, vlag consistent, geen leeg segment, overlapvla
+FAIL F5 intersections gelijk aan de eerdere replay op de opgeslagen ruwe beurten (zonder modelrun)
+FAIL I1 gediarizeerd transcript: herladen en opnieuw serialiseren behoudt alle intersections
+FAIL I2 preprocessing: herladen en opnieuw serialiseren behoudt turnsamenvatting en intersections in bronsegmenten
+FAIL I2 docentrol-uitvoer: herladen en opnieuw serialiseren behoudt turnsamenvatting en intersections in bronsegmenten
+{"passed": 22, "failed": 10, "raw_turns_identical_to_baseline": true}

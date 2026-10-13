@@ -1,0 +1,138 @@
+{
+  "protocol": "v1",
+  "fragment": "testaudio2_fragment",
+  "run_id": "20261013_lossless_run1",
+  "started_utc": "2026-10-13T11:55:01Z",
+  "command": [
+    "Data-analysis/Experiments/baseline_evaluation/run_baseline.py",
+    "--fragment",
+    "testaudio2_fragment",
+    "--run-id",
+    "20261013_lossless_run1"
+  ],
+  "inputs": {
+    "fragment": "testaudio2_fragment",
+    "audio_path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\src\\test-files\\testaudio2_fragment.mp3",
+    "audio_sha256": "3f5aaf74b54a76280bededdcc51ea90434c0896be3257cd2c9c1a3fc4c845f7a",
+    "audio_duration_s": 30.014694,
+    "reference_path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio2_fragment_raster.csv",
+    "reference_sha256": "4b2a99321c0e81648c35a3af901461abc649ffb96a6af3c6cc09dc53f7abbf4b",
+    "reference_rows": 19,
+    "reference_speakers": [
+      "SPREKER_A",
+      "SPREKER_B"
+    ],
+    "role_source": {
+      "path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio2_fragment.csv",
+      "sha256": "8e622635c4a125232610959813fd9988276c2ca48774381d298d1d9f1e1d7f03"
+    },
+    "manual_txt": {
+      "path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-local\\raw\\testaudio2_manual.txt",
+      "sha256": "96cbf8548c70521dc0e87c3cc8fde388e2f1d5120658580030c4bd0277b7d21e"
+    },
+    "docent_reference_audio": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\src\\test-files\\testdocent.mp3",
+    "docent_reference_sha256": "2ac7ef3b3b690f86cf731d795aa22a0a429746f38488ec25b37831638e65f81e"
+  },
+  "pipeline_settings": {
+    "transcription": {
+      "language": "nl",
+      "model_size": "medium",
+      "device": "cpu",
+      "compute_type": "int8",
+      "use_batching": false,
+      "batch_size": 8,
+      "beam_size": 5,
+      "condition_on_previous_text": true,
+      "repetition_penalty": 1.0,
+      "no_repeat_ngram_size": 0,
+      "word_timestamps": false,
+      "hallucination_silence_threshold": null,
+      "vad_filter": true,
+      "vad_parameters": null,
+      "log_prob_threshold": -1.0,
+      "no_speech_threshold": 0.6,
+      "compression_ratio_threshold": 2.4,
+      "flag_avg_logprob_below": -1.0,
+      "flag_no_speech_prob_above": 0.6,
+      "flag_compression_ratio_above": 2.4,
+      "flag_repetition_word_ratio": 0.6,
+      "flag_repetition_min_words": 6
+    },
+    "diarization": {
+      "backend": "pyannote",
+      "hf_model": "pyannote/speaker-diarization-3.1",
+      "device": "cpu",
+      "min_speakers": null,
+      "max_speakers": null,
+      "main_speaker_min_share": 0.0,
+      "overlap_min_ratio": 0.15,
+      "uncertain_coverage_below": 0.6,
+      "uncertain_margin_below": 0.15
+    },
+    "preprocessing": {
+      "max_gap_within_turn_seconds": 1.5,
+      "large_context_gap_seconds": 3.0
+    },
+    "docent_recognition": {
+      "reference_audio": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\src\\test-files\\testdocent.mp3",
+      "embedding_model": "pyannote/wespeaker-voxceleb-resnet34-LM",
+      "device": "cpu",
+      "similarity_threshold": 0.35,
+      "min_clip_duration_seconds": 1.0
+    },
+    "note": "Identiek aan wat run_docent_pipeline.py doorgeeft: --model medium, geen min/max-speakers, geen --threshold."
+  },
+  "git": {
+    "head": "afefb0a6866f4d5342d2f4ab67777f24e4b4f1cc",
+    "branch": "feature/lossless-speaker-intersections",
+    "status_short": []
+  },
+  "environment": {
+    "python": "3.14.8 (tags/v3.14.8:8e6e75d, Sep 30 2026, 18:19:33) [MSC v.1944 64 bit (AMD64)]",
+    "platform": "Windows-11-10.0.26300-SP0",
+    "cpu_count": 12,
+    "packages": {
+      "faster-whisper": "1.2.1",
+      "ctranslate2": "4.8.2",
+      "torch": "2.14.0+cpu",
+      "torchaudio": "2.11.0",
+      "pyannote.audio": "4.0.7",
+      "pyannote.core": "6.0.1",
+      "pyannote.metrics": "4.1",
+      "speechbrain": "1.1.1",
+      "numpy": "2.5.3",
+      "scipy": "1.18.1",
+      "pydantic": "2.13.5",
+      "python-dotenv": "1.2.3",
+      "huggingface-hub": "1.30.0"
+    },
+    "hf_snapshots": {
+      "Systran/faster-whisper-medium": [
+        "08e178d48790749d25932bbc082711ddcfdfbc4f"
+      ],
+      "pyannote/speaker-diarization-3.1": [
+        "84fd25912480287da0247647c3d2b4853cb3ee5d"
+      ],
+      "pyannote/segmentation-3.0": [
+        "e66f3d3b9eb0873085418a7b813d3b369bf160bb"
+      ],
+      "pyannote/wespeaker-voxceleb-resnet34-LM": [
+        "837717ddb9ff5507820346191109dc79c958d614"
+      ]
+    },
+    "hf_token_present": true,
+    "hf_hub_offline": "1",
+    "src_sha256": {
+      "config.py": "de727ea69a6f9f5f370a270c9a795894fa3462154912a80cf3b3e7067c62fa4a",
+      "diarization.py": "364196b88920c32e7121dcf456107aa1385b9a5d86535e18a30526b7bd1973ee",
+      "docent_recognition.py": "af63ff656399c8c8bfe4db50f69e16e00e2f243773cbc004c3afb5adb35809b0",
+      "models.py": "102232b4a7057f5520a2e7db4ad9a6f389e123d71b09ca13c7f5d99914925439",
+      "OLD_benchmark_transcription.py": "8f2a1dd535728a521f0646b1b61329e6dad888424728da24d5dda8ebf2560134",
+      "preprocessing.py": "6248979dc53d322366acc71e569867e4b4a1f2e277b270e02346cbac5c3559ed",
+      "run_docent_pipeline.py": "74ae0f6ae238c6b673735628ccbea17e9213f92424d7c9034e6a56faf6da095e",
+      "transcription.py": "153b7fa38afb5d83c28c4d0d1e082057baac8d24168b058719369137d52da97d"
+    }
+  },
+  "seeds": "geen (de pipeline zet geen seed; Whisper-temperatuurfallback kan niet-deterministisch zijn)",
+  "output_dir": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-local\\evaluation\\baseline_v1\\runs\\20261013_lossless_run1\\testaudio2_fragment"
+}

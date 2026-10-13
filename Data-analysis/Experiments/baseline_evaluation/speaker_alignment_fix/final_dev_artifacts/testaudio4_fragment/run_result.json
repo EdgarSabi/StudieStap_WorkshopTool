@@ -1,0 +1,58 @@
+{
+  "fragment": "testaudio4_fragment",
+  "run_id": "20261013_final_dev_run1",
+  "finished_utc": "2026-10-13T12:09:34Z",
+  "all_stages_ok": true,
+  "stages": [
+    {
+      "stage": "transcription",
+      "status": "ok",
+      "detail": null,
+      "seconds": 142.48,
+      "name": "01_transcribe",
+      "outputs": {
+        "transcript": "08507528f9525bd7ed08f2f2da0305b0b0d8e356f168f7bb5a15cb0b71806b4a"
+      }
+    },
+    {
+      "stage": "diarization",
+      "status": "ok",
+      "detail": null,
+      "seconds": 106.97,
+      "name": "02_diarize",
+      "outputs": {
+        "diarized": "837aa6e33cc5d36b419201b7ac7ebe50fce005bc44ec96f838aafcca208b84dd",
+        "raw_turns_rttm": "a556b6a7d510e9531978af9c0dc47ecd3743d0d0d8dd1c14d63b7b9b99af0037"
+      }
+    },
+    {
+      "stage": "preprocessing",
+      "status": "ok",
+      "detail": null,
+      "seconds": 0.01,
+      "name": "03_preprocess",
+      "outputs": {
+        "turns": "3be0ee1ae3e35fc664be0b9fefd4b2bf62c612980c8df4538fcbcf6d30a266ac"
+      }
+    },
+    {
+      "stage": "docent_recognition",
+      "status": "ok",
+      "detail": null,
+      "seconds": 3.68,
+      "name": "04_docent",
+      "outputs": {
+        "docent_roles": "fa094f8c2ab0c65133b1bd00f3da68153ebf0991c6eef5d9aa703f9ffbf5b8c8"
+      }
+    }
+  ],
+  "no_touch_check": {
+    "data_local_processed_diff": {
+      "added": [],
+      "removed": [],
+      "changed": []
+    },
+    "src_py_unchanged": true,
+    "reference_csv_unchanged": true
+  }
+}

@@ -1,0 +1,1906 @@
+{
+  "protocol": "PROTOCOL.md v1",
+  "fragment": "testaudio4_fragment",
+  "run_dir": "Data-local\\evaluation\\baseline_v1\\runs\\20261013_final_dev_run1\\testaudio4_fragment",
+  "audio_duration_s": 120.032653,
+  "reference": {
+    "path": "C:\\Users\\School\\StudieStap\\StudieStap_WorkshopTool\\Data-analysis\\Experiments\\diarization\\hyperparameter_tuning\\ground_truth_testaudio4_fragment.csv",
+    "sha256": "83417b95d88d1a0ba476b6e86f792f7beb287d0a2b74eef9ba310a48d8f12a4c",
+    "rows": 87,
+    "speakers": [
+      "SPREKER_A",
+      "SPREKER_B",
+      "SPREKER_C",
+      "SPREKER_D"
+    ],
+    "row_kinds": {
+      "speech": 87
+    },
+    "role_map": {},
+    "role_source": null
+  },
+  "quality_warning_unintelligible": {
+    "rows_ja": 0,
+    "seconds_ja": 0,
+    "used_for_exclusion": false
+  },
+  "circularity": {
+    "status": "ok",
+    "rows": 87,
+    "identical_rows": 87,
+    "ratio": 1.0,
+    "circular": true
+  },
+  "text": {
+    "hyp_segments_used": 87,
+    "hyp_segments_masked": 0,
+    "primary_fillers_removed": {
+      "errors": 0,
+      "substitutions": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "ref_len": 420,
+      "hyp_len": 420,
+      "unit": "words",
+      "rate": 0.0
+    },
+    "fillers_kept": {
+      "errors": 0,
+      "substitutions": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "ref_len": 420,
+      "hyp_len": 420,
+      "unit": "words",
+      "rate": 0.0
+    },
+    "cer_fillers_removed": {
+      "errors": 0,
+      "substitutions": 0,
+      "deletions": 0,
+      "insertions": 0,
+      "ref_len": 1962,
+      "hyp_len": 1962,
+      "unit": "chars",
+      "rate": 0.0
+    },
+    "status": "circular_reference_do_not_report"
+  },
+  "evidence": {
+    "wer_cer": "not_reportable_circular",
+    "wer_cer_reasons": [
+      "CIRCULAIR: 87/87 rijen gelijk aan Whisper",
+      "referentie is (deels) voorgevuld vanuit Whisper (README hyperparameter_tuning)"
+    ],
+    "der_overlap_exclude": "exploratory",
+    "der_overlap_exclude_reasons": [
+      "referentiegrenzen liggen op hele seconden/ASR-raster (hele sec: 0.00, ASR: 1.00)"
+    ],
+    "der_overlap_keep": "exploratory",
+    "der_overlap_keep_reasons": [
+      "referentiegrenzen liggen op hele seconden/ASR-raster (hele sec: 0.00, ASR: 1.00)",
+      "11 rijen met overlap=ja zonder tweede spreker geannoteerd"
+    ],
+    "segment_eval": "exploratory",
+    "docent_roles": "exploratory",
+    "docent_roles_reasons": [
+      "dev-data; drempel 0,35 is in-sample gekozen op testaudio1/2/5"
+    ],
+    "all_metrics": "dev, optimistisch: geen achtergehouden testdata"
+  },
+  "der_raw_turns": {
+    "uem=labelled|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 117.0,
+      "missed_s": 8.888,
+      "false_alarm_s": 22.784,
+      "confusion_s": 13.632,
+      "uem_s": 117.0,
+      "der": 0.38721367521367495,
+      "missed_rate": 0.07596581196581212,
+      "false_alarm_rate": 0.19473504273504263,
+      "confusion_rate": 0.11651282051282025,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 74.2,
+      "missed_s": 4.744,
+      "false_alarm_s": 9.974,
+      "confusion_s": 6.666,
+      "uem_s": 117.0,
+      "der": 0.2881940700808622,
+      "missed_rate": 0.06393530997304575,
+      "false_alarm_rate": 0.13442048517520222,
+      "confusion_rate": 0.08983827493261425,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 107.8,
+      "missed_s": 7.842,
+      "false_alarm_s": 20.436,
+      "confusion_s": 11.993,
+      "uem_s": 107.8,
+      "der": 0.3735714285714282,
+      "missed_rate": 0.07274582560296865,
+      "false_alarm_rate": 0.18957328385899777,
+      "confusion_rate": 0.11125231910946175,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 70.1,
+      "missed_s": 4.344,
+      "false_alarm_s": 9.207,
+      "confusion_s": 5.956,
+      "uem_s": 107.8,
+      "der": 0.27827389443651906,
+      "missed_rate": 0.06196861626248214,
+      "false_alarm_rate": 0.1313409415121255,
+      "confusion_rate": 0.0849643366619114,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 117.0,
+      "missed_s": 8.888,
+      "false_alarm_s": 23.193,
+      "confusion_s": 13.632,
+      "uem_s": 120.033,
+      "der": 0.3907094017094015,
+      "missed_rate": 0.07596581196581212,
+      "false_alarm_rate": 0.19823076923076918,
+      "confusion_rate": 0.11651282051282025,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 74.2,
+      "missed_s": 4.744,
+      "false_alarm_s": 9.974,
+      "confusion_s": 6.666,
+      "uem_s": 120.033,
+      "der": 0.2881940700808622,
+      "missed_rate": 0.06393530997304575,
+      "false_alarm_rate": 0.13442048517520222,
+      "confusion_rate": 0.08983827493261425,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 107.8,
+      "missed_s": 7.842,
+      "false_alarm_s": 20.845,
+      "confusion_s": 11.993,
+      "uem_s": 110.833,
+      "der": 0.37736549165120564,
+      "missed_rate": 0.07274582560296865,
+      "false_alarm_rate": 0.1933673469387752,
+      "confusion_rate": 0.11125231910946175,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 70.1,
+      "missed_s": 4.344,
+      "false_alarm_s": 9.207,
+      "confusion_s": 5.956,
+      "uem_s": 110.833,
+      "der": 0.27827389443651906,
+      "missed_rate": 0.06196861626248214,
+      "false_alarm_rate": 0.1313409415121255,
+      "confusion_rate": 0.0849643366619114,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    }
+  },
+  "der_segment_level_hypothesis": {
+    "uem=labelled|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 117.0,
+      "missed_s": 0.1,
+      "false_alarm_s": 0.0,
+      "confusion_s": 23.58,
+      "uem_s": 117.0,
+      "der": 0.20239316239316246,
+      "missed_rate": 0.0008547008547008061,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.20153846153846164,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 74.2,
+      "missed_s": 0.0,
+      "false_alarm_s": 0.0,
+      "confusion_s": 10.7,
+      "uem_s": 117.0,
+      "der": 0.14420485175202158,
+      "missed_rate": 0.0,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.14420485175202158,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 107.8,
+      "missed_s": 0.1,
+      "false_alarm_s": 0.0,
+      "confusion_s": 21.12,
+      "uem_s": 107.8,
+      "der": 0.19684601113172553,
+      "missed_rate": 0.0009276437847865895,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.19591836734693893,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=labelled|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 70.1,
+      "missed_s": 0.0,
+      "false_alarm_s": 0.0,
+      "confusion_s": 9.5,
+      "uem_s": 107.8,
+      "der": 0.13552068473609136,
+      "missed_rate": 0.0,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.13552068473609136,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=keep|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 117.0,
+      "missed_s": 0.1,
+      "false_alarm_s": 0.14,
+      "confusion_s": 23.58,
+      "uem_s": 120.033,
+      "der": 0.20358974358974374,
+      "missed_rate": 0.0008547008547008061,
+      "false_alarm_rate": 0.0011965811965812926,
+      "confusion_rate": 0.20153846153846164,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=keep|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 74.2,
+      "missed_s": 0.0,
+      "false_alarm_s": 0.0,
+      "confusion_s": 10.7,
+      "uem_s": 120.033,
+      "der": 0.14420485175202158,
+      "missed_rate": 0.0,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.14420485175202158,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=exclude|collar=0.0": {
+      "status": "ok",
+      "total_ref_speech_s": 107.8,
+      "missed_s": 0.1,
+      "false_alarm_s": 0.14,
+      "confusion_s": 21.12,
+      "uem_s": 110.833,
+      "der": 0.19814471243042694,
+      "missed_rate": 0.0009276437847865895,
+      "false_alarm_rate": 0.0012987012987014032,
+      "confusion_rate": 0.19591836734693893,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    },
+    "uem=strict|overlap=exclude|collar=0.25": {
+      "status": "ok",
+      "total_ref_speech_s": 70.1,
+      "missed_s": 0.0,
+      "false_alarm_s": 0.0,
+      "confusion_s": 9.5,
+      "uem_s": 110.833,
+      "der": 0.13552068473609136,
+      "missed_rate": 0.0,
+      "false_alarm_rate": 0.0,
+      "confusion_rate": 0.13552068473609136,
+      "n_ref_speakers": 4,
+      "n_hyp_speakers_total": 2
+    }
+  },
+  "segment_eval": {
+    "status": "ok",
+    "mapping_hyp_to_ref": {
+      "SPEAKER_00": "SPREKER_A",
+      "SPEAKER_01": "SPREKER_B"
+    },
+    "status_counts": {
+      "single": 87
+    },
+    "single_segments_seconds": 117.04,
+    "single_correct_seconds": 94.0,
+    "single_accuracy_seconds": 0.8031442241968555,
+    "mixed_segments": [],
+    "n_hyp_labels_in_single": 2,
+    "n_ref_speakers": 4,
+    "segments": [
+      {
+        "segment": 0,
+        "start": 0.0,
+        "end": 1.24,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.968,
+        "ref_second_share": 0.032,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.24,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 1,
+        "start": 1.24,
+        "end": 2.44,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.967,
+        "ref_second_share": 0.033,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.2,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 2,
+        "start": 2.44,
+        "end": 5.08,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.64,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 3,
+        "start": 5.08,
+        "end": 5.76,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.971,
+        "ref_second_share": 0.029,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.68,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 4,
+        "start": 5.76,
+        "end": 6.44,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.882,
+        "ref_second_share": 0.118,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.68,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 5,
+        "start": 6.44,
+        "end": 7.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 6,
+        "start": 7.56,
+        "end": 9.2,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.976,
+        "ref_second_share": 0.024,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.64,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 7,
+        "start": 9.2,
+        "end": 10.0,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.8,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 8,
+        "start": 10.0,
+        "end": 12.6,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.6,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 9,
+        "start": 12.6,
+        "end": 15.32,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.72,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 10,
+        "start": 15.32,
+        "end": 16.68,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.36,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 11,
+        "start": 16.68,
+        "end": 17.44,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.921,
+        "ref_second_share": 0.079,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.76,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 12,
+        "start": 17.44,
+        "end": 18.96,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.52,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 13,
+        "start": 18.96,
+        "end": 21.64,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.985,
+        "ref_second_share": 0.015,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.68,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 14,
+        "start": 21.64,
+        "end": 22.72,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.981,
+        "ref_second_share": 0.019,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.08,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 15,
+        "start": 22.72,
+        "end": 25.52,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.8,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 16,
+        "start": 25.52,
+        "end": 27.72,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.991,
+        "ref_second_share": 0.009,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.2,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 17,
+        "start": 27.72,
+        "end": 29.12,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.986,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.4,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 18,
+        "start": 29.16,
+        "end": 30.24,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.963,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.08,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 19,
+        "start": 30.24,
+        "end": 30.68,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.44,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 20,
+        "start": 30.68,
+        "end": 31.48,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.8,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 21,
+        "start": 31.48,
+        "end": 34.28,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.993,
+        "ref_second_share": 0.007,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.8,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 22,
+        "start": 34.28,
+        "end": 35.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.984,
+        "ref_second_share": 0.016,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.28,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 23,
+        "start": 35.56,
+        "end": 36.76,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.2,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 24,
+        "start": 36.76,
+        "end": 37.36,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.933,
+        "ref_second_share": 0.067,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.6,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 25,
+        "start": 37.36,
+        "end": 38.24,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.955,
+        "ref_second_share": 0.045,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.88,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 26,
+        "start": 38.24,
+        "end": 40.36,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.12,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 27,
+        "start": 40.36,
+        "end": 42.76,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.4,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 28,
+        "start": 42.76,
+        "end": 43.48,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.72,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 29,
+        "start": 43.48,
+        "end": 45.28,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.989,
+        "ref_second_share": 0.011,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.8,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 30,
+        "start": 45.28,
+        "end": 48.52,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 3.24,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 31,
+        "start": 48.52,
+        "end": 50.44,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.979,
+        "ref_second_share": 0.021,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.92,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 32,
+        "start": 50.44,
+        "end": 51.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 33,
+        "start": 51.56,
+        "end": 52.24,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.882,
+        "ref_second_share": 0.118,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.68,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 34,
+        "start": 52.24,
+        "end": 53.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.32,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 35,
+        "start": 53.56,
+        "end": 54.2,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.938,
+        "ref_second_share": 0.062,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.64,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 36,
+        "start": 54.2,
+        "end": 54.96,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.76,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 37,
+        "start": 54.96,
+        "end": 57.28,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.983,
+        "ref_second_share": 0.017,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.32,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 38,
+        "start": 57.28,
+        "end": 58.44,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.966,
+        "ref_second_share": 0.034,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.16,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 39,
+        "start": 58.44,
+        "end": 59.0,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.56,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 40,
+        "start": 59.0,
+        "end": 59.48,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.48,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 41,
+        "start": 59.48,
+        "end": 60.4,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.978,
+        "ref_second_share": 0.022,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.92,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 42,
+        "start": 60.4,
+        "end": 61.52,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.982,
+        "ref_second_share": 0.018,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 43,
+        "start": 61.52,
+        "end": 64.8,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 3.28,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 44,
+        "start": 64.8,
+        "end": 65.8,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 45,
+        "start": 67.32,
+        "end": 68.0,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.68,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 46,
+        "start": 68.0,
+        "end": 69.28,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.28,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 47,
+        "start": 69.28,
+        "end": 70.04,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.921,
+        "ref_second_share": 0.026,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.76,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 48,
+        "start": 71.24,
+        "end": 73.4,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.16,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 49,
+        "start": 73.4,
+        "end": 75.84,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.984,
+        "ref_second_share": 0.016,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.44,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 50,
+        "start": 75.84,
+        "end": 77.32,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.48,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 51,
+        "start": 77.32,
+        "end": 79.28,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.96,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 52,
+        "start": 79.28,
+        "end": 79.52,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.917,
+        "ref_second_share": 0.083,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.24,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 53,
+        "start": 79.52,
+        "end": 80.32,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.8,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 54,
+        "start": 80.32,
+        "end": 83.76,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 3.44,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 55,
+        "start": 83.76,
+        "end": 84.2,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.909,
+        "ref_second_share": 0.091,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.44,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 56,
+        "start": 84.2,
+        "end": 86.16,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.96,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 57,
+        "start": 86.36,
+        "end": 89.32,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.986,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.96,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 58,
+        "start": 89.32,
+        "end": 89.72,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.95,
+        "ref_second_share": 0.05,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.4,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 59,
+        "start": 89.72,
+        "end": 91.12,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_C",
+        "ref_top_share": 0.986,
+        "ref_second_share": 0.014,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.4,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 60,
+        "start": 91.12,
+        "end": 93.8,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 2.68,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 61,
+        "start": 93.8,
+        "end": 95.44,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.64,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 62,
+        "start": 95.44,
+        "end": 96.88,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.44,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 63,
+        "start": 96.88,
+        "end": 97.84,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.96,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 64,
+        "start": 97.84,
+        "end": 98.48,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.64,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 65,
+        "start": 98.48,
+        "end": 99.2,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.972,
+        "ref_second_share": 0.028,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.72,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 66,
+        "start": 99.2,
+        "end": 99.8,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.6,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": true
+      },
+      {
+        "segment": 67,
+        "start": 99.8,
+        "end": 100.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.76,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 68,
+        "start": 100.56,
+        "end": 101.92,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.36,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 69,
+        "start": 101.92,
+        "end": 102.8,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.88,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 70,
+        "start": 102.8,
+        "end": 103.92,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 71,
+        "start": 103.92,
+        "end": 105.16,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.24,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 72,
+        "start": 105.16,
+        "end": 106.32,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.948,
+        "ref_second_share": 0.052,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.16,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 73,
+        "start": 106.32,
+        "end": 107.2,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.88,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 74,
+        "start": 107.2,
+        "end": 107.92,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.972,
+        "ref_second_share": 0.028,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.72,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 75,
+        "start": 107.92,
+        "end": 108.36,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.44,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 76,
+        "start": 108.36,
+        "end": 110.2,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.978,
+        "ref_second_share": 0.022,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.84,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 77,
+        "start": 110.2,
+        "end": 111.8,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.6,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 78,
+        "start": 111.8,
+        "end": 112.56,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_D",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.76,
+        "flags": {
+          "overlap": false,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 79,
+        "start": 112.56,
+        "end": 114.48,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.979,
+        "ref_second_share": 0.021,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.92,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 80,
+        "start": 114.48,
+        "end": 114.84,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.944,
+        "ref_second_share": 0.056,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.36,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 81,
+        "start": 114.84,
+        "end": 115.96,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      },
+      {
+        "segment": 82,
+        "start": 115.96,
+        "end": 116.56,
+        "hyp_label": "SPEAKER_00",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 0.933,
+        "ref_second_share": 0.067,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.6,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 83,
+        "start": 116.56,
+        "end": 117.68,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 0.964,
+        "ref_second_share": 0.036,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.12,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 84,
+        "start": 117.68,
+        "end": 118.2,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.52,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": false
+      },
+      {
+        "segment": 85,
+        "start": 118.2,
+        "end": 119.2,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_A",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 1.0,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": true
+        },
+        "correct": false
+      },
+      {
+        "segment": 86,
+        "start": 119.2,
+        "end": 120.0,
+        "hyp_label": "SPEAKER_01",
+        "ref_top": "SPREKER_B",
+        "ref_top_share": 1.0,
+        "ref_second_share": 0.0,
+        "ref_unknown_share": 0.0,
+        "ref_masked_share": 0.0,
+        "status": "single",
+        "seconds": 0.8,
+        "flags": {
+          "overlap": true,
+          "uncertain_assignment": false
+        },
+        "correct": true
+      }
+    ]
+  },
+  "docent_roles": {
+    "status": "no_reference_roles"
+  }
+}

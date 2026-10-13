@@ -1,0 +1,14 @@
+PASS 0 alle vier stappen ok, no_touch_check schoon
+PASS E1 alle 170 (ruwe beurt, segment)-paren met positieve overlap staan als juiste intersection in het segment
+PASS E2a segmentvlag consistent met de lijst
+PASS E2b turnsamenvatting en vlag per turn kloppen met de bronsegmenten
+PASS E2c docentuitvoer bewaart de nieuwe velden ongewijzigd
+PASS E2d herladen en opnieuw serialiseren (gediarizeerd, preprocessing, docent) behoudt alles
+PASS E3a originele koppeling op dezelfde ruwe beurten: alle bestaande segmentvelden (dominant label, confidence, overlap, uncertain, tekst, tijden) identiek
+PASS E3b originele preprocessing: turngrenzen, sprekers, flags, context en bronsegmenten identiek
+PASS E3c docentstap wijzigt geen turnveld buiten de eigen rolvelden
+PASS E4a geen ruwe beurt met positieve segmentoverlap ontbreekt in de intersections (ook korte en rumoerige)
+PASS E4b elk ruw label met activiteit binnen een segment komt in de intersections voor
+PASS I1 src-hashes gelijk aan het runmanifest en werkboom (tracked) schoon
+PASS I2 audio- en referentiehash gelijk aan het runmanifest
+{"passed": 13, "failed": 0}
