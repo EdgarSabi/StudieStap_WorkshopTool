@@ -1,0 +1,18 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="68" height="68" viewBox="0 0 68 68" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Modus-wissel" filter="url(#filter0_d_0_4)">
+<rect x="12" y="8" width="44" height="44" rx="22" fill="white" fill-opacity="0.96"/>
+<rect x="12.75" y="8.75" width="42.5" height="42.5" rx="21.25" stroke="#BFE0BF" stroke-width="1.5"/>
+<path id="Maan-icoon" d="M33.0205 20C31.7608 21.4825 31 23.4021 31 25.5C31 30.1944 34.8056 34 39.5 34C40.5064 34 41.4712 33.823 42.3672 33.5019C40.9477 37.2972 37.2905 40 33 40C27.4772 40 23 35.5228 23 30C23 24.4771 27.4772 20 33 20C33.0068 20 33.0137 20 33.0205 20Z" fill="#FABD1A"/>
+</g>
+<defs>
+<filter id="filter0_d_0_4" x="0" y="0" width="68" height="68" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+<feFlood flood-opacity="0" result="BackgroundImageFix"/>
+<feColorMatrix in="SourceAlpha" type="matrix" values="0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 127 0" result="hardAlpha"/>
+<feOffset dy="4"/>
+<feGaussianBlur stdDeviation="6"/>
+<feColorMatrix type="matrix" values="0 0 0 0 0.18 0 0 0 0 0.49 0 0 0 0 0.2 0 0 0 0.16 0"/>
+<feBlend mode="normal" in2="BackgroundImageFix" result="effect1_dropShadow_0_4"/>
+<feBlend mode="normal" in="SourceGraphic" in2="effect1_dropShadow_0_4" result="shape"/>
+</filter>
+</defs>
+</svg>

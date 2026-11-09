@@ -1,0 +1,12 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="120" height="168" viewBox="0 0 120 168" fill="none" xmlns="http://www.w3.org/2000/svg">
+<g id="Luchtballon">
+<path id="Vector" d="M60 4.8C24 4.8 7.2 33.6 12 60C16.8 84 40.8 100.8 48 115.2H72C79.2 100.8 103.2 84 108 60C112.8 33.6 96 4.8 60 4.8Z" fill="#66BB6A"/>
+<path id="Vector_2" d="M60 4.8C40.8 24 40.8 96 48 115.2H72C79.2 96 79.2 24 60 4.8Z" fill="#FFC93C"/>
+<path id="Vector_3" d="M14.4 67.2C36 72 84 72 105.6 67.2" stroke-width="6" stroke="white" stroke-opacity="0.7"/>
+<g id="Vector_4">
+<path d="M48 115.2L50.4 136.8ZM72 115.2L69.6 136.8Z" fill="black"/>
+<path d="M48 115.2L50.4 136.8M72 115.2L69.6 136.8" stroke-width="3.6" stroke="#8D6E63"/>
+</g>
+<path id="Vector_5" d="M69.6 134.4H50.4C47.749 134.4 45.6 136.549 45.6 139.2V148.8C45.6 151.451 47.749 153.6 50.4 153.6H69.6C72.251 153.6 74.4 151.451 74.4 148.8V139.2C74.4 136.549 72.251 134.4 69.6 134.4Z" fill="#C4986A"/>
+</g>
+</svg>

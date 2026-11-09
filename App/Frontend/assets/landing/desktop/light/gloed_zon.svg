@@ -1,0 +1,11 @@
+<svg preserveAspectRatio="none" overflow="visible" style="display: block;" width="1116" height="513" viewBox="0 0 1116 513" fill="none" xmlns="http://www.w3.org/2000/svg">
+<ellipse id="Gloed zon" cx="558" cy="256.5" rx="558" ry="256.5" fill="url(#paint0_radial_0_81)"/>
+<defs>
+<radialGradient id="paint0_radial_0_81" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(558 256.5) scale(558 256.5)">
+<stop stop-color="#FFE08A" stop-opacity="0.585"/>
+<stop offset="0.4" stop-color="#FFE08A" stop-opacity="0.39"/>
+<stop offset="0.72" stop-color="#FFE08A" stop-opacity="0.13"/>
+<stop offset="1" stop-color="#FFE08A" stop-opacity="0"/>
+</radialGradient>
+</defs>
+</svg>
