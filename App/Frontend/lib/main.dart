@@ -1,7 +1,9 @@
 import 'package:flutter/material.dart';
 
+import 'features/forgot_password/forgot_password_page.dart';
 import 'features/landing/landing_page.dart';
 import 'features/login/login_page.dart';
+import 'features/register/register_page.dart';
 import 'theme/app_theme.dart';
 
 void main() {
@@ -21,20 +23,50 @@ class _StapperCoachAppState extends State<StapperCoachApp> {
 
   void _toggleTheme() => setState(() => _isDark = !_isDark);
 
-  void _openLogin() {
-    _navigator.currentState!.push(
-      MaterialPageRoute<void>(
-        builder: (_) => LoginPage(
-          onToggleTheme: _toggleTheme,
-          // Er is nog geen backend, en de schermen voor wachtwoord vergeten
-          // en registreren bestaan nog niet.
-          onLogin: (email, password) {},
-          onForgotPassword: () {},
-          onRegister: () {},
-        ),
-      ),
-    );
+  NavigatorState get _nav => _navigator.currentState!;
+
+  /// Opent [page]. Met [replace] vervangt het het huidige scherm, zodat heen
+  /// en weer wisselen tussen inloggen en registreren de stapel niet laat
+  /// groeien en "terug" naar de landingspagina gaat.
+  void _open(Widget page, {bool replace = false}) {
+    final route = MaterialPageRoute<void>(builder: (_) => page);
+    if (replace) {
+      _nav.pushReplacement(route);
+    } else {
+      _nav.push(route);
+    }
   }
+
+  // De backend bestaat nog niet, dus inloggen, registreren en de reset-link
+  // versturen doen nog niets.
+
+  void _openLogin({bool replace = false}) => _open(
+    LoginPage(
+      onToggleTheme: _toggleTheme,
+      onLogin: (email, password) {},
+      onForgotPassword: _openForgotPassword,
+      onRegister: () => _openRegister(replace: true),
+    ),
+    replace: replace,
+  );
+
+  void _openRegister({bool replace = false}) => _open(
+    RegisterPage(
+      onToggleTheme: _toggleTheme,
+      onRegister: (name, email, password) {},
+      onLogin: () => _openLogin(replace: true),
+    ),
+    replace: replace,
+  );
+
+  void _openForgotPassword() => _open(
+    ForgotPasswordPage(
+      onToggleTheme: _toggleTheme,
+      onSendResetLink: (email) {},
+      // Dit scherm wordt altijd vanaf het loginscherm geopend.
+      onBackToLogin: _nav.pop,
+    ),
+  );
 
   @override
   Widget build(BuildContext context) {
@@ -51,8 +83,7 @@ class _StapperCoachAppState extends State<StapperCoachApp> {
         isDark: _isDark,
         onToggleTheme: _toggleTheme,
         onLogin: _openLogin,
-        // Het registratiescherm bestaat nog niet.
-        onRegister: () {},
+        onRegister: _openRegister,
       ),
     );
   }

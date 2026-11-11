@@ -59,9 +59,9 @@ flutter:
   uses-material-design: true
 
   assets:
-    - assets/login/
-    - assets/login/desktop/
-    - assets/login/mobile/
+    - assets/auth/
+    - assets/auth/desktop/
+    - assets/auth/mobile/
     - assets/landing/
     - assets/landing/desktop/light/
     - assets/landing/desktop/dark/
