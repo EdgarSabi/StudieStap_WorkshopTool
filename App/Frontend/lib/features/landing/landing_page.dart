@@ -2,7 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
+import '../../theme/app_text.dart';
 import '../../theme/app_theme.dart';
+import '../../widgets/primary_button.dart';
+import '../../widgets/theme_toggle.dart';
 import 'landing_scene.dart';
 import 'landing_scene_data.dart';
 
@@ -10,24 +13,6 @@ const _themeFadeDuration = Duration(milliseconds: 300);
 const _mobileBreakpoint = 800.0;
 const _cardBorderWidth = 1.5;
 const _mascotAsset = 'assets/landing/mascotte_yay.png';
-
-/// Tekststijl uit Figma: regelhoogte "normal" van Inter, zonder de regelhoogte
-/// en letterafstand die Material anders meegeeft.
-TextStyle _inter(
-  double size,
-  FontWeight weight,
-  Color color, {
-  double spacing = 0,
-}) {
-  return TextStyle(
-    fontFamily: 'Inter',
-    fontSize: size,
-    fontWeight: weight,
-    color: color,
-    height: 1.21,
-    letterSpacing: spacing,
-  );
-}
 
 class LandingPage extends StatefulWidget {
   const LandingPage({
@@ -162,9 +147,10 @@ class _LandingPageState extends State<LandingPage>
                   Positioned(
                     top: layout.toggleTop + topInset,
                     right: layout.toggleRight,
-                    child: _ThemeToggle(
-                      layout: layout,
+                    child: ThemeToggle(
+                      size: layout.toggleSize,
                       isDark: widget.isDark,
+                      asset: layout.svgPath('modus_wissel', widget.isDark),
                       onPressed: widget.onToggleTheme,
                     ),
                   ),
@@ -405,7 +391,7 @@ class _LandingContent extends StatelessWidget {
               'AI-coach',
               maxLines: 1,
               overflow: TextOverflow.ellipsis,
-              style: _inter(layout.brandSize, FontWeight.w700, colors.text),
+              style: inter(layout.brandSize, FontWeight.w700, colors.text),
             ),
           ),
           TextButton(
@@ -415,7 +401,7 @@ class _LandingContent extends StatelessWidget {
               padding: EdgeInsets.zero,
               minimumSize: Size.zero,
               tapTargetSize: MaterialTapTargetSize.shrinkWrap,
-              textStyle: _inter(
+              textStyle: inter(
                 layout.navTextSize,
                 FontWeight.w600,
                 colors.text,
@@ -424,7 +410,7 @@ class _LandingContent extends StatelessWidget {
             child: const Text('Inloggen'),
           ),
           SizedBox(width: layout.navGap),
-          _PrimaryButton(
+          PrimaryButton(
             label: 'Registreren',
             onPressed: onRegister,
             padding: layout.navButtonPadding,
@@ -438,7 +424,7 @@ class _LandingContent extends StatelessWidget {
 
   Widget _buildHero(BuildContext context) {
     final colors = context.colors;
-    final cta = _PrimaryButton(
+    final cta = PrimaryButton(
       label: 'Registreer je account →',
       onPressed: onRegister,
       padding: layout.ctaPadding,
@@ -453,7 +439,7 @@ class _LandingContent extends StatelessWidget {
           Text(
             'VOOR STUDIESTAPPERS',
             textAlign: TextAlign.center,
-            style: _inter(
+            style: inter(
               layout.eyebrowSize,
               FontWeight.w600,
               colors.textMuted,
@@ -465,7 +451,7 @@ class _LandingContent extends StatelessWidget {
             child: Text(
               'Feedback op je workshop, zonder dat iemand hoeft mee te kijken',
               textAlign: TextAlign.center,
-              style: _inter(
+              style: inter(
                 layout.titleSize,
                 FontWeight.w700,
                 layout.isCompact ? colors.titleMobile : colors.titleDesktop,
@@ -477,11 +463,7 @@ class _LandingContent extends StatelessWidget {
             child: Text(
               layout.intro,
               textAlign: TextAlign.center,
-              style: _inter(
-                layout.introSize,
-                FontWeight.w400,
-                colors.textMuted,
-              ),
+              style: inter(layout.introSize, FontWeight.w400, colors.textMuted),
             ),
           ),
           if (layout.isCompact)
@@ -511,56 +493,6 @@ class _LandingContent extends StatelessWidget {
               spacing: layout.benefitsGap,
               children: [for (final card in cards) Expanded(child: card)],
             ),
-    );
-  }
-}
-
-class _PrimaryButton extends StatelessWidget {
-  const _PrimaryButton({
-    required this.label,
-    required this.onPressed,
-    required this.padding,
-    required this.radius,
-    required this.fontSize,
-  });
-
-  final String label;
-  final VoidCallback onPressed;
-  final EdgeInsets padding;
-  final double radius;
-  final double fontSize;
-
-  @override
-  Widget build(BuildContext context) {
-    final colors = context.colors;
-    final borderRadius = BorderRadius.circular(radius);
-    return DecoratedBox(
-      decoration: BoxDecoration(
-        borderRadius: borderRadius,
-        boxShadow: [
-          BoxShadow(
-            color: colors.primaryShadow,
-            offset: const Offset(0, 4),
-            blurRadius: 10,
-          ),
-        ],
-      ),
-      child: Material(
-        color: colors.primary,
-        borderRadius: borderRadius,
-        clipBehavior: Clip.antiAlias,
-        child: InkWell(
-          onTap: onPressed,
-          child: Padding(
-            padding: padding,
-            child: Text(
-              label,
-              textAlign: TextAlign.center,
-              style: _inter(fontSize, FontWeight.w600, Colors.white),
-            ),
-          ),
-        ),
-      ),
     );
   }
 }
@@ -599,92 +531,17 @@ class _BenefitCard extends StatelessWidget {
         children: [
           Text(
             title,
-            style: _inter(layout.cardTitleSize, FontWeight.w600, colors.text),
+            style: inter(layout.cardTitleSize, FontWeight.w600, colors.text),
           ),
           Text(
             body,
-            style: _inter(
+            style: inter(
               layout.cardBodySize,
               FontWeight.w400,
               colors.textMuted,
             ),
           ),
         ],
-      ),
-    );
-  }
-}
-
-class _ThemeToggle extends StatelessWidget {
-  const _ThemeToggle({
-    required this.layout,
-    required this.isDark,
-    required this.onPressed,
-  });
-
-  // De SVG is groter dan de knop: rondom is ruimte gereserveerd voor de schaduw.
-  static const _svgInsetX = 12.0;
-  static const _svgInsetY = 8.0;
-
-  final _LayoutSpec layout;
-  final bool isDark;
-  final VoidCallback onPressed;
-
-  @override
-  Widget build(BuildContext context) {
-    final size = layout.toggleSize;
-    final svgSize = size + _svgInsetX * 2;
-    return Semantics(
-      button: true,
-      label: isDark
-          ? 'Schakel naar lichte modus'
-          : 'Schakel naar donkere modus',
-      excludeSemantics: true,
-      child: DecoratedBox(
-        // flutter_svg negeert SVG-filters, dus de schaduw staat hier.
-        decoration: BoxDecoration(
-          shape: BoxShape.circle,
-          boxShadow: [
-            BoxShadow(
-              color: context.colors.toggleShadow,
-              offset: const Offset(0, 4),
-              blurRadius: 12,
-            ),
-          ],
-        ),
-        child: SizedBox.square(
-          dimension: size,
-          child: Stack(
-            clipBehavior: Clip.none,
-            children: [
-              Positioned(
-                left: -_svgInsetX,
-                top: -_svgInsetY,
-                width: svgSize,
-                height: svgSize,
-                child: AnimatedSwitcher(
-                  duration: _themeFadeDuration,
-                  switchInCurve: Curves.easeOut,
-                  switchOutCurve: Curves.easeOut,
-                  child: SvgPicture.asset(
-                    layout.svgPath('modus_wissel', isDark),
-                    key: ValueKey(isDark),
-                    width: svgSize,
-                    height: svgSize,
-                  ),
-                ),
-              ),
-              Positioned.fill(
-                child: Material(
-                  type: MaterialType.transparency,
-                  shape: const CircleBorder(),
-                  clipBehavior: Clip.antiAlias,
-                  child: InkWell(onTap: onPressed),
-                ),
-              ),
-            ],
-          ),
-        ),
       ),
     );
   }
