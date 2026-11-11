@@ -60,6 +60,29 @@ void main() {
     });
   });
 
+  group('driftedLeft', () {
+    double left(double seconds) => driftedLeft(
+      startLeft: 900,
+      width: 100,
+      screenWidth: 1000,
+      crossingSeconds: 100,
+      elapsedSeconds: seconds,
+    );
+
+    test('begint op de positie uit het ontwerp', () {
+      expect(left(0), 900);
+    });
+
+    test('schuift langzaam naar links', () {
+      expect(left(10), closeTo(800, 1e-9));
+    });
+
+    test('komt rechts terug zodra hij links helemaal uit beeld is', () {
+      expect(left(100), closeTo(-100, 1e-9));
+      expect(left(101), closeTo(990, 1e-9));
+    });
+  });
+
   testWidgets('desktop toont de teksten uit het ontwerp', (tester) async {
     setScreen(tester, const Size(1440, 1024));
     await tester.pumpWidget(page());

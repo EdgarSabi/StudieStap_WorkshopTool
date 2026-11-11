@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter/scheduler.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 
 import '../../theme/app_theme.dart';
@@ -47,12 +48,25 @@ class LandingPage extends StatefulWidget {
 }
 
 class _LandingPageState extends State<LandingPage>
-    with SingleTickerProviderStateMixin {
+    with TickerProviderStateMixin {
   late final AnimationController _loop = AnimationController(
     vsync: this,
     duration: sceneLoopDuration,
   )..repeat();
+
+  /// Verstreken tijd in seconden, voor de wolken en de luchtballon.
+  final _driftClock = ValueNotifier<double>(0);
+  late final Ticker _driftTicker;
   bool _assetsRequested = false;
+
+  @override
+  void initState() {
+    super.initState();
+    _driftTicker = createTicker((elapsed) {
+      _driftClock.value =
+          elapsed.inMicroseconds / Duration.microsecondsPerSecond;
+    })..start();
+  }
 
   @override
   void didChangeDependencies() {
@@ -86,6 +100,8 @@ class _LandingPageState extends State<LandingPage>
   @override
   void dispose() {
     _loop.dispose();
+    _driftTicker.dispose();
+    _driftClock.dispose();
     super.dispose();
   }
 
@@ -175,6 +191,7 @@ class _LandingPageState extends State<LandingPage>
             designSize: layout.designSize,
             layers: layout.layers,
             animation: _loop,
+            drift: _driftClock,
             layerBuilder: (layer) => SvgPicture.asset(
               layout.svgPath(layer.asset, widget.isDark),
               fit: BoxFit.fill,
